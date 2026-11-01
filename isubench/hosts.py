@@ -3,14 +3,14 @@ import time
 from pathlib import Path
 
 APPS = ('s1', 's2', 's3')
-TARGET_HOST = 'isuride.xiv.isucon.net'
 PROXY_PORT = 3128
 
 
 class Hosts:
-    def __init__(self, work: Path, hosts: dict):
+    def __init__(self, work: Path, hosts: dict, problem):
         self.work = work
         self.hosts = hosts
+        self.problem = problem
         self.config = work / 'ssh_config'
 
     def write_configs(self, harness_key: Path, agent_ssh: Path):
@@ -53,9 +53,9 @@ class Hosts:
             return None
 
     def http_status(self, path):
-        ip = self.hosts['s1']['private']
+        ip, target = self.hosts['s1']['private'], self.problem.target_host
         proc = self.ssh('bench', f"curl -ks -o /dev/null -w '%{{http_code}}' --max-time 10 "
-                                 f"--resolve {TARGET_HOST}:443:{ip} https://{TARGET_HOST}{path}", check=False)
+                                 f"--resolve {target}:443:{ip} https://{target}{path}", check=False)
         return int(proc.stdout or 0)
 
     def prepare(self, agent_public_key: str, lang: str, proxy_script: str, allowlist: str):
@@ -63,10 +63,9 @@ class Hosts:
             self.wait(host)
         for host in self.hosts:
             self.ssh(host, 'cloud-init status --wait >/dev/null || true')
-        # The AMI runs its own payment mock on 12345, where the benchmarker must listen instead.
-        self.ssh('bench', "sudo systemctl disable --now nginx mysql $(systemctl list-unit-files --type=service "
-                          "--no-legend --plain 'isuride*' | awk '{print $1}') && ! ss -ltn | grep -q ':12345 ' && "
-                          "sudo test ! -e /home/isucon/.ssh/authorized_keys")
+        self.problem.prepare_bench(self, self.work)
+        self.ssh('bench', f'{self.problem.bench_ready} && sudo test ! -e /home/isucon/.ssh/authorized_keys')
+        self.problem.prepare_apps(self, self.work)
         self.ssh('bench', 'sudo install -d /opt/isu-bench && sudo tee /opt/isu-bench/proxy.py >/dev/null', input=proxy_script)
         self.ssh('bench', 'sudo tee /opt/isu-bench/allow.txt >/dev/null', input=allowlist)
         unit = ('[Unit]\nAfter=network-online.target\n[Service]\nExecStart=/usr/bin/python3 /opt/isu-bench/proxy.py '
@@ -76,12 +75,14 @@ class Hosts:
                           'sudo systemctl enable --now isu-bench-proxy', input=unit)
         proxy = f"http://{self.hosts['bench']['private']}:{PROXY_PORT}"
         env = ''.join(f'{k}={proxy}\n' for k in ('http_proxy', 'https_proxy', 'HTTP_PROXY', 'HTTPS_PROXY'))
-        env += f'no_proxy=localhost,127.0.0.1,169.254.169.254,10.0.0.0/16,{TARGET_HOST}\nNO_PROXY=localhost,127.0.0.1,169.254.169.254,10.0.0.0/16,{TARGET_HOST}\n'
+        no_proxy = f'localhost,127.0.0.1,169.254.169.254,10.0.0.0/16,{self.problem.target_host}'
+        env += f'no_proxy={no_proxy}\nNO_PROXY={no_proxy}\n'
         apt = f'Acquire::http::Proxy "{proxy}";\nAcquire::https::Proxy "{proxy}";\n'
+        svc = self.problem.service
         switch = '' if lang == 'go' else (
-            f'sudo systemctl disable --now isuride-go && sudo systemctl enable --now isuride-{lang} && ')
+            f'sudo systemctl disable --now {svc}-go && sudo systemctl enable --now {svc}-{lang} && ')
         if lang == 'php':
-            switch += ('sudo ln -sf /etc/nginx/sites-available/isuride-php.conf /etc/nginx/sites-enabled/ && '
+            switch += (f'sudo ln -sf /etc/nginx/sites-available/{svc}-php.conf /etc/nginx/sites-enabled/ && '
                        'sudo systemctl restart nginx && ')
         for host in APPS:
             self.ssh(host, f'{switch}sudo install -d -m 700 -o isucon -g isucon /home/isucon/.ssh && '
@@ -96,11 +97,7 @@ class Hosts:
     def recover_bench(self, infra):
         infra.reboot(['bench'])
         time.sleep(30)
-        self.wait('bench', f"systemctl is-active -q isu-bench-proxy && ! ss -ltn | grep -q ':12345 '")
-
-    def bench_command(self):
-        return (f"sudo -iu isucon ./bench run --target https://{TARGET_HOST} --addr {self.hosts['s1']['private']}:443 "
-                f"--payment-url http://{self.hosts['bench']['private']}:12345 -t 60")
+        self.wait('bench', f'systemctl is-active -q isu-bench-proxy && {self.problem.bench_ready}')
 
     def reboot_check(self, infra):
         before = {h: self.boot_id(h) for h in APPS}
@@ -114,7 +111,7 @@ class Hosts:
         rebooted = {h: bool(after[h] and after[h] != before[h]) for h in APPS}
         deadline = time.monotonic() + 600
         while True:
-            root, api = self.http_status('/'), self.http_status('/api/app/rides')
+            root, api = (self.http_status(p) for p in self.problem.probe_paths)
             ok = root == 200 and 200 <= api < 500
             if ok or time.monotonic() > deadline:
                 return {'passed': ok, 'rebooted': rebooted, 'root_status': root, 'api_status': api}

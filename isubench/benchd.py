@@ -1,13 +1,11 @@
 import datetime
 import json
-import re
 import socketserver
 import subprocess
 import threading
 from pathlib import Path
 
 LIMIT = 15
-RESULT = re.compile(r'msg=結果 pass=(true|false) スコア=(-?\d+)')
 
 
 def now():
@@ -17,8 +15,9 @@ def now():
 class BenchServer(socketserver.ThreadingUnixStreamServer):
     daemon_threads = True
 
-    def __init__(self, socket_path: Path, out: Path, ssh_base: list, command: str, recover):
+    def __init__(self, socket_path: Path, out: Path, ssh_base: list, command: str, parse, recover):
         self.out = out
+        self.parse = parse
         self.ssh_base = ssh_base
         self.command = command
         self.recover = recover
@@ -70,10 +69,9 @@ class BenchServer(socketserver.ThreadingUnixStreamServer):
                 self.recover()
                 return
             stdout_path = stdout_path.rename(self.out / f'{n:02d}.stdout')
-            stderr_path.rename(self.out / f'{n:02d}.stderr')
-            match = RESULT.findall(stdout_path.read_text())
-            record.update(finished_at=now(), passed=bool(match) and match[-1][0] == 'true',
-                          score=int(match[-1][1]) if match else None)
+            stderr_path = stderr_path.rename(self.out / f'{n:02d}.stderr')
+            passed, score = self.parse(stdout_path.read_text(), stderr_path.read_text())
+            record.update(finished_at=now(), passed=passed, score=score)
             self.runs.append(record)
             with (self.out / 'runs.jsonl').open('a') as f:
                 f.write(json.dumps(record) + '\n')

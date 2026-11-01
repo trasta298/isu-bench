@@ -6,8 +6,6 @@ from pathlib import Path
 
 REGION = 'ap-northeast-1'
 ZONE = 'ap-northeast-1a'
-AMI = 'ami-0fcf9e8e8675a9ee4'
-TYPES = {'s1': 'c5.large', 's2': 'c5.large', 's3': 'c5.large', 'bench': 'c5.2xlarge'}
 TAG = 'isu-bench:run'
 
 TTL_SCRIPT = '''#!/bin/sh
@@ -57,7 +55,7 @@ class Infra:
         return json.dumps([{'ResourceType': resource, 'Tags': [
             {'Key': 'Name', 'Value': f'{self.run_id}-{name}'}, {'Key': TAG, 'Value': self.run_id}]}])
 
-    def provision(self, public_key: Path, ttl_hours: int):
+    def provision(self, public_key: Path, ttl_hours: int, problem):
         s = self.state
         if 'client_ip' not in s:
             self.save('client_ip', urllib.request.urlopen('https://checkip.amazonaws.com', timeout=20).read().decode().strip())
@@ -99,15 +97,15 @@ class Infra:
                 '--tag-specifications', self.tags('key-pair', 'key'))
             self.save('key', self.run_id)
         if 'image' not in s:
-            image = aws('ec2', 'describe-images', '--image-ids', AMI)['Images'][0]
+            image = aws('ec2', 'describe-images', '--image-ids', problem.ami)['Images'][0]
             self.save('image', {k: image[k] for k in ('ImageId', 'Name', 'OwnerId', 'CreationDate')})
         expires = int(time.time()) + ttl_hours * 3600
         instances = dict(s.get('instances', {}))
-        for role, itype in TYPES.items():
+        for role, itype in problem.types.items():
             if role in instances:
                 continue
             user_data = TTL_SCRIPT.replace('@EXPIRES@', str(expires))
-            res = aws('ec2', 'run-instances', '--image-id', AMI, '--instance-type', itype, '--count', '1',
+            res = aws('ec2', 'run-instances', '--image-id', problem.ami, '--instance-type', itype, '--count', '1',
                       '--key-name', s['key'], '--security-group-ids', s['sg']['bench' if role == 'bench' else 'app'],
                       '--subnet-id', s['subnet'],
                       '--instance-initiated-shutdown-behavior', 'terminate',

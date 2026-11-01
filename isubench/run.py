@@ -1,5 +1,6 @@
 import datetime
 import json
+import math
 import os
 import re
 import shutil
@@ -9,12 +10,10 @@ import time
 from pathlib import Path
 
 from . import agents, aws, benchd, hosts
+from .problems import LANGS, PROBLEMS
 
 ROOT = Path(__file__).resolve().parent.parent
-UPSTREAM = 'https://github.com/isucon/isucon14.git'
-UPSTREAM_COMMIT = '53f8b627e040c30ebec600457c6c97da008b84b0'
 IMAGE = 'isu-bench-agent:v1'
-LANGS = {'go': 'Go', 'rust': 'Rust', 'node': 'Node.js', 'perl': 'Perl', 'php': 'PHP', 'python': 'Python', 'ruby': 'Ruby'}
 RESUMES = 3
 TTL_HOURS = 48
 SESSION_DIRS = ('.claude/projects', '.codex/sessions', '.dsh/sessions')
@@ -33,17 +32,26 @@ def now():
     return datetime.datetime.now(datetime.timezone.utc)
 
 
-def prepare_workspace(dest: Path):
-    cache = ROOT / 'runs' / '.upstream'
+def prepare_workspace(dest: Path, problem):
+    cache = ROOT / 'runs' / '.upstream' / problem.name
     if not cache.exists():
-        sh('git', 'clone', '-q', '--filter=blob:none', '--no-checkout', UPSTREAM, str(cache))
-    sh('git', '-C', str(cache), 'checkout', '-q', UPSTREAM_COMMIT)
+        sh('git', 'clone', '-q', '--filter=blob:none', '--no-checkout', problem.upstream, str(cache))
+    sh('git', '-C', str(cache), 'checkout', '-q', problem.commit)
     for d in ('docs', 'webapp'):
         shutil.copytree(cache / d, dest / d)
     sh('git', 'init', '-q', str(dest))
     sh('git', '-C', str(dest), 'add', '-A')
     sh('git', '-C', str(dest), '-c', 'user.name=isu-bench', '-c', 'user.email=isu-bench@localhost', 'commit', '-qm', 'initial')
     return sh('git', '-C', str(dest), 'rev-parse', 'HEAD', capture_output=True).stdout.strip()
+
+
+def render_prompt(problem, lang):
+    fields = {'{TITLE}': problem.title, '{SERVICE}': problem.service, '{BENCH_NOTE}': problem.bench_note,
+              '{LANG}': LANGS[lang], '{lang}': lang, '{RUNS}': str(benchd.LIMIT)}
+    text = (ROOT / 'prompt.md').read_text()
+    for key, value in fields.items():
+        text = text.replace(key, value)
+    return text
 
 
 def keygen(path: Path, comment):
@@ -61,7 +69,8 @@ def scrub(directory: Path, secrets):
                 f.write_text(text, errors='surrogateescape')
 
 
-def run(agent_name, model, effort, lang, keep=False):
+def run(problem_name, agent_name, model, effort, lang, keep=False):
+    problem = PROBLEMS[problem_name]
     adapter = agents.AGENTS[agent_name]
     credentials = [c for c in adapter.credentials if os.environ.get(c)]
     auth_store = getattr(adapter, 'auth_store', None)
@@ -73,7 +82,7 @@ def run(agent_name, model, effort, lang, keep=False):
                          + (f" or {adapter.upstream['credential']}" if hasattr(adapter, 'upstream') else ''))
     secrets = [os.environ[c] for c in credentials] + ([os.environ[upstream['credential']]] if upstream else [])
     started = now()
-    run_id = re.sub(r'[^a-z0-9-]+', '-', f'{agent_name}-{model}-{lang}-{started:%Y%m%d%H%M%S}'.lower())
+    run_id = re.sub(r'[^a-z0-9-]+', '-', f'{problem.name}-{agent_name}-{model}-{lang}-{started:%Y%m%d%H%M%S}'.lower())
     work, res = ROOT / 'runs' / run_id, ROOT / 'results' / run_id
     home, ws, sock = work / 'home', work / 'workspace', work / 'sock'
     for d in (home / '.ssh', ws, sock, work / 'proxy', res / 'bench', res / 'agent'):
@@ -83,10 +92,11 @@ def run(agent_name, model, effort, lang, keep=False):
     sh('docker', 'build', '-q', '-t', IMAGE, '--build-arg', f'UID={os.getuid()}', '--build-arg', f'GID={os.getgid()}',
        str(ROOT / 'container'), stdout=subprocess.DEVNULL)
     version = sh('docker', 'run', '--rm', IMAGE, *adapter.version, capture_output=True).stdout.strip()
-    result = {'run_id': run_id, 'agent': agent_name, 'agent_version': version, 'model': model, 'effort': effort,
-              'lang': lang, 'provider': upstream['host'] if upstream else 'direct', 'upstream_commit': UPSTREAM_COMMIT,
+    result = {'run_id': run_id, 'problem': problem.name, 'agent': agent_name, 'agent_version': version, 'model': model,
+              'effort': effort, 'lang': lang, 'provider': upstream['host'] if upstream else 'direct',
+              'upstream_commit': problem.commit,
               'started_at': started.isoformat()}
-    initial = prepare_workspace(ws)
+    initial = prepare_workspace(ws, problem)
     harness_key = work / 'harness_key'
     keygen(harness_key, 'isu-bench-harness')
     agent_public_key = keygen(home / '.ssh' / 'id_ed25519', 'isu-bench-agent')
@@ -104,9 +114,9 @@ def run(agent_name, model, effort, lang, keep=False):
     server = None
     try:
         print('provisioning', flush=True)
-        infra.provision(harness_key.with_suffix('.pub'), TTL_HOURS)
+        infra.provision(harness_key.with_suffix('.pub'), TTL_HOURS, problem)
         result['image'] = infra.state['image']
-        h = hosts.Hosts(work, infra.state['hosts'])
+        h = hosts.Hosts(work, infra.state['hosts'], problem)
         h.write_configs(harness_key, home / '.ssh')
         print('preparing hosts', flush=True)
         result['host_resources'] = h.prepare(agent_public_key, lang, (ROOT / 'isubench' / 'proxy.py').read_text(), registries)
@@ -132,13 +142,13 @@ def run(agent_name, model, effort, lang, keep=False):
            IMAGE, 'sleep', 'infinity', stdout=subprocess.DEVNULL)
 
         server = benchd.BenchServer(sock / 'bench.sock', res / 'bench',
-                                    ['ssh', '-F', str(h.config), '-o', 'BatchMode=yes', 'bench'], h.bench_command(),
-                                    lambda: h.recover_bench(infra))
+                                    ['ssh', '-F', str(h.config), '-o', 'BatchMode=yes', 'bench'],
+                                    problem.bench_command(h.hosts), problem.parse, lambda: h.recover_bench(infra))
         threading.Thread(target=server.serve_forever, daemon=True).start()
 
         print('agent started', flush=True)
         agent_started = time.monotonic()
-        prompt = (ROOT / 'prompt.md').read_text().replace('{LANG}', LANGS[lang]).replace('{lang}', lang).replace('{RUNS}', str(benchd.LIMIT))
+        prompt = render_prompt(problem, lang)
         logs = []
         for attempt in range(RESUMES + 1):
             if attempt:
@@ -195,7 +205,8 @@ def run(agent_name, model, effort, lang, keep=False):
         if auth_store and (home / adapter.auth_file).exists():
             shutil.copy(home / adapter.auth_file, auth_store)
             secrets += adapter.auth_secrets((home / adapter.auth_file).read_text())
-        scrub(res, secrets)
+        # The agent can see its own public IP in the servers' SSH login records.
+        scrub(res, secrets + [infra.state['client_ip']] if infra.state.get('client_ip') else secrets)
         if keep:
             print(f'kept AWS resources; tear down with: python3 -m isubench teardown {run_id}', flush=True)
         else:
@@ -208,14 +219,39 @@ def teardown(run_id):
     aws.Infra(ROOT / 'runs' / run_id / 'aws.json', run_id).teardown()
 
 
+def winner_ratio(problem, score):
+    # A FAIL counts as no progress over the initial implementation, which keeps the geometric mean above zero.
+    return max(score, problem.initial) / problem.winner
+
+
 def table():
-    rows = ['| agent | model | effort | lang | runs | final | status | agent time | input | output | cache read |',
-            '|---|---|---|---|---|---|---|---|---|---|---|']
-    for f in sorted((ROOT / 'results').glob('*/result.json')):
-        r = json.loads(f.read_text())
-        u = r.get('usage', {})
-        scores = ' '.join(str(x['score'] if x['passed'] else 'FAIL') for x in r['runs'])
-        rows.append(f"| {r['agent']} {r['agent_version']} | {r['model']} | {r['effort']} | {r['lang']} | {scores} | "
-                    f"{r['final_score']} | {r['status']} | {r.get('agent_seconds', 0) // 60} min | "
-                    f"{u.get('input_tokens', '-')} | {u.get('output_tokens', '-')} | {u.get('cache_read_tokens', '-')} |")
-    print('\n'.join(rows))
+    results = [json.loads(f.read_text()) for f in sorted((ROOT / 'results').glob('*/result.json'))]
+    configs = {}
+    for r in results:
+        configs.setdefault((r['agent'], r['model'], r['effort']), {})[r['problem']] = r
+    names = [p for p in PROBLEMS if any(p in c for c in configs.values())]
+    out = ['| agent | model | effort | score | ' + ' | '.join(names) + ' |',
+           '|---|---|---|---:|' + '---:|' * len(names)]
+    board = []
+    for (agent, model, effort), by_problem in configs.items():
+        ratios = [winner_ratio(PROBLEMS[p], by_problem[p]['final_score']) for p in names if p in by_problem]
+        score = math.prod(ratios) ** (1 / len(ratios)) if len(ratios) == len(names) else None
+        cells = [f"{by_problem[p]['final_score']:,} ({winner_ratio(PROBLEMS[p], by_problem[p]['final_score']):.0%})"
+                 if p in by_problem else '-' for p in names]
+        board.append((score or 0, f"| {agent} | {model} | {effort} | {f'{score:.0%}' if score else '-'} | "
+                                   + ' | '.join(cells) + ' |'))
+    out += [row for _, row in sorted(board, reverse=True)]
+    out.append('')
+    for name in names:
+        problem = PROBLEMS[name]
+        out += [f'### {problem.title}', '',
+                '| agent | model | effort | final | of winner | x initial | runs | agent time | output | cache read |',
+                '|---|---|---|---:|---:|---:|---|---:|---:|---:|']
+        for r in sorted((r for r in results if r['problem'] == name), key=lambda r: -r['final_score']):
+            u = r.get('usage', {})
+            runs = ' '.join(str(x['score'] if x['passed'] else 'FAIL') for x in r['runs'])
+            out.append(f"| {r['agent']} {r['agent_version']} | {r['model']} | {r['effort']} | {r['final_score']:,} | "
+                       f"{r['final_score'] / problem.winner:.0%} | {r['final_score'] / problem.initial:.0f} | {runs} | "
+                       f"{r.get('agent_seconds', 0) // 60} min | {u.get('output_tokens', 0):,} | {u.get('cache_read_tokens', 0):,} |")
+        out.append('')
+    print('\n'.join(out))
