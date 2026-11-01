@@ -132,7 +132,8 @@ def run(agent_name, model, effort, lang, keep=False):
            IMAGE, 'sleep', 'infinity', stdout=subprocess.DEVNULL)
 
         server = benchd.BenchServer(sock / 'bench.sock', res / 'bench',
-                                    ['ssh', '-F', str(h.config), '-o', 'BatchMode=yes', 'bench'], h.bench_command())
+                                    ['ssh', '-F', str(h.config), '-o', 'BatchMode=yes', 'bench'], h.bench_command(),
+                                    lambda: h.recover_bench(infra))
         threading.Thread(target=server.serve_forever, daemon=True).start()
 
         print('agent started', flush=True)
@@ -174,6 +175,7 @@ def run(agent_name, model, effort, lang, keep=False):
             subprocess.run(['docker', 'rm', '-f', name], capture_output=True)
         subprocess.run(['docker', 'network', 'rm', names['net']], capture_output=True)
         result['runs'] = server.runs if server else []
+        result['infra_failures'] = server.infra_failures if server else []
         last = result['runs'][-1] if result['runs'] else None
         result['final_score'] = last['score'] if last and last['passed'] and result.get('reboot_check', {}).get('passed') else 0
         result['finished_at'] = now().isoformat()

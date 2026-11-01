@@ -17,16 +17,6 @@ cat <<'CRON' > /etc/cron.d/isu-bench-ttl
 CRON
 '''
 
-# mem=9G yields about 8 GiB on Nitro because 3-4 GiB of the physical address space is a device hole.
-MEM_SCRIPT = '''
-if ! grep -qw mem=9G /proc/cmdline && [ ! -e /var/lib/isu-bench-mem ]; then
-  mkdir -p /etc/default/grub.d
-  echo 'GRUB_CMDLINE_LINUX_DEFAULT="$GRUB_CMDLINE_LINUX_DEFAULT mem=9G"' > /etc/default/grub.d/zz-isu-bench-mem.cfg
-  touch /var/lib/isu-bench-mem
-  update-grub && shutdown -r now
-fi
-'''
-
 
 def aws_retry(*args, tries=12):
     for attempt in range(tries):
@@ -116,7 +106,7 @@ class Infra:
         for role, itype in TYPES.items():
             if role in instances:
                 continue
-            user_data = TTL_SCRIPT.replace('@EXPIRES@', str(expires)) + (MEM_SCRIPT if role == 'bench' else '')
+            user_data = TTL_SCRIPT.replace('@EXPIRES@', str(expires))
             res = aws('ec2', 'run-instances', '--image-id', AMI, '--instance-type', itype, '--count', '1',
                       '--key-name', s['key'], '--security-group-ids', s['sg']['bench' if role == 'bench' else 'app'],
                       '--subnet-id', s['subnet'],

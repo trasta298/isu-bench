@@ -17,12 +17,14 @@ def now():
 class BenchServer(socketserver.ThreadingUnixStreamServer):
     daemon_threads = True
 
-    def __init__(self, socket_path: Path, out: Path, ssh_base: list, command: str):
+    def __init__(self, socket_path: Path, out: Path, ssh_base: list, command: str, recover):
         self.out = out
         self.ssh_base = ssh_base
         self.command = command
+        self.recover = recover
         self.lock = threading.Lock()
         self.runs = []
+        self.infra_failures = []
         self.finished = threading.Event()
         out.mkdir(parents=True, exist_ok=True)
         socket_path.unlink(missing_ok=True)
@@ -46,14 +48,29 @@ class BenchServer(socketserver.ThreadingUnixStreamServer):
                 return
             record = {'n': n, 'started_at': now()}
             send(f'isu-bench: starting benchmark run {n}/{LIMIT}\n')
-            stdout_path = self.out / f'{n:02d}.stdout'
-            with stdout_path.open('w') as stdout, (self.out / f'{n:02d}.stderr').open('w') as stderr:
+            stdout_path, stderr_path = self.out / 'current.stdout', self.out / 'current.stderr'
+            with stdout_path.open('w') as stdout, stderr_path.open('w') as stderr:
                 proc = subprocess.Popen(self.ssh_base + [self.command], stdout=subprocess.PIPE, stderr=stderr, text=True)
                 for line in proc.stdout:
                     stdout.write(line)
                     stdout.flush()
                     send(line)
                 record['exit'] = proc.wait()
+            # 255 is ssh's own failure: the benchmark host was lost, which says nothing about the app.
+            if record['exit'] == 255:
+                stem = f'infra-{len(self.infra_failures) + 1:02d}'
+                stdout_path.rename(self.out / f'{stem}.stdout')
+                stderr_path.rename(self.out / f'{stem}.stderr')
+                record.update(finished_at=now(), files=stem)
+                self.infra_failures.append(record)
+                with (self.out / 'infra-failures.jsonl').open('a') as f:
+                    f.write(json.dumps(record) + '\n')
+                send('isu-bench: the benchmark host failed, not your application. Recovering it; '
+                     f'this run was not counted. {LIMIT - n + 1} runs left.\n')
+                self.recover()
+                return
+            stdout_path = stdout_path.rename(self.out / f'{n:02d}.stdout')
+            stderr_path.rename(self.out / f'{n:02d}.stderr')
             match = RESULT.findall(stdout_path.read_text())
             record.update(finished_at=now(), passed=bool(match) and match[-1][0] == 'true',
                           score=int(match[-1][1]) if match else None)

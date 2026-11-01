@@ -61,7 +61,6 @@ class Hosts:
     def prepare(self, agent_public_key: str, lang: str, proxy_script: str, allowlist: str):
         for host in self.hosts:
             self.wait(host)
-        self.wait('bench', 'grep -qw mem=9G /proc/cmdline')
         for host in self.hosts:
             self.ssh(host, 'cloud-init status --wait >/dev/null || true')
         # The AMI runs its own payment mock on 12345, where the benchmarker must listen instead.
@@ -70,8 +69,11 @@ class Hosts:
                           "sudo test ! -e /home/isucon/.ssh/authorized_keys")
         self.ssh('bench', 'sudo install -d /opt/isu-bench && sudo tee /opt/isu-bench/proxy.py >/dev/null', input=proxy_script)
         self.ssh('bench', 'sudo tee /opt/isu-bench/allow.txt >/dev/null', input=allowlist)
-        self.ssh('bench', f'sudo systemd-run --unit isu-bench-proxy -p Restart=always python3 /opt/isu-bench/proxy.py '
-                          f'--listen 0.0.0.0:{PROXY_PORT} --allow /opt/isu-bench/allow.txt --log /var/log/isu-bench-proxy.jsonl')
+        unit = ('[Unit]\nAfter=network-online.target\n[Service]\nExecStart=/usr/bin/python3 /opt/isu-bench/proxy.py '
+                f'--listen 0.0.0.0:{PROXY_PORT} --allow /opt/isu-bench/allow.txt --log /var/log/isu-bench-proxy.jsonl\n'
+                'Restart=always\n[Install]\nWantedBy=multi-user.target\n')
+        self.ssh('bench', 'sudo tee /etc/systemd/system/isu-bench-proxy.service >/dev/null && '
+                          'sudo systemctl enable --now isu-bench-proxy', input=unit)
         proxy = f"http://{self.hosts['bench']['private']}:{PROXY_PORT}"
         env = ''.join(f'{k}={proxy}\n' for k in ('http_proxy', 'https_proxy', 'HTTP_PROXY', 'HTTPS_PROXY'))
         env += f'no_proxy=localhost,127.0.0.1,169.254.169.254,10.0.0.0/16,{TARGET_HOST}\nNO_PROXY=localhost,127.0.0.1,169.254.169.254,10.0.0.0/16,{TARGET_HOST}\n'
@@ -90,6 +92,11 @@ class Hosts:
         if self.http_status('/') != 200:
             raise RuntimeError('s1 does not serve https after setup')
         return {h: self.ssh(h, "nproc; free -m | awk '/^Mem:/ {print $2}'").stdout.split() for h in self.hosts}
+
+    def recover_bench(self, infra):
+        infra.reboot(['bench'])
+        time.sleep(30)
+        self.wait('bench', f"systemctl is-active -q isu-bench-proxy && ! ss -ltn | grep -q ':12345 '")
 
     def bench_command(self):
         return (f"sudo -iu isucon ./bench run --target https://{TARGET_HOST} --addr {self.hosts['s1']['private']}:443 "
