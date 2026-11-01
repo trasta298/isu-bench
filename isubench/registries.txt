@@ -1,0 +1,16 @@
+proxy.golang.org
+sum.golang.org
+crates.io
+index.crates.io
+static.crates.io
+static.rust-lang.org
+registry.npmjs.org
+pypi.org
+files.pythonhosted.org
+rubygems.org
+index.rubygems.org
+repo.packagist.org
+cpan.metacpan.org
+archive.ubuntu.com
+security.ubuntu.com
+ap-northeast-1.ec2.archive.ubuntu.com
