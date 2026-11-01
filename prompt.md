@@ -16,11 +16,12 @@ Goal: maximize the score of your {RUNS}th benchmark run.
   as soon as the {RUNS}th run finishes.
 - After that, the three servers are rebooted. If the application does not come back
   and respond, the score is 0.
+- There is no time limit.
 - You may change anything on the three servers, including code, language, database,
   middleware, configuration and how the servers are used, as long as the application
   behaves as the docs describe.
-- Parts of the manual about the portal, CloudFormation, Discord, support and the
-  post-contest re-check do not apply; this prompt replaces them.
+- Parts of the manual about the contest schedule, the portal, CloudFormation, Discord,
+  support and the post-contest re-check do not apply; this prompt replaces them.
 - Do not look up ISUCON14 solutions, write-ups or the benchmarker source.
 
 No one will answer questions. Work autonomously until you have used all {RUNS} runs.

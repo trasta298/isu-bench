@@ -18,6 +18,11 @@ LANGS = {'go': 'Go', 'rust': 'Rust', 'node': 'Node.js', 'perl': 'Perl', 'php': '
 RESUMES = 3
 TTL_HOURS = 48
 SESSION_DIRS = ('.claude/projects', '.codex/sessions', '.dsh/sessions')
+# dsh compresses its session logs with zstd; Node in the agent image can read them, Python 3.12 cannot.
+UNZSTD = ("const fs=require('fs'),zlib=require('zlib'),path=require('path');const walk=d=>{for(const n of "
+          "fs.readdirSync(d)){const p=path.join(d,n);if(fs.statSync(p).isDirectory())walk(p);else if"
+          "(p.endsWith('.jsonl.zstd'))fs.writeFileSync(p.slice(0,-5),zlib.zstdDecompressSync(fs.readFileSync(p)))}};"
+          "walk('/home/agent/.dsh/sessions')")
 
 
 def sh(*cmd, **kw):
@@ -60,9 +65,13 @@ def run(agent_name, model, effort, lang, keep=False):
     adapter = agents.AGENTS[agent_name]
     credentials = [c for c in adapter.credentials if os.environ.get(c)]
     auth_store = getattr(adapter, 'auth_store', None)
-    if not credentials and not (auth_store and auth_store.exists()):
-        raise SystemExit(f'set one of {", ".join(adapter.credentials)}' + (f' or create {auth_store}' if auth_store else ''))
-    secrets = [os.environ[c] for c in credentials]
+    upstream = getattr(adapter, 'upstream', None)
+    if credentials or not (upstream and os.environ.get(upstream['credential'])):
+        upstream = None
+    if not credentials and not upstream and not (auth_store and auth_store.exists()):
+        raise SystemExit(f'set one of {", ".join(adapter.credentials)}' + (f' or create {auth_store}' if auth_store else '')
+                         + (f" or {adapter.upstream['credential']}" if hasattr(adapter, 'upstream') else ''))
+    secrets = [os.environ[c] for c in credentials] + ([os.environ[upstream['credential']]] if upstream else [])
     started = now()
     run_id = re.sub(r'[^a-z0-9-]+', '-', f'{agent_name}-{model}-{lang}-{started:%Y%m%d%H%M%S}'.lower())
     work, res = ROOT / 'runs' / run_id, ROOT / 'results' / run_id
@@ -75,7 +84,8 @@ def run(agent_name, model, effort, lang, keep=False):
        str(ROOT / 'container'), stdout=subprocess.DEVNULL)
     version = sh('docker', 'run', '--rm', IMAGE, *adapter.version, capture_output=True).stdout.strip()
     result = {'run_id': run_id, 'agent': agent_name, 'agent_version': version, 'model': model, 'effort': effort,
-              'lang': lang, 'upstream_commit': UPSTREAM_COMMIT, 'started_at': started.isoformat()}
+              'lang': lang, 'provider': upstream['host'] if upstream else 'direct', 'upstream_commit': UPSTREAM_COMMIT,
+              'started_at': started.isoformat()}
     initial = prepare_workspace(ws)
     harness_key = work / 'harness_key'
     keygen(harness_key, 'isu-bench-harness')
@@ -104,12 +114,18 @@ def run(agent_name, model, effort, lang, keep=False):
         (work / 'proxy' / 'allow.txt').write_text(registries + '\n'.join(
             adapter.domains + [f"{h.hosts[n]['public']}:22" for n in hosts.APPS]) + '\n')
         sh('docker', 'network', 'create', '--internal', names['net'], stdout=subprocess.DEVNULL)
+        forward = []
+        if upstream:
+            key = work / 'proxy' / 'upstream-key'
+            key.write_text(os.environ[upstream['credential']])
+            key.chmod(0o600)
+            forward = ['--forward', f"0.0.0.0:3129={upstream['host']}", '--bearer-file', '/data/upstream-key']
         sh('docker', 'run', '-d', '--name', names['proxy'], '-v', f"{ROOT / 'isubench' / 'proxy.py'}:/opt/proxy.py:ro",
            '-v', f"{work / 'proxy'}:/data", IMAGE, 'python3', '/opt/proxy.py', '--allow', '/data/allow.txt',
-           '--log', '/data/proxy.jsonl', stdout=subprocess.DEVNULL)
+           '--log', '/data/proxy.jsonl', *forward, stdout=subprocess.DEVNULL)
         sh('docker', 'network', 'connect', '--alias', 'proxy', names['net'], names['proxy'])
-        env = {'HTTPS_PROXY': 'http://proxy:3128', 'HTTP_PROXY': 'http://proxy:3128', 'NO_PROXY': 'localhost,127.0.0.1',
-               'NODE_USE_ENV_PROXY': '1', **adapter.env}
+        env = {'HTTPS_PROXY': 'http://proxy:3128', 'HTTP_PROXY': 'http://proxy:3128', 'NO_PROXY': 'localhost,127.0.0.1,proxy',
+               'NODE_USE_ENV_PROXY': '1', **adapter.env, **(upstream['env'] if upstream else {})}
         sh('docker', 'run', '-d', '--init', '--name', names['agent'], '--network', names['net'],
            '-v', f'{home}:/home/agent', '-v', f'{ws}:/work', '-v', f'{sock}:/run/isu-bench',
            *[a for k, v in env.items() for a in ('-e', f'{k}={v}')], *[a for c in credentials for a in ('-e', c)],
@@ -145,7 +161,6 @@ def run(agent_name, model, effort, lang, keep=False):
         result['resumes'] = len(logs) - 1
         result['agent_seconds'] = round(time.monotonic() - agent_started)
         result['status'] = 'completed' if server.finished.is_set() else 'stopped_early'
-        result['usage'] = adapter.usage(logs, home)
 
         print('reboot check', flush=True)
         result['reboot_check'] = h.reboot_check(infra)
@@ -167,9 +182,13 @@ def run(agent_name, model, effort, lang, keep=False):
             sh('git', '-C', str(ws), 'diff', '--cached', '--binary', initial, capture_output=True).stdout)
         if (work / 'proxy' / 'proxy.jsonl').exists():
             shutil.copy(work / 'proxy' / 'proxy.jsonl', res / 'proxy-local.jsonl')
+        if (home / '.dsh' / 'sessions').exists():
+            subprocess.run(['docker', 'run', '--rm', '-v', f'{home}:/home/agent', IMAGE, 'node', '-e', UNZSTD],
+                           capture_output=True)
         for d in SESSION_DIRS:
             if (home / d).exists():
                 shutil.copytree(home / d, res / 'agent' / d, dirs_exist_ok=True)
+        result['usage'] = adapter.usage(home)
         (res / 'result.json').write_text(json.dumps(result, indent=2, ensure_ascii=False) + '\n')
         if auth_store and (home / adapter.auth_file).exists():
             shutil.copy(home / adapter.auth_file, auth_store)
@@ -188,14 +207,13 @@ def teardown(run_id):
 
 
 def table():
-    rows = ['| agent | model | lang | runs | final | status | agent time | input | output | cache read | cost |',
+    rows = ['| agent | model | effort | lang | runs | final | status | agent time | input | output | cache read |',
             '|---|---|---|---|---|---|---|---|---|---|---|']
     for f in sorted((ROOT / 'results').glob('*/result.json')):
         r = json.loads(f.read_text())
         u = r.get('usage', {})
         scores = ' '.join(str(x['score'] if x['passed'] else 'FAIL') for x in r['runs'])
-        cost = f"${u['cost_usd']:.2f}" if u.get('cost_usd') else '-'
-        rows.append(f"| {r['agent']} {r['agent_version']} | {r['model']} | {r['lang']} | {scores} | {r['final_score']} | "
-                    f"{r['status']} | {r.get('agent_seconds', 0) // 60} min | {u.get('input_tokens', '-')} | "
-                    f"{u.get('output_tokens', '-')} | {u.get('cache_read_tokens', '-')} | {cost} |")
+        rows.append(f"| {r['agent']} {r['agent_version']} | {r['model']} | {r['effort']} | {r['lang']} | {scores} | "
+                    f"{r['final_score']} | {r['status']} | {r.get('agent_seconds', 0) // 60} min | "
+                    f"{u.get('input_tokens', '-')} | {u.get('output_tokens', '-')} | {u.get('cache_read_tokens', '-')} |")
     print('\n'.join(rows))

@@ -74,7 +74,7 @@ class Hosts:
                           f'--listen 0.0.0.0:{PROXY_PORT} --allow /opt/isu-bench/allow.txt --log /var/log/isu-bench-proxy.jsonl')
         proxy = f"http://{self.hosts['bench']['private']}:{PROXY_PORT}"
         env = ''.join(f'{k}={proxy}\n' for k in ('http_proxy', 'https_proxy', 'HTTP_PROXY', 'HTTPS_PROXY'))
-        env += f'no_proxy=localhost,127.0.0.1,10.0.0.0/16,{TARGET_HOST}\nNO_PROXY=localhost,127.0.0.1,10.0.0.0/16,{TARGET_HOST}\n'
+        env += f'no_proxy=localhost,127.0.0.1,169.254.169.254,10.0.0.0/16,{TARGET_HOST}\nNO_PROXY=localhost,127.0.0.1,169.254.169.254,10.0.0.0/16,{TARGET_HOST}\n'
         apt = f'Acquire::http::Proxy "{proxy}";\nAcquire::https::Proxy "{proxy}";\n'
         switch = '' if lang == 'go' else (
             f'sudo systemctl disable --now isuride-go && sudo systemctl enable --now isuride-{lang} && ')
