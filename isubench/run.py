@@ -59,8 +59,10 @@ def scrub(directory: Path, secrets):
 def run(agent_name, model, effort, lang, keep=False):
     adapter = agents.AGENTS[agent_name]
     credentials = [c for c in adapter.credentials if os.environ.get(c)]
-    if not credentials:
-        raise SystemExit(f'set one of {", ".join(adapter.credentials)}')
+    auth_store = getattr(adapter, 'auth_store', None)
+    if not credentials and not (auth_store and auth_store.exists()):
+        raise SystemExit(f'set one of {", ".join(adapter.credentials)}' + (f' or create {auth_store}' if auth_store else ''))
+    secrets = [os.environ[c] for c in credentials]
     started = now()
     run_id = re.sub(r'[^a-z0-9-]+', '-', f'{agent_name}-{model}-{lang}-{started:%Y%m%d%H%M%S}'.lower())
     work, res = ROOT / 'runs' / run_id, ROOT / 'results' / run_id
@@ -78,6 +80,11 @@ def run(agent_name, model, effort, lang, keep=False):
     harness_key = work / 'harness_key'
     keygen(harness_key, 'isu-bench-harness')
     agent_public_key = keygen(home / '.ssh' / 'id_ed25519', 'isu-bench-agent')
+    if auth_store and auth_store.exists():
+        auth = home / adapter.auth_file
+        auth.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy(auth_store, auth)
+        auth.chmod(0o600)
     if hasattr(adapter, 'patch_text'):
         (home / Path(adapter.patch).name).write_text(adapter.patch_text(model, effort))
     registries = (ROOT / 'isubench' / 'registries.txt').read_text()
@@ -164,7 +171,10 @@ def run(agent_name, model, effort, lang, keep=False):
             if (home / d).exists():
                 shutil.copytree(home / d, res / 'agent' / d, dirs_exist_ok=True)
         (res / 'result.json').write_text(json.dumps(result, indent=2, ensure_ascii=False) + '\n')
-        scrub(res, [os.environ[c] for c in credentials])
+        if auth_store and (home / adapter.auth_file).exists():
+            shutil.copy(home / adapter.auth_file, auth_store)
+            secrets += adapter.auth_secrets((home / adapter.auth_file).read_text())
+        scrub(res, secrets)
         if keep:
             print(f'kept AWS resources; tear down with: python3 -m isubench teardown {run_id}', flush=True)
         else:

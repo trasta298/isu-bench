@@ -49,6 +49,12 @@ class Codex:
     credentials = ['OPENAI_API_KEY', 'CODEX_API_KEY']
     env = {}
     version = ['codex', '--version']
+    # A ChatGPT login made for isu-bench only, so refresh-token rotation never touches the user's own login.
+    auth_store = Path('~/.config/isu-bench/codex/auth.json').expanduser()
+    auth_file = '.codex/auth.json'
+
+    def auth_secrets(self, text):
+        return [v for v in json.loads(text).get('tokens', {}).values() if isinstance(v, str) and len(v) > 20]
 
     def command(self, model, effort, prompt, logs):
         cmd = ['codex', 'exec'] + (['resume', '--last'] if logs else [])
