@@ -64,7 +64,9 @@ class Hosts:
         self.wait('bench', 'grep -qw mem=9G /proc/cmdline')
         for host in self.hosts:
             self.ssh(host, 'cloud-init status --wait >/dev/null || true')
-        self.ssh('bench', "sudo systemctl disable --now 'isuride-*' nginx mysql >/dev/null 2>&1; "
+        # The AMI runs its own payment mock on 12345, where the benchmarker must listen instead.
+        self.ssh('bench', "sudo systemctl disable --now nginx mysql $(systemctl list-unit-files --type=service "
+                          "--no-legend --plain 'isuride*' | awk '{print $1}') && ! ss -ltn | grep -q ':12345 ' && "
                           "sudo test ! -e /home/isucon/.ssh/authorized_keys")
         self.ssh('bench', 'sudo install -d /opt/isu-bench && sudo tee /opt/isu-bench/proxy.py >/dev/null', input=proxy_script)
         self.ssh('bench', 'sudo tee /opt/isu-bench/allow.txt >/dev/null', input=allowlist)
