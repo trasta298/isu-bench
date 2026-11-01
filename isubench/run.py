@@ -121,7 +121,7 @@ def run(agent_name, model, effort, lang, keep=False):
 
         print('agent started', flush=True)
         agent_started = time.monotonic()
-        prompt = (ROOT / 'prompt.md').read_text().replace('{LANG}', LANGS[lang]).replace('{lang}', lang)
+        prompt = (ROOT / 'prompt.md').read_text().replace('{LANG}', LANGS[lang]).replace('{lang}', lang).replace('{RUNS}', str(benchd.LIMIT))
         logs = []
         for attempt in range(RESUMES + 1):
             if attempt:

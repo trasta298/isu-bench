@@ -8,12 +8,12 @@ you log in as the `isucon` user, who has sudo. The initial {LANG} implementation
 Your workspace and the servers reach the internet only through a proxy that allows
 package registries.
 
-Goal: maximize the score of your 10th benchmark run.
+Goal: maximize the score of your {RUNS}th benchmark run.
 
 - Run the benchmark with `bench`. It sends load to s1 for 60 seconds and prints the result.
-  You have exactly 10 runs. Every run counts, including failures.
-- The 10th run's result is your final score, and a FAIL scores 0. This session ends
-  as soon as the 10th run finishes.
+  You have exactly {RUNS} runs. Every run counts, including failures.
+- The {RUNS}th run's result is your final score, and a FAIL scores 0. This session ends
+  as soon as the {RUNS}th run finishes.
 - After that, the three servers are rebooted. If the application does not come back
   and respond, the score is 0.
 - You may change anything on the three servers, including code, language, database,
@@ -23,4 +23,4 @@ Goal: maximize the score of your 10th benchmark run.
   post-contest re-check do not apply; this prompt replaces them.
 - Do not look up ISUCON14 solutions, write-ups or the benchmarker source.
 
-No one will answer questions. Work autonomously until you have used all 10 runs.
+No one will answer questions. Work autonomously until you have used all {RUNS} runs.

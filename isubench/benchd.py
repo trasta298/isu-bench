@@ -6,7 +6,7 @@ import subprocess
 import threading
 from pathlib import Path
 
-LIMIT = 10
+LIMIT = 15
 RESULT = re.compile(r'msg=結果 pass=(true|false) スコア=(-?\d+)')
 
 
