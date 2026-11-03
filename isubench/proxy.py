@@ -3,6 +3,7 @@
 import argparse
 import asyncio
 import json
+import os
 import ssl
 import time
 from urllib.parse import urlsplit
@@ -19,6 +20,92 @@ def allowed(rules, host, port):
     return False
 
 
+class Pacer:
+    def __init__(self, rate):
+        self.rate, self.next = rate, 0.0
+
+    async def take(self, n):
+        now = time.monotonic()
+        start = max(self.next, now)
+        self.next = start + n / self.rate
+        await asyncio.sleep(start - now)
+
+
+# Controls on the agent's SSH: delay and rate per host and direction, byte counts, and a file that closes it.
+class Ssh:
+    def __init__(self, port, delay, rate, closed_file, log):
+        self.port, self.delay, self.rate, self.closed_file, self.log = port, delay, rate, closed_file, log
+        self.pacers = {}
+        self.open = {}
+        self.aborted = 0
+        self.reported = False
+
+    def closed(self):
+        return bool(self.closed_file) and os.path.exists(self.closed_file)
+
+    def write(self, **record):
+        self.log.write(json.dumps({'time': time.time(), **record}) + '\n')
+        self.log.flush()
+
+    async def pipe(self, reader, writer, tunnel, direction):
+        pacer = self.pacers.setdefault((tunnel['host'], direction), Pacer(self.rate)) if self.rate else None
+        # A bounded queue keeps backpressure on the sender, so the delay does not turn into unlimited buffering.
+        queue = asyncio.Queue(maxsize=64)
+
+        async def receive():
+            try:
+                while data := await reader.read(16384):
+                    tunnel[direction] += len(data)
+                    await queue.put((time.monotonic() + self.delay, data))
+            except (ConnectionError, OSError):
+                pass
+            await queue.put((0, b''))
+
+        async def send():
+            try:
+                while (item := await queue.get())[1]:
+                    await asyncio.sleep(max(0, item[0] - time.monotonic()))
+                    if pacer:
+                        await pacer.take(len(item[1]))
+                    writer.write(item[1])
+                    await writer.drain()
+            except (ConnectionError, OSError):
+                pass
+            finally:
+                writer.close()
+
+        await asyncio.gather(receive(), send())
+
+    async def tunnel(self, host, reader, writer, upstream_reader, upstream_writer):
+        tunnel = {'host': host, 'up': 0, 'down': 0, 'opened': time.time(), 'writers': (writer, upstream_writer)}
+        self.open[id(tunnel)] = tunnel
+        try:
+            await asyncio.gather(self.pipe(reader, upstream_writer, tunnel, 'up'),
+                                 self.pipe(upstream_reader, writer, tunnel, 'down'))
+        finally:
+            self.open.pop(id(tunnel), None)
+            self.write(event='ssh-bytes', host=host, up=tunnel['up'], down=tunnel['down'], opened=tunnel['opened'],
+                       closed=True)
+
+    async def watch(self):
+        last = time.monotonic()
+        while True:
+            await asyncio.sleep(0.5)
+            tunnels = list(self.open.values())
+            if self.closed():
+                self.aborted += len(tunnels)
+                for t in tunnels:
+                    for w in t['writers']:
+                        w.transport.abort()
+                if not self.reported and not self.open:
+                    self.write(event='ssh-closed', open=0, aborted=self.aborted)
+                    self.reported = True
+            if time.monotonic() - last >= 10:
+                last = time.monotonic()
+                for t in tunnels:
+                    self.write(event='ssh-bytes', host=t['host'], up=t['up'], down=t['down'], opened=t['opened'])
+
+
 async def pipe(reader, writer):
     try:
         while data := await reader.read(65536):
@@ -30,7 +117,7 @@ async def pipe(reader, writer):
         writer.close()
 
 
-async def handle(reader, writer, rules, log):
+async def handle(reader, writer, rules, log, ssh=None):
     try:
         head = await reader.readuntil(b'\r\n\r\n')
     except (asyncio.IncompleteReadError, asyncio.LimitOverrunError, ConnectionError):
@@ -51,7 +138,11 @@ async def handle(reader, writer, rules, log):
         writer.close()
         return
     ok = allowed(rules, host, port)
-    log.write(json.dumps({'time': time.time(), 'method': method, 'host': host, 'port': port, 'allowed': ok}) + '\n')
+    entry = {'time': time.time(), 'method': method, 'host': host, 'port': port, 'allowed': ok}
+    if ok and ssh and port == ssh.port and ssh.closed():
+        ok = entry['allowed'] = False
+        entry['ssh_closed'] = True
+    log.write(json.dumps(entry) + '\n')
     log.flush()
     if not ok:
         writer.write(b'HTTP/1.1 403 Forbidden\r\nContent-Length: 0\r\nConnection: close\r\n\r\n')
@@ -70,6 +161,9 @@ async def handle(reader, writer, rules, log):
         await writer.drain()
     else:
         upstream_writer.write(head)
+    if ssh and method == 'CONNECT' and port == ssh.port:
+        await ssh.tunnel(host, reader, writer, upstream_reader, upstream_writer)
+        return
     await asyncio.gather(pipe(reader, upstream_writer), pipe(upstream_reader, writer))
 
 
@@ -106,12 +200,18 @@ async def main():
     parser.add_argument('--log', required=True)
     parser.add_argument('--forward', help='LISTEN=HOST: plain HTTP in, HTTPS to HOST with a bearer token added')
     parser.add_argument('--bearer-file')
+    parser.add_argument('--ssh-port', type=int, default=22)
+    parser.add_argument('--ssh-delay', type=float, default=0, help='one-way delay in seconds on CONNECT to the SSH port')
+    parser.add_argument('--ssh-rate', type=float, default=0, help='bytes per second per host and direction on SSH')
+    parser.add_argument('--ssh-closed', help='while this file exists, refuse and close CONNECTs to the SSH port')
     args = parser.parse_args()
     with open(args.allow) as f:
         rules = [line.strip().lower() for line in f if line.strip() and not line.startswith('#')]
     host, port = args.listen.rsplit(':', 1)
     with open(args.log, 'a') as log:
-        servers = [await asyncio.start_server(lambda r, w: handle(r, w, rules, log), host, int(port))]
+        ssh = (Ssh(args.ssh_port, args.ssh_delay, args.ssh_rate, args.ssh_closed, log)
+               if args.ssh_delay or args.ssh_rate or args.ssh_closed else None)
+        servers = [await asyncio.start_server(lambda r, w: handle(r, w, rules, log, ssh), host, int(port))]
         if args.forward:
             listen, upstream = args.forward.split('=')
             with open(args.bearer_file) as f:
@@ -119,7 +219,7 @@ async def main():
             forward_host, forward_port = listen.rsplit(':', 1)
             servers.append(await asyncio.start_server(lambda r, w: forward(r, w, upstream, token, log),
                                                       forward_host, int(forward_port)))
-        await asyncio.gather(*(s.serve_forever() for s in servers))
+        await asyncio.gather(*(s.serve_forever() for s in servers), *([ssh.watch()] if ssh else []))
 
 
 if __name__ == '__main__':

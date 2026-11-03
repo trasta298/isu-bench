@@ -5,7 +5,8 @@ import urllib.request
 from pathlib import Path
 
 REGION = 'ap-northeast-1'
-ZONE = 'ap-northeast-1a'
+# An AZ ID names the same zone in every account, unlike ap-northeast-1a.
+ZONE_ID = 'apne1-az4'
 TAG = 'isu-bench:run'
 
 TTL_SCRIPT = '''#!/bin/sh
@@ -41,6 +42,26 @@ def clean(permissions):
                 if p.get('UserIdGroupPairs') else {})} for p in permissions]
 
 
+def permissions(rules, sg, client_ip):
+    peer = lambda source: ({'IpRanges': [{'CidrIp': client_ip + '/32'}]} if source == 'client' else
+                           {'UserIdGroupPairs': [{'GroupId': sg[source]}]})
+    return [{'IpProtocol': '-1', **peer(source)} if port is None else
+            {'IpProtocol': 'tcp', 'FromPort': port, 'ToPort': port, **peer(source)}
+            for source, port in rules]
+
+
+def check_types(problem, images):
+    types = {t['InstanceType']: t for t in aws('ec2', 'describe-instance-types', '--instance-types',
+                                                *set(problem.types.values()))['InstanceTypes']}
+    for role, itype in problem.types.items():
+        arch = images[problem.amis[role]]['Architecture']
+        if arch not in types[itype]['ProcessorInfo']['SupportedArchitectures']:
+            raise RuntimeError(f'{role}: {itype} cannot run the {arch} image {problem.amis[role]}')
+        need = 1 + len(problem.secondary_addresses.get(role, ()))
+        if types[itype]['NetworkInfo']['Ipv4AddressesPerInterface'] < need:
+            raise RuntimeError(f'{role}: {itype} cannot hold {need} addresses on one interface')
+
+
 class Infra:
     def __init__(self, path: Path, run_id: str):
         self.path = path
@@ -64,7 +85,7 @@ class Infra:
                                  '--tag-specifications', self.tags('vpc', 'vpc'))['Vpc']['VpcId'])
         if 'subnet' not in s:
             self.save('subnet', aws('ec2', 'create-subnet', '--vpc-id', s['vpc'], '--cidr-block', '10.0.1.0/24',
-                                    '--availability-zone', ZONE,
+                                    '--availability-zone-id', ZONE_ID,
                                     '--tag-specifications', self.tags('subnet', 'subnet'))['Subnet']['SubnetId'])
             aws('ec2', 'modify-subnet-attribute', '--subnet-id', s['subnet'], '--map-public-ip-on-launch')
         if 'igw' not in s:
@@ -75,39 +96,51 @@ class Infra:
             aws('ec2', 'create-route', '--route-table-id', table['RouteTableId'],
                 '--destination-cidr-block', '0.0.0.0/0', '--gateway-id', s['igw'])
         if 'sg' not in s:
+            names = sorted(set(problem.groups.values()), key=lambda g: (g != 'app', g))
             sg = {role: aws('ec2', 'create-security-group', '--vpc-id', s['vpc'], '--group-name', f'{self.run_id}-{role}',
                             '--description', f'isu-bench {role}',
                             '--tag-specifications', self.tags('security-group', f'sg-{role}'))['GroupId']
-                  for role in ('app', 'bench')}
+                  for role in names}
             self.save('sg', sg)
-            group = lambda g: [{'IpProtocol': '-1', 'UserIdGroupPairs': [{'GroupId': sg[g]}]}]
-            client = lambda *ports: [{'IpProtocol': 'tcp', 'FromPort': p, 'ToPort': p,
-                                      'IpRanges': [{'CidrIp': s['client_ip'] + '/32'}]} for p in ports]
-            aws('ec2', 'authorize-security-group-ingress', '--group-id', sg['app'],
-                '--ip-permissions', json.dumps(group('app') + group('bench') + client(22, 443)))
-            aws('ec2', 'authorize-security-group-ingress', '--group-id', sg['bench'],
-                '--ip-permissions', json.dumps(group('app') + client(22)))
-            # Competition hosts reach the internet only through the allowlist proxy on the benchmark host.
-            aws('ec2', 'revoke-security-group-egress', '--group-id', sg['app'],
-                '--ip-permissions', json.dumps([{'IpProtocol': '-1', 'IpRanges': [{'CidrIp': '0.0.0.0/0'}]}]))
-            aws('ec2', 'authorize-security-group-egress', '--group-id', sg['app'],
-                '--ip-permissions', json.dumps(group('app') + group('bench')))
+            for name in names:
+                if problem.ingress.get(name):
+                    aws('ec2', 'authorize-security-group-ingress', '--group-id', sg[name],
+                        '--ip-permissions', json.dumps(permissions(problem.ingress[name], sg, s['client_ip'])))
+            for name, targets in problem.egress.items():
+                # Competition hosts reach the internet only through the allowlist proxy on the benchmark host.
+                aws('ec2', 'revoke-security-group-egress', '--group-id', sg[name],
+                    '--ip-permissions', json.dumps([{'IpProtocol': '-1', 'IpRanges': [{'CidrIp': '0.0.0.0/0'}]}]))
+                aws('ec2', 'authorize-security-group-egress', '--group-id', sg[name],
+                    '--ip-permissions', json.dumps(permissions([(t, None) for t in targets], sg, s['client_ip'])))
         if 'key' not in s:
             aws('ec2', 'import-key-pair', '--key-name', self.run_id, '--public-key-material', f'fileb://{public_key}',
                 '--tag-specifications', self.tags('key-pair', 'key'))
             self.save('key', self.run_id)
+        amis = problem.amis
         if 'image' not in s:
-            image = aws('ec2', 'describe-images', '--image-ids', problem.ami)['Images'][0]
-            self.save('image', {k: image[k] for k in ('ImageId', 'Name', 'OwnerId', 'CreationDate')})
+            keep = ('ImageId', 'Name', 'OwnerId', 'CreationDate', 'Architecture')
+            images = {i['ImageId']: i for i in aws('ec2', 'describe-images', '--image-ids', *set(amis.values()))['Images']}
+            self.save('image', {k: images[amis['s1']][k] for k in keep[:4]})
+            if len(images) > 1:
+                self.save('images', {role: {k: images[ami][k] for k in keep} for role, ami in amis.items()})
+                check_types(problem, images)
         expires = int(time.time()) + ttl_hours * 3600
         instances = dict(s.get('instances', {}))
         for role, itype in problem.types.items():
             if role in instances:
                 continue
             user_data = TTL_SCRIPT.replace('@EXPIRES@', str(expires))
-            res = aws('ec2', 'run-instances', '--image-id', problem.ami, '--instance-type', itype, '--count', '1',
-                      '--key-name', s['key'], '--security-group-ids', s['sg']['bench' if role == 'bench' else 'app'],
-                      '--subnet-id', s['subnet'],
+            group = s['sg'][problem.groups[role]]
+            if role in problem.addresses:
+                addresses = [problem.addresses[role], *problem.secondary_addresses.get(role, ())]
+                network = ['--network-interfaces', json.dumps([{
+                    'DeviceIndex': 0, 'SubnetId': s['subnet'], 'Groups': [group], 'AssociatePublicIpAddress': True,
+                    'DeleteOnTermination': True,
+                    'PrivateIpAddresses': [{'PrivateIpAddress': a, 'Primary': i == 0} for i, a in enumerate(addresses)]}])]
+            else:
+                network = ['--security-group-ids', group, '--subnet-id', s['subnet']]
+            res = aws('ec2', 'run-instances', '--image-id', amis[role], '--instance-type', itype, '--count', '1',
+                      '--key-name', s['key'], *network,
                       '--instance-initiated-shutdown-behavior', 'terminate',
                       '--metadata-options', 'HttpTokens=required,HttpEndpoint=enabled',
                       '--block-device-mappings', json.dumps([{'DeviceName': '/dev/sda1', 'Ebs': {
@@ -121,6 +154,30 @@ class Infra:
                  for i in r['Instances']}
         self.save('hosts', {role: {'public': found[iid]['PublicIpAddress'], 'private': found[iid]['PrivateIpAddress']}
                             for role, iid in instances.items()})
+
+    def close_client_ssh(self, problem):
+        for name in sorted({problem.groups[r] for r in problem.apps}):
+            if ('client', 22) in problem.ingress.get(name, []):
+                aws('ec2', 'revoke-security-group-ingress', '--group-id', self.state['sg'][name],
+                    '--ip-permissions', json.dumps(permissions([('client', 22)], self.state['sg'], self.state['client_ip'])))
+
+    def audit(self, problem, ssh_closed=False):
+        s = self.state
+        diffs = problem.security_group_differences(
+            aws('ec2', 'describe-security-groups', '--group-ids', *s['sg'].values())['SecurityGroups'],
+            s['sg'], s['client_ip'], ssh_closed)
+        diffs += problem.interface_differences(
+            aws('ec2', 'describe-network-interfaces', '--filters', f"Name=vpc-id,Values={s['vpc']}")['NetworkInterfaces'],
+            s['sg'], s['instances'])
+        vpc = aws('ec2', 'describe-vpcs', '--vpc-ids', s['vpc'])['Vpcs'][0]
+        if vpc.get('Ipv6CidrBlockAssociationSet'):
+            diffs.append('the VPC has an IPv6 CIDR')
+        for table in aws('ec2', 'describe-route-tables', '--filters', f"Name=vpc-id,Values={s['vpc']}")['RouteTables']:
+            for route in table['Routes']:
+                if not (route.get('GatewayId') == 'local' or
+                        (route.get('GatewayId') == s['igw'] and route.get('DestinationCidrBlock') == '0.0.0.0/0')):
+                    diffs.append(f'unexpected route {route}')
+        return diffs
 
     def reboot(self, roles):
         aws('ec2', 'reboot-instances', '--instance-ids', *(self.state['instances'][r] for r in roles))

@@ -1,2 +1,7 @@
 runs/
 __pycache__/
+results/calibrate/
+# ISUMAIL source must stay off public hosts: transcripts, diffs and bench output contain it.
+results/isumail-*/*
+!results/isumail-*/result.json
+site/

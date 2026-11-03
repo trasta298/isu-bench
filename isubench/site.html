@@ -1,0 +1,490 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>isu-bench results</title>
+<style>
+:root {
+  color-scheme: light;
+  --page: #f9f9f7;
+  --surface: #fcfcfb;
+  --ink: #0b0b0b;
+  --ink-2: #52514e;
+  --muted: #898781;
+  --grid: #e1e0d9;
+  --axis: #c3c2b7;
+  --ring: rgba(11, 11, 11, 0.10);
+  --s1: #2a78d6; --s2: #eb6834; --s3: #1baf7a; --s4: #eda100;
+  --s5: #e87ba4; --s6: #008300; --s7: #6250d6; --s8: #e34948;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --page: #0d0d0d; --surface: #1a1a19; --ink: #f0efec; --ink-2: #c3c2b7; --muted: #898781;
+    --grid: #2c2c2a; --axis: #383835; --ring: rgba(255, 255, 255, 0.10);
+    --s1: #3987e5; --s2: #d95926; --s3: #199e70; --s4: #c98500;
+    --s5: #d55181; --s6: #008300; --s7: #9085e9; --s8: #e66767;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --page: #0d0d0d; --surface: #1a1a19; --ink: #f0efec; --ink-2: #c3c2b7; --muted: #898781;
+  --grid: #2c2c2a; --axis: #383835; --ring: rgba(255, 255, 255, 0.10);
+  --s1: #3987e5; --s2: #d95926; --s3: #199e70; --s4: #c98500;
+  --s5: #d55181; --s6: #008300; --s7: #9085e9; --s8: #e66767;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--page); color: var(--ink);
+  font: 15px/1.55 system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+main { max-width: 960px; margin: 0 auto; padding: 40px 16px 64px; }
+h1 { font-size: 28px; margin: 0 0 8px; }
+h2 { font-size: 17px; margin: 0 0 12px; }
+p { margin: 0 0 12px; color: var(--ink-2); }
+a { color: inherit; }
+.tabs { display: flex; gap: 4px; margin: 28px 0 16px; flex-wrap: wrap; }
+.tabs button {
+  font: inherit; padding: 6px 14px; border-radius: 999px; cursor: pointer;
+  border: 1px solid var(--ring); background: transparent; color: var(--ink-2);
+}
+.tabs button[aria-selected="true"] { background: var(--ink); color: var(--page); border-color: var(--ink); }
+.card { background: var(--surface); border: 1px solid var(--ring); border-radius: 12px; padding: 20px; margin-bottom: 16px; }
+.note { font-size: 13px; color: var(--muted); margin: 8px 0 0; }
+svg { display: block; overflow: visible; }
+svg text { fill: var(--ink-2); font-size: 12px; }
+svg .tick { fill: var(--muted); font-variant-numeric: tabular-nums; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 0 0 12px; font-size: 13px; color: var(--ink-2); }
+.legend span::before {
+  content: ""; display: inline-block; width: 14px; height: 2px; margin-right: 6px; vertical-align: middle;
+  background: var(--key);
+}
+.tip {
+  position: fixed; pointer-events: none; display: none; z-index: 10; min-width: 180px;
+  background: var(--surface); border: 1px solid var(--ring); border-radius: 8px; padding: 8px 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12); font-size: 13px;
+}
+.tip .h { color: var(--muted); margin-bottom: 4px; }
+.tip .r { display: flex; align-items: center; gap: 8px; white-space: nowrap; }
+.tip .r i { width: 12px; height: 2px; background: var(--key); flex: none; }
+.tip .r b { font-variant-numeric: tabular-nums; margin-left: auto; padding-left: 12px; }
+.tip .r span { color: var(--ink-2); }
+.scroll { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: 13px; }
+th, td { padding: 8px; border-bottom: 1px solid var(--grid); text-align: right; white-space: nowrap; }
+th { color: var(--muted); font-weight: 500; }
+th:first-child, td:first-child { text-align: left; }
+td { font-variant-numeric: tabular-nums; }
+td .key { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 8px; background: var(--key); vertical-align: -1px; }
+td small { color: var(--muted); }
+td:first-child small { margin-left: 18px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>isu-bench</h1>
+  <p data-t="intro"></p>
+  <p id="meta"></p>
+  <div class="tabs" role="tablist" id="tabs"></div>
+  <section class="card">
+    <h2 data-t="final"></h2>
+    <svg id="bars" role="img"></svg>
+    <p class="note" id="bars-note"></p>
+  </section>
+  <section class="card">
+    <h2 data-t="each"></h2>
+    <div class="legend" id="legend"></div>
+    <svg id="lines" role="img"></svg>
+    <p class="note" data-t="failNote"></p>
+  </section>
+  <section class="card">
+    <h2 data-t="overTime"></h2>
+    <div class="legend" id="legend-time"></div>
+    <svg id="time" role="img"></svg>
+    <p class="note" data-t="timeNote"></p>
+  </section>
+  <section class="card">
+    <h2 data-t="paceTitle"></h2>
+    <div class="scroll"><table id="pace"></table></div>
+    <p class="note" data-t="paceNote"></p>
+  </section>
+  <section class="card">
+    <h2 data-t="details"></h2>
+    <div class="scroll"><table id="table"></table></div>
+    <p class="note" data-t="tableNote"></p>
+  </section>
+  <p class="note"><span data-t="ask"></span><a href="https://x.com/trasta">@trasta</a><span data-t="askEnd"></span></p>
+  <p class="note"><span data-t="source"></span> <a href="https://github.com/trasta298/isu-bench">github.com/trasta298/isu-bench</a></p>
+</main>
+<div class="tip" id="tip"></div>
+<script type="application/json" id="data">/*DATA*/</script>
+<script>
+const DATA = JSON.parse(document.getElementById('data').textContent);
+const NS = 'http://www.w3.org/2000/svg';
+const tip = document.getElementById('tip');
+const fmt = n => n.toLocaleString('en-US');
+const compact = n => n >= 1e6 ? (n / 1e6).toFixed(n % 1e6 ? 1 : 0) + 'M' : n >= 1e3 ? Math.round(n / 1e3) + 'K' : String(n);
+const pct = x => Math.round(x * 100) + '%';
+const color = c => `var(--s${DATA.configs.indexOf(c) % 8 + 1})`;
+const T = {
+  en: {
+    title: 'isu-bench results',
+    intro: 'How far can a coding agent tune an ISUCON web service on its first encounter, given exactly 15 benchmark runs? Each agent gets the docs, a slow reference implementation and SSH to the servers; its score is the 15th run. The isu-bench score is ISUMAIL, a problem written for isu-bench whose source is not published; ISUCON14 and ISUCON13 are extras.',
+    final: 'Final score',
+    each: 'Score of each benchmark run',
+    details: 'Details',
+    failNote: 'A hollow mark on the baseline is a FAIL, which scores 0.',
+    tableNote: ["Tokens come from each agent's transcripts and are not strictly comparable across providers.",
+                'API cost prices those tokens at each provider\'s list price on 2026-11-03 (DeepSeek at its peak rate; off-peak is half).'],
+    source: 'Source and rules:',
+    ask: 'Want another model or agent added? Ask ',
+    askEnd: ' on X. Donations toward the EC2 and API costs are welcome too.',
+    theory: 'estimated theoretical maximum',
+    winner: 'contest winner',
+    tab: p => p.extra ? `${p.title} (extra)` : p.title,
+    summary: p => `${p.title}: ${p.results.length} configurations, one trial each, language Go.` +
+      (p.extra ? " An extra, not part of the isu-bench score: its public solutions may be in the models' training data." : ''),
+    barsLabel: (p, ref) => `Final score as a percentage of the ${ref} for ${p.title}`,
+    barsNote: (p, ref) => `The line marks 100%: the ${ref}, ${fmt(p.winner)}. The initial implementation scores about ${fmt(p.initial)}.`,
+    share: (score, ratio, ref) => `${score} (${ratio} of ${ref})`,
+    linesLabel: p => `Score of each of the 15 benchmark runs for ${p.title}`,
+    run: i => `Run ${i}`,
+    head: ['Configuration', 'Final', '× initial', 'Best', 'FAIL', 'Uncounted', 'Agent time', 'Output tokens', 'Cache read', 'API cost'],
+    minutes: m => `${m} min`,
+    overTime: 'Score over time',
+    timeNote: "Each mark is one benchmark run, placed at the minute it started, counted from the agent's first action. A long gap means the agent worked longer before measuring again.",
+    timeLabel: p => `Score of each benchmark run against the minutes since the agent started, for ${p.title}`,
+    elapsed: 'Minutes since the agent started',
+    runAt: (i, m) => `Run ${i} · ${m} min`,
+    since: c => `${c} tool calls before it`,
+    paceTitle: 'How each agent spent its 15 runs',
+    paceHead: ['Configuration', 'Run 2 at', 'Median gap', 'Longest gap', 'Tool calls / run', 'Output tokens / run', 'Agent time'],
+    paceNote: ['Run 1 usually measures the initial implementation, so "Run 2 at" is how long the agent worked before measuring its first change.',
+               'A gap is the time between the starts of two consecutive runs.',
+               'Tool calls and tokens are counted from the transcripts.'],
+  },
+  ja: {
+    title: 'isu-bench の結果',
+    intro: 'コーディングエージェントが、初めて見るISUCON形式のWebサービスを、ベンチマーク15回だけでどこまで速くできるかを測ります。各エージェントには仕様書、遅い参照実装、サーバーへのSSHを渡し、15回目の点で採点します。isu-benchスコアはISUMAILの点で決めます。ISUMAILはisu-benchのために作った問題で、ソースを公開していません。ISUCON14とISUCON13の結果はおまけです。',
+    final: '最終点',
+    each: '各ベンチマークの点',
+    details: '詳細',
+    failNote: '0点の線上にある白抜きの印はFAILです（0点）。',
+    tableNote: ['トークン数は各エージェントの会話記録から数えたもので、提供元をまたいで厳密には比べられません。',
+                'API換算の費用は、そのトークン数に2026年11月3日時点の各社の定価を掛けた値です（DeepSeekはピーク時の料金で、オフピーク時はその半額）。'],
+    source: 'ソースとルール:',
+    ask: '追加してほしいモデルやエージェントがあれば、Xの',
+    askEnd: 'まで連絡してください。EC2とAPIの費用への寄付も歓迎します。',
+    theory: '理論上の上限の見積もり',
+    winner: '競技の優勝スコア',
+    tab: p => p.extra ? `${p.title}（おまけ）` : p.title,
+    summary: p => `${p.title}: ${p.results.length}構成、各1試行、言語はGo。` +
+      (p.extra ? 'この問題はおまけで、isu-benchスコアには入りません。公開解がモデルの学習データに含まれている可能性があります。' : ''),
+    barsLabel: (p, ref) => `${p.title}の最終点（${ref}に対する割合）`,
+    barsNote: (p, ref) => `縦線は100%の位置で、${ref}（${fmt(p.winner)}点）を表します。初期実装は約${fmt(p.initial)}点です。`,
+    share: (score, ratio, ref) => `${score}（${ref}の${ratio}）`,
+    linesLabel: p => `${p.title}の15回のベンチマークの点`,
+    run: i => `${i}回目`,
+    head: ['構成', '最終点', '初期実装比', '最高点', 'FAIL', '数えない走行', '作業時間', '出力トークン', 'キャッシュ読込', 'API換算の費用'],
+    minutes: m => `${m}分`,
+    overTime: '経過時間と点',
+    timeNote: '印は1回のベンチマークで、エージェントが動き始めてから何分後に始めたかの位置にあります。間隔が長いほど、次に測るまでに長く作業しています。',
+    timeLabel: p => `${p.title}の各ベンチマークの点を、エージェントが動き始めてからの時間に沿って並べたグラフ`,
+    elapsed: 'エージェントが動き始めてからの時間（分）',
+    runAt: (i, m) => `${i}回目・${m}分`,
+    since: c => `直前までにツール呼び出し${c}回`,
+    paceTitle: '15回の使い方',
+    paceHead: ['構成', '2回目の開始', '間隔の中央値', '最長の間隔', '1回あたりのツール呼び出し', '1回あたりの出力トークン', '作業時間'],
+    paceNote: ['1回目はたいてい初期実装を測るので、「2回目の開始」は最初の変更を測るまでに作業した時間です。',
+               '間隔は、続けて行った2回のベンチマークの開始時刻の差です。',
+               'ツール呼び出しとトークンは会話記録から数えています。'],
+  },
+};
+const L = T[/^ja\b/i.test(navigator.language) ? 'ja' : 'en'];
+document.documentElement.lang = L === T.ja ? 'ja' : 'en';
+document.title = L.title;
+for (const e of document.querySelectorAll('[data-t]')) {
+  const t = L[e.dataset.t];
+  e.replaceChildren(...[t].flat().flatMap((s, i) => i ? [document.createElement('br'), s] : [s]));
+}
+
+function el(tag, attrs, parent, text) {
+  const e = document.createElementNS(NS, tag);
+  for (const [k, v] of Object.entries(attrs)) e.setAttribute(k, v);
+  if (text !== undefined) e.textContent = text;
+  if (parent) parent.appendChild(e);
+  return e;
+}
+
+function showTip(ev, head, rows) {
+  tip.replaceChildren();
+  const h = document.createElement('div');
+  h.className = 'h';
+  h.textContent = head;
+  tip.appendChild(h);
+  for (const [config, value] of rows) {
+    const r = document.createElement('div');
+    r.className = 'r';
+    r.style.setProperty('--key', color(config));
+    const key = document.createElement('i');
+    const name = document.createElement('span');
+    name.textContent = config;
+    const b = document.createElement('b');
+    b.textContent = value;
+    r.append(key, name, b);
+    tip.appendChild(r);
+  }
+  tip.style.display = 'block';
+  const x = Math.min(ev.clientX + 14, innerWidth - tip.offsetWidth - 8);
+  const y = Math.min(ev.clientY + 14, innerHeight - tip.offsetHeight - 8);
+  tip.style.left = x + 'px';
+  tip.style.top = y + 'px';
+}
+const hideTip = () => { tip.style.display = 'none'; };
+
+function bars(problem) {
+  const svg = document.getElementById('bars');
+  svg.replaceChildren();
+  const rows = problem.results;
+  const W = Math.max(300, svg.parentElement.clientWidth - 40), narrow = W < 600;
+  const left = narrow ? 0 : 250, right = narrow ? 120 : 170, rowH = narrow ? 52 : 40, top = 8, H = top + rows.length * rowH + 28;
+  svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+  svg.setAttribute('width', W);
+  svg.setAttribute('height', H);
+  const ref = L[problem.reference];
+  svg.setAttribute('aria-label', L.barsLabel(problem, ref));
+  const maxRatio = Math.max(1, ...rows.map(r => r.final / problem.winner));
+  const step = maxRatio > 4 ? 2 : maxRatio > 2 ? 1 : 0.5;
+  const top100 = Math.ceil(maxRatio / step) * step;
+  const x = v => left + (W - left - right) * v / top100;
+  const baseY = top + rows.length * rowH;
+  for (let v = 0; v <= top100 + 1e-9; v += step) {
+    el('line', { x1: x(v), x2: x(v), y1: top, y2: baseY, stroke: 'var(--grid)', 'stroke-width': 1 }, svg);
+    el('text', { x: x(v), y: baseY + 18, 'text-anchor': 'middle', class: 'tick' }, svg, pct(v));
+  }
+  el('line', { x1: x(1), x2: x(1), y1: top - 4, y2: baseY, stroke: 'var(--muted)', 'stroke-width': 1 }, svg);
+  rows.forEach((r, i) => {
+    const y = top + i * rowH + (narrow ? rowH - 26 : (rowH - 22) / 2);
+    const ratio = r.final / problem.winner;
+    const w = Math.max(2, x(ratio) - left);
+    const g = el('g', { tabindex: 0 }, svg);
+    if (narrow) el('text', { x: 0, y: y - 6 }, g, r.config);
+    else el('text', { x: left - 12, y: y + 15, 'text-anchor': 'end' }, g, r.config);
+    const rad = Math.min(4, w);
+    el('path', {
+      d: `M${left},${y} h${w - rad} a${rad},${rad} 0 0 1 ${rad},${rad} v${22 - 2 * rad} a${rad},${rad} 0 0 1 ${-rad},${rad} h${-(w - rad)} z`,
+      fill: color(r.config),
+    }, g);
+    el('text', { x: left + w + 8, y: y + 15, style: 'fill: var(--ink)' }, g, `${fmt(r.final)} · ${pct(ratio)}`);
+    el('rect', { x: 0, y: top + i * rowH, width: W, height: rowH, fill: 'transparent' }, g);
+    const show = ev => showTip(ev, problem.title, [[r.config, L.share(fmt(r.final), pct(ratio), ref)]]);
+    g.addEventListener('pointermove', show);
+    g.addEventListener('pointerleave', hideTip);
+    g.addEventListener('focus', () => {
+      const b = g.getBoundingClientRect();
+      show({ clientX: b.left + left + 8, clientY: b.bottom });
+    });
+    g.addEventListener('blur', hideTip);
+  });
+  document.getElementById('bars-note').textContent = L.barsNote(problem, ref);
+}
+
+function legend(id, results) {
+  const box = document.getElementById(id);
+  box.replaceChildren();
+  for (const r of results) {
+    const s = document.createElement('span');
+    s.style.setProperty('--key', color(r.config));
+    s.textContent = r.config;
+    box.appendChild(s);
+  }
+}
+
+function scoreScale(maxV) {
+  const mag = 10 ** Math.floor(Math.log10(maxV));
+  const tick = [1, 2, 2.5, 5, 10].map(m => m * mag).find(t => maxV / t <= 5);
+  return { tick, topV: Math.ceil(maxV / tick) * tick };
+}
+
+function lines(problem) {
+  const svg = document.getElementById('lines');
+  svg.replaceChildren();
+  legend('legend', problem.results);
+  const W = Math.max(300, svg.parentElement.clientWidth - 40), H = W < 600 ? 260 : 340, left = 44, right = 8, top = 12, bottom = 32;
+  svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+  svg.setAttribute('width', W);
+  svg.setAttribute('height', H);
+  svg.setAttribute('aria-label', L.linesLabel(problem));
+  const n = Math.max(...problem.results.map(r => r.runs.length));
+  const { tick, topV } = scoreScale(Math.max(...problem.results.flatMap(r => r.runs.map(v => v || 0))));
+  const x = i => left + (W - left - right) * i / (n - 1);
+  const y = v => top + (H - top - bottom) * (1 - v / topV);
+  for (let v = 0; v <= topV; v += tick) {
+    el('line', { x1: left, x2: W - right, y1: y(v), y2: y(v), stroke: v ? 'var(--grid)' : 'var(--axis)', 'stroke-width': 1 }, svg);
+    el('text', { x: left - 8, y: y(v) + 4, 'text-anchor': 'end', class: 'tick' }, svg, compact(v));
+  }
+  for (let i = 0; i < n; i++) el('text', { x: x(i), y: H - 10, 'text-anchor': 'middle', class: 'tick' }, svg, i + 1);
+  for (const r of problem.results) {
+    const c = color(r.config);
+    const d = r.runs.map((v, i) => (i ? 'L' : 'M') + x(i) + ',' + y(v || 0)).join('');
+    el('path', { d, fill: 'none', stroke: c, 'stroke-width': 2, 'stroke-linejoin': 'round', 'stroke-linecap': 'round' }, svg);
+    r.runs.forEach((v, i) => {
+      if (v === null) {
+        el('circle', { cx: x(i), cy: y(0), r: 4, fill: 'var(--surface)', stroke: c, 'stroke-width': 2 }, svg);
+      } else if (i === r.runs.length - 1) {
+        el('circle', { cx: x(i), cy: y(v), r: 5, fill: c, stroke: 'var(--surface)', 'stroke-width': 2 }, svg);
+      }
+    });
+  }
+  const cross = el('line', { y1: top, y2: H - bottom, stroke: 'var(--muted)', 'stroke-width': 1, visibility: 'hidden' }, svg);
+  const hit = el('rect', { x: left, y: top, width: W - left - right, height: H - top - bottom, fill: 'transparent', tabindex: 0 }, svg);
+  let focusIndex = n - 1;
+  const at = (ev, i) => {
+    cross.setAttribute('x1', x(i));
+    cross.setAttribute('x2', x(i));
+    cross.setAttribute('visibility', 'visible');
+    const rows = problem.results.map(r => [r.config, i >= r.runs.length ? '-' : r.runs[i] === null ? 'FAIL' : fmt(r.runs[i])]);
+    showTip(ev, L.run(i + 1), rows);
+  };
+  hit.addEventListener('pointermove', ev => {
+    const px = ev.clientX - svg.getBoundingClientRect().left;
+    at(ev, Math.max(0, Math.min(n - 1, Math.round((px - left) / (W - left - right) * (n - 1)))));
+  });
+  const leave = () => { cross.setAttribute('visibility', 'hidden'); hideTip(); };
+  hit.addEventListener('pointerleave', leave);
+  hit.addEventListener('blur', leave);
+  const key = ev => {
+    if (ev.key === 'ArrowLeft') focusIndex = Math.max(0, focusIndex - 1);
+    else if (ev.key === 'ArrowRight') focusIndex = Math.min(n - 1, focusIndex + 1);
+    else if (ev.type !== 'focus') return;
+    const b = svg.getBoundingClientRect();
+    at({ clientX: b.left + x(focusIndex), clientY: b.top + top }, focusIndex);
+  };
+  hit.addEventListener('keydown', key);
+  hit.addEventListener('focus', key);
+}
+
+function timeline(problem) {
+  const svg = document.getElementById('time');
+  svg.replaceChildren();
+  const results = problem.results.filter(r => r.pace.length === r.runs.length);
+  legend('legend-time', results);
+  const W = Math.max(300, svg.parentElement.clientWidth - 40), H = W < 600 ? 260 : 340, left = 44, right = 8, top = 12, bottom = 48;
+  svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+  svg.setAttribute('width', W);
+  svg.setAttribute('height', H);
+  svg.setAttribute('aria-label', L.timeLabel(problem));
+  const maxM = Math.max(...results.map(r => Math.max(r.agent_seconds / 60, ...r.pace.map(p => p.minutes))));
+  const stepM = maxM > 120 ? 30 : maxM > 60 ? 15 : 10;
+  const topM = Math.ceil(maxM / stepM) * stepM;
+  const { tick, topV } = scoreScale(Math.max(...results.flatMap(r => r.runs.map(v => v || 0))));
+  const x = m => left + (W - left - right) * m / topM;
+  const y = v => top + (H - top - bottom) * (1 - v / topV);
+  for (let v = 0; v <= topV; v += tick) {
+    el('line', { x1: left, x2: W - right, y1: y(v), y2: y(v), stroke: v ? 'var(--grid)' : 'var(--axis)', 'stroke-width': 1 }, svg);
+    el('text', { x: left - 8, y: y(v) + 4, 'text-anchor': 'end', class: 'tick' }, svg, compact(v));
+  }
+  for (let m = 0; m <= topM; m += stepM) el('text', { x: x(m), y: H - 28, 'text-anchor': 'middle', class: 'tick' }, svg, m);
+  el('text', { x: left + (W - left - right) / 2, y: H - 6, 'text-anchor': 'middle', class: 'tick' }, svg, L.elapsed);
+  for (const r of results) {
+    const c = color(r.config);
+    const pts = r.runs.map((v, i) => [x(r.pace[i].minutes), y(v || 0)]);
+    el('path', { d: pts.map((p, i) => (i ? 'L' : 'M') + p).join(''), fill: 'none', stroke: c, 'stroke-width': 2,
+                 'stroke-linejoin': 'round', 'stroke-linecap': 'round' }, svg);
+    r.runs.forEach((v, i) => {
+      el('circle', { cx: pts[i][0], cy: pts[i][1], r: 3.5, fill: v === null ? 'var(--surface)' : c, stroke: c, 'stroke-width': 1.5 }, svg);
+      const hit = el('circle', { cx: pts[i][0], cy: pts[i][1], r: 9, fill: 'transparent', tabindex: 0 }, svg);
+      const show = ev => showTip(ev, L.runAt(i + 1, Math.round(r.pace[i].minutes)),
+                                 [[r.config, `${v === null ? 'FAIL' : fmt(v)} · ${L.since(r.pace[i].tool_calls)}`]]);
+      hit.addEventListener('pointermove', show);
+      hit.addEventListener('pointerleave', hideTip);
+      hit.addEventListener('focus', () => { const b = hit.getBoundingClientRect(); show({ clientX: b.right, clientY: b.bottom }); });
+      hit.addEventListener('blur', hideTip);
+    });
+  }
+}
+
+function paceTable(problem) {
+  const t = document.getElementById('pace');
+  t.replaceChildren();
+  const tr = t.insertRow();
+  for (const h of L.paceHead) {
+    const th = document.createElement('th');
+    th.textContent = h;
+    tr.appendChild(th);
+  }
+  const median = xs => { const s = [...xs].sort((a, b) => a - b); return s.length % 2 ? s[s.length >> 1] : (s[s.length / 2 - 1] + s[s.length / 2]) / 2; };
+  for (const r of problem.results.filter(r => r.pace.length > 1)) {
+    const row = t.insertRow();
+    const name = row.insertCell();
+    const key = document.createElement('span');
+    key.className = 'key';
+    key.style.setProperty('--key', color(r.config));
+    name.append(key, r.config);
+    const starts = r.pace.map(p => p.minutes);
+    const gaps = starts.slice(1).map((m, i) => m - starts[i]);
+    const n = r.pace.length;
+    const cells = [L.minutes(Math.round(starts[1])), L.minutes(Math.round(median(gaps))), L.minutes(Math.round(Math.max(...gaps))),
+                   Math.round(r.pace.reduce((a, p) => a + p.tool_calls, 0) / n),
+                   fmt(Math.round(r.pace.reduce((a, p) => a + p.output_tokens, 0) / n)), L.minutes(Math.floor(r.agent_seconds / 60))];
+    for (const v of cells) row.insertCell().textContent = v;
+  }
+}
+
+function table(problem) {
+  const t = document.getElementById('table');
+  t.replaceChildren();
+  const tr = t.insertRow();
+  for (const h of L.head) {
+    const th = document.createElement('th');
+    th.textContent = h;
+    tr.appendChild(th);
+  }
+  for (const r of problem.results) {
+    const row = t.insertRow();
+    const name = row.insertCell();
+    const key = document.createElement('span');
+    key.className = 'key';
+    key.style.setProperty('--key', color(r.config));
+    const ver = document.createElement('small');
+    ver.textContent = r.agent;
+    name.append(key, r.config, document.createElement('br'), ver);
+    const final = row.insertCell();
+    const share = document.createElement('small');
+    share.textContent = pct(r.final / problem.winner);
+    final.append(fmt(r.final), document.createElement('br'), share);
+    const cells = [Math.round(r.final / problem.initial), fmt(r.best),
+                   r.fails, r.uncounted, L.minutes(Math.floor(r.agent_seconds / 60)), fmt(r.output_tokens), compact(r.cache_read_tokens),
+                   r.cost === null ? '-' : '$' + r.cost.toFixed(2)];
+    for (const v of cells) row.insertCell().textContent = v;
+  }
+}
+
+function select(name) {
+  current = name;
+  const problem = DATA.problems.find(p => p.name === name);
+  for (const b of document.querySelectorAll('.tabs button')) b.setAttribute('aria-selected', b.dataset.name === name);
+  document.getElementById('meta').textContent = L.summary(problem);
+  bars(problem);
+  lines(problem);
+  timeline(problem);
+  paceTable(problem);
+  table(problem);
+}
+
+let current;
+addEventListener('resize', () => select(current));
+const tabs = document.getElementById('tabs');
+for (const p of DATA.problems) {
+  const b = document.createElement('button');
+  b.role = 'tab';
+  b.dataset.name = p.name;
+  b.textContent = L.tab(p);
+  b.addEventListener('click', () => select(p.name));
+  tabs.appendChild(b);
+}
+select(DATA.problems[0].name);
+</script>
+</body>
+</html>

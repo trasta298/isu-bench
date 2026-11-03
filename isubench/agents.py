@@ -1,3 +1,4 @@
+import datetime
 import json
 from pathlib import Path
 
@@ -8,6 +9,10 @@ def events(path: Path):
             yield json.loads(line)
         except ValueError:
             continue
+
+
+def epoch(text):
+    return datetime.datetime.fromisoformat(text.replace('Z', '+00:00')).timestamp()
 
 
 def add(total, **values):
@@ -43,6 +48,18 @@ class ClaudeCode:
                     cache_write_tokens=u.get('cache_creation_input_tokens'))
         return total
 
+    def activity(self, home):
+        seen = set()
+        for log in (home / '.claude' / 'projects').rglob('*.jsonl'):
+            for e in events(log):
+                m = e.get('message') if e.get('type') == 'assistant' else None
+                if not isinstance(m, dict) or not e.get('timestamp'):
+                    continue
+                calls = sum(1 for b in m.get('content') or [] if isinstance(b, dict) and b.get('type') == 'tool_use')
+                tokens = 0 if m.get('id') in seen else (m.get('usage') or {}).get('output_tokens') or 0
+                seen.add(m.get('id'))
+                yield epoch(e['timestamp']), calls, tokens
+
 
 class Codex:
     name = 'codex'
@@ -76,6 +93,19 @@ class Codex:
                     cache_write_tokens=u.get('cache_write_input_tokens'),
                     reasoning_tokens=u.get('reasoning_output_tokens'))
         return total
+
+    def activity(self, home):
+        for log in (home / '.codex' / 'sessions').rglob('*.jsonl'):
+            done = 0
+            for e in events(log):
+                p = e.get('payload') or {}
+                if e.get('type') == 'response_item' and p.get('type') in ('custom_tool_call', 'function_call', 'local_shell_call'):
+                    yield epoch(e['timestamp']), 1, 0
+                elif e.get('type') == 'event_msg' and p.get('type') == 'token_count' and p.get('info'):
+                    # Each count is the session's running total.
+                    total = p['info']['total_token_usage'].get('output_tokens', 0)
+                    yield epoch(e['timestamp']), 0, total - done
+                    done = total
 
 
 class DeepSeekHarness:
@@ -113,6 +143,14 @@ class DeepSeekHarness:
                     add(total, input_tokens=u.get('inputTokens'), output_tokens=u.get('outputTokens'),
                         cache_read_tokens=u.get('cacheReadTokens'), cache_write_tokens=u.get('cacheWriteTokens'))
         return total
+
+    def activity(self, home):
+        for log in (home / '.dsh' / 'sessions').rglob('*.jsonl'):
+            for e in events(log):
+                if e.get('type') == 'tool/call':
+                    yield e['time'] / 1000, 1, 0
+                elif e.get('type') in ('assistant/message', 'compaction/summary') and (e.get('data') or {}).get('usage'):
+                    yield e['time'] / 1000, 0, e['data']['usage'].get('outputTokens') or 0
 
 
 AGENTS = {a.name: a for a in (ClaudeCode(), Codex(), DeepSeekHarness())}
