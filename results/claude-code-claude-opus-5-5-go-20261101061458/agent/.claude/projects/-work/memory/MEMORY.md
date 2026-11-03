@@ -1,0 +1,1 @@
+- [ISUCON14 bench learnings](isucon14-bench-learnings.md) — empirical benchmarker rules (payment sync, nearby both-way checks, matching)

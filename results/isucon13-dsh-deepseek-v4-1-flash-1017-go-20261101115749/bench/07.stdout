@@ -1,0 +1,19 @@
+2026-11-01T12:21:11.460Z	info	isupipe-benchmarker	SSL接続が有効になっています
+2026-11-01T12:21:11.460Z	info	isupipe-benchmarker	静的ファイルチェックを行います
+2026-11-01T12:21:11.460Z	info	isupipe-benchmarker	静的ファイルチェックが完了しました
+2026-11-01T12:21:11.460Z	info	isupipe-benchmarker	webappの初期化を行います
+2026-11-01T12:21:14.227Z	info	isupipe-benchmarker	ベンチマーク走行前のデータ整合性チェックを行います
+2026-11-01T12:21:19.968Z	info	isupipe-benchmarker	整合性チェックが成功しました
+2026-11-01T12:21:19.968Z	info	isupipe-benchmarker	ベンチマーク走行を開始します
+2026-11-01T12:21:21.978Z	info	isupipe-benchmarker	DNS水責め負荷が上昇します	{"parallelis": 3}
+2026-11-01T12:21:23.978Z	info	isupipe-benchmarker	DNS水責め負荷が上昇します	{"parallelis": 4}
+2026-11-01T12:21:25.978Z	info	isupipe-benchmarker	DNS水責め負荷が上昇します	{"parallelis": 6}
+2026-11-01T12:21:27.978Z	info	isupipe-benchmarker	DNS水責め負荷が上昇します	{"parallelis": 9}
+2026-11-01T12:22:03.978Z	info	isupipe-benchmarker	DNS水責め負荷が上昇します	{"parallelis": 13}
+2026-11-01T12:22:19.968Z	info	isupipe-benchmarker	ベンチマーク走行を停止します
+2026-11-01T12:22:19.972Z	warn	isupipe-benchmarker	ライブコメントを配信に投稿できないため、視聴者が離脱します	{"viewer": "usato4", "livestream_id": 7603, "error": "Post \"https://maaya520.u.isucon.dev:443/api/livestream/7603/livecomment\": context canceled: ベンチマーク走行が継続できないエラーが発生しました"}
+2026-11-01T12:22:20.454Z	info	isupipe-benchmarker	ベンチマーク走行終了
+2026-11-01T12:22:20.455Z	info	isupipe-benchmarker	最終チェックを実施します
+2026-11-01T12:22:20.455Z	info	isupipe-benchmarker	最終チェックが成功しました
+2026-11-01T12:22:20.455Z	info	isupipe-benchmarker	重複排除したログを以下に出力します
+2026-11-01T12:22:20.455Z	info	isupipe-benchmarker	配信を最後まで視聴できた視聴者数	{"viewers": 1709}

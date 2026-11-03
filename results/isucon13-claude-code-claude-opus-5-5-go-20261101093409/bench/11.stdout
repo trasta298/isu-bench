@@ -1,0 +1,25 @@
+2026-11-01T10:23:52.566Z	info	isupipe-benchmarker	SSL接続が有効になっています
+2026-11-01T10:23:52.566Z	info	isupipe-benchmarker	静的ファイルチェックを行います
+2026-11-01T10:23:52.566Z	info	isupipe-benchmarker	静的ファイルチェックが完了しました
+2026-11-01T10:23:52.566Z	info	isupipe-benchmarker	webappの初期化を行います
+2026-11-01T10:23:55.163Z	info	isupipe-benchmarker	ベンチマーク走行前のデータ整合性チェックを行います
+2026-11-01T10:23:59.499Z	info	isupipe-benchmarker	整合性チェックが成功しました
+2026-11-01T10:23:59.499Z	info	isupipe-benchmarker	ベンチマーク走行を開始します
+2026-11-01T10:24:01.510Z	info	isupipe-benchmarker	DNS水責め負荷が上昇します	{"parallelis": 3}
+2026-11-01T10:24:03.510Z	info	isupipe-benchmarker	DNS水責め負荷が上昇します	{"parallelis": 4}
+2026-11-01T10:24:05.511Z	info	isupipe-benchmarker	DNS水責め負荷が上昇します	{"parallelis": 6}
+2026-11-01T10:24:07.510Z	info	isupipe-benchmarker	DNS水責め負荷が上昇します	{"parallelis": 9}
+2026-11-01T10:24:09.510Z	info	isupipe-benchmarker	DNS水責め負荷が上昇します	{"parallelis": 13}
+2026-11-01T10:24:11.511Z	info	isupipe-benchmarker	DNS水責め負荷が上昇します	{"parallelis": 15}
+2026-11-01T10:24:19.842Z	warn	isupipe-benchmarker	ライブコメントを配信に投稿できないため、視聴者が離脱します	{"viewer": "sotaro911", "livestream_id": 7522, "error": "benchmark-application: [一般エラー] POST /api/livestream/7522/livecomment へのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:201, actual:400)"}
+2026-11-01T10:24:38.109Z	warn	isupipe-benchmarker	ライブコメントを配信に投稿できないため、視聴者が離脱します	{"viewer": "satoyumiko2", "livestream_id": 8368, "error": "benchmark-application: [一般エラー] POST /api/livestream/8368/livecomment へのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:201, actual:400)"}
+2026-11-01T10:24:59.500Z	info	isupipe-benchmarker	ベンチマーク走行を停止します
+2026-11-01T10:24:59.502Z	warn	isupipe-benchmarker	ライブコメントを配信に投稿できないため、視聴者が離脱します	{"viewer": "kyosuke910", "livestream_id": 7560, "error": "ベンチマーク走行が継続できないエラーが発生しました"}
+2026-11-01T10:24:59.503Z	warn	isupipe-benchmarker	ライブコメントを配信に投稿できないため、視聴者が離脱します	{"viewer": "naoto081", "livestream_id": 7858, "error": "ベンチマーク走行が継続できないエラーが発生しました"}
+2026-11-01T10:24:59.503Z	warn	isupipe-benchmarker	ライブコメントを配信に投稿できないため、視聴者が離脱します	{"viewer": "qito1", "livestream_id": 7893, "error": "ベンチマーク走行が継続できないエラーが発生しました"}
+2026-11-01T10:24:59.503Z	warn	isupipe-benchmarker	ライブコメントを配信に投稿できないため、視聴者が離脱します	{"viewer": "katoatsushi0", "livestream_id": 7536, "error": "ベンチマーク走行が継続できないエラーが発生しました"}
+2026-11-01T10:25:00.163Z	info	isupipe-benchmarker	ベンチマーク走行終了
+2026-11-01T10:25:00.163Z	info	isupipe-benchmarker	最終チェックを実施します
+2026-11-01T10:25:00.163Z	info	isupipe-benchmarker	最終チェックが成功しました
+2026-11-01T10:25:00.163Z	info	isupipe-benchmarker	重複排除したログを以下に出力します
+2026-11-01T10:25:00.168Z	info	isupipe-benchmarker	配信を最後まで視聴できた視聴者数	{"viewers": 3850}

@@ -1,0 +1,17 @@
+2026-11-01T10:57:49.217Z	info	isupipe-benchmarker	SSL接続が有効になっています
+2026-11-01T10:57:49.217Z	info	isupipe-benchmarker	静的ファイルチェックを行います
+2026-11-01T10:57:49.217Z	info	isupipe-benchmarker	静的ファイルチェックが完了しました
+2026-11-01T10:57:49.217Z	info	isupipe-benchmarker	webappの初期化を行います
+2026-11-01T10:57:52.277Z	info	isupipe-benchmarker	ベンチマーク走行前のデータ整合性チェックを行います
+2026-11-01T10:57:57.449Z	info	isupipe-benchmarker	整合性チェックが成功しました
+2026-11-01T10:57:57.449Z	info	isupipe-benchmarker	ベンチマーク走行を開始します
+2026-11-01T10:57:59.459Z	info	isupipe-benchmarker	DNS水責め負荷が上昇します	{"parallelis": 3}
+2026-11-01T10:58:57.449Z	info	isupipe-benchmarker	ベンチマーク走行を停止します
+2026-11-01T10:58:57.450Z	warn	isupipe-benchmarker	ライブコメントを配信に投稿できないため、視聴者が離脱します	{"viewer": "wkimura1", "livestream_id": 8065, "error": "Post \"https://kobayashimikako0.u.isucon.dev:443/api/livestream/8065/livecomment\": context canceled: ベンチマーク走行が継続できないエラーが発生しました"}
+2026-11-01T10:58:57.451Z	warn	isupipe-benchmarker	ライブコメントを配信に投稿できないため、視聴者が離脱します	{"viewer": "yuisuzuki1", "livestream_id": 7554, "error": "Post \"https://satomiishii0.u.isucon.dev:443/api/livestream/7554/livecomment\": context canceled: ベンチマーク走行が継続できないエラーが発生しました"}
+2026-11-01T10:58:57.451Z	warn	isupipe-benchmarker	ライブコメントを配信に投稿できないため、視聴者が離脱します	{"viewer": "atsushikondo1", "livestream_id": 8441, "error": "Post \"https://gnakagawa0.u.isucon.dev:443/api/livestream/8441/livecomment\": context canceled: ベンチマーク走行が継続できないエラーが発生しました"}
+2026-11-01T10:58:57.786Z	info	isupipe-benchmarker	ベンチマーク走行終了
+2026-11-01T10:58:57.786Z	info	isupipe-benchmarker	最終チェックを実施します
+2026-11-01T10:58:57.787Z	info	isupipe-benchmarker	最終チェックが成功しました
+2026-11-01T10:58:57.787Z	info	isupipe-benchmarker	重複排除したログを以下に出力します
+2026-11-01T10:58:57.787Z	info	isupipe-benchmarker	配信を最後まで視聴できた視聴者数	{"viewers": 972}

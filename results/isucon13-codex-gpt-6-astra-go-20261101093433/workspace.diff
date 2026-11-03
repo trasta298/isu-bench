@@ -1,0 +1,4113 @@
+diff --git a/.gitignore b/.gitignore
+new file mode 100644
+index 0000000..bfa1241
+--- /dev/null
++++ b/.gitignore
+@@ -0,0 +1,6 @@
++/ops/isupipe-stage*
++/ops/isudns
++/results/
++
++/ops/isudns-pool
++/ops/isupipe-hash
+diff --git a/ops/README.md b/ops/README.md
+new file mode 100644
+index 0000000..08ca07d
+--- /dev/null
++++ b/ops/README.md
+@@ -0,0 +1,21 @@
++# ISUPipe deployment
++
++The active Go application runs on **s2**, using MySQL on **s3**. Nginx on **s1** and **s3** proxies all API requests to s2. The authoritative DNS service on s1 distributes existing web names between s1 and s3 with a 2:1 weight; unknown names remain NXDOMAIN. User registration persists DNS records in s1's MySQL and synchronously updates the DNS service.
++
++Enabled services:
++
++- s1: `nginx`, `mysql`, `isudns-go`
++- s2: `isupipe-go` (also the original Nginx, which can proxy locally)
++- s3: `nginx`, `mysql`, `isupipe-hash`
++
++The s2 application connects to `10.0.1.47:3306` for application data, `10.0.1.34:3306` for DNS records, `10.0.1.34:8053` for DNS cache updates, and `10.0.1.47:9090` for bcrypt work. Bcrypt's algorithm and cost are unchanged. Local bcrypt is the fallback if the worker cannot respond.
++
++Application source is in `webapp/go`; DNS and bcrypt worker source is in `webapp/go/cmd/dns` and `webapp/go/cmd/auth`. Build with `/home/isucon/local/golang/bin/go` on a server. Active executables are `/home/isucon/webapp/go/isupipe` on s2, `/home/isucon/isudns` on s1, and `/home/isucon/isupipe-hash` on s3.
++
++The application persists writes to MySQL before publishing updated in-memory models, timelines, lists, moderation rules, and statistics. It rebuilds all caches at startup and initialization. User icons are immutable files addressed by SHA256 under `/home/isucon/webapp/icons` on s2; MySQL stores ownership and hashes. Initialization clears the icon directory after resetting database state. Moderated comments are soft-deleted so their reports remain readable; timelines, payments, and statistics exclude them.
++
++`indexes.sql` and `softdelete.sql` describe the applied schema migrations; the reference schema also includes these changes. Runtime configuration snapshots are in this directory. Nginx and application services have persistent file descriptor limits of 65536. The application restarts automatically while remote dependencies are still coming up after boot.
++
++Checks include JSON compatibility, differential NG-word matching against MySQL LIKE, API workflow checks (`smoke.py`), and independent SQL comparisons of statistics (`verify_stats.py`). Benchmark logs and CPU samples are under `/work/results`. `run.sh` maintains the benchmark count; run 15 is final.
++
++The final application runtime uses `GOGC=200`. Run 13 passed after reboot with 566,163; run 14 passed with this GC setting at 574,161. Final run 15 is recorded in `results/run15.log`.
+diff --git a/ops/dns-pool.conf b/ops/dns-pool.conf
+new file mode 100644
+index 0000000..da6db51
+--- /dev/null
++++ b/ops/dns-pool.conf
+@@ -0,0 +1,2 @@
++[Service]
++Environment=ISUDNS_HTTP_BACKENDS=10.0.1.34,10.0.1.34,10.0.1.47
+diff --git a/ops/env.s1 b/ops/env.s1
+new file mode 100755
+index 0000000..980b5c2
+--- /dev/null
++++ b/ops/env.s1
+@@ -0,0 +1,8 @@
++ISUCON13_MYSQL_DIALCONFIG_NET="tcp"
++ISUCON13_MYSQL_DIALCONFIG_ADDRESS="127.0.0.1"
++ISUCON13_MYSQL_DIALCONFIG_PORT="3306"
++ISUCON13_MYSQL_DIALCONFIG_USER="isucon"
++ISUCON13_MYSQL_DIALCONFIG_DATABASE="isupipe"
++ISUCON13_MYSQL_DIALCONFIG_PARSETIME="true"
++ISUCON13_POWERDNS_SUBDOMAIN_ADDRESS="10.0.1.34"
++ISUCON13_POWERDNS_DISABLED="false"
+diff --git a/ops/env.s2 b/ops/env.s2
+new file mode 100644
+index 0000000..d9671b2
+--- /dev/null
++++ b/ops/env.s2
+@@ -0,0 +1,14 @@
++ISUCON13_MYSQL_DIALCONFIG_NET="tcp"
++ISUCON13_MYSQL_DIALCONFIG_ADDRESS="10.0.1.47"
++ISUCON13_MYSQL_DIALCONFIG_PORT="3306"
++ISUCON13_MYSQL_DIALCONFIG_USER="isucon"
++ISUCON13_MYSQL_DIALCONFIG_DATABASE="isupipe"
++ISUCON13_MYSQL_DIALCONFIG_PARSETIME="true"
++ISUCON13_POWERDNS_SUBDOMAIN_ADDRESS="10.0.1.34"
++ISUCON13_POWERDNS_DISABLED="false"
++
++ISUCON_DNS_DB_ADDRESS="10.0.1.34"
++ISUCON_DNS_API=http://10.0.1.34:8053
++ISUCON_HASH_API=http://10.0.1.47:9090
++
++GOGC=200
+diff --git a/ops/indexes.sql b/ops/indexes.sql
+new file mode 100644
+index 0000000..bbbc167
+--- /dev/null
++++ b/ops/indexes.sql
+@@ -0,0 +1,11 @@
++ALTER TABLE icons ADD COLUMN hash CHAR(64) NOT NULL DEFAULT '', ADD UNIQUE KEY icons_user(user_id);
++UPDATE icons SET hash=SHA2(image,256);
++ALTER TABLE themes ADD UNIQUE KEY themes_user(user_id);
++ALTER TABLE livestreams ADD KEY ls_user(user_id);
++ALTER TABLE reservation_slots ADD KEY slots_time(start_at,end_at);
++ALTER TABLE livestream_tags ADD KEY lt_stream(livestream_id), ADD KEY lt_tag(tag_id,livestream_id);
++ALTER TABLE livestream_viewers_history ADD KEY history_stream_user(livestream_id,user_id);
++ALTER TABLE livecomments ADD KEY comments_stream_time(livestream_id,created_at), ADD KEY comments_stream_tip(livestream_id,tip);
++ALTER TABLE livecomment_reports ADD KEY reports_stream(livestream_id);
++ALTER TABLE ng_words ADD KEY ng_stream_user(livestream_id,user_id);
++ALTER TABLE reactions ADD KEY reactions_stream_time(livestream_id,created_at);
+diff --git a/ops/isudns-go.service b/ops/isudns-go.service
+new file mode 100644
+index 0000000..94b5946
+--- /dev/null
++++ b/ops/isudns-go.service
+@@ -0,0 +1,14 @@
++[Unit]
++Description=In-memory authoritative DNS backed by persistent MySQL records
++After=network-online.target mysql.service
++Requires=mysql.service
++[Service]
++User=isucon
++Group=isucon
++ExecStart=/home/isucon/isudns
++Restart=always
++RestartSec=2
++AmbientCapabilities=CAP_NET_BIND_SERVICE
++LimitNOFILE=65536
++[Install]
++WantedBy=multi-user.target
+diff --git a/ops/isupipe-go.service b/ops/isupipe-go.service
+new file mode 100644
+index 0000000..6f6d62c
+--- /dev/null
++++ b/ops/isupipe-go.service
+@@ -0,0 +1,21 @@
++[Unit]
++Description=isupipe-go
++After=syslog.target
++After=network-online.target
++Wants=network-online.target
++
++[Service]
++WorkingDirectory=/home/isucon/webapp/go
++EnvironmentFile=/home/isucon/env.sh
++
++User=isucon
++Group=isucon
++ExecStart=/home/isucon/webapp/go/isupipe
++ExecStop=/bin/kill -s QUIT $MAINPID
++
++LimitNOFILE=65536
++Restart=on-failure
++RestartSec=5
++
++[Install]
++WantedBy=multi-user.target
+diff --git a/ops/isupipe-hash.service b/ops/isupipe-hash.service
+new file mode 100644
+index 0000000..c8c6044
+--- /dev/null
++++ b/ops/isupipe-hash.service
+@@ -0,0 +1,13 @@
++[Unit]
++Description=ISUPipe bcrypt worker
++After=network-online.target
++Wants=network-online.target
++[Service]
++User=isucon
++Group=isucon
++ExecStart=/home/isucon/isupipe-hash
++Restart=always
++RestartSec=2
++LimitNOFILE=65536
++[Install]
++WantedBy=multi-user.target
+diff --git a/ops/isupipe.conf b/ops/isupipe.conf
+new file mode 100644
+index 0000000..511e697
+--- /dev/null
++++ b/ops/isupipe.conf
+@@ -0,0 +1,51 @@
++upstream app { server 10.0.1.45:8080; keepalive 64; }
++server {
++  listen 80 default_server;
++  server_name _;
++  index index.html index.htm index.nginx-debian.html;
++  root /var/www/html;
++  location / {
++    try_files $uri $uri/ =404;
++  }
++}
++
++server {
++  listen 443 ssl default_server;
++  server_name _;
++  index index.html index.htm index.nginx-debian.html;
++  root /var/www/html;
++
++  # bot避けのためのvhostで、この証明書は有効期限がきれています
++  ssl_certificate     /etc/nginx/tls/_.t.isucon.dev.crt;
++  ssl_certificate_key /etc/nginx/tls/_.t.isucon.dev.key;
++  ssl_protocols TLSv1.3;
++  ssl_prefer_server_ciphers off;
++
++  location / {
++    try_files $uri $uri/ =404;
++  }
++}
++
++server {
++  listen 443 ssl;
++  server_name u.isucon.dev;
++  server_name *.u.isucon.dev;
++
++  ssl_certificate     /etc/nginx/tls/_.u.isucon.dev.crt;
++  ssl_certificate_key /etc/nginx/tls/_.u.isucon.dev.key;
++
++  ssl_protocols TLSv1.3;
++  ssl_prefer_server_ciphers off;
++
++  client_max_body_size 10m;
++  root /home/isucon/webapp/public/;
++  location / {
++    try_files $uri /index.html;
++  }
++  location /api {
++    proxy_set_header Host $host;
++    proxy_http_version 1.1;
++    proxy_set_header Connection "";
++    proxy_pass http://app;
++  }
++}
+\ No newline at end of file
+diff --git a/ops/metrics.conf b/ops/metrics.conf
+new file mode 100644
+index 0000000..828986f
+--- /dev/null
++++ b/ops/metrics.conf
+@@ -0,0 +1,2 @@
++log_format perf '$request_method $uri $status $request_time $upstream_response_time $body_bytes_sent';
++access_log /var/log/nginx/perf.log perf buffer=64k flush=1s;
+diff --git a/ops/mysql-db.cnf b/ops/mysql-db.cnf
+new file mode 100644
+index 0000000..eb4b93d
+--- /dev/null
++++ b/ops/mysql-db.cnf
+@@ -0,0 +1,9 @@
++[mysqld]
++bind-address=0.0.0.0
++innodb_buffer_pool_size=1G
++innodb_flush_log_at_trx_commit=2
++skip-log-bin
++max_connections=200
++slow_query_log=ON
++slow_query_log_file=/var/log/mysql/slow.log
++long_query_time=0.05
+diff --git a/ops/mysql-extra.cnf b/ops/mysql-extra.cnf
+new file mode 100644
+index 0000000..d4afadb
+--- /dev/null
++++ b/ops/mysql-extra.cnf
+@@ -0,0 +1,7 @@
++[mysqld]
++transaction-isolation=READ-COMMITTED
++innodb_redo_log_capacity=1073741824
++innodb_log_buffer_size=67108864
++innodb_io_capacity=2000
++innodb_io_capacity_max=4000
++slow_query_log=OFF
+diff --git a/ops/mysql.cnf b/ops/mysql.cnf
+new file mode 100644
+index 0000000..acb52e4
+--- /dev/null
++++ b/ops/mysql.cnf
+@@ -0,0 +1,9 @@
++[mysqld]
++innodb_buffer_pool_size=1G
++innodb_flush_log_at_trx_commit=2
++skip-log-bin
++max_connections=200
++slow_query_log=ON
++slow_query_log_file=/var/log/mysql/slow.log
++long_query_time=0.05
++bind-address=0.0.0.0
+diff --git a/ops/nginx-throughput.conf b/ops/nginx-throughput.conf
+new file mode 100644
+index 0000000..0ad3012
+--- /dev/null
++++ b/ops/nginx-throughput.conf
+@@ -0,0 +1,9 @@
++keepalive_timeout 15s;
++keepalive_requests 10000;
++ssl_session_cache shared:SSL:20m;
++ssl_session_timeout 10m;
++client_body_buffer_size 512k;
++proxy_request_buffering off;
++proxy_buffer_size 16k;
++proxy_buffers 16 16k;
++proxy_max_temp_file_size 0;
+diff --git a/ops/nginx.conf b/ops/nginx.conf
+new file mode 100644
+index 0000000..a15d6fe
+--- /dev/null
++++ b/ops/nginx.conf
+@@ -0,0 +1,84 @@
++user www-data;
++worker_processes auto;
++worker_rlimit_nofile 65536;
++pid /run/nginx.pid;
++include /etc/nginx/modules-enabled/*.conf;
++
++events {
++	worker_connections 16384;
++	# multi_accept on;
++}
++
++http {
++
++	##
++	# Basic Settings
++	##
++
++	sendfile on;
++	tcp_nopush on;
++	types_hash_max_size 2048;
++	# server_tokens off;
++
++	# server_names_hash_bucket_size 64;
++	# server_name_in_redirect off;
++
++	include /etc/nginx/mime.types;
++	default_type application/octet-stream;
++
++	##
++	# SSL Settings
++	##
++
++	ssl_protocols TLSv1 TLSv1.1 TLSv1.2 TLSv1.3; # Dropping SSLv3, ref: POODLE
++	ssl_prefer_server_ciphers on;
++
++	##
++	# Logging Settings
++	##
++
++	access_log off;
++	error_log /var/log/nginx/error.log;
++
++	##
++	# Gzip Settings
++	##
++
++	gzip on;
++
++	# gzip_vary on;
++	# gzip_proxied any;
++	# gzip_comp_level 6;
++	# gzip_buffers 16 8k;
++	# gzip_http_version 1.1;
++	# gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript;
++
++	##
++	# Virtual Host Configs
++	##
++
++	include /etc/nginx/conf.d/*.conf;
++	include /etc/nginx/sites-enabled/*;
++}
++
++
++#mail {
++#	# See sample authentication script at:
++#	# http://wiki.nginx.org/ImapAuthenticateWithApachePhpScript
++#
++#	# auth_http localhost/auth.php;
++#	# pop3_capabilities "TOP" "USER";
++#	# imap_capabilities "IMAP4rev1" "UIDPLUS";
++#
++#	server {
++#		listen     localhost:110;
++#		protocol   pop3;
++#		proxy      on;
++#	}
++#
++#	server {
++#		listen     localhost:143;
++#		protocol   imap;
++#		proxy      on;
++#	}
++#}
+diff --git a/ops/run.sh b/ops/run.sh
+new file mode 100755
+index 0000000..ca8434a
+--- /dev/null
++++ b/ops/run.sh
+@@ -0,0 +1,9 @@
++#!/bin/bash
++set -euo pipefail
++cd /work
++n=${1:?run number required}
++last=$(cat results/count)
++if [ "$n" -ne "$((last+1))" ] || [ "$n" -gt 15 ]; then echo "Invalid run number"; exit 1; fi
++printf '%s\n' "$n" > results/count
++bench > "results/run$(printf '%02d' "$n").log" 2>&1
++cat "results/run$(printf '%02d' "$n").log"
+diff --git a/ops/service-limits.conf b/ops/service-limits.conf
+new file mode 100644
+index 0000000..0a7dd67
+--- /dev/null
++++ b/ops/service-limits.conf
+@@ -0,0 +1,2 @@
++[Service]
++LimitNOFILE=65536
+diff --git a/ops/smoke.py b/ops/smoke.py
+new file mode 100644
+index 0000000..61b9570
+--- /dev/null
++++ b/ops/smoke.py
+@@ -0,0 +1,40 @@
++import http.client,json,time,base64,hashlib,sys,urllib.parse
++conn=http.client.HTTPConnection('127.0.0.1',8080,timeout=20)
++cookie=''
++def call(method,path,data=None,expect=200,extra=None):
++ global cookie
++ headers={'Host':'pipe.u.isucon.dev','Content-Type':'application/json'}
++ if cookie:headers['Cookie']=cookie
++ if extra:headers.update(extra)
++ conn.request(method,path,json.dumps(data) if data is not None else None,headers)
++ r=conn.getresponse();body=r.read()
++ if r.getheader('Set-Cookie'):cookie=r.getheader('Set-Cookie').split(';',1)[0]
++ assert r.status==expect,(method,path,r.status,body[:200])
++ if r.getheader('Content-Type','').startswith('application/json') and body:return json.loads(body)
++ return body
++name='tuning-smoke-'+str(int(time.time()))
++u=call('POST','/api/register',dict(name=name,display_name='Cache smoke',description='verification',password='test',theme={'dark_mode':True}),201)
++call('POST','/api/login',dict(username=name,password='test'))
++start=int(sys.argv[1]);s=call('POST','/api/livestream/reservation',dict(tags=[1],title='smoke',description='test',playlist_url='https://example.invalid/live.m3u8',thumbnail_url='https://example.invalid/thumb.jpg',start_at=start,end_at=start+3600),201);sid=s['id'];p=f'/api/livestream/{sid}'
++assert call('GET','/api/livestream')[0]['id']==sid
++assert call('GET',f'/api/user/{name}/livestream')[0]['id']==sid
++assert call('GET','/api/livestream/search?limit=1')[0]['id']==sid
++assert call('GET','/api/livestream/search?tag='+urllib.parse.quote(s['tags'][0]['name']))[0]['id']==sid
++call('POST',p+'/enter')
++c=call('POST',p+'/livecomment',dict(comment='cache-smoke-word',tip=123),201)
++call('POST',p+'/reaction',dict(emoji_name='smile'),201)
++assert call('GET',p+'/livecomment?limit=1')[0]['id']==c['id']
++call('POST',p+f'/livecomment/{c["id"]}/report',expect=201)
++n=call('POST',p+'/moderate',dict(ng_word='cache-smoke-word'),201)
++assert call('GET',p+'/ngwords')[0]['id']==n['word_id']
++assert call('GET',p+'/livecomment')==[]
++assert call('GET',p+'/report')[0]['livecomment']['id']==c['id']
++call('POST',p+'/livecomment',dict(comment='again cache-smoke-word',tip=0),400)
++st=call('GET',p+'/statistics');assert st['max_tip']==0 and st['total_reports']==1 and st['total_reactions']==1 and st['viewers_count']==1,st
++st=call('GET',f'/api/user/{name}/statistics');assert st['total_tip']==0 and st['total_livecomments']==0 and st['favorite_emoji']=='smile',st
++call('DELETE',p+'/exit');assert call('GET',p+'/statistics')['viewers_count']==0
++image=open('/home/isucon/webapp/img/NoImage.jpg','rb').read();digest=hashlib.sha256(image).hexdigest()
++call('POST','/api/icon',dict(image=base64.b64encode(image).decode()),201)
++assert call('GET',f'/api/user/{name}/icon')==image
++call('GET',f'/api/user/{name}/icon',expect=304,extra={'If-None-Match':'"'+digest+'"'})
++print('PASS: register/login, list/search, comments/reactions, reports/moderation, statistics, viewers, icons; user='+name)
+diff --git a/ops/softdelete.sql b/ops/softdelete.sql
+new file mode 100644
+index 0000000..38b9730
+--- /dev/null
++++ b/ops/softdelete.sql
+@@ -0,0 +1 @@
++ALTER TABLE livecomments ADD COLUMN deleted BOOLEAN NOT NULL DEFAULT 0, ADD KEY comments_stream_deleted_time(livestream_id,deleted,created_at);
+diff --git a/ops/stage1.py b/ops/stage1.py
+new file mode 100644
+index 0000000..c9257e0
+--- /dev/null
++++ b/ops/stage1.py
+@@ -0,0 +1,73 @@
++from pathlib import Path
++p=Path('/work/webapp/go/main.go')
++s=p.read_text().replace('"github.com/labstack/echo/v4/middleware"','').replace('db.SetMaxOpenConns(10)','db.SetMaxOpenConns(40)\n\tdb.SetMaxIdleConns(40)').replace('conf.ParseTime = true','conf.ParseTime = true\n\tconf.InterpolateParams = true').replace('e.Debug = true','e.Debug = false').replace('e.Logger.SetLevel(echolog.DEBUG)','e.Logger.SetLevel(echolog.WARN)').replace('e.Use(middleware.Logger())','')
++p.write_text(s)
++p=Path('/work/webapp/go/livecomment_handler.go');s=p.read_text()
++a=s.index('\t// スパム判定');b=s.index('\n\tnow :=',a)
++s=s[:a]+'''\t// Match all words with one indexed query, preserving MySQL LIKE semantics.
++	var hitSpam int
++	if err := tx.GetContext(ctx, &hitSpam, "SELECT EXISTS(SELECT 1 FROM ng_words WHERE user_id = ? AND livestream_id = ? AND ? LIKE CONCAT('%',word,'%'))", livestreamModel.UserID, livestreamModel.ID, req.Comment); err != nil {
++		return err
++	}
++	if hitSpam != 0 { return echo.NewHTTPError(http.StatusBadRequest, "このコメントがスパム判定されました") }
++'''+s[b:]
++a=s.index('\tvar ngwords',s.index('func moderateHandler'));b=s.index('\n\tif err := tx.Commit()',a)
++s=s[:a]+'''	// Delete only comments in this stream that match a registered word.
++	if _, err := tx.ExecContext(ctx, "DELETE c FROM livecomments c WHERE c.livestream_id = ? AND EXISTS (SELECT 1 FROM ng_words n WHERE n.livestream_id = c.livestream_id AND c.comment LIKE CONCAT('%',n.word,'%'))", livestreamID); err != nil { return err }
++'''+s[b:]
++p.write_text(s)
++p=Path('/work/webapp/go/livestream_handler.go');s=p.read_text()
++a=s.index('\t\tvar count int');b=s.index('\t\tif count < 1',a)
++s=s[:a]+s[b:].replace('if count < 1','if slot.Slot < 1',1)
++s=s.replace('start_at >= ? AND end_at <= ? FOR UPDATE", req.StartAt, req.EndAt','start_at >= ? AND start_at < ? AND end_at <= ? FOR UPDATE", req.StartAt, req.EndAt, req.EndAt')
++s=s.replace('start_at >= ? AND end_at <= ?", req.StartAt, req.EndAt','start_at >= ? AND start_at < ? AND end_at <= ?", req.StartAt, req.EndAt, req.EndAt')
++p.write_text(s)
++p=Path('/work/webapp/go/stats_handler.go');s=p.read_text()
++a=s.index('\t// ランク算出');b=s.index('\n\tsort.Sort(ranking)',a)
++s=s[:a]+'''	var ranking UserRanking
++	if err := tx.SelectContext(ctx, &ranking, `SELECT u.name AS username, COALESCE(r.cnt,0)+COALESCE(c.tip,0) AS score FROM users u
++	LEFT JOIN (SELECT l.user_id, COUNT(*) cnt FROM reactions r JOIN livestreams l ON l.id=r.livestream_id GROUP BY l.user_id) r ON r.user_id=u.id
++	LEFT JOIN (SELECT l.user_id, SUM(c.tip) tip FROM livecomments c JOIN livestreams l ON l.id=c.livestream_id GROUP BY l.user_id) c ON c.user_id=u.id`); err != nil { return err }
++'''+s[b:]
++a=s.index('\tvar livestreams []*LivestreamModel',s.index('func getLivestreamStatisticsHandler'));b=s.index('\n\tsort.Sort(ranking)',a)
++s=s[:a]+'''	var ranking LivestreamRanking
++	if err := tx.SelectContext(ctx, &ranking, `SELECT l.id AS livestreamid, COALESCE(r.cnt,0)+COALESCE(c.tip,0) AS score FROM livestreams l
++	LEFT JOIN (SELECT livestream_id, COUNT(*) cnt FROM reactions GROUP BY livestream_id) r ON r.livestream_id=l.id
++	LEFT JOIN (SELECT livestream_id, SUM(tip) tip FROM livecomments GROUP BY livestream_id) c ON c.livestream_id=l.id`); err != nil { return err }
++'''+s[b:]
++p.write_text(s)
++p=Path('/work/webapp/go/user_handler.go');s=p.read_text()
++s=s.replace('"time"','"time"\n"sync"')
++s=s.replace('var fallbackImage = "../img/NoImage.jpg"','''var fallbackImage = "../img/NoImage.jpg"
++var fallbackOnce sync.Once
++var fallbackBytes []byte
++var fallbackHash string
++func getFallback() ([]byte,string) {
++ fallbackOnce.Do(func(){ var err error; fallbackBytes,err=os.ReadFile(fallbackImage); if err!=nil {panic(err)}; fallbackHash=fmt.Sprintf("%x",sha256.Sum256(fallbackBytes)) })
++ return fallbackBytes,fallbackHash
++}''')
++a=s.index('\tvar image []byte',s.index('func fillUserResponse'));b=s.index('\n\tuser := User{',a)
++s=s[:a]+'''	var iconHash string
++	if err := tx.GetContext(ctx, &iconHash, "SELECT hash FROM icons WHERE user_id = ?", userModel.ID); err != nil {
++		if !errors.Is(err,sql.ErrNoRows) { return User{}, err }
++		_,iconHash = getFallback()
++	}
++'''+s[b:]
++s=s.replace('IconHash: fmt.Sprintf("%x", iconHash)','IconHash: iconHash')
++s=s.replace('"INSERT INTO icons (user_id, image) VALUES (?, ?)", userID, req.Image','"INSERT INTO icons (user_id, image, hash) VALUES (?, ?, ?)", userID, req.Image, fmt.Sprintf("%x",sha256.Sum256(req.Image))')
++a=s.index('func getIconHandler');b=s.index('\nfunc postIconHandler',a)
++s=s[:a]+'''func getIconHandler(c echo.Context) error {
++ ctx:=c.Request().Context()
++ var row struct { ID int64; Hash sql.NullString }
++ if err:=dbConn.GetContext(ctx,&row,"SELECT u.id, i.hash FROM users u LEFT JOIN icons i ON i.user_id=u.id WHERE u.name=?",c.Param("username")); err!=nil {
++  if errors.Is(err,sql.ErrNoRows) { return echo.NewHTTPError(404,"not found user") }; return err
++ }
++ _,hash:=getFallback(); if row.Hash.Valid {hash=row.Hash.String}
++ etag:=`"`+hash+`"`; c.Response().Header().Set("ETag",etag)
++ if c.Request().Header.Get("If-None-Match")==etag { return c.NoContent(304) }
++ image,_:=getFallback()
++ if row.Hash.Valid {if err:=dbConn.GetContext(ctx,&image,"SELECT image FROM icons WHERE user_id=?",row.ID);err!=nil{return err}}
++ return c.Blob(200,"image/jpeg",image)
++}
++'''+s[b:]
++p.write_text(s)
+diff --git a/ops/stage10.py b/ops/stage10.py
+new file mode 100644
+index 0000000..ed6e0a5
+--- /dev/null
++++ b/ops/stage10.py
+@@ -0,0 +1,49 @@
++from pathlib import Path
++import re
++p=Path('webapp/go/stats_cache.go');s=p.read_text().replace('return loadTimelines(ctx)','if err:=loadTimelines(ctx);err!=nil{return err};return loadLists(ctx)');p.write_text(s)
++p=Path('webapp/go/livestream_handler.go');s=p.read_text().replace('newStreamStats(*livestreamModel)','newStreamStats(*livestreamModel)\n\taddListedStream(*livestreamModel,livestream.Tags)')
++a=s.index('func searchLivestreamsHandler');b=s.index('\nfunc getMyLivestreamsHandler',a)
++s=s[:a]+'''func searchLivestreamsHandler(c echo.Context)error{
++ limit:=-1;tag:=c.QueryParam("tag")
++ if tag=="" {if v:=c.QueryParam("limit");v!=""{n,err:=strconv.Atoi(v);if err!=nil||n<0{return echo.NewHTTPError(400,"invalid limit")};limit=n}}
++ models:=getListedStreams(tag,0,limit);out:=make([]Livestream,len(models))
++ for i,m:=range models{v,err:=fillLivestreamResponse(c.Request().Context(),nil,m);if err!=nil{return err};out[i]=v}
++ return c.JSON(200,out)
++}
++'''+s[b:]
++a=s.index('func getMyLivestreamsHandler');b=s.index('\nfunc getUserLivestreamsHandler',a)
++s=s[:a]+'''func getMyLivestreamsHandler(c echo.Context)error{
++ if err:=verifyUserSession(c);err!=nil{return err};sess,_:=getSessionCached(c);id:=sess.Values[defaultUserIDKey].(int64)
++ models:=getListedStreams("",id,-1);out:=make([]Livestream,len(models));for i,m:=range models{v,err:=fillLivestreamResponse(c.Request().Context(),nil,m);if err!=nil{return err};out[i]=v};return c.JSON(200,out)
++}
++'''+s[b:]
++a=s.index('func getUserLivestreamsHandler');b=s.index('\n// viewerテーブル',a)
++s=s[:a]+'''func getUserLivestreamsHandler(c echo.Context)error{
++ if err:=verifyUserSession(c);err!=nil{return err};u,err:=userByName(c.Request().Context(),nil,c.Param("username"));if err!=nil{return echo.NewHTTPError(404,"user not found")}
++ models:=getListedStreams("",u.ID,-1);out:=make([]Livestream,len(models));for i,m:=range models{v,err:=fillLivestreamResponse(c.Request().Context(),nil,m);if err!=nil{return err};out[i]=v};return c.JSON(200,out)
++}
++'''+s[b:]
++a=s.index('func getLivecommentReportsHandler');b=s.index('\nfunc fillLivestreamResponse',a);f=s[a:b]
++f=re.sub(r'\ttx, err := dbConn.BeginTxx\(ctx, nil\)\n\tif err != nil \{.*?\n\t\}\n\tdefer tx.Rollback\(\)\n','',f,flags=re.S)
++f=re.sub(r'\tif err := tx.Commit\(\); err != nil \{.*?\n\t\}\n','',f,flags=re.S)
++f=f.replace('(ctx, tx,','(ctx, nil,')
++x=f.index('\tvar reportModels');y=f.index('\n\treports :=',x);f=f[:x]+'\treportModels:=getListedReports(int64(livestreamID))\n'+f[y:];f=f.replace('*reportModels[i]','reportModels[i]');s=s[:a]+f+s[b:];p.write_text(s)
++p=Path('webapp/go/livecomment_handler.go');s=p.read_text()
++a=s.index('func getNgwords');b=s.index('\nfunc postLivecommentHandler',a)
++s=s[:a]+'''func getNgwords(c echo.Context)error{
++ if err:=verifyUserSession(c);err!=nil{return err};sess,_:=getSessionCached(c);uid:=sess.Values[defaultUserIDKey].(int64)
++ id,err:=strconv.ParseInt(c.Param("livestream_id"),10,64);if err!=nil{return echo.NewHTTPError(400,"invalid livestream_id")}
++ return c.JSON(200,getListedWords(id,uid))
++}
++'''+s[b:]
++s=s.replace('appendComment(livecommentModel)','appendComment(livecommentModel)\n\taddListedComment(livecommentModel)').replace('addReportStats(int64(livestreamID))','addReportStats(int64(livestreamID))\n\taddListedReport(reportModel)')
++a=s.index('func moderateHandler');b=s.index('\nfunc fillLivecommentResponse',a);f=s[a:b]
++x=f.index('\trs, err := tx.NamedExecContext');y=f.index('\n\tif err != nil',x);old=f[x:y]
++model=old[old.index('&NGWord{')+1:];model=model[:model.rfind(')')]
++f=f[:x]+'\tnewWord := '+model+'\n\trs, err := tx.NamedExecContext(ctx,"INSERT INTO ng_words(user_id,livestream_id,word,created_at) VALUES (:user_id,:livestream_id,:word,:created_at)",&newWord)'+f[y:]
++f=f.replace('moderateTimeline(int64(livestreamID),userID,req.NGWord,active)','moderateTimeline(int64(livestreamID),userID,req.NGWord,active)\n\tnewWord.ID=wordID;addListedWord(newWord)');s=s[:a]+f+s[b:]
++a=s.index('func fillLivecommentReportResponse');f=s[a:]
++x=f.index('\tlivecommentModel := LivecommentModel{}');y=f.index('\n\tlivecomment, err :=',x)
++f=f[:x]+'''\tlists.RLock();livecommentModel,ok:=lists.comments[reportModel.LivecommentID];lists.RUnlock()
++ if !ok {if err:=getRow(ctx,tx,&livecommentModel,"SELECT * FROM livecomments WHERE id=?",reportModel.LivecommentID);err!=nil{return LivecommentReport{},err}}
++'''+f[y:];s=s[:a]+f;p.write_text(s)
+diff --git a/ops/stage2.py b/ops/stage2.py
+new file mode 100644
+index 0000000..bdf73ce
+--- /dev/null
++++ b/ops/stage2.py
+@@ -0,0 +1,49 @@
++from pathlib import Path
++p=Path('webapp/go/main.go');s=p.read_text().replace('"fmt"','"fmt"\n"context"')
++s=s.replace('c.Request().Header.Add("Content-Type"', 'if err := loadReadCache(c.Request().Context()); err != nil { return err }\n\tc.Request().Header.Add("Content-Type"')
++s=s.replace('dbConn = conn','dbConn = conn\n\tif err := loadReadCache(context.Background()); err != nil { panic(err) }')
++p.write_text(s)
++p=Path('webapp/go/user_handler.go');s=p.read_text()
++a=s.index('func getIconHandler');b=s.index('\nfunc postIconHandler',a)
++s=s[:a]+'''func getIconHandler(c echo.Context) error {
++ u,err:=userByName(c.Request().Context(),nil,c.Param("username"));if err!=nil{return echo.NewHTTPError(404,"not found user")}
++ icon:=currentIcon(u.ID)
++ etag:=`"`+icon.Hash+`"`; c.Response().Header().Set("ETag",etag)
++ if c.Request().Header.Get("If-None-Match")==etag {return c.NoContent(304)}
++ return c.Blob(200,"image/jpeg",icon.Image)
++}
++'''+s[b:]
++a=s.index('func postIconHandler');b=s.index('\nfunc getMeHandler',a);s1=s[a:b]
++s1=s1.replace('\ttx, err := dbConn.BeginTxx', '\tlock:=&iconLocks[userID%256];lock.Lock();defer lock.Unlock()\n\ttx, err := dbConn.BeginTxx')
++s1=s1.replace('\treturn c.JSON(http.StatusCreated, &PostIconResponse{','\tcached.Lock();cached.icons[userID]=iconData{Image:req.Image,Hash:fmt.Sprintf("%x",sha256.Sum256(req.Image))};cached.Unlock()\n\treturn c.JSON(http.StatusCreated, &PostIconResponse{')
++s=s[:a]+s1+s[b:]
++a=s.index('func fillUserResponse');s=s[:a]+'''func fillUserResponse(ctx context.Context, tx *sqlx.Tx, userModel UserModel) (User, error) {
++ cached.RLock();theme,ok:=cached.themes[userModel.ID];cached.RUnlock()
++ if !ok {var model ThemeModel;if err:=tx.GetContext(ctx,&model,"SELECT * FROM themes WHERE user_id=?",userModel.ID);err!=nil{return User{},err};theme=Theme{ID:model.ID,DarkMode:model.DarkMode}}
++ return User{ID:userModel.ID,Name:userModel.Name,DisplayName:userModel.DisplayName,Description:userModel.Description,Theme:theme,IconHash:currentIcon(userModel.ID).Hash},nil
++}
++'''
++a=s.index('func registerHandler');b=s.index('\n// ユーザログインAPI',a);s1=s[a:b].replace('\treturn c.JSON(http.StatusCreated, user)','\tpublishUser(userModel,user.Theme)\n\treturn c.JSON(http.StatusCreated, user)');s=s[:a]+s1+s[b:]
++p.write_text(s)
++# Replace primary-key queries with the persistent read caches.
++for p in Path('webapp/go').glob('*handler.go'):
++ s=p.read_text()
++ import re
++ for typ,fun,table in [('UserModel','userByID','users'),('LivestreamModel','streamByID','livestreams')]:
++  s=re.sub(r'if err := tx.GetContext\(ctx, &(\w+), "SELECT \* FROM '+table+r' WHERE id = \?", ([^;)]+)\); err != nil \{',lambda m:'if model, err := '+fun+'(ctx, tx, int64('+m[2]+')); err != nil {',s) if False else s
++  # retain the existing error branches using immediate assignment before the if
++  s=re.sub(r'if err := tx.GetContext\(ctx, &(\w+), "SELECT \* FROM '+table+r' WHERE id = \?", ([^;)]+)\); err != nil \{',lambda m:m[1]+', err := '+fun+'(ctx, tx, int64('+m[2]+'))\n\tif err != nil {',s)
++  s=re.sub(r'err (=|:=) tx.GetContext\(ctx, &(\w+), "SELECT \* FROM '+table+r' WHERE id = \?", ([^;)]+)\)',lambda m:m[2]+', err := '+fun+'(ctx, tx, int64('+m[3]+'))',s)
++ # declarations of the variable now duplicated; change old := {} / var to no declaration when followed by new :=
++ s=re.sub(r'(?:var (\w+) (?:UserModel|LivestreamModel)|\b(\w+) := (?:UserModel|LivestreamModel)\{\})\n(\s*)(\w+), err :=',lambda m:m[3]+m[4]+', err :=' if (m[1] or m[2])==m[4] else m[0],s)
++ p.write_text(s)
++p=Path('webapp/go/livestream_handler.go');s=p.read_text()
++a=s.index('\tvar livestreamTagModels',s.index('func fillLivestreamResponse'));b=s.index('\n\tlivestream :=',a)
++s=s[:a]+'''	cached.RLock();tags,ok:=cached.tags[livestreamModel.ID];cached.RUnlock()
++	if !ok {
++	 tags=[]Tag{}
++	 if err:=tx.SelectContext(ctx,&tags,"SELECT t.id,t.name FROM tags t JOIN livestream_tags lt ON lt.tag_id=t.id WHERE lt.livestream_id=? ORDER BY lt.id",livestreamModel.ID);err!=nil{return Livestream{},err}
++	}
++'''+s[b:]
++a=s.index('func reserveLivestreamHandler');b=s.index('\nfunc searchLivestreamsHandler',a);s1=s[a:b].replace('\treturn c.JSON(http.StatusCreated, livestream)','\tpublishStream(*livestreamModel,livestream.Tags)\n\treturn c.JSON(http.StatusCreated, livestream)');s=s[:a]+s1+s[b:]
++p.write_text(s)
+diff --git a/ops/stage3.py b/ops/stage3.py
+new file mode 100644
+index 0000000..44b9fcd
+--- /dev/null
++++ b/ops/stage3.py
+@@ -0,0 +1,12 @@
++from pathlib import Path
++p=Path('webapp/go/main.go');s=p.read_text().replace('dbConn                   *sqlx.DB','dbConn                   *sqlx.DB\n\tdnsDB *sqlx.DB')
++if 'dnsDB *sqlx.DB' not in s:s=s.replace('dbConn                  *sqlx.DB','dbConn                  *sqlx.DB\n\tdnsDB *sqlx.DB')
++s=s.replace('dbConn = conn','''dbConn = conn
++ dnsHost:=os.Getenv("ISUCON_DNS_DB_ADDRESS");if dnsHost==""{dnsHost="127.0.0.1"}
++ dnsDB,err=sqlx.Connect("mysql","isudns:isudns@tcp("+dnsHost+":3306)/isudns?interpolateParams=true")
++ if err!=nil{panic(err)};dnsDB.SetMaxOpenConns(8);dnsDB.SetMaxIdleConns(8)''')
++p.write_text(s)
++p=Path('webapp/go/user_handler.go');s=p.read_text().replace('\n\t"os/exec"','')
++a=s.index('\tif out, err := exec.Command("pdnsutil"');b=s.index('\n\tuser, err := fillUserResponse',a)
++s=s[:a]+'''	if _,err:=dnsDB.ExecContext(ctx,"INSERT INTO records (domain_id,name,type,content,ttl,prio,disabled,auth) SELECT id,?,'A',?,60,0,0,1 FROM domains WHERE name='u.isucon.dev'",req.Name+".u.isucon.dev",powerDNSSubdomainAddress);err!=nil{return err}
++'''+s[b:];p.write_text(s)
+diff --git a/ops/stage5.py b/ops/stage5.py
+new file mode 100644
+index 0000000..c28d6e2
+--- /dev/null
++++ b/ops/stage5.py
+@@ -0,0 +1,52 @@
++from pathlib import Path
++import re
++for p in Path('webapp/go').glob('*handler.go'):
++ s=p.read_text().replace('session.Get(defaultSessionIDKey, c)','getSessionCached(c)')
++ if p.name=='user_handler.go':
++  a=s.index('func loginHandler');b=s.index('\n// ユーザ詳細API',a)
++  s=s[:a]+s[a:b].replace('getSessionCached(c)','session.Get(defaultSessionIDKey, c)')+s[b:]
++ else:s=s.replace('\n\t"github.com/labstack/echo-contrib/session"','')
++ p.write_text(s)
++# Remove read-only/single-statement transactions.
++targets={'user_handler.go':['getMeHandler','getUserHandler','loginHandler'],
++'livestream_handler.go':['getLivestreamHandler','enterLivestreamHandler','exitLivestreamHandler'],
++'livecomment_handler.go':['getLivecommentsHandler','getNgwords'],
++'reaction_handler.go':['getReactionsHandler'],
++'top_handler.go':['getTagHandler','getStreamerThemeHandler']}
++for fn,names in targets.items():
++ p=Path('webapp/go')/fn;s=p.read_text()
++ for name in names:
++  a=s.index('func '+name+'(');b=s.find('\nfunc ',a+5);b=len(s) if b<0 else b
++  f=s[a:b]
++  f=re.sub(r'\ttx, err := dbConn.BeginTxx\(ctx, nil\)\n\tif err != nil \{.*?\n\t\}\n\tdefer tx.Rollback\(\)\n','',f,flags=re.S)
++  f=re.sub(r'\tif err := tx.Commit\(\); err != nil \{.*?\n\t\}\n','',f,flags=re.S)
++  f=f.replace('tx.SelectContext','dbConn.SelectContext').replace('tx.GetContext','dbConn.GetContext').replace('tx.ExecContext','dbConn.ExecContext').replace('tx.NamedExecContext','dbConn.NamedExecContext').replace('(ctx, tx,','(ctx, nil,')
++  # err was formerly introduced by BeginTxx
++  if name in ['getLivecommentsHandler']:pass # parse declared err
++  if name=='loginHandler':f=f.replace('err = dbConn.GetContext','err := dbConn.GetContext',1)
++  if name=='getStreamerThemeHandler':f=f.replace('err = dbConn.GetContext','err := dbConn.GetContext',1)
++  s=s[:a]+f+s[b:]
++ p.write_text(s)
++# Allow database fallback without a transaction.
++p=Path('webapp/go/cache.go');s=p.read_text().replace('"database/sql"','')
++s=s.replace('err:=tx.GetContext(ctx,&u,"SELECT * FROM users WHERE id=?",id);return u,err','var err error;if tx==nil{err=dbConn.GetContext(ctx,&u,"SELECT * FROM users WHERE id=?",id)}else{err=tx.GetContext(ctx,&u,"SELECT * FROM users WHERE id=?",id)};return u,err')
++s=s.replace('if tx==nil{return u,sql.ErrNoRows};err:=tx.GetContext(ctx,&u,"SELECT * FROM users WHERE name=?",name);return u,err','var err error;if tx==nil{err=dbConn.GetContext(ctx,&u,"SELECT * FROM users WHERE name=?",name)}else{err=tx.GetContext(ctx,&u,"SELECT * FROM users WHERE name=?",name)};return u,err')
++s=s.replace('err:=tx.GetContext(ctx,&s,"SELECT * FROM livestreams WHERE id=?",id);return s,err','var err error;if tx==nil{err=dbConn.GetContext(ctx,&s,"SELECT * FROM livestreams WHERE id=?",id)}else{err=tx.GetContext(ctx,&s,"SELECT * FROM livestreams WHERE id=?",id)};return s,err')
++s+='''
++func getRow(ctx context.Context,tx *sqlx.Tx,dest interface{},query string,args ...interface{})error{if tx==nil{return dbConn.GetContext(ctx,dest,query,args...)};return tx.GetContext(ctx,dest,query,args...)}
++func getRows(ctx context.Context,tx *sqlx.Tx,dest interface{},query string,args ...interface{})error{if tx==nil{return dbConn.SelectContext(ctx,dest,query,args...)};return tx.SelectContext(ctx,dest,query,args...)}
++var commentLocks [1024]sync.RWMutex
++'''
++p.write_text(s)
++p=Path('webapp/go/user_handler.go');s=p.read_text()
++a=s.index('func postIconHandler');b=s.index('\nfunc getMeHandler',a);f=s[a:b];f=re.sub(r'\tif _, err := tx.ExecContext\(ctx, "DELETE FROM icons WHERE user_id = \?", userID\); err != nil \{.*?\n\t\}\n','',f,flags=re.S).replace('INSERT INTO icons','REPLACE INTO icons');s=s[:a]+f+s[b:]
++s=s.replace('tx.GetContext(ctx,&model,','getRow(ctx,tx,&model,')
++p.write_text(s)
++p=Path('webapp/go/livestream_handler.go');s=p.read_text().replace('tx.SelectContext(ctx,&tags,','getRows(ctx,tx,&tags,');p.write_text(s)
++p=Path('webapp/go/livecomment_handler.go');s=p.read_text()
++for name,mode in [('postLivecommentHandler','R'),('moderateHandler','')]:
++ a=s.index('func '+name);b=s.index('\n\ttx, err := dbConn.BeginTxx',a)
++ s=s[:b]+f'\n\tlock:=&commentLocks[livestreamID%1024];lock.{mode}Lock();defer lock.{mode}Unlock()\n'+s[b:]
++p.write_text(s)
++p=Path('webapp/go/stats_handler.go');s=p.read_text().replace('dbConn.BeginTxx(ctx, nil)','dbConn.BeginTxx(ctx, &sql.TxOptions{Isolation:sql.LevelRepeatableRead})');p.write_text(s)
++p=Path('webapp/go/main.go');s=p.read_text().replace('c.Logger().Errorf("error at %s: %+v", c.Path(), err)','if he, ok := err.(*echo.HTTPError); !ok || he.Code>=500 { c.Logger().Errorf("error at %s: %+v", c.Path(), err) }');p.write_text(s)
+diff --git a/ops/stage6.py b/ops/stage6.py
+new file mode 100644
+index 0000000..45cadc4
+--- /dev/null
++++ b/ops/stage6.py
+@@ -0,0 +1,17 @@
++from pathlib import Path
++p=Path('webapp/go/main.go');s=p.read_text().replace('loadReadCache(','loadState(');p.write_text(s)
++p=Path('webapp/go/livestream_handler.go');s=p.read_text().replace('publishStream(*livestreamModel,livestream.Tags)','publishStream(*livestreamModel,livestream.Tags)\n\tnewStreamStats(*livestreamModel)')
++a=s.index('func enterLivestreamHandler');b=s.index('\nfunc exitLivestreamHandler',a);f=s[a:b]
++f=f.replace('\tviewer := LivestreamViewerModel{','\tlock:=&viewerLocks[livestreamID%1024];lock.Lock();defer lock.Unlock()\n\tviewer := LivestreamViewerModel{').replace('\treturn c.NoContent(http.StatusOK)','\taddViewerStats(int64(livestreamID),1)\n\treturn c.NoContent(http.StatusOK)');s=s[:a]+f+s[b:]
++a=s.index('func exitLivestreamHandler');b=s.index('\nfunc getLivestreamHandler',a);f=s[a:b]
++f=f.replace('\tif _, err := dbConn.ExecContext(ctx, "DELETE FROM livestream_viewers_history WHERE user_id = ? AND livestream_id = ?", userID, livestreamID); err != nil {','\tlock:=&viewerLocks[livestreamID%1024];lock.Lock();defer lock.Unlock()\n\trs, err := dbConn.ExecContext(ctx, "DELETE FROM livestream_viewers_history WHERE user_id = ? AND livestream_id = ?", userID, livestreamID)\n\tif err != nil {').replace('\treturn c.NoContent(http.StatusOK)','\tn,_:=rs.RowsAffected();addViewerStats(int64(livestreamID),-n)\n\treturn c.NoContent(http.StatusOK)');s=s[:a]+f+s[b:];p.write_text(s)
++p=Path('webapp/go/livecomment_handler.go');s=p.read_text().replace('type LivecommentModel struct {','type LivecommentModel struct {\n Deleted bool `db:"deleted"`')
++s=s.replace('SELECT * FROM livecomments WHERE livestream_id = ? ORDER','SELECT * FROM livecomments WHERE livestream_id = ? AND deleted=0 ORDER')
++s=s.replace('DELETE c FROM livecomments c WHERE c.livestream_id = ? AND EXISTS','UPDATE livecomments c SET deleted=1 WHERE c.livestream_id = ? AND c.deleted=0 AND EXISTS')
++a=s.index('func postLivecommentHandler');b=s.index('\nfunc reportLivecommentHandler',a);f=s[a:b].replace('\treturn c.JSON(http.StatusCreated, livecomment)','\taddCommentStats(int64(livestreamID),req.Tip)\n\treturn c.JSON(http.StatusCreated, livecomment)');s=s[:a]+f+s[b:]
++a=s.index('func reportLivecommentHandler');b=s.index('\n// NGワードを登録',a);f=s[a:b].replace('SELECT * FROM livecomments WHERE id = ?','SELECT * FROM livecomments WHERE id = ? AND deleted=0').replace('\treturn c.JSON(http.StatusCreated, report)','\taddReportStats(int64(livestreamID))\n\treturn c.JSON(http.StatusCreated, report)');s=s[:a]+f+s[b:]
++a=s.index('func moderateHandler');b=s.index('\nfunc fillLivecommentResponse',a);f=s[a:b]
++f=f.replace('\n\tif err := tx.Commit();','\n\tvar totals struct{Count int64;Tips int64;Max int64}\n\tif err:=tx.GetContext(ctx,&totals,"SELECT COUNT(*) count,COALESCE(SUM(tip),0) tips,COALESCE(MAX(tip),0) max FROM livecomments WHERE livestream_id=? AND deleted=0",livestreamID);err!=nil{return err}\n\tif err := tx.Commit();')
++f=f.replace('\treturn c.JSON(http.StatusCreated, map[string]interface{}{','\tsetCommentStats(int64(livestreamID),totals.Count,totals.Tips,totals.Max)\n\treturn c.JSON(http.StatusCreated, map[string]interface{}{');s=s[:a]+f+s[b:];p.write_text(s)
++p=Path('webapp/go/reaction_handler.go');s=p.read_text().replace('\treturn c.JSON(http.StatusCreated, reaction)','\taddReactionStats(int64(livestreamID),req.EmojiName)\n\treturn c.JSON(http.StatusCreated, reaction)');p.write_text(s)
++p=Path('webapp/go/payment_handler.go');s=p.read_text().replace('SELECT IFNULL(SUM(tip), 0) FROM livecomments','SELECT IFNULL(SUM(tip), 0) FROM livecomments WHERE deleted=0');p.write_text(s)
+diff --git a/ops/stage7.py b/ops/stage7.py
+new file mode 100644
+index 0000000..f5d308d
+--- /dev/null
++++ b/ops/stage7.py
+@@ -0,0 +1,36 @@
++from pathlib import Path
++import re
++p=Path('webapp/go/stats_cache.go');s=p.read_text().replace('return loadStatistics(ctx)','if err:=loadStatistics(ctx);err!=nil{return err};return loadTimelines(ctx)').replace('if tip>s.MaxTip','if s.Comments==1||tip>s.MaxTip');p.write_text(s)
++p=Path('webapp/go/livecomment_handler.go');s=p.read_text()
++a=s.index('\tquery := "SELECT * FROM livecomments',s.index('func getLivecommentsHandler'));b=s.index('\n\tlivecomments := make',a)
++s=s[:a]+'''	limit:=-1
++	if v:=c.QueryParam("limit");v!=""{n,e:=strconv.Atoi(v);if e!=nil||n<0{return echo.NewHTTPError(400,"invalid limit")};limit=n}
++	livecommentModels:=getComments(int64(livestreamID),limit)
++'''+s[b:]
++a=s.index('func postLivecommentHandler');b=s.index('\nfunc reportLivecommentHandler',a);f=s[a:b]
++f=re.sub(r'\ttx, err := dbConn.BeginTxx\(ctx, nil\)\n\tif err != nil \{.*?\n\t\}\n\tdefer tx.Rollback\(\)\n','',f,flags=re.S)
++f=f.replace('streamByID(ctx, tx,','streamByID(ctx, nil,')
++c=f.index('\t// Match all words');d=f.index('\n\tnow :=',c)
++f=f[:c]+'''	if isSpam(int64(livestreamID),livestreamModel.UserID,req.Comment){return echo.NewHTTPError(400,"このコメントがスパム判定されました")}
++'''+f[d:]
++c=f.index('\tlivecomment, err := fillLivecommentResponse');d=f.index('\n\taddCommentStats',c)
++fill=f[c:d];fill=re.sub(r'\n\tif err := tx.Commit\(\); err != nil \{.*?\n\t\}\n','',fill,flags=re.S).replace('(ctx, tx,','(ctx, nil,')
++f=f[:c]+f[d:];i=f.index('\trs, err :=');f=f[:i]+fill+'\n'+f[i:]
++f=f.replace('tx.NamedExecContext','dbConn.NamedExecContext').replace('\tlivecommentModel.ID = livecommentID','\tlivecommentModel.ID = livecommentID\n\tlivecomment.ID=livecommentID\n\tappendComment(livecommentModel)')
++s=s[:a]+f+s[b:]
++a=s.index('func moderateHandler');b=s.index('\nfunc fillLivecommentResponse',a);f=s[a:b]
++f=f.replace('var totals struct{Count int64;Tips int64;Max int64}','var active []LivecommentModel')
++f=f.replace('tx.GetContext(ctx,&totals,"SELECT COUNT(*) count,COALESCE(SUM(tip),0) tips,COALESCE(MAX(tip),0) max FROM livecomments WHERE livestream_id=? AND deleted=0",livestreamID)','tx.SelectContext(ctx,&active,"SELECT * FROM livecomments WHERE livestream_id=? AND deleted=0",livestreamID)')
++f=f.replace('setCommentStats(int64(livestreamID),totals.Count,totals.Tips,totals.Max)','moderateTimeline(int64(livestreamID),userID,req.NGWord,active)')
++s=s[:a]+f+s[b:];s=s.replace('\n\t"fmt"','');p.write_text(s)
++p=Path('webapp/go/reaction_handler.go');s=p.read_text()
++a=s.index('\tquery := "SELECT * FROM reactions',s.index('func getReactionsHandler'));b=s.index('\n\treactions := make',a)
++s=s[:a]+'''	limit:=-1
++	if v:=c.QueryParam("limit");v!=""{n,e:=strconv.Atoi(v);if e!=nil||n<0{return echo.NewHTTPError(400,"invalid limit")};limit=n}
++	reactionModels:=getReactionModels(int64(livestreamID),limit)
++'''+s[b:]
++a=s.index('func postReactionHandler');b=s.index('\nfunc fillReactionResponse',a);f=s[a:b]
++f=re.sub(r'\ttx, err := dbConn.BeginTxx\(ctx, nil\)\n\tif err != nil \{.*?\n\t\}\n\tdefer tx.Rollback\(\)\n','',f,flags=re.S)
++c=f.index('\treaction, err := fillReactionResponse');d=f.index('\n\taddReactionStats',c);fill=f[c:d];fill=re.sub(r'\n\tif err := tx.Commit\(\); err != nil \{.*?\n\t\}\n','',fill,flags=re.S).replace('(ctx, tx,','(ctx, nil,');f=f[:c]+f[d:];i=f.index('\tresult, err :=');f=f[:i]+fill+'\n'+f[i:]
++f=f.replace('tx.NamedExecContext','dbConn.NamedExecContext').replace('\treactionModel.ID = reactionID','\treactionModel.ID = reactionID\n\treaction.ID=reactionID\n\tappendReaction(reactionModel)')
++s=s[:a]+f+s[b:];s=s.replace('\n\t"fmt"','');p.write_text(s)
+diff --git a/ops/stage8.py b/ops/stage8.py
+new file mode 100644
+index 0000000..b36c027
+--- /dev/null
++++ b/ops/stage8.py
+@@ -0,0 +1,14 @@
++from pathlib import Path
++import re
++p=Path('webapp/go/user_handler.go');s=p.read_text();a=s.index('func postIconHandler');b=s.index('\nfunc getMeHandler',a);f=s[a:b]
++f=re.sub(r'\ttx, err := dbConn.BeginTxx\(ctx, nil\)\n\tif err != nil \{.*?\n\t\}\n\tdefer tx.Rollback\(\)\n','',f,flags=re.S)
++f=re.sub(r'\tif err := tx.Commit\(\); err != nil \{.*?\n\t\}\n','',f,flags=re.S)
++f=f.replace('\trs, err := tx.ExecContext','\thash:=fmt.Sprintf("%x",sha256.Sum256(req.Image))\n\tif err:=storeIcon(hash,req.Image);err!=nil{return err}\n\trs, err := dbConn.ExecContext')
++f=f.replace('userID, req.Image, fmt.Sprintf("%x",sha256.Sum256(req.Image))','userID, []byte{}, hash').replace('Hash:fmt.Sprintf("%x",sha256.Sum256(req.Image))','Hash:hash')
++s=s[:a]+f+s[b:];p.write_text(s)
++p=Path('webapp/go/cache.go');s=p.read_text().replace('"context"','"context"\n"os"\n"path/filepath"')
++s=s.replace('cached.Lock(); defer cached.Unlock()','''if err:=os.MkdirAll(iconDirectory,0755);err!=nil{return err}
++ for n:=range icons{if len(icons[n].Image)==0 && len(icons[n].Hash)==64{b,err:=os.ReadFile(filepath.Join(iconDirectory,icons[n].Hash));if err!=nil{return err};icons[n].Image=b}}
++ cached.Lock(); defer cached.Unlock()''',1)
++p.write_text(s)
++p=Path('webapp/go/main.go');s=p.read_text().replace('if err := syncDNS(c.Request().Context(),"/reload",nil);','if err := initializeIconStorage(); err != nil { return err }\n\tif err := syncDNS(c.Request().Context(),"/reload",nil);');p.write_text(s)
+diff --git a/ops/verify_stats.py b/ops/verify_stats.py
+new file mode 100644
+index 0000000..a3f2017
+--- /dev/null
++++ b/ops/verify_stats.py
+@@ -0,0 +1,30 @@
++import subprocess,json
++
++def sql(q):
++ return subprocess.check_output(['ssh','s3','sudo mysql -NB isupipe'],input=q.encode()).decode().splitlines()
++def api(path):
++ return json.loads(subprocess.check_output(['ssh','s2',f'curl -s --resolve pipe.u.isucon.dev:8080:127.0.0.1 -b /tmp/verify-cookies http://pipe.u.isucon.dev:8080{path}']))
++subprocess.run(['ssh','s2', '''curl -s --resolve pipe.u.isucon.dev:8080:127.0.0.1 -c /tmp/verify-cookies -H 'Content-Type: application/json' -d '{"username":"test001","password":"test"}' http://pipe.u.isucon.dev:8080/api/login'''],check=True)
++streams={int(i):{'owner':int(u),'reactions':0,'comments':0,'tips':0,'max':0,'viewers':0,'reports':0} for i,u in (r.split('\t') for r in sql('SELECT id,user_id FROM livestreams'))}
++users={int(i):n for i,n in (r.split('\t') for r in sql('SELECT id,name FROM users'))}
++for r in sql('SELECT livestream_id,COUNT(*),SUM(tip),MAX(tip) FROM livecomments WHERE deleted=0 GROUP BY livestream_id'):
++ i,c,t,m=map(int,r.split('\t'));streams[i].update(comments=c,tips=t,max=m)
++for table,key in [('reactions','reactions'),('livestream_viewers_history','viewers'),('livecomment_reports','reports')]:
++ for r in sql(f'SELECT livestream_id,COUNT(*) FROM {table} GROUP BY livestream_id'):
++  i,c=map(int,r.split('\t'))
++  if i in streams:streams[i][key]=c
++scores={i:s['tips']+s['reactions'] for i,s in streams.items()}
++targets=[1,max(scores,key=scores.get),max(streams)]
++for i in targets:
++ s=streams[i]
++ expected=dict(rank=1+sum((v,j)>(scores[i],i) for j,v in scores.items()),viewers_count=s['viewers'],total_reactions=s['reactions'],total_reports=s['reports'],max_tip=s['max'])
++ actual=api(f'/api/livestream/{i}/statistics');assert actual==expected,(i,actual,expected)
++ print('stream',i,'statistics match')
++for uid in set([streams[i]['owner'] for i in targets]):
++ name=users[uid];owned=[s for s in streams.values() if s['owner']==uid]
++ user_scores={u:0 for u in users}
++ for s in streams.values():user_scores[s['owner']]+=s['reactions']+s['tips']
++ fav=sql(f'SELECT r.emoji_name FROM reactions r JOIN livestreams l ON l.id=r.livestream_id WHERE l.user_id={uid} GROUP BY r.emoji_name ORDER BY COUNT(*) DESC,r.emoji_name DESC LIMIT 1')
++ expected=dict(rank=1+sum((v,users[u])>(user_scores[uid],name) for u,v in user_scores.items()),viewers_count=sum(s['viewers'] for s in owned),total_reactions=sum(s['reactions'] for s in owned),total_livecomments=sum(s['comments'] for s in owned),total_tip=sum(s['tips'] for s in owned),favorite_emoji=fav[0] if fav else '')
++ actual=api(f'/api/user/{name}/statistics');assert actual==expected,(name,actual,expected)
++ print('user',name,'statistics match')
+diff --git a/webapp/go/auth_client.go b/webapp/go/auth_client.go
+new file mode 100644
+index 0000000..5e512e2
+--- /dev/null
++++ b/webapp/go/auth_client.go
+@@ -0,0 +1,59 @@
++package main
++
++import (
++	"bytes"
++	"context"
++	"encoding/json"
++	"golang.org/x/crypto/bcrypt"
++	"io"
++	"net/http"
++	"os"
++	"time"
++)
++
++var hashClient = &http.Client{Timeout: 2 * time.Second, Transport: &http.Transport{MaxIdleConns: 128, MaxIdleConnsPerHost: 128, IdleConnTimeout: 90 * time.Second}}
++
++func remoteHash(ctx context.Context, path string, password, hash []byte) (int, []byte, error) {
++	body, _ := json.Marshal(struct {
++		Password []byte `json:"password"`
++		Hash     []byte `json:"hash"`
++	}{password, hash})
++	req, err := http.NewRequestWithContext(ctx, "POST", os.Getenv("ISUCON_HASH_API")+path, bytes.NewReader(body))
++	if err != nil {
++		return 0, nil, err
++	}
++	req.Header.Set("Content-Type", "application/json")
++	res, err := hashClient.Do(req)
++	if err != nil {
++		return 0, nil, err
++	}
++	defer res.Body.Close()
++	data, err := io.ReadAll(res.Body)
++	return res.StatusCode, data, err
++}
++func generatePasswordHash(ctx context.Context, password []byte) ([]byte, error) {
++	if os.Getenv("ISUCON_HASH_API") != "" {
++		status, hash, err := remoteHash(ctx, "/hash", password, nil)
++		if err == nil && status == 200 {
++			cost, e := bcrypt.Cost(hash)
++			if e == nil && cost == bcryptDefaultCost {
++				return hash, nil
++			}
++		}
++	}
++	return bcrypt.GenerateFromPassword(password, bcryptDefaultCost)
++}
++func comparePasswordHash(ctx context.Context, hash, password []byte) error {
++	if os.Getenv("ISUCON_HASH_API") != "" {
++		status, _, err := remoteHash(ctx, "/verify", password, hash)
++		if err == nil {
++			if status == 204 {
++				return nil
++			}
++			if status == 401 {
++				return bcrypt.ErrMismatchedHashAndPassword
++			}
++		}
++	}
++	return bcrypt.CompareHashAndPassword(hash, password)
++}
+diff --git a/webapp/go/cache.go b/webapp/go/cache.go
+new file mode 100644
+index 0000000..19ba7ac
+--- /dev/null
++++ b/webapp/go/cache.go
+@@ -0,0 +1,191 @@
++package main
++
++import (
++	"context"
++	"os"
++	"path/filepath"
++
++	"sync"
++
++	"github.com/jmoiron/sqlx"
++)
++
++type iconData struct {
++	Image []byte
++	Hash  string
++}
++type readCache struct {
++	sync.RWMutex
++	users   map[int64]UserModel
++	names   map[string]int64
++	themes  map[int64]Theme
++	streams map[int64]LivestreamModel
++	tags    map[int64][]Tag
++	allTags []Tag
++	icons   map[int64]iconData
++	images  map[string][]byte
++}
++
++var cached = readCache{}
++var iconLocks [256]sync.Mutex
++
++func loadReadCache(ctx context.Context) error {
++	var users []UserModel
++	var themes []ThemeModel
++	var streams []LivestreamModel
++	var tags []TagModel
++	var joins []LivestreamTagModel
++	var icons []struct {
++		UserID int64 `db:"user_id"`
++		Image  []byte
++		Hash   string
++	}
++	for _, q := range []struct {
++		dst   interface{}
++		query string
++	}{
++		{&users, "SELECT * FROM users"}, {&themes, "SELECT * FROM themes"},
++		{&streams, "SELECT * FROM livestreams"}, {&tags, "SELECT * FROM tags ORDER BY id"},
++		{&joins, "SELECT * FROM livestream_tags ORDER BY id"}, {&icons, "SELECT user_id,image,hash FROM icons"},
++	} {
++		if err := dbConn.SelectContext(ctx, q.dst, q.query); err != nil {
++			return err
++		}
++	}
++	if err := os.MkdirAll(iconDirectory, 0755); err != nil {
++		return err
++	}
++	imageMap := make(map[string][]byte)
++	for n := range icons {
++		if b, ok := imageMap[icons[n].Hash]; ok {
++			icons[n].Image = b
++		} else {
++			if len(icons[n].Image) == 0 && len(icons[n].Hash) == 64 {
++				b, err := os.ReadFile(filepath.Join(iconDirectory, icons[n].Hash))
++				if err != nil {
++					return err
++				}
++				icons[n].Image = b
++			}
++			imageMap[icons[n].Hash] = icons[n].Image
++		}
++	}
++	cached.Lock()
++	defer cached.Unlock()
++	cached.images = imageMap
++	cached.users = make(map[int64]UserModel, len(users))
++	cached.names = make(map[string]int64, len(users))
++	cached.themes = make(map[int64]Theme, len(themes))
++	cached.streams = make(map[int64]LivestreamModel, len(streams))
++	cached.tags = make(map[int64][]Tag, len(streams))
++	cached.icons = make(map[int64]iconData, len(icons))
++	cached.allTags = make([]Tag, 0, len(tags))
++	tagMap := make(map[int64]Tag, len(tags))
++	for _, u := range users {
++		cached.users[u.ID] = u
++		cached.names[u.Name] = u.ID
++	}
++	for _, t := range themes {
++		cached.themes[t.UserID] = Theme{ID: t.ID, DarkMode: t.DarkMode}
++	}
++	for _, s := range streams {
++		cached.streams[s.ID] = s
++		cached.tags[s.ID] = []Tag{}
++	}
++	for _, t := range tags {
++		v := Tag{ID: t.ID, Name: t.Name}
++		cached.allTags = append(cached.allTags, v)
++		tagMap[t.ID] = v
++	}
++	for _, j := range joins {
++		cached.tags[j.LivestreamID] = append(cached.tags[j.LivestreamID], tagMap[j.TagID])
++	}
++	for _, i := range icons {
++		cached.icons[i.UserID] = iconData{Image: i.Image, Hash: i.Hash}
++	}
++	return nil
++}
++func userByID(ctx context.Context, tx *sqlx.Tx, id int64) (UserModel, error) {
++	cached.RLock()
++	u, ok := cached.users[id]
++	cached.RUnlock()
++	if ok {
++		return u, nil
++	}
++	var err error
++	if tx == nil {
++		err = dbConn.GetContext(ctx, &u, "SELECT * FROM users WHERE id=?", id)
++	} else {
++		err = tx.GetContext(ctx, &u, "SELECT * FROM users WHERE id=?", id)
++	}
++	return u, err
++}
++func userByName(ctx context.Context, tx *sqlx.Tx, name string) (UserModel, error) {
++	cached.RLock()
++	id, ok := cached.names[name]
++	u := cached.users[id]
++	cached.RUnlock()
++	if ok {
++		return u, nil
++	}
++	var err error
++	if tx == nil {
++		err = dbConn.GetContext(ctx, &u, "SELECT * FROM users WHERE name=?", name)
++	} else {
++		err = tx.GetContext(ctx, &u, "SELECT * FROM users WHERE name=?", name)
++	}
++	return u, err
++}
++func streamByID(ctx context.Context, tx *sqlx.Tx, id int64) (LivestreamModel, error) {
++	cached.RLock()
++	s, ok := cached.streams[id]
++	cached.RUnlock()
++	if ok {
++		return s, nil
++	}
++	var err error
++	if tx == nil {
++		err = dbConn.GetContext(ctx, &s, "SELECT * FROM livestreams WHERE id=?", id)
++	} else {
++		err = tx.GetContext(ctx, &s, "SELECT * FROM livestreams WHERE id=?", id)
++	}
++	return s, err
++}
++func currentIcon(id int64) iconData {
++	cached.RLock()
++	i, ok := cached.icons[id]
++	cached.RUnlock()
++	if ok {
++		return i
++	}
++	b, h := getFallback()
++	return iconData{Image: b, Hash: h}
++}
++func publishUser(u UserModel, t Theme) {
++	cached.Lock()
++	cached.users[u.ID] = u
++	cached.names[u.Name] = u.ID
++	cached.themes[u.ID] = t
++	cached.Unlock()
++}
++func publishStream(s LivestreamModel, tags []Tag) {
++	cached.Lock()
++	cached.streams[s.ID] = s
++	cached.tags[s.ID] = tags
++	cached.Unlock()
++}
++
++func getRow(ctx context.Context, tx *sqlx.Tx, dest interface{}, query string, args ...interface{}) error {
++	if tx == nil {
++		return dbConn.GetContext(ctx, dest, query, args...)
++	}
++	return tx.GetContext(ctx, dest, query, args...)
++}
++func getRows(ctx context.Context, tx *sqlx.Tx, dest interface{}, query string, args ...interface{}) error {
++	if tx == nil {
++		return dbConn.SelectContext(ctx, dest, query, args...)
++	}
++	return tx.SelectContext(ctx, dest, query, args...)
++}
++
++var commentLocks [1024]sync.RWMutex
+diff --git a/webapp/go/cmd/auth/main.go b/webapp/go/cmd/auth/main.go
+new file mode 100644
+index 0000000..cd739c7
+--- /dev/null
++++ b/webapp/go/cmd/auth/main.go
+@@ -0,0 +1,47 @@
++package main
++
++import (
++	"encoding/json"
++	"golang.org/x/crypto/bcrypt"
++	"log"
++	"net/http"
++)
++
++type request struct {
++	Password []byte `json:"password"`
++	Hash     []byte `json:"hash"`
++}
++
++func main() {
++	http.HandleFunc("/hash", func(w http.ResponseWriter, r *http.Request) {
++		var v request
++		if json.NewDecoder(r.Body).Decode(&v) != nil {
++			http.Error(w, "bad request", 400)
++			return
++		}
++		hash, err := bcrypt.GenerateFromPassword(v.Password, bcrypt.MinCost)
++		if err != nil {
++			http.Error(w, "hash error", 500)
++			return
++		}
++		w.Write(hash)
++	})
++	http.HandleFunc("/verify", func(w http.ResponseWriter, r *http.Request) {
++		var v request
++		if json.NewDecoder(r.Body).Decode(&v) != nil {
++			http.Error(w, "bad request", 400)
++			return
++		}
++		err := bcrypt.CompareHashAndPassword(v.Hash, v.Password)
++		if err == bcrypt.ErrMismatchedHashAndPassword {
++			w.WriteHeader(401)
++			return
++		}
++		if err != nil {
++			w.WriteHeader(500)
++			return
++		}
++		w.WriteHeader(204)
++	})
++	log.Fatal(http.ListenAndServe(":9090", nil))
++}
+diff --git a/webapp/go/cmd/dns/main.go b/webapp/go/cmd/dns/main.go
+new file mode 100644
+index 0000000..b2394f5
+--- /dev/null
++++ b/webapp/go/cmd/dns/main.go
+@@ -0,0 +1,205 @@
++package main
++
++import (
++	"database/sql"
++	"fmt"
++	"log"
++	"net"
++	"net/http"
++	"os"
++	"strconv"
++	"strings"
++	"sync"
++	"sync/atomic"
++	"time"
++
++	_ "github.com/go-sql-driver/mysql"
++	"golang.org/x/net/dns/dnsmessage"
++)
++
++type zoneData struct {
++	sync.RWMutex
++	records map[string][]dnsmessage.Resource
++}
++
++var zone zoneData
++var db *sql.DB
++var httpAddresses [][4]byte
++var roundRobin atomic.Uint64
++var soa = dnsmessage.SOAResource{NS: mustName("ns1.u.isucon.dev."), MBox: mustName("hostmaster.u.isucon.dev."), Serial: 0, Refresh: 10800, Retry: 3600, Expire: 604800, MinTTL: 1}
++
++func mustName(s string) dnsmessage.Name {
++	n, e := dnsmessage.NewName(s)
++	if e != nil {
++		panic(e)
++	}
++	return n
++}
++func canonical(s string) string { return strings.ToLower(strings.TrimSuffix(s, ".")) + "." }
++func aRecord(name, ip string) (dnsmessage.Resource, error) {
++	parsed := net.ParseIP(ip).To4()
++	if parsed == nil {
++		return dnsmessage.Resource{}, fmt.Errorf("invalid IPv4")
++	}
++	var a [4]byte
++	copy(a[:], parsed)
++	return dnsmessage.Resource{Header: dnsmessage.ResourceHeader{Name: mustName(canonical(name)), Type: dnsmessage.TypeA, Class: dnsmessage.ClassINET, TTL: 60}, Body: &dnsmessage.AResource{A: a}}, nil
++}
++func reload() error {
++	rows, err := db.Query("SELECT name,type,content FROM records WHERE disabled=0")
++	if err != nil {
++		return err
++	}
++	defer rows.Close()
++	records := make(map[string][]dnsmessage.Resource)
++	for rows.Next() {
++		var name, typ, content string
++		if err := rows.Scan(&name, &typ, &content); err != nil {
++			return err
++		}
++		name = canonical(name)
++		hdr := dnsmessage.ResourceHeader{Name: mustName(name), Class: dnsmessage.ClassINET, TTL: 60}
++		var r dnsmessage.Resource
++		switch typ {
++		case "A":
++			r, err = aRecord(name, content)
++			if err != nil {
++				return err
++			}
++		case "NS":
++			hdr.Type = dnsmessage.TypeNS
++			r = dnsmessage.Resource{Header: hdr, Body: &dnsmessage.NSResource{NS: mustName(canonical(content))}}
++		case "SOA":
++			f := strings.Fields(content)
++			v := soa
++			if len(f) >= 7 {
++				v.NS = mustName(canonical(f[0]))
++				v.MBox = mustName(canonical(f[1]))
++				nums := []*uint32{&v.Serial, &v.Refresh, &v.Retry, &v.Expire, &v.MinTTL}
++				for i, p := range nums {
++					n, _ := strconv.ParseUint(f[i+2], 10, 32)
++					*p = uint32(n)
++				}
++			}
++			hdr.Type = dnsmessage.TypeSOA
++			r = dnsmessage.Resource{Header: hdr, Body: &v}
++		default:
++			return fmt.Errorf("unsupported record type %s", typ)
++		}
++		records[name] = append(records[name], r)
++	}
++	if err := rows.Err(); err != nil {
++		return err
++	}
++	zone.Lock()
++	zone.records = records
++	zone.Unlock()
++	return nil
++}
++func answer(packet []byte) ([]byte, error) {
++	var req dnsmessage.Message
++	if err := req.Unpack(packet); err != nil {
++		return nil, err
++	}
++	if len(req.Questions) != 1 || req.Header.Response {
++		return nil, fmt.Errorf("invalid query")
++	}
++	q := req.Questions[0]
++	res := dnsmessage.Message{Header: dnsmessage.Header{ID: req.Header.ID, Response: true, Authoritative: true, RecursionDesired: req.Header.RecursionDesired}, Questions: req.Questions}
++	zone.RLock()
++	rr, exists := zone.records[canonical(q.Name.String())]
++	zone.RUnlock()
++	if !exists {
++		res.Header.RCode = dnsmessage.RCodeNameError
++		res.Authorities = []dnsmessage.Resource{{Header: dnsmessage.ResourceHeader{Name: mustName("u.isucon.dev."), Type: dnsmessage.TypeSOA, Class: dnsmessage.ClassINET, TTL: 1}, Body: &soa}}
++	} else {
++		for _, r := range rr {
++			if r.Header.Type == q.Type || q.Type == dnsmessage.TypeALL {
++				if r.Header.Type == dnsmessage.TypeA && len(httpAddresses) > 0 && canonical(q.Name.String()) != "ns1.u.isucon.dev." {
++					a := httpAddresses[(roundRobin.Add(1)-1)%uint64(len(httpAddresses))]
++					r.Body = &dnsmessage.AResource{A: a}
++					if canonical(q.Name.String()) == "pipe.u.isucon.dev." {
++						r.Header.TTL = 0
++					}
++				}
++				res.Answers = append(res.Answers, r)
++			}
++		}
++	}
++	return res.Pack()
++}
++func main() {
++	if pool := os.Getenv("ISUDNS_HTTP_BACKENDS"); pool != "" {
++		for _, host := range strings.Split(pool, ",") {
++			ip := net.ParseIP(host).To4()
++			if ip == nil {
++				log.Fatal("invalid HTTP backend")
++			}
++			var a [4]byte
++			copy(a[:], ip)
++			httpAddresses = append(httpAddresses, a)
++		}
++	}
++	var err error
++	db, err = sql.Open("mysql", "isudns:isudns@tcp(127.0.0.1:3306)/isudns")
++	if err != nil {
++		log.Fatal(err)
++	}
++	db.SetMaxOpenConns(2)
++	if err := reload(); err != nil {
++		log.Fatal(err)
++	}
++	http.HandleFunc("/reload", func(w http.ResponseWriter, r *http.Request) {
++		if r.Method != "POST" {
++			http.Error(w, "method", 405)
++			return
++		}
++		if err := reload(); err != nil {
++			http.Error(w, err.Error(), 500)
++			return
++		}
++		w.WriteHeader(204)
++	})
++	http.HandleFunc("/add", func(w http.ResponseWriter, r *http.Request) {
++		if r.Method != "POST" {
++			http.Error(w, "method", 405)
++			return
++		}
++		name := canonical(r.URL.Query().Get("name"))
++		rec, err := aRecord(name, r.URL.Query().Get("ip"))
++		if err != nil {
++			http.Error(w, err.Error(), 400)
++			return
++		}
++		zone.Lock()
++		zone.records[name] = []dnsmessage.Resource{rec}
++		zone.Unlock()
++		w.WriteHeader(204)
++	})
++	go func() { log.Fatal(http.ListenAndServe(":8053", nil)) }()
++	conn, err := net.ListenUDP("udp", &net.UDPAddr{Port: 53})
++	if err != nil {
++		log.Fatal(err)
++	}
++	conn.SetReadBuffer(4 << 20)
++	conn.SetWriteBuffer(4 << 20)
++	for i := 0; i < 2; i++ {
++		go func() {
++			buf := make([]byte, 4096)
++			for {
++				n, addr, err := conn.ReadFromUDP(buf)
++				if err != nil {
++					log.Print(err)
++					continue
++				}
++				out, err := answer(buf[:n])
++				if err == nil {
++					conn.WriteToUDP(out, addr)
++				}
++			}
++		}()
++	}
++	for {
++		time.Sleep(time.Hour)
++	}
++}
+diff --git a/webapp/go/dns_client.go b/webapp/go/dns_client.go
+new file mode 100644
+index 0000000..522cb87
+--- /dev/null
++++ b/webapp/go/dns_client.go
+@@ -0,0 +1,32 @@
++package main
++
++import (
++	"context"
++	"fmt"
++	"net/http"
++	"net/url"
++	"os"
++	"time"
++)
++
++var dnsClient = &http.Client{Timeout: 3 * time.Second}
++
++func syncDNS(ctx context.Context, path string, values url.Values) error {
++	base := os.Getenv("ISUCON_DNS_API")
++	if base == "" {
++		return nil
++	}
++	req, err := http.NewRequestWithContext(ctx, "POST", base+path+"?"+values.Encode(), nil)
++	if err != nil {
++		return err
++	}
++	res, err := dnsClient.Do(req)
++	if err != nil {
++		return err
++	}
++	defer res.Body.Close()
++	if res.StatusCode != 204 {
++		return fmt.Errorf("DNS update status %d", res.StatusCode)
++	}
++	return nil
++}
+diff --git a/webapp/go/fastjson.go b/webapp/go/fastjson.go
+new file mode 100644
+index 0000000..76cd65f
+--- /dev/null
++++ b/webapp/go/fastjson.go
+@@ -0,0 +1,20 @@
++package main
++
++import (
++	json "github.com/goccy/go-json"
++	"github.com/labstack/echo/v4"
++)
++
++type fastJSONSerializer struct{}
++
++func (fastJSONSerializer) Serialize(c echo.Context, v interface{}, indent string) error {
++	e := json.NewEncoder(c.Response())
++	e.SetEscapeHTML(false)
++	if indent != "" {
++		e.SetIndent("", indent)
++	}
++	return e.Encode(v)
++}
++func (fastJSONSerializer) Deserialize(c echo.Context, v interface{}) error {
++	return json.NewDecoder(c.Request().Body).Decode(v)
++}
+diff --git a/webapp/go/fastjson_test.go b/webapp/go/fastjson_test.go
+new file mode 100644
+index 0000000..7129ac7
+--- /dev/null
++++ b/webapp/go/fastjson_test.go
+@@ -0,0 +1,36 @@
++package main
++
++import (
++	"bytes"
++	stdjson "encoding/json"
++	json "github.com/goccy/go-json"
++	"reflect"
++	"testing"
++)
++
++func TestFastJSONCompatibility(t *testing.T) {
++	user := User{ID: 123, Name: "tester", DisplayName: "<猫>&emoji😀", Description: "test\n\"quote\"\u2028", Theme: Theme{ID: 1, DarkMode: true}, IconHash: "aabb"}
++	stream := Livestream{ID: 456, Owner: user, Tags: []Tag{{ID: 1, Name: "日本語"}}, Title: "title", StartAt: 1234567890, EndAt: 1234569999}
++	for _, v := range []interface{}{user, stream, Livecomment{ID: 2, User: user, Livestream: stream, Comment: "a%b_\\foo", Tip: 10000}, Reaction{User: user, Livestream: stream, EmojiName: "innocent"}, UserStatistics{Rank: 123}, PostIconRequest{Image: []byte{0, 1, 2, 128, 255}}} {
++		expected, err := stdjson.Marshal(v)
++		if err != nil {
++			t.Fatal(err)
++		}
++		var buf bytes.Buffer
++		enc := json.NewEncoder(&buf)
++		enc.SetEscapeHTML(false)
++		if err := enc.Encode(v); err != nil {
++			t.Fatal(err)
++		}
++		var a, b interface{}
++		if err := stdjson.Unmarshal(expected, &a); err != nil {
++			t.Fatal(err)
++		}
++		if err := stdjson.Unmarshal(buf.Bytes(), &b); err != nil {
++			t.Fatal(err)
++		}
++		if !reflect.DeepEqual(a, b) {
++			t.Fatalf("JSON differs: %s %s", expected, buf.Bytes())
++		}
++	}
++}
+diff --git a/webapp/go/go.mod b/webapp/go/go.mod
+index f4cda49..dea6b53 100644
+--- a/webapp/go/go.mod
++++ b/webapp/go/go.mod
+@@ -14,6 +14,7 @@ require (
+ )
+ 
+ require (
++	github.com/goccy/go-json v0.10.3 // indirect
+ 	github.com/golang-jwt/jwt v3.2.2+incompatible // indirect
+ 	github.com/gorilla/context v1.1.1 // indirect
+ 	github.com/gorilla/securecookie v1.1.2 // indirect
+diff --git a/webapp/go/go.sum b/webapp/go/go.sum
+index 2087927..4690b89 100644
+--- a/webapp/go/go.sum
++++ b/webapp/go/go.sum
+@@ -4,6 +4,8 @@ github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSs
+ github.com/go-sql-driver/mysql v1.6.0/go.mod h1:DCzpHaOWr8IXmIStZouvnhqoel9Qv2LBy8hT2VhHyBg=
+ github.com/go-sql-driver/mysql v1.7.1 h1:lUIinVbN1DY0xBg0eMOzmmtGoHwWBbvnWubQUrtU8EI=
+ github.com/go-sql-driver/mysql v1.7.1/go.mod h1:OXbVy3sEdcQ2Doequ6Z5BW6fXNQTmx+9S1MCJN5yJMI=
++github.com/goccy/go-json v0.10.3 h1:KZ5WoDbxAIgm2HNbYckL0se1fHD6rz5j4ywS6ebzDqA=
++github.com/goccy/go-json v0.10.3/go.mod h1:oq7eo15ShAhp70Anwd5lgX2pLfOS3QCiwU/PULtXL6M=
+ github.com/golang-jwt/jwt v3.2.2+incompatible h1:IfV12K8xAKAnZqdXVzCZ+TOjboZ2keLg81eXfW3O+oY=
+ github.com/golang-jwt/jwt v3.2.2+incompatible/go.mod h1:8pz2t5EyA70fFQQSrl6XZXzqecmYZeUEB8OUGHkxJ+I=
+ github.com/google/gofuzz v1.2.0 h1:xRy4A+RhZaiKjJ1bPfwQ8sedCA+YS2YcCHW6ec7JMi0=
+diff --git a/webapp/go/icon_storage.go b/webapp/go/icon_storage.go
+new file mode 100644
+index 0000000..78e4a5a
+--- /dev/null
++++ b/webapp/go/icon_storage.go
+@@ -0,0 +1,35 @@
++package main
++
++import (
++	"os"
++	"path/filepath"
++)
++
++const iconDirectory = "../icons"
++
++func storeIcon(hash string, image []byte) error {
++	path := filepath.Join(iconDirectory, hash)
++	if _, err := os.Stat(path); err == nil {
++		return nil
++	}
++	f, err := os.CreateTemp(iconDirectory, ".upload-")
++	if err != nil {
++		return err
++	}
++	name := f.Name()
++	defer os.Remove(name)
++	if _, err = f.Write(image); err != nil {
++		f.Close()
++		return err
++	}
++	if err = f.Close(); err != nil {
++		return err
++	}
++	return os.Rename(name, path)
++}
++func initializeIconStorage() error {
++	if err := os.RemoveAll(iconDirectory); err != nil {
++		return err
++	}
++	return os.MkdirAll(iconDirectory, 0755)
++}
+diff --git a/webapp/go/list_cache.go b/webapp/go/list_cache.go
+new file mode 100644
+index 0000000..093cc09
+--- /dev/null
++++ b/webapp/go/list_cache.go
+@@ -0,0 +1,149 @@
++package main
++
++import (
++	"context"
++	"sort"
++	"sync"
++)
++
++var lists = struct {
++	sync.RWMutex
++	all      []int64
++	owned    map[int64][]int64
++	tagged   map[string][]int64
++	words    map[int64][]NGWord
++	reports  map[int64][]LivecommentReportModel
++	comments map[int64]LivecommentModel
++}{}
++
++func descending(ids []int64) { sort.Slice(ids, func(i, j int) bool { return ids[i] > ids[j] }) }
++func insertDescending(ids []int64, id int64) []int64 {
++	i := sort.Search(len(ids), func(i int) bool { return ids[i] < id })
++	ids = append(ids, 0)
++	copy(ids[i+1:], ids[i:])
++	ids[i] = id
++	return ids
++}
++func loadLists(ctx context.Context) error {
++	all := []int64{}
++	owned := make(map[int64][]int64)
++	tagged := make(map[string][]int64)
++	words := make(map[int64][]NGWord)
++	reports := make(map[int64][]LivecommentReportModel)
++	comments := make(map[int64]LivecommentModel)
++	cached.RLock()
++	for id, s := range cached.streams {
++		all = append(all, id)
++		owned[s.UserID] = append(owned[s.UserID], id)
++		for _, t := range cached.tags[id] {
++			tagged[t.Name] = append(tagged[t.Name], id)
++		}
++	}
++	cached.RUnlock()
++	descending(all)
++	for _, ids := range owned {
++		sort.Slice(ids, func(i, j int) bool { return ids[i] < ids[j] })
++	}
++	for _, ids := range tagged {
++		descending(ids)
++	}
++	var wm []NGWord
++	var rm []LivecommentReportModel
++	var cm []LivecommentModel
++	if err := dbConn.SelectContext(ctx, &wm, "SELECT * FROM ng_words"); err != nil {
++		return err
++	}
++	for _, w := range wm {
++		words[w.LivestreamID] = append(words[w.LivestreamID], w)
++	}
++	if err := dbConn.SelectContext(ctx, &rm, "SELECT * FROM livecomment_reports"); err != nil {
++		return err
++	}
++	for _, r := range rm {
++		reports[r.LivestreamID] = append(reports[r.LivestreamID], r)
++	}
++	if err := dbConn.SelectContext(ctx, &cm, "SELECT * FROM livecomments"); err != nil {
++		return err
++	}
++	for _, c := range cm {
++		comments[c.ID] = c
++	}
++	lists.Lock()
++	lists.all = all
++	lists.owned = owned
++	lists.tagged = tagged
++	lists.words = words
++	lists.reports = reports
++	lists.comments = comments
++	lists.Unlock()
++	return nil
++}
++func addListedStream(s LivestreamModel, tags []Tag) {
++	lists.Lock()
++	lists.all = insertDescending(lists.all, s.ID)
++	lists.owned[s.UserID] = append(lists.owned[s.UserID], s.ID)
++	for _, t := range tags {
++		lists.tagged[t.Name] = insertDescending(lists.tagged[t.Name], s.ID)
++	}
++	lists.Unlock()
++}
++func getListedStreams(tag string, owner int64, limit int) []LivestreamModel {
++	lists.RLock()
++	ids := lists.all
++	if tag != "" {
++		ids = lists.tagged[tag]
++	} else if owner != 0 {
++		ids = lists.owned[owner]
++	}
++	if limit >= 0 && len(ids) > limit {
++		ids = ids[:limit]
++	}
++	copyIDs := append([]int64{}, ids...)
++	lists.RUnlock()
++	if owner != 0 {
++		sort.Slice(copyIDs, func(i, j int) bool { return copyIDs[i] < copyIDs[j] })
++	}
++	out := make([]LivestreamModel, 0, len(copyIDs))
++	cached.RLock()
++	for _, id := range copyIDs {
++		out = append(out, cached.streams[id])
++	}
++	cached.RUnlock()
++	return out
++}
++func getListedWords(id, user int64) []*NGWord {
++	var out []*NGWord
++	lists.RLock()
++	for _, w := range lists.words[id] {
++		if w.UserID == user {
++			v := w
++			out = append(out, &v)
++		}
++	}
++	lists.RUnlock()
++	sort.Slice(out, func(i, j int) bool {
++		if out[i].CreatedAt == out[j].CreatedAt {
++			return out[i].ID > out[j].ID
++		}
++		return out[i].CreatedAt > out[j].CreatedAt
++	})
++	return out
++}
++func getListedReports(id int64) []LivecommentReportModel {
++	lists.RLock()
++	out := append([]LivecommentReportModel{}, lists.reports[id]...)
++	lists.RUnlock()
++	sort.Slice(out, func(i, j int) bool { return out[i].ID < out[j].ID })
++	return out
++}
++func addListedWord(w NGWord) {
++	lists.Lock()
++	lists.words[w.LivestreamID] = append(lists.words[w.LivestreamID], w)
++	lists.Unlock()
++}
++func addListedReport(r LivecommentReportModel) {
++	lists.Lock()
++	lists.reports[r.LivestreamID] = append(lists.reports[r.LivestreamID], r)
++	lists.Unlock()
++}
++func addListedComment(c LivecommentModel) { lists.Lock(); lists.comments[c.ID] = c; lists.Unlock() }
+diff --git a/webapp/go/livecomment_handler.go b/webapp/go/livecomment_handler.go
+index 1a20528..403d635 100644
+--- a/webapp/go/livecomment_handler.go
++++ b/webapp/go/livecomment_handler.go
+@@ -3,15 +3,13 @@ package main
+ import (
+ 	"context"
+ 	"database/sql"
+-	"encoding/json"
+ 	"errors"
+-	"fmt"
++	json "github.com/goccy/go-json"
+ 	"net/http"
+ 	"strconv"
+ 	"time"
+ 
+ 	"github.com/jmoiron/sqlx"
+-	"github.com/labstack/echo-contrib/session"
+ 	"github.com/labstack/echo/v4"
+ )
+ 
+@@ -21,6 +19,7 @@ type PostLivecommentRequest struct {
+ }
+ 
+ type LivecommentModel struct {
++	Deleted      bool   `db:"deleted"`
+ 	ID           int64  `db:"id"`
+ 	UserID       int64  `db:"user_id"`
+ 	LivestreamID int64  `db:"livestream_id"`
+@@ -78,33 +77,19 @@ func getLivecommentsHandler(c echo.Context) error {
+ 		return echo.NewHTTPError(http.StatusBadRequest, "livestream_id in path must be integer")
+ 	}
+ 
+-	tx, err := dbConn.BeginTxx(ctx, nil)
+-	if err != nil {
+-		return echo.NewHTTPError(http.StatusInternalServerError, "failed to begin transaction: "+err.Error())
+-	}
+-	defer tx.Rollback()
+-
+-	query := "SELECT * FROM livecomments WHERE livestream_id = ? ORDER BY created_at DESC"
+-	if c.QueryParam("limit") != "" {
+-		limit, err := strconv.Atoi(c.QueryParam("limit"))
+-		if err != nil {
+-			return echo.NewHTTPError(http.StatusBadRequest, "limit query parameter must be integer")
++	limit := -1
++	if v := c.QueryParam("limit"); v != "" {
++		n, e := strconv.Atoi(v)
++		if e != nil || n < 0 {
++			return echo.NewHTTPError(400, "invalid limit")
+ 		}
+-		query += fmt.Sprintf(" LIMIT %d", limit)
+-	}
+-
+-	livecommentModels := []LivecommentModel{}
+-	err = tx.SelectContext(ctx, &livecommentModels, query, livestreamID)
+-	if errors.Is(err, sql.ErrNoRows) {
+-		return c.JSON(http.StatusOK, []*Livecomment{})
+-	}
+-	if err != nil {
+-		return echo.NewHTTPError(http.StatusInternalServerError, "failed to get livecomments: "+err.Error())
++		limit = n
+ 	}
++	livecommentModels := getComments(int64(livestreamID), limit)
+ 
+ 	livecomments := make([]Livecomment, len(livecommentModels))
+ 	for i := range livecommentModels {
+-		livecomment, err := fillLivecommentResponse(ctx, tx, livecommentModels[i])
++		livecomment, err := fillLivecommentResponse(ctx, nil, livecommentModels[i])
+ 		if err != nil {
+ 			return echo.NewHTTPError(http.StatusInternalServerError, "failed to fil livecomments: "+err.Error())
+ 		}
+@@ -112,54 +97,25 @@ func getLivecommentsHandler(c echo.Context) error {
+ 		livecomments[i] = livecomment
+ 	}
+ 
+-	if err := tx.Commit(); err != nil {
+-		return echo.NewHTTPError(http.StatusInternalServerError, "failed to commit: "+err.Error())
+-	}
+-
+ 	return c.JSON(http.StatusOK, livecomments)
+ }
+ 
+ func getNgwords(c echo.Context) error {
+-	ctx := c.Request().Context()
+-
+ 	if err := verifyUserSession(c); err != nil {
+ 		return err
+ 	}
+-
+-	// error already checked
+-	sess, _ := session.Get(defaultSessionIDKey, c)
+-	// existence already checked
+-	userID := sess.Values[defaultUserIDKey].(int64)
+-
+-	livestreamID, err := strconv.Atoi(c.Param("livestream_id"))
+-	if err != nil {
+-		return echo.NewHTTPError(http.StatusBadRequest, "livestream_id in path must be integer")
+-	}
+-
+-	tx, err := dbConn.BeginTxx(ctx, nil)
++	sess, _ := getSessionCached(c)
++	uid := sess.Values[defaultUserIDKey].(int64)
++	id, err := strconv.ParseInt(c.Param("livestream_id"), 10, 64)
+ 	if err != nil {
+-		return echo.NewHTTPError(http.StatusInternalServerError, "failed to begin transaction: "+err.Error())
+-	}
+-	defer tx.Rollback()
+-
+-	var ngWords []*NGWord
+-	if err := tx.SelectContext(ctx, &ngWords, "SELECT * FROM ng_words WHERE user_id = ? AND livestream_id = ? ORDER BY created_at DESC", userID, livestreamID); err != nil {
+-		if errors.Is(err, sql.ErrNoRows) {
+-			return c.JSON(http.StatusOK, []*NGWord{})
+-		} else {
+-			return echo.NewHTTPError(http.StatusInternalServerError, "failed to get NG words: "+err.Error())
+-		}
++		return echo.NewHTTPError(400, "invalid livestream_id")
+ 	}
+-
+-	if err := tx.Commit(); err != nil {
+-		return echo.NewHTTPError(http.StatusInternalServerError, "failed to commit: "+err.Error())
+-	}
+-
+-	return c.JSON(http.StatusOK, ngWords)
++	return c.JSON(200, getListedWords(id, uid))
+ }
+ 
+ func postLivecommentHandler(c echo.Context) error {
+-	ctx := c.Request().Context()
++	ctx, cancel := mutationContext(c)
++	defer cancel()
+ 	defer c.Request().Body.Close()
+ 
+ 	if err := verifyUserSession(c); err != nil {
+@@ -172,7 +128,7 @@ func postLivecommentHandler(c echo.Context) error {
+ 	}
+ 
+ 	// error already checked
+-	sess, _ := session.Get(defaultSessionIDKey, c)
++	sess, _ := getSessionCached(c)
+ 	// existence already checked
+ 	userID := sess.Values[defaultUserIDKey].(int64)
+ 
+@@ -181,14 +137,12 @@ func postLivecommentHandler(c echo.Context) error {
+ 		return echo.NewHTTPError(http.StatusBadRequest, "failed to decode the request body as json")
+ 	}
+ 
+-	tx, err := dbConn.BeginTxx(ctx, nil)
+-	if err != nil {
+-		return echo.NewHTTPError(http.StatusInternalServerError, "failed to begin transaction: "+err.Error())
+-	}
+-	defer tx.Rollback()
++	lock := &commentLocks[uint64(livestreamID)%1024]
++	lock.RLock()
++	defer lock.RUnlock()
+ 
+-	var livestreamModel LivestreamModel
+-	if err := tx.GetContext(ctx, &livestreamModel, "SELECT * FROM livestreams WHERE id = ?", livestreamID); err != nil {
++	livestreamModel, err := streamByID(ctx, nil, int64(livestreamID))
++	if err != nil {
+ 		if errors.Is(err, sql.ErrNoRows) {
+ 			return echo.NewHTTPError(http.StatusNotFound, "livestream not found")
+ 		} else {
+@@ -196,29 +150,8 @@ func postLivecommentHandler(c echo.Context) error {
+ 		}
+ 	}
+ 
+-	// スパム判定
+-	var ngwords []*NGWord
+-	if err := tx.SelectContext(ctx, &ngwords, "SELECT id, user_id, livestream_id, word FROM ng_words WHERE user_id = ? AND livestream_id = ?", livestreamModel.UserID, livestreamModel.ID); err != nil && !errors.Is(err, sql.ErrNoRows) {
+-		return echo.NewHTTPError(http.StatusInternalServerError, "failed to get NG words: "+err.Error())
+-	}
+-
+-	var hitSpam int
+-	for _, ngword := range ngwords {
+-		query := `
+-		SELECT COUNT(*)
+-		FROM
+-		(SELECT ? AS text) AS texts
+-		INNER JOIN
+-		(SELECT CONCAT('%', ?, '%')	AS pattern) AS patterns
+-		ON texts.text LIKE patterns.pattern;
+-		`
+-		if err := tx.GetContext(ctx, &hitSpam, query, req.Comment, ngword.Word); err != nil {
+-			return echo.NewHTTPError(http.StatusInternalServerError, "failed to get hitspam: "+err.Error())
+-		}
+-		c.Logger().Infof("[hitSpam=%d] comment = %s", hitSpam, req.Comment)
+-		if hitSpam >= 1 {
+-			return echo.NewHTTPError(http.StatusBadRequest, "このコメントがスパム判定されました")
+-		}
++	if isSpam(int64(livestreamID), livestreamModel.UserID, req.Comment) {
++		return echo.NewHTTPError(400, "このコメントがスパム判定されました")
+ 	}
+ 
+ 	now := time.Now().Unix()
+@@ -230,7 +163,12 @@ func postLivecommentHandler(c echo.Context) error {
+ 		CreatedAt:    now,
+ 	}
+ 
+-	rs, err := tx.NamedExecContext(ctx, "INSERT INTO livecomments (user_id, livestream_id, comment, tip, created_at) VALUES (:user_id, :livestream_id, :comment, :tip, :created_at)", livecommentModel)
++	livecomment, err := fillLivecommentResponse(ctx, nil, livecommentModel)
++	if err != nil {
++		return echo.NewHTTPError(http.StatusInternalServerError, "failed to fill livecomment: "+err.Error())
++	}
++
++	rs, err := dbConn.NamedExecContext(ctx, "INSERT INTO livecomments (user_id, livestream_id, comment, tip, created_at) VALUES (:user_id, :livestream_id, :comment, :tip, :created_at)", livecommentModel)
+ 	if err != nil {
+ 		return echo.NewHTTPError(http.StatusInternalServerError, "failed to insert livecomment: "+err.Error())
+ 	}
+@@ -240,21 +178,17 @@ func postLivecommentHandler(c echo.Context) error {
+ 		return echo.NewHTTPError(http.StatusInternalServerError, "failed to get last inserted livecomment id: "+err.Error())
+ 	}
+ 	livecommentModel.ID = livecommentID
++	livecomment.ID = livecommentID
++	appendComment(livecommentModel)
++	addListedComment(livecommentModel)
+ 
+-	livecomment, err := fillLivecommentResponse(ctx, tx, livecommentModel)
+-	if err != nil {
+-		return echo.NewHTTPError(http.StatusInternalServerError, "failed to fill livecomment: "+err.Error())
+-	}
+-
+-	if err := tx.Commit(); err != nil {
+-		return echo.NewHTTPError(http.StatusInternalServerError, "failed to commit: "+err.Error())
+-	}
+-
++	addCommentStats(int64(livestreamID), req.Tip)
+ 	return c.JSON(http.StatusCreated, livecomment)
+ }
+ 
+ func reportLivecommentHandler(c echo.Context) error {
+-	ctx := c.Request().Context()
++	ctx, cancel := mutationContext(c)
++	defer cancel()
+ 
+ 	if err := verifyUserSession(c); err != nil {
+ 		return err
+@@ -271,7 +205,7 @@ func reportLivecommentHandler(c echo.Context) error {
+ 	}
+ 
+ 	// error already checked
+-	sess, _ := session.Get(defaultSessionIDKey, c)
++	sess, _ := getSessionCached(c)
+ 	// existence already checked
+ 	userID := sess.Values[defaultUserIDKey].(int64)
+ 
+@@ -281,8 +215,8 @@ func reportLivecommentHandler(c echo.Context) error {
+ 	}
+ 	defer tx.Rollback()
+ 
+-	var livestreamModel LivestreamModel
+-	if err := tx.GetContext(ctx, &livestreamModel, "SELECT * FROM livestreams WHERE id = ?", livestreamID); err != nil {
++	_, err = streamByID(ctx, tx, int64(livestreamID))
++	if err != nil {
+ 		if errors.Is(err, sql.ErrNoRows) {
+ 			return echo.NewHTTPError(http.StatusNotFound, "livestream not found")
+ 		} else {
+@@ -291,7 +225,7 @@ func reportLivecommentHandler(c echo.Context) error {
+ 	}
+ 
+ 	var livecommentModel LivecommentModel
+-	if err := tx.GetContext(ctx, &livecommentModel, "SELECT * FROM livecomments WHERE id = ?", livecommentID); err != nil {
++	if err := tx.GetContext(ctx, &livecommentModel, "SELECT * FROM livecomments WHERE id = ? AND deleted=0", livecommentID); err != nil {
+ 		if errors.Is(err, sql.ErrNoRows) {
+ 			return echo.NewHTTPError(http.StatusNotFound, "livecomment not found")
+ 		} else {
+@@ -324,12 +258,15 @@ func reportLivecommentHandler(c echo.Context) error {
+ 		return echo.NewHTTPError(http.StatusInternalServerError, "failed to commit: "+err.Error())
+ 	}
+ 
++	addReportStats(int64(livestreamID))
++	addListedReport(reportModel)
+ 	return c.JSON(http.StatusCreated, report)
+ }
+ 
+ // NGワードを登録
+ func moderateHandler(c echo.Context) error {
+-	ctx := c.Request().Context()
++	ctx, cancel := mutationContext(c)
++	defer cancel()
+ 	defer c.Request().Body.Close()
+ 
+ 	if err := verifyUserSession(c); err != nil {
+@@ -342,7 +279,7 @@ func moderateHandler(c echo.Context) error {
+ 	}
+ 
+ 	// error already checked
+-	sess, _ := session.Get(defaultSessionIDKey, c)
++	sess, _ := getSessionCached(c)
+ 	// existence already checked
+ 	userID := sess.Values[defaultUserIDKey].(int64)
+ 
+@@ -351,6 +288,10 @@ func moderateHandler(c echo.Context) error {
+ 		return echo.NewHTTPError(http.StatusBadRequest, "failed to decode the request body as json")
+ 	}
+ 
++	lock := &commentLocks[uint64(livestreamID)%1024]
++	lock.Lock()
++	defer lock.Unlock()
++
+ 	tx, err := dbConn.BeginTxx(ctx, nil)
+ 	if err != nil {
+ 		return echo.NewHTTPError(http.StatusInternalServerError, "failed to begin transaction: "+err.Error())
+@@ -366,12 +307,13 @@ func moderateHandler(c echo.Context) error {
+ 		return echo.NewHTTPError(http.StatusBadRequest, "A streamer can't moderate livestreams that other streamers own")
+ 	}
+ 
+-	rs, err := tx.NamedExecContext(ctx, "INSERT INTO ng_words(user_id, livestream_id, word, created_at) VALUES (:user_id, :livestream_id, :word, :created_at)", &NGWord{
++	newWord := NGWord{
+ 		UserID:       int64(userID),
+ 		LivestreamID: int64(livestreamID),
+ 		Word:         req.NGWord,
+ 		CreatedAt:    time.Now().Unix(),
+-	})
++	}
++	rs, err := tx.NamedExecContext(ctx, "INSERT INTO ng_words(user_id,livestream_id,word,created_at) VALUES (:user_id,:livestream_id,:word,:created_at)", &newWord)
+ 	if err != nil {
+ 		return echo.NewHTTPError(http.StatusInternalServerError, "failed to insert new NG word: "+err.Error())
+ 	}
+@@ -381,50 +323,30 @@ func moderateHandler(c echo.Context) error {
+ 		return echo.NewHTTPError(http.StatusInternalServerError, "failed to get last inserted NG word id: "+err.Error())
+ 	}
+ 
+-	var ngwords []*NGWord
+-	if err := tx.SelectContext(ctx, &ngwords, "SELECT * FROM ng_words WHERE livestream_id = ?", livestreamID); err != nil {
+-		return echo.NewHTTPError(http.StatusInternalServerError, "failed to get NG words: "+err.Error())
++	// Delete only comments in this stream that match a registered word.
++	if _, err := tx.ExecContext(ctx, "UPDATE livecomments c SET deleted=1 WHERE c.livestream_id = ? AND c.deleted=0 AND EXISTS (SELECT 1 FROM ng_words n WHERE n.livestream_id = c.livestream_id AND c.comment LIKE CONCAT('%',n.word,'%'))", livestreamID); err != nil {
++		return err
+ 	}
+ 
+-	// NGワードにヒットする過去の投稿も全削除する
+-	for _, ngword := range ngwords {
+-		// ライブコメント一覧取得
+-		var livecomments []*LivecommentModel
+-		if err := tx.SelectContext(ctx, &livecomments, "SELECT * FROM livecomments"); err != nil {
+-			return echo.NewHTTPError(http.StatusInternalServerError, "failed to get livecomments: "+err.Error())
+-		}
+-
+-		for _, livecomment := range livecomments {
+-			query := `
+-			DELETE FROM livecomments
+-			WHERE
+-			id = ? AND
+-			livestream_id = ? AND
+-			(SELECT COUNT(*)
+-			FROM
+-			(SELECT ? AS text) AS texts
+-			INNER JOIN
+-			(SELECT CONCAT('%', ?, '%')	AS pattern) AS patterns
+-			ON texts.text LIKE patterns.pattern) >= 1;
+-			`
+-			if _, err := tx.ExecContext(ctx, query, livecomment.ID, livestreamID, livecomment.Comment, ngword.Word); err != nil {
+-				return echo.NewHTTPError(http.StatusInternalServerError, "failed to delete old livecomments that hit spams: "+err.Error())
+-			}
+-		}
++	var active []LivecommentModel
++	if err := tx.SelectContext(ctx, &active, "SELECT * FROM livecomments WHERE livestream_id=? AND deleted=0", livestreamID); err != nil {
++		return err
+ 	}
+-
+ 	if err := tx.Commit(); err != nil {
+ 		return echo.NewHTTPError(http.StatusInternalServerError, "failed to commit: "+err.Error())
+ 	}
+ 
++	moderateTimeline(int64(livestreamID), userID, req.NGWord, active)
++	newWord.ID = wordID
++	addListedWord(newWord)
+ 	return c.JSON(http.StatusCreated, map[string]interface{}{
+ 		"word_id": wordID,
+ 	})
+ }
+ 
+ func fillLivecommentResponse(ctx context.Context, tx *sqlx.Tx, livecommentModel LivecommentModel) (Livecomment, error) {
+-	commentOwnerModel := UserModel{}
+-	if err := tx.GetContext(ctx, &commentOwnerModel, "SELECT * FROM users WHERE id = ?", livecommentModel.UserID); err != nil {
++	commentOwnerModel, err := userByID(ctx, tx, int64(livecommentModel.UserID))
++	if err != nil {
+ 		return Livecomment{}, err
+ 	}
+ 	commentOwner, err := fillUserResponse(ctx, tx, commentOwnerModel)
+@@ -432,8 +354,8 @@ func fillLivecommentResponse(ctx context.Context, tx *sqlx.Tx, livecommentModel
+ 		return Livecomment{}, err
+ 	}
+ 
+-	livestreamModel := LivestreamModel{}
+-	if err := tx.GetContext(ctx, &livestreamModel, "SELECT * FROM livestreams WHERE id = ?", livecommentModel.LivestreamID); err != nil {
++	livestreamModel, err := streamByID(ctx, tx, int64(livecommentModel.LivestreamID))
++	if err != nil {
+ 		return Livecomment{}, err
+ 	}
+ 	livestream, err := fillLivestreamResponse(ctx, tx, livestreamModel)
+@@ -454,8 +376,8 @@ func fillLivecommentResponse(ctx context.Context, tx *sqlx.Tx, livecommentModel
+ }
+ 
+ func fillLivecommentReportResponse(ctx context.Context, tx *sqlx.Tx, reportModel LivecommentReportModel) (LivecommentReport, error) {
+-	reporterModel := UserModel{}
+-	if err := tx.GetContext(ctx, &reporterModel, "SELECT * FROM users WHERE id = ?", reportModel.UserID); err != nil {
++	reporterModel, err := userByID(ctx, tx, int64(reportModel.UserID))
++	if err != nil {
+ 		return LivecommentReport{}, err
+ 	}
+ 	reporter, err := fillUserResponse(ctx, tx, reporterModel)
+@@ -463,10 +385,15 @@ func fillLivecommentReportResponse(ctx context.Context, tx *sqlx.Tx, reportModel
+ 		return LivecommentReport{}, err
+ 	}
+ 
+-	livecommentModel := LivecommentModel{}
+-	if err := tx.GetContext(ctx, &livecommentModel, "SELECT * FROM livecomments WHERE id = ?", reportModel.LivecommentID); err != nil {
+-		return LivecommentReport{}, err
++	lists.RLock()
++	livecommentModel, ok := lists.comments[reportModel.LivecommentID]
++	lists.RUnlock()
++	if !ok {
++		if err := getRow(ctx, tx, &livecommentModel, "SELECT * FROM livecomments WHERE id=?", reportModel.LivecommentID); err != nil {
++			return LivecommentReport{}, err
++		}
+ 	}
++
+ 	livecomment, err := fillLivecommentResponse(ctx, tx, livecommentModel)
+ 	if err != nil {
+ 		return LivecommentReport{}, err
+diff --git a/webapp/go/livestream_handler.go b/webapp/go/livestream_handler.go
+index 4716dc5..1e2ced9 100644
+--- a/webapp/go/livestream_handler.go
++++ b/webapp/go/livestream_handler.go
+@@ -3,15 +3,14 @@ package main
+ import (
+ 	"context"
+ 	"database/sql"
+-	"encoding/json"
+ 	"errors"
+ 	"fmt"
++	json "github.com/goccy/go-json"
+ 	"net/http"
+ 	"strconv"
+ 	"time"
+ 
+ 	"github.com/jmoiron/sqlx"
+-	"github.com/labstack/echo-contrib/session"
+ 	"github.com/labstack/echo/v4"
+ )
+ 
+@@ -68,7 +67,8 @@ type ReservationSlotModel struct {
+ }
+ 
+ func reserveLivestreamHandler(c echo.Context) error {
+-	ctx := c.Request().Context()
++	ctx, cancel := mutationContext(c)
++	defer cancel()
+ 	defer c.Request().Body.Close()
+ 
+ 	if err := verifyUserSession(c); err != nil {
+@@ -77,7 +77,7 @@ func reserveLivestreamHandler(c echo.Context) error {
+ 	}
+ 
+ 	// error already checked
+-	sess, _ := session.Get(defaultSessionIDKey, c)
++	sess, _ := getSessionCached(c)
+ 	// existence already checked
+ 	userID := sess.Values[defaultUserIDKey].(int64)
+ 
+@@ -106,17 +106,12 @@ func reserveLivestreamHandler(c echo.Context) error {
+ 	// 予約枠をみて、予約が可能か調べる
+ 	// NOTE: 並列な予約のoverbooking防止にFOR UPDATEが必要
+ 	var slots []*ReservationSlotModel
+-	if err := tx.SelectContext(ctx, &slots, "SELECT * FROM reservation_slots WHERE start_at >= ? AND end_at <= ? FOR UPDATE", req.StartAt, req.EndAt); err != nil {
++	if err := tx.SelectContext(ctx, &slots, "SELECT * FROM reservation_slots WHERE start_at >= ? AND start_at < ? AND end_at <= ? FOR UPDATE", req.StartAt, req.EndAt, req.EndAt); err != nil {
+ 		c.Logger().Warnf("予約枠一覧取得でエラー発生: %+v", err)
+ 		return echo.NewHTTPError(http.StatusInternalServerError, "failed to get reservation_slots: "+err.Error())
+ 	}
+ 	for _, slot := range slots {
+-		var count int
+-		if err := tx.GetContext(ctx, &count, "SELECT slot FROM reservation_slots WHERE start_at = ? AND end_at = ?", slot.StartAt, slot.EndAt); err != nil {
+-			return echo.NewHTTPError(http.StatusInternalServerError, "failed to get reservation_slots: "+err.Error())
+-		}
+-		c.Logger().Infof("%d ~ %d予約枠の残数 = %d\n", slot.StartAt, slot.EndAt, slot.Slot)
+-		if count < 1 {
++		if slot.Slot < 1 {
+ 			return echo.NewHTTPError(http.StatusBadRequest, fmt.Sprintf("予約期間 %d ~ %dに対して、予約区間 %d ~ %dが予約できません", termStartAt.Unix(), termEndAt.Unix(), req.StartAt, req.EndAt))
+ 		}
+ 	}
+@@ -133,7 +128,7 @@ func reserveLivestreamHandler(c echo.Context) error {
+ 		}
+ 	)
+ 
+-	if _, err := tx.ExecContext(ctx, "UPDATE reservation_slots SET slot = slot - 1 WHERE start_at >= ? AND end_at <= ?", req.StartAt, req.EndAt); err != nil {
++	if _, err := tx.ExecContext(ctx, "UPDATE reservation_slots SET slot = slot - 1 WHERE start_at >= ? AND start_at < ? AND end_at <= ?", req.StartAt, req.EndAt, req.EndAt); err != nil {
+ 		return echo.NewHTTPError(http.StatusInternalServerError, "failed to update reservation_slot: "+err.Error())
+ 	}
+ 
+@@ -167,166 +162,85 @@ func reserveLivestreamHandler(c echo.Context) error {
+ 		return echo.NewHTTPError(http.StatusInternalServerError, "failed to commit: "+err.Error())
+ 	}
+ 
++	publishStream(*livestreamModel, livestream.Tags)
++	newStreamStats(*livestreamModel)
++	addListedStream(*livestreamModel, livestream.Tags)
+ 	return c.JSON(http.StatusCreated, livestream)
+ }
+ 
+ func searchLivestreamsHandler(c echo.Context) error {
+-	ctx := c.Request().Context()
+-	keyTagName := c.QueryParam("tag")
+-
+-	tx, err := dbConn.BeginTxx(ctx, nil)
+-	if err != nil {
+-		return echo.NewHTTPError(http.StatusInternalServerError, "failed to begin transaction: "+err.Error())
+-	}
+-	defer tx.Rollback()
+-
+-	var livestreamModels []*LivestreamModel
+-	if c.QueryParam("tag") != "" {
+-		// タグによる取得
+-		var tagIDList []int
+-		if err := tx.SelectContext(ctx, &tagIDList, "SELECT id FROM tags WHERE name = ?", keyTagName); err != nil {
+-			return echo.NewHTTPError(http.StatusInternalServerError, "failed to get tags: "+err.Error())
+-		}
+-
+-		query, params, err := sqlx.In("SELECT * FROM livestream_tags WHERE tag_id IN (?) ORDER BY livestream_id DESC", tagIDList)
+-		if err != nil {
+-			return echo.NewHTTPError(http.StatusInternalServerError, "failed to construct IN query: "+err.Error())
+-		}
+-		var keyTaggedLivestreams []*LivestreamTagModel
+-		if err := tx.SelectContext(ctx, &keyTaggedLivestreams, query, params...); err != nil {
+-			return echo.NewHTTPError(http.StatusInternalServerError, "failed to get keyTaggedLivestreams: "+err.Error())
+-		}
+-
+-		for _, keyTaggedLivestream := range keyTaggedLivestreams {
+-			ls := LivestreamModel{}
+-			if err := tx.GetContext(ctx, &ls, "SELECT * FROM livestreams WHERE id = ?", keyTaggedLivestream.LivestreamID); err != nil {
+-				return echo.NewHTTPError(http.StatusInternalServerError, "failed to get livestreams: "+err.Error())
++	limit := -1
++	tag := c.QueryParam("tag")
++	if tag == "" {
++		if v := c.QueryParam("limit"); v != "" {
++			n, err := strconv.Atoi(v)
++			if err != nil || n < 0 {
++				return echo.NewHTTPError(400, "invalid limit")
+ 			}
+-
+-			livestreamModels = append(livestreamModels, &ls)
+-		}
+-	} else {
+-		// 検索条件なし
+-		query := `SELECT * FROM livestreams ORDER BY id DESC`
+-		if c.QueryParam("limit") != "" {
+-			limit, err := strconv.Atoi(c.QueryParam("limit"))
+-			if err != nil {
+-				return echo.NewHTTPError(http.StatusBadRequest, "limit query parameter must be integer")
+-			}
+-			query += fmt.Sprintf(" LIMIT %d", limit)
+-		}
+-
+-		if err := tx.SelectContext(ctx, &livestreamModels, query); err != nil {
+-			return echo.NewHTTPError(http.StatusInternalServerError, "failed to get livestreams: "+err.Error())
++			limit = n
+ 		}
+ 	}
+-
+-	livestreams := make([]Livestream, len(livestreamModels))
+-	for i := range livestreamModels {
+-		livestream, err := fillLivestreamResponse(ctx, tx, *livestreamModels[i])
++	models := getListedStreams(tag, 0, limit)
++	out := make([]Livestream, len(models))
++	for i, m := range models {
++		v, err := fillLivestreamResponse(c.Request().Context(), nil, m)
+ 		if err != nil {
+-			return echo.NewHTTPError(http.StatusInternalServerError, "failed to fill livestream: "+err.Error())
++			return err
+ 		}
+-		livestreams[i] = livestream
+-	}
+-
+-	if err := tx.Commit(); err != nil {
+-		return echo.NewHTTPError(http.StatusInternalServerError, "failed to commit: "+err.Error())
++		out[i] = v
+ 	}
+-
+-	return c.JSON(http.StatusOK, livestreams)
++	return c.JSON(200, out)
+ }
+ 
+ func getMyLivestreamsHandler(c echo.Context) error {
+-	ctx := c.Request().Context()
+ 	if err := verifyUserSession(c); err != nil {
+ 		return err
+ 	}
+-
+-	tx, err := dbConn.BeginTxx(ctx, nil)
+-	if err != nil {
+-		return echo.NewHTTPError(http.StatusInternalServerError, "failed to begin transaction: "+err.Error())
+-	}
+-	defer tx.Rollback()
+-
+-	// error already checked
+-	sess, _ := session.Get(defaultSessionIDKey, c)
+-	// existence already checked
+-	userID := sess.Values[defaultUserIDKey].(int64)
+-
+-	var livestreamModels []*LivestreamModel
+-	if err := tx.SelectContext(ctx, &livestreamModels, "SELECT * FROM livestreams WHERE user_id = ?", userID); err != nil {
+-		return echo.NewHTTPError(http.StatusInternalServerError, "failed to get livestreams: "+err.Error())
+-	}
+-	livestreams := make([]Livestream, len(livestreamModels))
+-	for i := range livestreamModels {
+-		livestream, err := fillLivestreamResponse(ctx, tx, *livestreamModels[i])
++	sess, _ := getSessionCached(c)
++	id := sess.Values[defaultUserIDKey].(int64)
++	models := getListedStreams("", id, -1)
++	out := make([]Livestream, len(models))
++	for i, m := range models {
++		v, err := fillLivestreamResponse(c.Request().Context(), nil, m)
+ 		if err != nil {
+-			return echo.NewHTTPError(http.StatusInternalServerError, "failed to fill livestream: "+err.Error())
++			return err
+ 		}
+-		livestreams[i] = livestream
++		out[i] = v
+ 	}
+-
+-	if err := tx.Commit(); err != nil {
+-		return echo.NewHTTPError(http.StatusInternalServerError, "failed to commit: "+err.Error())
+-	}
+-
+-	return c.JSON(http.StatusOK, livestreams)
++	return c.JSON(200, out)
+ }
+ 
+ func getUserLivestreamsHandler(c echo.Context) error {
+-	ctx := c.Request().Context()
+ 	if err := verifyUserSession(c); err != nil {
+ 		return err
+ 	}
+-
+-	username := c.Param("username")
+-
+-	tx, err := dbConn.BeginTxx(ctx, nil)
++	u, err := userByName(c.Request().Context(), nil, c.Param("username"))
+ 	if err != nil {
+-		return echo.NewHTTPError(http.StatusInternalServerError, "failed to begin transaction: "+err.Error())
+-	}
+-	defer tx.Rollback()
+-
+-	var user UserModel
+-	if err := tx.GetContext(ctx, &user, "SELECT * FROM users WHERE name = ?", username); err != nil {
+-		if errors.Is(err, sql.ErrNoRows) {
+-			return echo.NewHTTPError(http.StatusNotFound, "user not found")
+-		} else {
+-			return echo.NewHTTPError(http.StatusInternalServerError, "failed to get user: "+err.Error())
+-		}
++		return echo.NewHTTPError(404, "user not found")
+ 	}
+-
+-	var livestreamModels []*LivestreamModel
+-	if err := tx.SelectContext(ctx, &livestreamModels, "SELECT * FROM livestreams WHERE user_id = ?", user.ID); err != nil {
+-		return echo.NewHTTPError(http.StatusInternalServerError, "failed to get livestreams: "+err.Error())
+-	}
+-	livestreams := make([]Livestream, len(livestreamModels))
+-	for i := range livestreamModels {
+-		livestream, err := fillLivestreamResponse(ctx, tx, *livestreamModels[i])
++	models := getListedStreams("", u.ID, -1)
++	out := make([]Livestream, len(models))
++	for i, m := range models {
++		v, err := fillLivestreamResponse(c.Request().Context(), nil, m)
+ 		if err != nil {
+-			return echo.NewHTTPError(http.StatusInternalServerError, "failed to fill livestream: "+err.Error())
++			return err
+ 		}
+-		livestreams[i] = livestream
++		out[i] = v
+ 	}
+-
+-	if err := tx.Commit(); err != nil {
+-		return echo.NewHTTPError(http.StatusInternalServerError, "failed to commit: "+err.Error())
+-	}
+-
+-	return c.JSON(http.StatusOK, livestreams)
++	return c.JSON(200, out)
+ }
+ 
+ // viewerテーブルの廃止
+ func enterLivestreamHandler(c echo.Context) error {
+-	ctx := c.Request().Context()
++	ctx, cancel := mutationContext(c)
++	defer cancel()
+ 	if err := verifyUserSession(c); err != nil {
+ 		// echo.NewHTTPErrorが返っているのでそのまま出力
+ 		return err
+ 	}
+ 
+ 	// error already checked
+-	sess, _ := session.Get(defaultSessionIDKey, c)
++	sess, _ := getSessionCached(c)
+ 	// existence already checked
+ 	userID := sess.Values[defaultUserIDKey].(int64)
+ 
+@@ -335,38 +249,33 @@ func enterLivestreamHandler(c echo.Context) error {
+ 		return echo.NewHTTPError(http.StatusBadRequest, "livestream_id must be integer")
+ 	}
+ 
+-	tx, err := dbConn.BeginTxx(ctx, nil)
+-	if err != nil {
+-		return echo.NewHTTPError(http.StatusInternalServerError, "failed to begin transaction: "+err.Error())
+-	}
+-	defer tx.Rollback()
+-
++	lock := &viewerLocks[uint64(livestreamID)%1024]
++	lock.Lock()
++	defer lock.Unlock()
+ 	viewer := LivestreamViewerModel{
+ 		UserID:       int64(userID),
+ 		LivestreamID: int64(livestreamID),
+ 		CreatedAt:    time.Now().Unix(),
+ 	}
+ 
+-	if _, err := tx.NamedExecContext(ctx, "INSERT INTO livestream_viewers_history (user_id, livestream_id, created_at) VALUES(:user_id, :livestream_id, :created_at)", viewer); err != nil {
++	if _, err := dbConn.NamedExecContext(ctx, "INSERT INTO livestream_viewers_history (user_id, livestream_id, created_at) VALUES(:user_id, :livestream_id, :created_at)", viewer); err != nil {
+ 		return echo.NewHTTPError(http.StatusInternalServerError, "failed to insert livestream_view_history: "+err.Error())
+ 	}
+ 
+-	if err := tx.Commit(); err != nil {
+-		return echo.NewHTTPError(http.StatusInternalServerError, "failed to commit: "+err.Error())
+-	}
+-
++	addViewerStats(int64(livestreamID), 1)
+ 	return c.NoContent(http.StatusOK)
+ }
+ 
+ func exitLivestreamHandler(c echo.Context) error {
+-	ctx := c.Request().Context()
++	ctx, cancel := mutationContext(c)
++	defer cancel()
+ 	if err := verifyUserSession(c); err != nil {
+ 		// echo.NewHTTPErrorが返っているのでそのまま出力
+ 		return err
+ 	}
+ 
+ 	// error already checked
+-	sess, _ := session.Get(defaultSessionIDKey, c)
++	sess, _ := getSessionCached(c)
+ 	// existence already checked
+ 	userID := sess.Values[defaultUserIDKey].(int64)
+ 
+@@ -375,20 +284,16 @@ func exitLivestreamHandler(c echo.Context) error {
+ 		return echo.NewHTTPError(http.StatusBadRequest, "livestream_id in path must be integer")
+ 	}
+ 
+-	tx, err := dbConn.BeginTxx(ctx, nil)
++	lock := &viewerLocks[uint64(livestreamID)%1024]
++	lock.Lock()
++	defer lock.Unlock()
++	rs, err := dbConn.ExecContext(ctx, "DELETE FROM livestream_viewers_history WHERE user_id = ? AND livestream_id = ?", userID, livestreamID)
+ 	if err != nil {
+-		return echo.NewHTTPError(http.StatusInternalServerError, "failed to begin transaction: "+err.Error())
+-	}
+-	defer tx.Rollback()
+-
+-	if _, err := tx.ExecContext(ctx, "DELETE FROM livestream_viewers_history WHERE user_id = ? AND livestream_id = ?", userID, livestreamID); err != nil {
+ 		return echo.NewHTTPError(http.StatusInternalServerError, "failed to delete livestream_view_history: "+err.Error())
+ 	}
+ 
+-	if err := tx.Commit(); err != nil {
+-		return echo.NewHTTPError(http.StatusInternalServerError, "failed to commit: "+err.Error())
+-	}
+-
++	n, _ := rs.RowsAffected()
++	addViewerStats(int64(livestreamID), -n)
+ 	return c.NoContent(http.StatusOK)
+ }
+ 
+@@ -404,14 +309,7 @@ func getLivestreamHandler(c echo.Context) error {
+ 		return echo.NewHTTPError(http.StatusBadRequest, "livestream_id in path must be integer")
+ 	}
+ 
+-	tx, err := dbConn.BeginTxx(ctx, nil)
+-	if err != nil {
+-		return echo.NewHTTPError(http.StatusInternalServerError, "failed to begin transaction: "+err.Error())
+-	}
+-	defer tx.Rollback()
+-
+-	livestreamModel := LivestreamModel{}
+-	err = tx.GetContext(ctx, &livestreamModel, "SELECT * FROM livestreams WHERE id = ?", livestreamID)
++	livestreamModel, err := streamByID(ctx, nil, int64(livestreamID))
+ 	if errors.Is(err, sql.ErrNoRows) {
+ 		return echo.NewHTTPError(http.StatusNotFound, "not found livestream that has the given id")
+ 	}
+@@ -419,15 +317,11 @@ func getLivestreamHandler(c echo.Context) error {
+ 		return echo.NewHTTPError(http.StatusInternalServerError, "failed to get livestream: "+err.Error())
+ 	}
+ 
+-	livestream, err := fillLivestreamResponse(ctx, tx, livestreamModel)
++	livestream, err := fillLivestreamResponse(ctx, nil, livestreamModel)
+ 	if err != nil {
+ 		return echo.NewHTTPError(http.StatusInternalServerError, "failed to fill livestream: "+err.Error())
+ 	}
+ 
+-	if err := tx.Commit(); err != nil {
+-		return echo.NewHTTPError(http.StatusInternalServerError, "failed to commit: "+err.Error())
+-	}
+-
+ 	return c.JSON(http.StatusOK, livestream)
+ }
+ 
+@@ -443,19 +337,13 @@ func getLivecommentReportsHandler(c echo.Context) error {
+ 		return echo.NewHTTPError(http.StatusBadRequest, "livestream_id in path must be integer")
+ 	}
+ 
+-	tx, err := dbConn.BeginTxx(ctx, nil)
++	livestreamModel, err := streamByID(ctx, nil, int64(livestreamID))
+ 	if err != nil {
+-		return echo.NewHTTPError(http.StatusInternalServerError, "failed to begin transaction: "+err.Error())
+-	}
+-	defer tx.Rollback()
+-
+-	var livestreamModel LivestreamModel
+-	if err := tx.GetContext(ctx, &livestreamModel, "SELECT * FROM livestreams WHERE id = ?", livestreamID); err != nil {
+ 		return echo.NewHTTPError(http.StatusInternalServerError, "failed to get livestream: "+err.Error())
+ 	}
+ 
+ 	// error already check
+-	sess, _ := session.Get(defaultSessionIDKey, c)
++	sess, _ := getSessionCached(c)
+ 	// existence already check
+ 	userID := sess.Values[defaultUserIDKey].(int64)
+ 
+@@ -463,30 +351,23 @@ func getLivecommentReportsHandler(c echo.Context) error {
+ 		return echo.NewHTTPError(http.StatusForbidden, "can't get other streamer's livecomment reports")
+ 	}
+ 
+-	var reportModels []*LivecommentReportModel
+-	if err := tx.SelectContext(ctx, &reportModels, "SELECT * FROM livecomment_reports WHERE livestream_id = ?", livestreamID); err != nil {
+-		return echo.NewHTTPError(http.StatusInternalServerError, "failed to get livecomment reports: "+err.Error())
+-	}
++	reportModels := getListedReports(int64(livestreamID))
+ 
+ 	reports := make([]LivecommentReport, len(reportModels))
+ 	for i := range reportModels {
+-		report, err := fillLivecommentReportResponse(ctx, tx, *reportModels[i])
++		report, err := fillLivecommentReportResponse(ctx, nil, reportModels[i])
+ 		if err != nil {
+ 			return echo.NewHTTPError(http.StatusInternalServerError, "failed to fill livecomment report: "+err.Error())
+ 		}
+ 		reports[i] = report
+ 	}
+ 
+-	if err := tx.Commit(); err != nil {
+-		return echo.NewHTTPError(http.StatusInternalServerError, "failed to commit: "+err.Error())
+-	}
+-
+ 	return c.JSON(http.StatusOK, reports)
+ }
+ 
+ func fillLivestreamResponse(ctx context.Context, tx *sqlx.Tx, livestreamModel LivestreamModel) (Livestream, error) {
+-	ownerModel := UserModel{}
+-	if err := tx.GetContext(ctx, &ownerModel, "SELECT * FROM users WHERE id = ?", livestreamModel.UserID); err != nil {
++	ownerModel, err := userByID(ctx, tx, int64(livestreamModel.UserID))
++	if err != nil {
+ 		return Livestream{}, err
+ 	}
+ 	owner, err := fillUserResponse(ctx, tx, ownerModel)
+@@ -494,22 +375,14 @@ func fillLivestreamResponse(ctx context.Context, tx *sqlx.Tx, livestreamModel Li
+ 		return Livestream{}, err
+ 	}
+ 
+-	var livestreamTagModels []*LivestreamTagModel
+-	if err := tx.SelectContext(ctx, &livestreamTagModels, "SELECT * FROM livestream_tags WHERE livestream_id = ?", livestreamModel.ID); err != nil {
+-		return Livestream{}, err
+-	}
+-
+-	tags := make([]Tag, len(livestreamTagModels))
+-	for i := range livestreamTagModels {
+-		tagModel := TagModel{}
+-		if err := tx.GetContext(ctx, &tagModel, "SELECT * FROM tags WHERE id = ?", livestreamTagModels[i].TagID); err != nil {
++	cached.RLock()
++	tags, ok := cached.tags[livestreamModel.ID]
++	cached.RUnlock()
++	if !ok {
++		tags = []Tag{}
++		if err := getRows(ctx, tx, &tags, "SELECT t.id,t.name FROM tags t JOIN livestream_tags lt ON lt.tag_id=t.id WHERE lt.livestream_id=? ORDER BY lt.id", livestreamModel.ID); err != nil {
+ 			return Livestream{}, err
+ 		}
+-
+-		tags[i] = Tag{
+-			ID:   tagModel.ID,
+-			Name: tagModel.Name,
+-		}
+ 	}
+ 
+ 	livestream := Livestream{
+diff --git a/webapp/go/main.go b/webapp/go/main.go
+index 2064123..5146a58 100644
+--- a/webapp/go/main.go
++++ b/webapp/go/main.go
+@@ -4,10 +4,12 @@ package main
+ // sqlx的な参考: https://jmoiron.github.io/sqlx/
+ 
+ import (
++	"context"
+ 	"fmt"
+ 	"log"
+ 	"net"
+ 	"net/http"
++	_ "net/http/pprof"
+ 	"os"
+ 	"os/exec"
+ 	"strconv"
+@@ -15,7 +17,6 @@ import (
+ 	"github.com/go-sql-driver/mysql"
+ 	"github.com/jmoiron/sqlx"
+ 	"github.com/labstack/echo/v4"
+-	"github.com/labstack/echo/v4/middleware"
+ 
+ 	"github.com/gorilla/sessions"
+ 	"github.com/labstack/echo-contrib/session"
+@@ -30,6 +31,7 @@ const (
+ var (
+ 	powerDNSSubdomainAddress string
+ 	dbConn                   *sqlx.DB
++	dnsDB                    *sqlx.DB
+ 	secret                   = []byte("isucon13_session_cookiestore_defaultsecret")
+ )
+ 
+@@ -65,6 +67,7 @@ func connectDB(logger echo.Logger) (*sqlx.DB, error) {
+ 	conf.Passwd = "isucon"
+ 	conf.DBName = "isupipe"
+ 	conf.ParseTime = true
++	conf.InterpolateParams = true
+ 
+ 	if v, ok := os.LookupEnv(networkTypeEnvKey); ok {
+ 		conf.Net = v
+@@ -97,7 +100,8 @@ func connectDB(logger echo.Logger) (*sqlx.DB, error) {
+ 	if err != nil {
+ 		return nil, err
+ 	}
+-	db.SetMaxOpenConns(10)
++	db.SetMaxOpenConns(40)
++	db.SetMaxIdleConns(40)
+ 
+ 	if err := db.Ping(); err != nil {
+ 		return nil, err
+@@ -112,6 +116,15 @@ func initializeHandler(c echo.Context) error {
+ 		return echo.NewHTTPError(http.StatusInternalServerError, "failed to initialize: "+err.Error())
+ 	}
+ 
++	if err := initializeIconStorage(); err != nil {
++		return err
++	}
++	if err := syncDNS(c.Request().Context(), "/reload", nil); err != nil {
++		return err
++	}
++	if err := loadState(c.Request().Context()); err != nil {
++		return err
++	}
+ 	c.Request().Header.Add("Content-Type", "application/json;charset=utf-8")
+ 	return c.JSON(http.StatusOK, InitializeResponse{
+ 		Language: "golang",
+@@ -119,10 +132,12 @@ func initializeHandler(c echo.Context) error {
+ }
+ 
+ func main() {
++	go func() { log.Print(http.ListenAndServe(":6060", nil)) }()
+ 	e := echo.New()
+-	e.Debug = true
+-	e.Logger.SetLevel(echolog.DEBUG)
+-	e.Use(middleware.Logger())
++	e.JSONSerializer = fastJSONSerializer{}
++	e.Debug = false
++	e.Logger.SetLevel(echolog.WARN)
++
+ 	cookieStore := sessions.NewCookieStore(secret)
+ 	cookieStore.Options.Domain = "*.u.isucon.dev"
+ 	e.Use(session.Middleware(cookieStore))
+@@ -192,6 +207,19 @@ func main() {
+ 	}
+ 	defer conn.Close()
+ 	dbConn = conn
++	dnsHost := os.Getenv("ISUCON_DNS_DB_ADDRESS")
++	if dnsHost == "" {
++		dnsHost = "127.0.0.1"
++	}
++	dnsDB, err = sqlx.Connect("mysql", "isudns:isudns@tcp("+dnsHost+":3306)/isudns?interpolateParams=true")
++	if err != nil {
++		panic(err)
++	}
++	dnsDB.SetMaxOpenConns(8)
++	dnsDB.SetMaxIdleConns(8)
++	if err := loadState(context.Background()); err != nil {
++		panic(err)
++	}
+ 
+ 	subdomainAddr, ok := os.LookupEnv(powerDNSSubdomainAddressEnvKey)
+ 	if !ok {
+@@ -213,7 +241,9 @@ type ErrorResponse struct {
+ }
+ 
+ func errorResponseHandler(err error, c echo.Context) {
+-	c.Logger().Errorf("error at %s: %+v", c.Path(), err)
++	if he, ok := err.(*echo.HTTPError); !ok || he.Code >= 500 {
++		c.Logger().Errorf("error at %s: %+v", c.Path(), err)
++	}
+ 	if he, ok := err.(*echo.HTTPError); ok {
+ 		if e := c.JSON(he.Code, &ErrorResponse{Error: err.Error()}); e != nil {
+ 			c.Logger().Errorf("%+v", e)
+diff --git a/webapp/go/payment_handler.go b/webapp/go/payment_handler.go
+index 9db1966..ecbd26e 100644
+--- a/webapp/go/payment_handler.go
++++ b/webapp/go/payment_handler.go
+@@ -20,7 +20,7 @@ func GetPaymentResult(c echo.Context) error {
+ 	defer tx.Rollback()
+ 
+ 	var totalTip int64
+-	if err := tx.GetContext(ctx, &totalTip, "SELECT IFNULL(SUM(tip), 0) FROM livecomments"); err != nil {
++	if err := tx.GetContext(ctx, &totalTip, "SELECT IFNULL(SUM(tip), 0) FROM livecomments WHERE deleted=0"); err != nil {
+ 		return echo.NewHTTPError(http.StatusInternalServerError, "failed to count total tip: "+err.Error())
+ 	}
+ 
+diff --git a/webapp/go/reaction_handler.go b/webapp/go/reaction_handler.go
+index 25b5c29..0d6449e 100644
+--- a/webapp/go/reaction_handler.go
++++ b/webapp/go/reaction_handler.go
+@@ -2,14 +2,12 @@ package main
+ 
+ import (
+ 	"context"
+-	"encoding/json"
+-	"fmt"
++	json "github.com/goccy/go-json"
+ 	"net/http"
+ 	"strconv"
+ 	"time"
+ 
+ 	"github.com/jmoiron/sqlx"
+-	"github.com/labstack/echo-contrib/session"
+ 	"github.com/labstack/echo/v4"
+ )
+ 
+@@ -46,29 +44,19 @@ func getReactionsHandler(c echo.Context) error {
+ 		return echo.NewHTTPError(http.StatusBadRequest, "livestream_id in path must be integer")
+ 	}
+ 
+-	tx, err := dbConn.BeginTxx(ctx, nil)
+-	if err != nil {
+-		return echo.NewHTTPError(http.StatusInternalServerError, "failed to begin transaction: "+err.Error())
+-	}
+-	defer tx.Rollback()
+-
+-	query := "SELECT * FROM reactions WHERE livestream_id = ? ORDER BY created_at DESC"
+-	if c.QueryParam("limit") != "" {
+-		limit, err := strconv.Atoi(c.QueryParam("limit"))
+-		if err != nil {
+-			return echo.NewHTTPError(http.StatusBadRequest, "limit query parameter must be integer")
++	limit := -1
++	if v := c.QueryParam("limit"); v != "" {
++		n, e := strconv.Atoi(v)
++		if e != nil || n < 0 {
++			return echo.NewHTTPError(400, "invalid limit")
+ 		}
+-		query += fmt.Sprintf(" LIMIT %d", limit)
+-	}
+-
+-	reactionModels := []ReactionModel{}
+-	if err := tx.SelectContext(ctx, &reactionModels, query, livestreamID); err != nil {
+-		return echo.NewHTTPError(http.StatusNotFound, "failed to get reactions")
++		limit = n
+ 	}
++	reactionModels := getReactionModels(int64(livestreamID), limit)
+ 
+ 	reactions := make([]Reaction, len(reactionModels))
+ 	for i := range reactionModels {
+-		reaction, err := fillReactionResponse(ctx, tx, reactionModels[i])
++		reaction, err := fillReactionResponse(ctx, nil, reactionModels[i])
+ 		if err != nil {
+ 			return echo.NewHTTPError(http.StatusInternalServerError, "failed to fill reaction: "+err.Error())
+ 		}
+@@ -76,15 +64,12 @@ func getReactionsHandler(c echo.Context) error {
+ 		reactions[i] = reaction
+ 	}
+ 
+-	if err := tx.Commit(); err != nil {
+-		return echo.NewHTTPError(http.StatusInternalServerError, "failed to commit: "+err.Error())
+-	}
+-
+ 	return c.JSON(http.StatusOK, reactions)
+ }
+ 
+ func postReactionHandler(c echo.Context) error {
+-	ctx := c.Request().Context()
++	ctx, cancel := mutationContext(c)
++	defer cancel()
+ 	livestreamID, err := strconv.Atoi(c.Param("livestream_id"))
+ 	if err != nil {
+ 		return echo.NewHTTPError(http.StatusBadRequest, "livestream_id in path must be integer")
+@@ -96,7 +81,7 @@ func postReactionHandler(c echo.Context) error {
+ 	}
+ 
+ 	// error already checked
+-	sess, _ := session.Get(defaultSessionIDKey, c)
++	sess, _ := getSessionCached(c)
+ 	// existence already checked
+ 	userID := sess.Values[defaultUserIDKey].(int64)
+ 
+@@ -105,12 +90,6 @@ func postReactionHandler(c echo.Context) error {
+ 		return echo.NewHTTPError(http.StatusBadRequest, "failed to decode the request body as json")
+ 	}
+ 
+-	tx, err := dbConn.BeginTxx(ctx, nil)
+-	if err != nil {
+-		return echo.NewHTTPError(http.StatusInternalServerError, "failed to begin transaction: "+err.Error())
+-	}
+-	defer tx.Rollback()
+-
+ 	reactionModel := ReactionModel{
+ 		UserID:       int64(userID),
+ 		LivestreamID: int64(livestreamID),
+@@ -118,7 +97,12 @@ func postReactionHandler(c echo.Context) error {
+ 		CreatedAt:    time.Now().Unix(),
+ 	}
+ 
+-	result, err := tx.NamedExecContext(ctx, "INSERT INTO reactions (user_id, livestream_id, emoji_name, created_at) VALUES (:user_id, :livestream_id, :emoji_name, :created_at)", reactionModel)
++	reaction, err := fillReactionResponse(ctx, nil, reactionModel)
++	if err != nil {
++		return echo.NewHTTPError(http.StatusInternalServerError, "failed to fill reaction: "+err.Error())
++	}
++
++	result, err := dbConn.NamedExecContext(ctx, "INSERT INTO reactions (user_id, livestream_id, emoji_name, created_at) VALUES (:user_id, :livestream_id, :emoji_name, :created_at)", reactionModel)
+ 	if err != nil {
+ 		return echo.NewHTTPError(http.StatusInternalServerError, "failed to insert reaction: "+err.Error())
+ 	}
+@@ -128,22 +112,16 @@ func postReactionHandler(c echo.Context) error {
+ 		return echo.NewHTTPError(http.StatusInternalServerError, "failed to get last inserted reaction id: "+err.Error())
+ 	}
+ 	reactionModel.ID = reactionID
++	reaction.ID = reactionID
++	appendReaction(reactionModel)
+ 
+-	reaction, err := fillReactionResponse(ctx, tx, reactionModel)
+-	if err != nil {
+-		return echo.NewHTTPError(http.StatusInternalServerError, "failed to fill reaction: "+err.Error())
+-	}
+-
+-	if err := tx.Commit(); err != nil {
+-		return echo.NewHTTPError(http.StatusInternalServerError, "failed to commit: "+err.Error())
+-	}
+-
++	addReactionStats(int64(livestreamID), req.EmojiName)
+ 	return c.JSON(http.StatusCreated, reaction)
+ }
+ 
+ func fillReactionResponse(ctx context.Context, tx *sqlx.Tx, reactionModel ReactionModel) (Reaction, error) {
+-	userModel := UserModel{}
+-	if err := tx.GetContext(ctx, &userModel, "SELECT * FROM users WHERE id = ?", reactionModel.UserID); err != nil {
++	userModel, err := userByID(ctx, tx, int64(reactionModel.UserID))
++	if err != nil {
+ 		return Reaction{}, err
+ 	}
+ 	user, err := fillUserResponse(ctx, tx, userModel)
+@@ -151,8 +129,8 @@ func fillReactionResponse(ctx context.Context, tx *sqlx.Tx, reactionModel Reacti
+ 		return Reaction{}, err
+ 	}
+ 
+-	livestreamModel := LivestreamModel{}
+-	if err := tx.GetContext(ctx, &livestreamModel, "SELECT * FROM livestreams WHERE id = ?", reactionModel.LivestreamID); err != nil {
++	livestreamModel, err := streamByID(ctx, tx, int64(reactionModel.LivestreamID))
++	if err != nil {
+ 		return Reaction{}, err
+ 	}
+ 	livestream, err := fillLivestreamResponse(ctx, tx, livestreamModel)
+diff --git a/webapp/go/session_cache.go b/webapp/go/session_cache.go
+new file mode 100644
+index 0000000..0bd2708
+--- /dev/null
++++ b/webapp/go/session_cache.go
+@@ -0,0 +1,47 @@
++package main
++
++import (
++	"github.com/gorilla/sessions"
++	"github.com/labstack/echo-contrib/session"
++	"github.com/labstack/echo/v4"
++	"sync"
++	"time"
++)
++
++var sessionCache = struct {
++	sync.RWMutex
++	entries map[string]*sessions.Session
++}{entries: make(map[string]*sessions.Session)}
++
++// Cached sessions are immutable; login always uses a fresh request-local session.
++func getSessionCached(c echo.Context) (*sessions.Session, error) {
++	if v := c.Get("verified-session"); v != nil {
++		return v.(*sessions.Session), nil
++	}
++	cookie, e := c.Request().Cookie(defaultSessionIDKey)
++	if e == nil {
++		sessionCache.RLock()
++		s := sessionCache.entries[cookie.Value]
++		sessionCache.RUnlock()
++		if s != nil {
++			c.Set("verified-session", s)
++			return s, nil
++		}
++	}
++	s, err := session.Get(defaultSessionIDKey, c)
++	if err != nil {
++		return s, err
++	}
++	if e == nil {
++		if expiry, ok := s.Values[defaultSessionExpiresKey].(int64); ok && expiry > time.Now().Unix() {
++			sessionCache.Lock()
++			if len(sessionCache.entries) > 100000 {
++				sessionCache.entries = make(map[string]*sessions.Session)
++			}
++			sessionCache.entries[cookie.Value] = s
++			sessionCache.Unlock()
++		}
++	}
++	c.Set("verified-session", s)
++	return s, nil
++}
+diff --git a/webapp/go/stats_cache.go b/webapp/go/stats_cache.go
+new file mode 100644
+index 0000000..ddf6f56
+--- /dev/null
++++ b/webapp/go/stats_cache.go
+@@ -0,0 +1,160 @@
++package main
++
++import (
++	"context"
++	"sync"
++)
++
++type streamCounters struct {
++	OwnerID   int64
++	Reactions int64
++	Comments  int64
++	Tips      int64
++	MaxTip    int64
++	Viewers   int64
++	Reports   int64
++}
++
++var statistics = struct {
++	sync.RWMutex
++	streams map[int64]streamCounters
++	emojis  map[int64]map[string]int64
++}{}
++var viewerLocks [1024]sync.Mutex
++
++func loadState(ctx context.Context) error {
++	if err := loadReadCache(ctx); err != nil {
++		return err
++	}
++	if err := loadStatistics(ctx); err != nil {
++		return err
++	}
++	if err := loadTimelines(ctx); err != nil {
++		return err
++	}
++	return loadLists(ctx)
++}
++func loadStatistics(ctx context.Context) error {
++	streams := make(map[int64]streamCounters)
++	emojis := make(map[int64]map[string]int64)
++	var owners []struct {
++		ID     int64
++		UserID int64 `db:"user_id"`
++	}
++	if err := dbConn.SelectContext(ctx, &owners, "SELECT id,user_id FROM livestreams"); err != nil {
++		return err
++	}
++	for _, r := range owners {
++		streams[r.ID] = streamCounters{OwnerID: r.UserID}
++	}
++	var rows []struct {
++		ID    int64
++		Count int64
++		Tips  int64
++		Max   int64
++	}
++	for _, t := range []struct {
++		query string
++		kind  int
++	}{
++		{"SELECT livestream_id id, COUNT(*) count, SUM(tip) tips, MAX(tip) max FROM livecomments WHERE deleted=0 GROUP BY livestream_id", 0},
++		{"SELECT livestream_id id, COUNT(*) count FROM reactions GROUP BY livestream_id", 1},
++		{"SELECT livestream_id id, COUNT(*) count FROM livestream_viewers_history GROUP BY livestream_id", 2},
++		{"SELECT livestream_id id, COUNT(*) count FROM livecomment_reports GROUP BY livestream_id", 3},
++	} {
++		rows = nil
++		if err := dbConn.SelectContext(ctx, &rows, t.query); err != nil {
++			return err
++		}
++		for _, r := range rows {
++			s, ok := streams[r.ID]
++			if !ok {
++				continue
++			}
++			switch t.kind {
++			case 0:
++				s.Comments = r.Count
++				s.Tips = r.Tips
++				s.MaxTip = r.Max
++			case 1:
++				s.Reactions = r.Count
++			case 2:
++				s.Viewers = r.Count
++			case 3:
++				s.Reports = r.Count
++			}
++			streams[r.ID] = s
++		}
++	}
++	var erows []struct {
++		UserID int64 `db:"user_id"`
++		Emoji  string
++		Count  int64
++	}
++	if err := dbConn.SelectContext(ctx, &erows, "SELECT l.user_id,r.emoji_name emoji,COUNT(*) count FROM reactions r JOIN livestreams l ON l.id=r.livestream_id GROUP BY l.user_id,r.emoji_name"); err != nil {
++		return err
++	}
++	for _, r := range erows {
++		if emojis[r.UserID] == nil {
++			emojis[r.UserID] = make(map[string]int64)
++		}
++		emojis[r.UserID][r.Emoji] = r.Count
++	}
++	statistics.Lock()
++	statistics.streams = streams
++	statistics.emojis = emojis
++	statistics.Unlock()
++	return nil
++}
++func newStreamStats(m LivestreamModel) {
++	statistics.Lock()
++	statistics.streams[m.ID] = streamCounters{OwnerID: m.UserID}
++	statistics.Unlock()
++}
++func addCommentStats(id, tip int64) {
++	statistics.Lock()
++	s := statistics.streams[id]
++	s.Comments++
++	s.Tips += tip
++	if s.Comments == 1 || tip > s.MaxTip {
++		s.MaxTip = tip
++	}
++	statistics.streams[id] = s
++	statistics.Unlock()
++}
++func setCommentStats(id, count, tips, max int64) {
++	statistics.Lock()
++	s := statistics.streams[id]
++	s.Comments = count
++	s.Tips = tips
++	s.MaxTip = max
++	statistics.streams[id] = s
++	statistics.Unlock()
++}
++func addReactionStats(id int64, emoji string) {
++	statistics.Lock()
++	s := statistics.streams[id]
++	s.Reactions++
++	statistics.streams[id] = s
++	if statistics.emojis[s.OwnerID] == nil {
++		statistics.emojis[s.OwnerID] = make(map[string]int64)
++	}
++	statistics.emojis[s.OwnerID][emoji]++
++	statistics.Unlock()
++}
++func addViewerStats(id, n int64) {
++	statistics.Lock()
++	s, ok := statistics.streams[id]
++	if ok {
++		s.Viewers += n
++		statistics.streams[id] = s
++	}
++	statistics.Unlock()
++}
++func addReportStats(id int64) {
++	statistics.Lock()
++	s := statistics.streams[id]
++	s.Reports++
++	statistics.streams[id] = s
++	statistics.Unlock()
++}
+diff --git a/webapp/go/stats_handler.go b/webapp/go/stats_handler.go
+index c2083ad..8a69a2e 100644
+--- a/webapp/go/stats_handler.go
++++ b/webapp/go/stats_handler.go
+@@ -1,13 +1,9 @@
+ package main
+ 
+ import (
+-	"database/sql"
+-	"errors"
++	"github.com/labstack/echo/v4"
+ 	"net/http"
+-	"sort"
+ 	"strconv"
+-
+-	"github.com/labstack/echo/v4"
+ )
+ 
+ type LivestreamStatistics struct {
+@@ -17,23 +13,6 @@ type LivestreamStatistics struct {
+ 	TotalReports   int64 `json:"total_reports"`
+ 	MaxTip         int64 `json:"max_tip"`
+ }
+-
+-type LivestreamRankingEntry struct {
+-	LivestreamID int64
+-	Score        int64
+-}
+-type LivestreamRanking []LivestreamRankingEntry
+-
+-func (r LivestreamRanking) Len() int      { return len(r) }
+-func (r LivestreamRanking) Swap(i, j int) { r[i], r[j] = r[j], r[i] }
+-func (r LivestreamRanking) Less(i, j int) bool {
+-	if r[i].Score == r[j].Score {
+-		return r[i].LivestreamID < r[j].LivestreamID
+-	} else {
+-		return r[i].Score < r[j].Score
+-	}
+-}
+-
+ type UserStatistics struct {
+ 	Rank              int64  `json:"rank"`
+ 	ViewersCount      int64  `json:"viewers_count"`
+@@ -43,258 +22,68 @@ type UserStatistics struct {
+ 	FavoriteEmoji     string `json:"favorite_emoji"`
+ }
+ 
+-type UserRankingEntry struct {
+-	Username string
+-	Score    int64
+-}
+-type UserRanking []UserRankingEntry
+-
+-func (r UserRanking) Len() int      { return len(r) }
+-func (r UserRanking) Swap(i, j int) { r[i], r[j] = r[j], r[i] }
+-func (r UserRanking) Less(i, j int) bool {
+-	if r[i].Score == r[j].Score {
+-		return r[i].Username < r[j].Username
+-	} else {
+-		return r[i].Score < r[j].Score
+-	}
+-}
+-
+ func getUserStatisticsHandler(c echo.Context) error {
+-	ctx := c.Request().Context()
+-
+ 	if err := verifyUserSession(c); err != nil {
+-		// echo.NewHTTPErrorが返っているのでそのまま出力
+ 		return err
+ 	}
+-
+-	username := c.Param("username")
+-	// ユーザごとに、紐づく配信について、累計リアクション数、累計ライブコメント数、累計売上金額を算出
+-	// また、現在の合計視聴者数もだす
+-
+-	tx, err := dbConn.BeginTxx(ctx, nil)
++	u, err := userByName(c.Request().Context(), nil, c.Param("username"))
+ 	if err != nil {
+-		return echo.NewHTTPError(http.StatusInternalServerError, "failed to begin transaction: "+err.Error())
+-	}
+-	defer tx.Rollback()
+-
+-	var user UserModel
+-	if err := tx.GetContext(ctx, &user, "SELECT * FROM users WHERE name = ?", username); err != nil {
+-		if errors.Is(err, sql.ErrNoRows) {
+-			return echo.NewHTTPError(http.StatusBadRequest, "not found user that has the given username")
+-		} else {
+-			return echo.NewHTTPError(http.StatusInternalServerError, "failed to get user: "+err.Error())
+-		}
+-	}
+-
+-	// ランク算出
+-	var users []*UserModel
+-	if err := tx.SelectContext(ctx, &users, "SELECT * FROM users"); err != nil {
+-		return echo.NewHTTPError(http.StatusInternalServerError, "failed to get users: "+err.Error())
+-	}
+-
+-	var ranking UserRanking
+-	for _, user := range users {
+-		var reactions int64
+-		query := `
+-		SELECT COUNT(*) FROM users u
+-		INNER JOIN livestreams l ON l.user_id = u.id
+-		INNER JOIN reactions r ON r.livestream_id = l.id
+-		WHERE u.id = ?`
+-		if err := tx.GetContext(ctx, &reactions, query, user.ID); err != nil && !errors.Is(err, sql.ErrNoRows) {
+-			return echo.NewHTTPError(http.StatusInternalServerError, "failed to count reactions: "+err.Error())
+-		}
+-
+-		var tips int64
+-		query = `
+-		SELECT IFNULL(SUM(l2.tip), 0) FROM users u
+-		INNER JOIN livestreams l ON l.user_id = u.id	
+-		INNER JOIN livecomments l2 ON l2.livestream_id = l.id
+-		WHERE u.id = ?`
+-		if err := tx.GetContext(ctx, &tips, query, user.ID); err != nil && !errors.Is(err, sql.ErrNoRows) {
+-			return echo.NewHTTPError(http.StatusInternalServerError, "failed to count tips: "+err.Error())
+-		}
+-
+-		score := reactions + tips
+-		ranking = append(ranking, UserRankingEntry{
+-			Username: user.Name,
+-			Score:    score,
+-		})
+-	}
+-	sort.Sort(ranking)
+-
+-	var rank int64 = 1
+-	for i := len(ranking) - 1; i >= 0; i-- {
+-		entry := ranking[i]
+-		if entry.Username == username {
+-			break
+-		}
+-		rank++
+-	}
+-
+-	// リアクション数
+-	var totalReactions int64
+-	query := `SELECT COUNT(*) FROM users u 
+-    INNER JOIN livestreams l ON l.user_id = u.id 
+-    INNER JOIN reactions r ON r.livestream_id = l.id
+-    WHERE u.name = ?
+-	`
+-	if err := tx.GetContext(ctx, &totalReactions, query, username); err != nil && !errors.Is(err, sql.ErrNoRows) {
+-		return echo.NewHTTPError(http.StatusInternalServerError, "failed to count total reactions: "+err.Error())
+-	}
+-
+-	// ライブコメント数、チップ合計
+-	var totalLivecomments int64
+-	var totalTip int64
+-	var livestreams []*LivestreamModel
+-	if err := tx.SelectContext(ctx, &livestreams, "SELECT * FROM livestreams WHERE user_id = ?", user.ID); err != nil && !errors.Is(err, sql.ErrNoRows) {
+-		return echo.NewHTTPError(http.StatusInternalServerError, "failed to get livestreams: "+err.Error())
+-	}
+-
+-	for _, livestream := range livestreams {
+-		var livecomments []*LivecommentModel
+-		if err := tx.SelectContext(ctx, &livecomments, "SELECT * FROM livecomments WHERE livestream_id = ?", livestream.ID); err != nil && !errors.Is(err, sql.ErrNoRows) {
+-			return echo.NewHTTPError(http.StatusInternalServerError, "failed to get livecomments: "+err.Error())
+-		}
+-
+-		for _, livecomment := range livecomments {
+-			totalTip += livecomment.Tip
+-			totalLivecomments++
++		return echo.NewHTTPError(http.StatusBadRequest, "not found user that has the given username")
++	}
++	totals := make(map[int64]UserStatistics)
++	statistics.RLock()
++	for _, s := range statistics.streams {
++		v := totals[s.OwnerID]
++		v.ViewersCount += s.Viewers
++		v.TotalReactions += s.Reactions
++		v.TotalLivecomments += s.Comments
++		v.TotalTip += s.Tips
++		totals[s.OwnerID] = v
++	}
++	result := totals[u.ID]
++	result.Rank = 1
++	var favoriteCount int64
++	for emoji, count := range statistics.emojis[u.ID] {
++		if count > favoriteCount || count == favoriteCount && emoji > result.FavoriteEmoji {
++			favoriteCount = count
++			result.FavoriteEmoji = emoji
+ 		}
+ 	}
+-
+-	// 合計視聴者数
+-	var viewersCount int64
+-	for _, livestream := range livestreams {
+-		var cnt int64
+-		if err := tx.GetContext(ctx, &cnt, "SELECT COUNT(*) FROM livestream_viewers_history WHERE livestream_id = ?", livestream.ID); err != nil && !errors.Is(err, sql.ErrNoRows) {
+-			return echo.NewHTTPError(http.StatusInternalServerError, "failed to get livestream_view_history: "+err.Error())
++	statistics.RUnlock()
++	score := result.TotalReactions + result.TotalTip
++	cached.RLock()
++	for id, user := range cached.users {
++		v := totals[id]
++		other := v.TotalReactions + v.TotalTip
++		if other > score || other == score && user.Name > u.Name {
++			result.Rank++
+ 		}
+-		viewersCount += cnt
+-	}
+-
+-	// お気に入り絵文字
+-	var favoriteEmoji string
+-	query = `
+-	SELECT r.emoji_name
+-	FROM users u
+-	INNER JOIN livestreams l ON l.user_id = u.id
+-	INNER JOIN reactions r ON r.livestream_id = l.id
+-	WHERE u.name = ?
+-	GROUP BY emoji_name
+-	ORDER BY COUNT(*) DESC, emoji_name DESC
+-	LIMIT 1
+-	`
+-	if err := tx.GetContext(ctx, &favoriteEmoji, query, username); err != nil && !errors.Is(err, sql.ErrNoRows) {
+-		return echo.NewHTTPError(http.StatusInternalServerError, "failed to find favorite emoji: "+err.Error())
+ 	}
+-
+-	stats := UserStatistics{
+-		Rank:              rank,
+-		ViewersCount:      viewersCount,
+-		TotalReactions:    totalReactions,
+-		TotalLivecomments: totalLivecomments,
+-		TotalTip:          totalTip,
+-		FavoriteEmoji:     favoriteEmoji,
+-	}
+-	return c.JSON(http.StatusOK, stats)
++	cached.RUnlock()
++	return c.JSON(200, result)
+ }
+-
+ func getLivestreamStatisticsHandler(c echo.Context) error {
+-	ctx := c.Request().Context()
+-
+ 	if err := verifyUserSession(c); err != nil {
+ 		return err
+ 	}
+-
+-	id, err := strconv.Atoi(c.Param("livestream_id"))
++	id, err := strconv.ParseInt(c.Param("livestream_id"), 10, 64)
+ 	if err != nil {
+-		return echo.NewHTTPError(http.StatusBadRequest, "livestream_id in path must be integer")
+-	}
+-	livestreamID := int64(id)
+-
+-	tx, err := dbConn.BeginTxx(ctx, nil)
+-	if err != nil {
+-		return echo.NewHTTPError(http.StatusInternalServerError, "failed to begin transaction: "+err.Error())
+-	}
+-	defer tx.Rollback()
+-
+-	var livestream LivestreamModel
+-	if err := tx.GetContext(ctx, &livestream, "SELECT * FROM livestreams WHERE id = ?", livestreamID); err != nil {
+-		if errors.Is(err, sql.ErrNoRows) {
+-			return echo.NewHTTPError(http.StatusBadRequest, "cannot get stats of not found livestream")
+-		} else {
+-			return echo.NewHTTPError(http.StatusInternalServerError, "failed to get livestream: "+err.Error())
++		return echo.NewHTTPError(400, "livestream_id in path must be integer")
++	}
++	statistics.RLock()
++	s, ok := statistics.streams[id]
++	if !ok {
++		statistics.RUnlock()
++		return echo.NewHTTPError(400, "cannot get stats of not found livestream")
++	}
++	rank := int64(1)
++	score := s.Tips + s.Reactions
++	for otherID, other := range statistics.streams {
++		otherScore := other.Tips + other.Reactions
++		if otherScore > score || otherScore == score && otherID > id {
++			rank++
+ 		}
+ 	}
+-
+-	var livestreams []*LivestreamModel
+-	if err := tx.SelectContext(ctx, &livestreams, "SELECT * FROM livestreams"); err != nil && !errors.Is(err, sql.ErrNoRows) {
+-		return echo.NewHTTPError(http.StatusInternalServerError, "failed to get livestreams: "+err.Error())
+-	}
+-
+-	// ランク算出
+-	var ranking LivestreamRanking
+-	for _, livestream := range livestreams {
+-		var reactions int64
+-		if err := tx.GetContext(ctx, &reactions, "SELECT COUNT(*) FROM livestreams l INNER JOIN reactions r ON l.id = r.livestream_id WHERE l.id = ?", livestream.ID); err != nil && !errors.Is(err, sql.ErrNoRows) {
+-			return echo.NewHTTPError(http.StatusInternalServerError, "failed to count reactions: "+err.Error())
+-		}
+-
+-		var totalTips int64
+-		if err := tx.GetContext(ctx, &totalTips, "SELECT IFNULL(SUM(l2.tip), 0) FROM livestreams l INNER JOIN livecomments l2 ON l.id = l2.livestream_id WHERE l.id = ?", livestream.ID); err != nil && !errors.Is(err, sql.ErrNoRows) {
+-			return echo.NewHTTPError(http.StatusInternalServerError, "failed to count tips: "+err.Error())
+-		}
+-
+-		score := reactions + totalTips
+-		ranking = append(ranking, LivestreamRankingEntry{
+-			LivestreamID: livestream.ID,
+-			Score:        score,
+-		})
+-	}
+-	sort.Sort(ranking)
+-
+-	var rank int64 = 1
+-	for i := len(ranking) - 1; i >= 0; i-- {
+-		entry := ranking[i]
+-		if entry.LivestreamID == livestreamID {
+-			break
+-		}
+-		rank++
+-	}
+-
+-	// 視聴者数算出
+-	var viewersCount int64
+-	if err := tx.GetContext(ctx, &viewersCount, `SELECT COUNT(*) FROM livestreams l INNER JOIN livestream_viewers_history h ON h.livestream_id = l.id WHERE l.id = ?`, livestreamID); err != nil && !errors.Is(err, sql.ErrNoRows) {
+-		return echo.NewHTTPError(http.StatusInternalServerError, "failed to count livestream viewers: "+err.Error())
+-	}
+-
+-	// 最大チップ額
+-	var maxTip int64
+-	if err := tx.GetContext(ctx, &maxTip, `SELECT IFNULL(MAX(tip), 0) FROM livestreams l INNER JOIN livecomments l2 ON l2.livestream_id = l.id WHERE l.id = ?`, livestreamID); err != nil && !errors.Is(err, sql.ErrNoRows) {
+-		return echo.NewHTTPError(http.StatusInternalServerError, "failed to find maximum tip livecomment: "+err.Error())
+-	}
+-
+-	// リアクション数
+-	var totalReactions int64
+-	if err := tx.GetContext(ctx, &totalReactions, "SELECT COUNT(*) FROM livestreams l INNER JOIN reactions r ON r.livestream_id = l.id WHERE l.id = ?", livestreamID); err != nil && !errors.Is(err, sql.ErrNoRows) {
+-		return echo.NewHTTPError(http.StatusInternalServerError, "failed to count total reactions: "+err.Error())
+-	}
+-
+-	// スパム報告数
+-	var totalReports int64
+-	if err := tx.GetContext(ctx, &totalReports, `SELECT COUNT(*) FROM livestreams l INNER JOIN livecomment_reports r ON r.livestream_id = l.id WHERE l.id = ?`, livestreamID); err != nil && !errors.Is(err, sql.ErrNoRows) {
+-		return echo.NewHTTPError(http.StatusInternalServerError, "failed to count total spam reports: "+err.Error())
+-	}
+-
+-	if err := tx.Commit(); err != nil {
+-		return echo.NewHTTPError(http.StatusInternalServerError, "failed to commit: "+err.Error())
+-	}
+-
+-	return c.JSON(http.StatusOK, LivestreamStatistics{
+-		Rank:           rank,
+-		ViewersCount:   viewersCount,
+-		MaxTip:         maxTip,
+-		TotalReactions: totalReactions,
+-		TotalReports:   totalReports,
+-	})
++	statistics.RUnlock()
++	return c.JSON(200, LivestreamStatistics{Rank: rank, ViewersCount: s.Viewers, TotalReactions: s.Reactions, TotalReports: s.Reports, MaxTip: s.MaxTip})
+ }
+diff --git a/webapp/go/timeline_cache.go b/webapp/go/timeline_cache.go
+new file mode 100644
+index 0000000..4295d3c
+--- /dev/null
++++ b/webapp/go/timeline_cache.go
+@@ -0,0 +1,157 @@
++package main
++
++import (
++	"context"
++	"regexp"
++	"sort"
++	"strings"
++	"sync"
++)
++
++type wordMatcher struct {
++	userID int64
++	word   string
++	re     *regexp.Regexp
++}
++
++func compileWord(user int64, word string) wordMatcher {
++	m := wordMatcher{userID: user, word: word}
++	if !strings.ContainsAny(word, "%_\\") {
++		return m
++	}
++	var b strings.Builder
++	b.WriteString("(?s)^")
++	r := []rune("%" + word + "%")
++	for i := 0; i < len(r); i++ {
++		switch r[i] {
++		case '%':
++			b.WriteString(".*")
++		case '_':
++			b.WriteString(".")
++		case '\\':
++			if i+1 < len(r) {
++				i++
++				b.WriteString(regexp.QuoteMeta(string(r[i])))
++			} else {
++				b.WriteString(`\\`)
++			}
++		default:
++			b.WriteString(regexp.QuoteMeta(string(r[i])))
++		}
++	}
++	b.WriteString("$")
++	m.re = regexp.MustCompile(b.String())
++	return m
++}
++func (m wordMatcher) matches(comment string) bool {
++	if m.re != nil {
++		return m.re.MatchString(comment)
++	}
++	return strings.Contains(comment, m.word)
++}
++
++var timeline = struct {
++	sync.RWMutex
++	comments  map[int64][]LivecommentModel
++	reactions map[int64][]ReactionModel
++	words     map[int64][]wordMatcher
++}{}
++
++func loadTimelines(ctx context.Context) error {
++	var comments []LivecommentModel
++	var reactions []ReactionModel
++	var words []NGWord
++	if err := dbConn.SelectContext(ctx, &comments, "SELECT * FROM livecomments WHERE deleted=0"); err != nil {
++		return err
++	}
++	if err := dbConn.SelectContext(ctx, &reactions, "SELECT * FROM reactions"); err != nil {
++		return err
++	}
++	if err := dbConn.SelectContext(ctx, &words, "SELECT * FROM ng_words"); err != nil {
++		return err
++	}
++	cm := make(map[int64][]LivecommentModel)
++	rm := make(map[int64][]ReactionModel)
++	wm := make(map[int64][]wordMatcher)
++	for _, c := range comments {
++		cm[c.LivestreamID] = append(cm[c.LivestreamID], c)
++	}
++	for _, r := range reactions {
++		rm[r.LivestreamID] = append(rm[r.LivestreamID], r)
++	}
++	for _, w := range words {
++		wm[w.LivestreamID] = append(wm[w.LivestreamID], compileWord(w.UserID, w.Word))
++	}
++	timeline.Lock()
++	timeline.comments = cm
++	timeline.reactions = rm
++	timeline.words = wm
++	timeline.Unlock()
++	return nil
++}
++func getComments(id int64, limit int) []LivecommentModel {
++	timeline.RLock()
++	rows := append([]LivecommentModel{}, timeline.comments[id]...)
++	timeline.RUnlock()
++	sort.Slice(rows, func(i, j int) bool {
++		if rows[i].CreatedAt == rows[j].CreatedAt {
++			return rows[i].ID > rows[j].ID
++		}
++		return rows[i].CreatedAt > rows[j].CreatedAt
++	})
++	if limit >= 0 && len(rows) > limit {
++		rows = rows[:limit]
++	}
++	return rows
++}
++func getReactionModels(id int64, limit int) []ReactionModel {
++	timeline.RLock()
++	rows := append([]ReactionModel{}, timeline.reactions[id]...)
++	timeline.RUnlock()
++	sort.Slice(rows, func(i, j int) bool {
++		if rows[i].CreatedAt == rows[j].CreatedAt {
++			return rows[i].ID > rows[j].ID
++		}
++		return rows[i].CreatedAt > rows[j].CreatedAt
++	})
++	if limit >= 0 && len(rows) > limit {
++		rows = rows[:limit]
++	}
++	return rows
++}
++func isSpam(id, user int64, comment string) bool {
++	timeline.RLock()
++	words := timeline.words[id]
++	timeline.RUnlock()
++	for _, w := range words {
++		if w.userID == user && w.matches(comment) {
++			return true
++		}
++	}
++	return false
++}
++func appendComment(m LivecommentModel) {
++	timeline.Lock()
++	timeline.comments[m.LivestreamID] = append(timeline.comments[m.LivestreamID], m)
++	timeline.Unlock()
++}
++func appendReaction(m ReactionModel) {
++	timeline.Lock()
++	timeline.reactions[m.LivestreamID] = append(timeline.reactions[m.LivestreamID], m)
++	timeline.Unlock()
++}
++func moderateTimeline(id, user int64, word string, comments []LivecommentModel) {
++	matcher := compileWord(user, word)
++	timeline.Lock()
++	timeline.comments[id] = comments
++	timeline.words[id] = append(timeline.words[id], matcher)
++	timeline.Unlock()
++	var tips, max int64
++	for i, c := range comments {
++		tips += c.Tip
++		if i == 0 || c.Tip > max {
++			max = c.Tip
++		}
++	}
++	setCommentStats(id, int64(len(comments)), tips, max)
++}
+diff --git a/webapp/go/timeline_cache_test.go b/webapp/go/timeline_cache_test.go
+new file mode 100644
+index 0000000..0341f84
+--- /dev/null
++++ b/webapp/go/timeline_cache_test.go
+@@ -0,0 +1,33 @@
++package main
++
++import (
++	"database/sql"
++	"os"
++	"testing"
++)
++
++func TestMatcherAgainstMySQL(t *testing.T) {
++	dsn := os.Getenv("MYSQL_TEST_DSN")
++	if dsn == "" {
++		t.Skip("set MYSQL_TEST_DSN for differential matcher test")
++	}
++	db, err := sql.Open("mysql", dsn)
++	if err != nil {
++		t.Fatal(err)
++	}
++	defer db.Close()
++	words := []string{"foo", "FOO", "", "_", "%", "a_b", "a%b", "a\\_b", "a\\%b", "foo\\", "\\", "\\\\", "日本", "é", "e", "a\nb"}
++	comments := []string{"", "a", "foo", "FOO", "abcfooXYZ", "a_b", "axb", "a日本b", "a\nb", "foo%", "foo%tail", "abc\\def", "a%b", "日本語", "é", "é", "É"}
++	for _, w := range words {
++		for _, c := range comments {
++			var want bool
++			if err := db.QueryRow("SELECT CONVERT(? USING utf8mb4) COLLATE utf8mb4_bin LIKE CONCAT('%',?,'%')", c, w).Scan(&want); err != nil {
++				t.Fatal(err)
++			}
++			got := compileWord(1, w).matches(c)
++			if got != want {
++				t.Errorf("comment=%q word=%q got=%v SQL=%v", c, w, got, want)
++			}
++		}
++	}
++}
+diff --git a/webapp/go/top_handler.go b/webapp/go/top_handler.go
+index fdcd519..d47460b 100644
+--- a/webapp/go/top_handler.go
++++ b/webapp/go/top_handler.go
+@@ -1,9 +1,7 @@
+ package main
+ 
+ import (
+-	"database/sql"
+-	"errors"
+-	"net/http"
++	"sort"
+ 
+ 	"github.com/labstack/echo/v4"
+ )
+@@ -23,76 +21,28 @@ type TagsResponse struct {
+ }
+ 
+ func getTagHandler(c echo.Context) error {
+-	ctx := c.Request().Context()
+-
+-	tx, err := dbConn.BeginTxx(ctx, nil)
+-	if err != nil {
+-		return echo.NewHTTPError(http.StatusInternalServerError, "failed to begin new transaction: : "+err.Error()+err.Error())
+-	}
+-	defer tx.Rollback()
+-
+-	var tagModels []*TagModel
+-	if err := tx.SelectContext(ctx, &tagModels, "SELECT * FROM tags"); err != nil {
+-		return echo.NewHTTPError(http.StatusInternalServerError, "failed to get tags: "+err.Error())
+-	}
+-
+-	if err := tx.Commit(); err != nil {
+-		return echo.NewHTTPError(http.StatusInternalServerError, "failed to commit: "+err.Error())
+-	}
+-
+-	tags := make([]*Tag, len(tagModels))
+-	for i := range tagModels {
+-		tags[i] = &Tag{
+-			ID:   tagModels[i].ID,
+-			Name: tagModels[i].Name,
+-		}
+-	}
+-	return c.JSON(http.StatusOK, &TagsResponse{
+-		Tags: tags,
+-	})
++	cached.RLock()
++	values := append([]Tag{}, cached.allTags...)
++	cached.RUnlock()
++	sort.Slice(values, func(i, j int) bool { return values[i].Name < values[j].Name })
++	tags := make([]*Tag, len(values))
++	for i := range values {
++		v := values[i]
++		tags[i] = &v
++	}
++	return c.JSON(200, TagsResponse{Tags: tags})
+ }
+-
+-// 配信者のテーマ取得API
+-// GET /api/user/:username/theme
+ func getStreamerThemeHandler(c echo.Context) error {
+-	ctx := c.Request().Context()
+-
+ 	if err := verifyUserSession(c); err != nil {
+-		// echo.NewHTTPErrorが返っているのでそのまま出力
+-		c.Logger().Printf("verifyUserSession: %+v\n", err)
+ 		return err
+ 	}
+-
+-	username := c.Param("username")
+-
+-	tx, err := dbConn.BeginTxx(ctx, nil)
++	u, err := userByName(c.Request().Context(), nil, c.Param("username"))
+ 	if err != nil {
+-		return echo.NewHTTPError(http.StatusInternalServerError, "failed to begin transaction: "+err.Error())
+-	}
+-	defer tx.Rollback()
+-
+-	userModel := UserModel{}
+-	err = tx.GetContext(ctx, &userModel, "SELECT id FROM users WHERE name = ?", username)
+-	if errors.Is(err, sql.ErrNoRows) {
+-		return echo.NewHTTPError(http.StatusNotFound, "not found user that has the given username")
++		return echo.NewHTTPError(404, "not found user")
+ 	}
++	v, err := fillUserResponse(c.Request().Context(), nil, u)
+ 	if err != nil {
+-		return echo.NewHTTPError(http.StatusInternalServerError, "failed to get user: "+err.Error())
+-	}
+-
+-	themeModel := ThemeModel{}
+-	if err := tx.GetContext(ctx, &themeModel, "SELECT * FROM themes WHERE user_id = ?", userModel.ID); err != nil {
+-		return echo.NewHTTPError(http.StatusInternalServerError, "failed to get user theme: "+err.Error())
+-	}
+-
+-	if err := tx.Commit(); err != nil {
+-		return echo.NewHTTPError(http.StatusInternalServerError, "failed to commit: "+err.Error())
+-	}
+-
+-	theme := Theme{
+-		ID:       themeModel.ID,
+-		DarkMode: themeModel.DarkMode,
++		return err
+ 	}
+-
+-	return c.JSON(http.StatusOK, theme)
++	return c.JSON(200, v.Theme)
+ }
+diff --git a/webapp/go/user_handler.go b/webapp/go/user_handler.go
+index ea0aebf..6ef55d0 100644
+--- a/webapp/go/user_handler.go
++++ b/webapp/go/user_handler.go
+@@ -4,12 +4,13 @@ import (
+ 	"context"
+ 	"crypto/sha256"
+ 	"database/sql"
+-	"encoding/json"
+ 	"errors"
+ 	"fmt"
++	json "github.com/goccy/go-json"
+ 	"net/http"
++	"net/url"
+ 	"os"
+-	"os/exec"
++	"sync"
+ 	"time"
+ 
+ 	"github.com/google/uuid"
+@@ -29,6 +30,21 @@ const (
+ )
+ 
+ var fallbackImage = "../img/NoImage.jpg"
++var fallbackOnce sync.Once
++var fallbackBytes []byte
++var fallbackHash string
++
++func getFallback() ([]byte, string) {
++	fallbackOnce.Do(func() {
++		var err error
++		fallbackBytes, err = os.ReadFile(fallbackImage)
++		if err != nil {
++			panic(err)
++		}
++		fallbackHash = fmt.Sprintf("%x", sha256.Sum256(fallbackBytes))
++	})
++	return fallbackBytes, fallbackHash
++}
+ 
+ type UserModel struct {
+ 	ID             int64  `db:"id"`
+@@ -86,38 +102,22 @@ type PostIconResponse struct {
+ }
+ 
+ func getIconHandler(c echo.Context) error {
+-	ctx := c.Request().Context()
+-
+-	username := c.Param("username")
+-
+-	tx, err := dbConn.BeginTxx(ctx, nil)
++	u, err := userByName(c.Request().Context(), nil, c.Param("username"))
+ 	if err != nil {
+-		return echo.NewHTTPError(http.StatusInternalServerError, "failed to begin transaction: "+err.Error())
++		return echo.NewHTTPError(404, "not found user")
+ 	}
+-	defer tx.Rollback()
+-
+-	var user UserModel
+-	if err := tx.GetContext(ctx, &user, "SELECT * FROM users WHERE name = ?", username); err != nil {
+-		if errors.Is(err, sql.ErrNoRows) {
+-			return echo.NewHTTPError(http.StatusNotFound, "not found user that has the given username")
+-		}
+-		return echo.NewHTTPError(http.StatusInternalServerError, "failed to get user: "+err.Error())
++	icon := currentIcon(u.ID)
++	etag := `"` + icon.Hash + `"`
++	c.Response().Header().Set("ETag", etag)
++	if c.Request().Header.Get("If-None-Match") == etag {
++		return c.NoContent(304)
+ 	}
+-
+-	var image []byte
+-	if err := tx.GetContext(ctx, &image, "SELECT image FROM icons WHERE user_id = ?", user.ID); err != nil {
+-		if errors.Is(err, sql.ErrNoRows) {
+-			return c.File(fallbackImage)
+-		} else {
+-			return echo.NewHTTPError(http.StatusInternalServerError, "failed to get user icon: "+err.Error())
+-		}
+-	}
+-
+-	return c.Blob(http.StatusOK, "image/jpeg", image)
++	return c.Blob(200, "image/jpeg", icon.Image)
+ }
+ 
+ func postIconHandler(c echo.Context) error {
+-	ctx := c.Request().Context()
++	ctx, cancel := mutationContext(c)
++	defer cancel()
+ 
+ 	if err := verifyUserSession(c); err != nil {
+ 		// echo.NewHTTPErrorが返っているのでそのまま出力
+@@ -125,7 +125,7 @@ func postIconHandler(c echo.Context) error {
+ 	}
+ 
+ 	// error already checked
+-	sess, _ := session.Get(defaultSessionIDKey, c)
++	sess, _ := getSessionCached(c)
+ 	// existence already checked
+ 	userID := sess.Values[defaultUserIDKey].(int64)
+ 
+@@ -134,17 +134,15 @@ func postIconHandler(c echo.Context) error {
+ 		return echo.NewHTTPError(http.StatusBadRequest, "failed to decode the request body as json")
+ 	}
+ 
+-	tx, err := dbConn.BeginTxx(ctx, nil)
+-	if err != nil {
+-		return echo.NewHTTPError(http.StatusInternalServerError, "failed to begin transaction: "+err.Error())
+-	}
+-	defer tx.Rollback()
++	lock := &iconLocks[userID%256]
++	lock.Lock()
++	defer lock.Unlock()
+ 
+-	if _, err := tx.ExecContext(ctx, "DELETE FROM icons WHERE user_id = ?", userID); err != nil {
+-		return echo.NewHTTPError(http.StatusInternalServerError, "failed to delete old user icon: "+err.Error())
++	hash := fmt.Sprintf("%x", sha256.Sum256(req.Image))
++	if err := storeIcon(hash, req.Image); err != nil {
++		return err
+ 	}
+-
+-	rs, err := tx.ExecContext(ctx, "INSERT INTO icons (user_id, image) VALUES (?, ?)", userID, req.Image)
++	rs, err := dbConn.ExecContext(ctx, "REPLACE INTO icons (user_id, image, hash) VALUES (?, ?, ?)", userID, []byte{}, hash)
+ 	if err != nil {
+ 		return echo.NewHTTPError(http.StatusInternalServerError, "failed to insert new user icon: "+err.Error())
+ 	}
+@@ -154,10 +152,14 @@ func postIconHandler(c echo.Context) error {
+ 		return echo.NewHTTPError(http.StatusInternalServerError, "failed to get last inserted icon id: "+err.Error())
+ 	}
+ 
+-	if err := tx.Commit(); err != nil {
+-		return echo.NewHTTPError(http.StatusInternalServerError, "failed to commit: "+err.Error())
++	cached.Lock()
++	image, ok := cached.images[hash]
++	if !ok {
++		image = req.Image
++		cached.images[hash] = image
+ 	}
+-
++	cached.icons[userID] = iconData{Image: image, Hash: hash}
++	cached.Unlock()
+ 	return c.JSON(http.StatusCreated, &PostIconResponse{
+ 		ID: iconID,
+ 	})
+@@ -172,18 +174,11 @@ func getMeHandler(c echo.Context) error {
+ 	}
+ 
+ 	// error already checked
+-	sess, _ := session.Get(defaultSessionIDKey, c)
++	sess, _ := getSessionCached(c)
+ 	// existence already checked
+ 	userID := sess.Values[defaultUserIDKey].(int64)
+ 
+-	tx, err := dbConn.BeginTxx(ctx, nil)
+-	if err != nil {
+-		return echo.NewHTTPError(http.StatusInternalServerError, "failed to begin transaction: "+err.Error())
+-	}
+-	defer tx.Rollback()
+-
+-	userModel := UserModel{}
+-	err = tx.GetContext(ctx, &userModel, "SELECT * FROM users WHERE id = ?", userID)
++	userModel, err := userByID(ctx, nil, int64(userID))
+ 	if errors.Is(err, sql.ErrNoRows) {
+ 		return echo.NewHTTPError(http.StatusNotFound, "not found user that has the userid in session")
+ 	}
+@@ -191,22 +186,19 @@ func getMeHandler(c echo.Context) error {
+ 		return echo.NewHTTPError(http.StatusInternalServerError, "failed to get user: "+err.Error())
+ 	}
+ 
+-	user, err := fillUserResponse(ctx, tx, userModel)
++	user, err := fillUserResponse(ctx, nil, userModel)
+ 	if err != nil {
+ 		return echo.NewHTTPError(http.StatusInternalServerError, "failed to fill user: "+err.Error())
+ 	}
+ 
+-	if err := tx.Commit(); err != nil {
+-		return echo.NewHTTPError(http.StatusInternalServerError, "failed to commit: "+err.Error())
+-	}
+-
+ 	return c.JSON(http.StatusOK, user)
+ }
+ 
+ // ユーザ登録API
+ // POST /api/register
+ func registerHandler(c echo.Context) error {
+-	ctx := c.Request().Context()
++	ctx, cancel := mutationContext(c)
++	defer cancel()
+ 	defer c.Request().Body.Close()
+ 
+ 	req := PostUserRequest{}
+@@ -218,7 +210,7 @@ func registerHandler(c echo.Context) error {
+ 		return echo.NewHTTPError(http.StatusBadRequest, "the username 'pipe' is reserved")
+ 	}
+ 
+-	hashedPassword, err := bcrypt.GenerateFromPassword([]byte(req.Password), bcryptDefaultCost)
++	hashedPassword, err := generatePasswordHash(ctx, []byte(req.Password))
+ 	if err != nil {
+ 		return echo.NewHTTPError(http.StatusInternalServerError, "failed to generate hashed password: "+err.Error())
+ 	}
+@@ -256,8 +248,12 @@ func registerHandler(c echo.Context) error {
+ 		return echo.NewHTTPError(http.StatusInternalServerError, "failed to insert user theme: "+err.Error())
+ 	}
+ 
+-	if out, err := exec.Command("pdnsutil", "add-record", "u.isucon.dev", req.Name, "A", "0", powerDNSSubdomainAddress).CombinedOutput(); err != nil {
+-		return echo.NewHTTPError(http.StatusInternalServerError, string(out)+": "+err.Error())
++	if _, err := dnsDB.ExecContext(ctx, "INSERT INTO records (domain_id,name,type,content,ttl,prio,disabled,auth) SELECT id,?,'A',?,60,0,0,1 FROM domains WHERE name='u.isucon.dev'", req.Name+".u.isucon.dev", powerDNSSubdomainAddress); err != nil {
++		return err
++	}
++
++	if err := syncDNS(ctx, "/add", url.Values{"name": {req.Name + ".u.isucon.dev"}, "ip": {powerDNSSubdomainAddress}}); err != nil {
++		return err
+ 	}
+ 
+ 	user, err := fillUserResponse(ctx, tx, userModel)
+@@ -269,6 +265,7 @@ func registerHandler(c echo.Context) error {
+ 		return echo.NewHTTPError(http.StatusInternalServerError, "failed to commit: "+err.Error())
+ 	}
+ 
++	publishUser(userModel, user.Theme)
+ 	return c.JSON(http.StatusCreated, user)
+ }
+ 
+@@ -283,15 +280,9 @@ func loginHandler(c echo.Context) error {
+ 		return echo.NewHTTPError(http.StatusBadRequest, "failed to decode the request body as json")
+ 	}
+ 
+-	tx, err := dbConn.BeginTxx(ctx, nil)
+-	if err != nil {
+-		return echo.NewHTTPError(http.StatusInternalServerError, "failed to begin transaction: "+err.Error())
+-	}
+-	defer tx.Rollback()
+-
+ 	userModel := UserModel{}
+ 	// usernameはUNIQUEなので、whereで一意に特定できる
+-	err = tx.GetContext(ctx, &userModel, "SELECT * FROM users WHERE name = ?", req.Username)
++	err := dbConn.GetContext(ctx, &userModel, "SELECT * FROM users WHERE name = ?", req.Username)
+ 	if errors.Is(err, sql.ErrNoRows) {
+ 		return echo.NewHTTPError(http.StatusUnauthorized, "invalid username or password")
+ 	}
+@@ -299,11 +290,7 @@ func loginHandler(c echo.Context) error {
+ 		return echo.NewHTTPError(http.StatusInternalServerError, "failed to get user: "+err.Error())
+ 	}
+ 
+-	if err := tx.Commit(); err != nil {
+-		return echo.NewHTTPError(http.StatusInternalServerError, "failed to commit: "+err.Error())
+-	}
+-
+-	err = bcrypt.CompareHashAndPassword([]byte(userModel.HashedPassword), []byte(req.Password))
++	err = comparePasswordHash(ctx, []byte(userModel.HashedPassword), []byte(req.Password))
+ 	if err == bcrypt.ErrMismatchedHashAndPassword {
+ 		return echo.NewHTTPError(http.StatusUnauthorized, "invalid username or password")
+ 	}
+@@ -348,34 +335,24 @@ func getUserHandler(c echo.Context) error {
+ 
+ 	username := c.Param("username")
+ 
+-	tx, err := dbConn.BeginTxx(ctx, nil)
+-	if err != nil {
+-		return echo.NewHTTPError(http.StatusInternalServerError, "failed to begin transaction: "+err.Error())
+-	}
+-	defer tx.Rollback()
+-
+ 	userModel := UserModel{}
+-	if err := tx.GetContext(ctx, &userModel, "SELECT * FROM users WHERE name = ?", username); err != nil {
++	if err := dbConn.GetContext(ctx, &userModel, "SELECT * FROM users WHERE name = ?", username); err != nil {
+ 		if errors.Is(err, sql.ErrNoRows) {
+ 			return echo.NewHTTPError(http.StatusNotFound, "not found user that has the given username")
+ 		}
+ 		return echo.NewHTTPError(http.StatusInternalServerError, "failed to get user: "+err.Error())
+ 	}
+ 
+-	user, err := fillUserResponse(ctx, tx, userModel)
++	user, err := fillUserResponse(ctx, nil, userModel)
+ 	if err != nil {
+ 		return echo.NewHTTPError(http.StatusInternalServerError, "failed to fill user: "+err.Error())
+ 	}
+ 
+-	if err := tx.Commit(); err != nil {
+-		return echo.NewHTTPError(http.StatusInternalServerError, "failed to commit: "+err.Error())
+-	}
+-
+ 	return c.JSON(http.StatusOK, user)
+ }
+ 
+ func verifyUserSession(c echo.Context) error {
+-	sess, err := session.Get(defaultSessionIDKey, c)
++	sess, err := getSessionCached(c)
+ 	if err != nil {
+ 		return echo.NewHTTPError(http.StatusUnauthorized, "failed to get session")
+ 	}
+@@ -399,34 +376,15 @@ func verifyUserSession(c echo.Context) error {
+ }
+ 
+ func fillUserResponse(ctx context.Context, tx *sqlx.Tx, userModel UserModel) (User, error) {
+-	themeModel := ThemeModel{}
+-	if err := tx.GetContext(ctx, &themeModel, "SELECT * FROM themes WHERE user_id = ?", userModel.ID); err != nil {
+-		return User{}, err
+-	}
+-
+-	var image []byte
+-	if err := tx.GetContext(ctx, &image, "SELECT image FROM icons WHERE user_id = ?", userModel.ID); err != nil {
+-		if !errors.Is(err, sql.ErrNoRows) {
+-			return User{}, err
+-		}
+-		image, err = os.ReadFile(fallbackImage)
+-		if err != nil {
++	cached.RLock()
++	theme, ok := cached.themes[userModel.ID]
++	cached.RUnlock()
++	if !ok {
++		var model ThemeModel
++		if err := getRow(ctx, tx, &model, "SELECT * FROM themes WHERE user_id=?", userModel.ID); err != nil {
+ 			return User{}, err
+ 		}
++		theme = Theme{ID: model.ID, DarkMode: model.DarkMode}
+ 	}
+-	iconHash := sha256.Sum256(image)
+-
+-	user := User{
+-		ID:          userModel.ID,
+-		Name:        userModel.Name,
+-		DisplayName: userModel.DisplayName,
+-		Description: userModel.Description,
+-		Theme: Theme{
+-			ID:       themeModel.ID,
+-			DarkMode: themeModel.DarkMode,
+-		},
+-		IconHash: fmt.Sprintf("%x", iconHash),
+-	}
+-
+-	return user, nil
++	return User{ID: userModel.ID, Name: userModel.Name, DisplayName: userModel.DisplayName, Description: userModel.Description, Theme: theme, IconHash: currentIcon(userModel.ID).Hash}, nil
+ }
+diff --git a/webapp/go/write_context.go b/webapp/go/write_context.go
+new file mode 100644
+index 0000000..7c772eb
+--- /dev/null
++++ b/webapp/go/write_context.go
+@@ -0,0 +1,12 @@
++package main
++
++import (
++	"context"
++	"github.com/labstack/echo/v4"
++	"time"
++)
++
++// Finish committed database writes and cache publication even if the client disconnects.
++func mutationContext(c echo.Context) (context.Context, context.CancelFunc) {
++	return context.WithTimeout(context.WithoutCancel(c.Request().Context()), 20*time.Second)
++}
+diff --git a/webapp/sql/initdb.d/10_schema.sql b/webapp/sql/initdb.d/10_schema.sql
+index 83f3e9f..001a9a9 100644
+--- a/webapp/sql/initdb.d/10_schema.sql
++++ b/webapp/sql/initdb.d/10_schema.sql
+@@ -103,4 +103,18 @@ CREATE TABLE `reactions` (
+   -- :innocent:, :tada:, etc...
+   `emoji_name` VARCHAR(255) NOT NULL,
+   `created_at` BIGINT NOT NULL
+-) ENGINE=InnoDB CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
+\ No newline at end of file
++) ENGINE=InnoDB CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
++
++-- Performance indexes and persisted cache metadata.
++ALTER TABLE icons ADD COLUMN hash CHAR(64) NOT NULL DEFAULT '', ADD UNIQUE KEY icons_user(user_id);
++UPDATE icons SET hash=SHA2(image,256);
++ALTER TABLE themes ADD UNIQUE KEY themes_user(user_id);
++ALTER TABLE livestreams ADD KEY ls_user(user_id);
++ALTER TABLE reservation_slots ADD KEY slots_time(start_at,end_at);
++ALTER TABLE livestream_tags ADD KEY lt_stream(livestream_id), ADD KEY lt_tag(tag_id,livestream_id);
++ALTER TABLE livestream_viewers_history ADD KEY history_stream_user(livestream_id,user_id);
++ALTER TABLE livecomments ADD KEY comments_stream_time(livestream_id,created_at), ADD KEY comments_stream_tip(livestream_id,tip);
++ALTER TABLE livecomment_reports ADD KEY reports_stream(livestream_id);
++ALTER TABLE ng_words ADD KEY ng_stream_user(livestream_id,user_id);
++ALTER TABLE reactions ADD KEY reactions_stream_time(livestream_id,created_at);
++ALTER TABLE livecomments ADD COLUMN deleted BOOLEAN NOT NULL DEFAULT 0, ADD KEY comments_stream_deleted_time(livestream_id,deleted,created_at);

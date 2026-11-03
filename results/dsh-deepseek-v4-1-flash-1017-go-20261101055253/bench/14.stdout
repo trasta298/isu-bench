@@ -1,0 +1,338 @@
+time=15:27:00.571 level=INFO msg=負荷走行を開始します
+time=15:27:06.456 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMH50KW7ZRV21WZQK72BP, got: 128, want: 129)"
+time=15:27:06.457 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMH6YATXGZVRVHGNYHHTP, got: 37, want: 39)"
+time=15:27:06.459 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMH44ZAT32P24VH2QR5KN, got: 86, want: 87)"
+time=15:27:07.322 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=迅行タクシー 増加数=1
+time=15:27:07.326 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子と暮らし舎 増加数=1
+time=15:27:08.257 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMH7AF5T1TMNW5XNZRFS0, got: 197, want: 198)"
+time=15:27:08.257 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMH3N00VB07Z4P7PP48CR, got: 83, want: 84)"
+time=15:27:08.259 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMH6BZ74JGX4A0ACCYW5E, got: 114, want: 115)"
+time=15:27:08.259 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMMXY6J1KNVT1MC2T1FN4, got: 99, want: 104)"
+time=15:27:09.119 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子と暮らし舎 増加数=2
+time=15:27:09.125 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=迅行タクシー 増加数=2
+time=15:27:09.125 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=1
+time=15:27:09.125 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=EcoChairs 増加数=2
+time=15:27:09.127 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=和やか交通 増加数=1
+time=15:27:09.147 level=INFO msg=これまでに地域内の評判によって6人、既存ユーザーの招待経由で32人が新規登録しました
+time=15:27:09.147 level=INFO msg=0.0%のライドは椅子がマッチされるまでの時間、65.6%のライドはマッチされた椅子が乗車地点までに掛かる時間、0.0%のライドは椅子の実移動時間に不満がありました
+time=15:27:10.061 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMMXY6J1KNVT1MC2T1FN4, got: 219, want: 222)"
+time=15:27:10.062 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMPPDE6ZCEQD464Z1JDTK, got: 141, want: 142)"
+time=15:27:10.062 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMH774047S21PGXV9PWAH, got: 199, want: 200)"
+time=15:27:10.062 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMPPE5BBFAZV5QXCXRHJT, got: 100, want: 104)"
+time=15:27:10.922 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=迅行タクシー 増加数=1
+time=15:27:10.925 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=和やか交通 増加数=1
+time=15:27:10.926 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=1
+time=15:27:10.926 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=EcoChairs 増加数=1
+time=15:27:10.927 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子と暮らし舎 増加数=1
+time=15:27:11.861 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMH44ZAT32P24VH2QR5KN, got: 364, want: 365)"
+time=15:27:11.861 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMREQ98VTHTM2Y70E9NKS, got: 44, want: 45)"
+time=15:27:11.867 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMH6BZ74JGX4A0ACCYW5E, got: 229, want: 230)"
+time=15:27:12.725 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子と暮らし舎 増加数=2
+time=15:27:12.727 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=2
+time=15:27:12.731 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=迅行タクシー 増加数=1
+time=15:27:12.739 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=EcoChairs 増加数=2
+time=15:27:13.660 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMH6YATXGZVRVHGNYHHTP, got: 371, want: 372)"
+time=15:27:13.662 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMMXY6J1KNVT1MC2T1FN4, got: 645, want: 646)"
+time=15:27:13.665 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMT7MK88G0EDTX9Y85ZG9, got: 67, want: 68)"
+time=15:27:14.525 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=EcoChairs 増加数=1
+time=15:27:14.525 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=和やか交通 増加数=1
+time=15:27:14.526 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子と暮らし舎 増加数=2
+time=15:27:14.529 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=迅行タクシー 増加数=1
+time=15:27:14.547 level=INFO msg=これまでに地域内の評判によって18人、既存ユーザーの招待経由で77人が新規登録しました
+time=15:27:14.547 level=INFO msg=0.0%のライドは椅子がマッチされるまでの時間、64.9%のライドはマッチされた椅子が乗車地点までに掛かる時間、0.6%のライドは椅子の実移動時間に不満がありました
+time=15:27:15.465 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMREQ98VTHTM2Y70E9NKS, got: 233, want: 235)"
+time=15:27:15.465 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMT79F3WJPXJEX94M2NR5, got: 87, want: 90)"
+time=15:27:15.466 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMREKTMZRHZTTHCTDGJHD, got: 334, want: 338)"
+time=15:27:16.324 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=1
+time=15:27:16.327 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子と暮らし舎 増加数=2
+time=15:27:16.329 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=迅行タクシー 増加数=1
+time=15:27:16.329 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=和やか交通 増加数=1
+time=15:27:16.343 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=EcoChairs 増加数=1
+time=15:27:17.261 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMH4J782D25JD44SE5KTV, got: 727, want: 728)"
+time=15:27:17.262 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMXQBG54E6PRCNCF7C86H, got: 25, want: 28)"
+time=15:27:17.264 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMH3N00VB07Z4P7PP48CR, got: 369, want: 370)"
+time=15:27:17.265 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMXQJGGPFDTRGFGWMFBSK, got: 63, want: 65)"
+time=15:27:17.266 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMMY24BKFCP6J8ZRXTDXE, got: 1333, want: 1338)"
+time=15:27:18.125 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=EcoChairs 増加数=1
+time=15:27:18.131 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=迅行タクシー 増加数=1
+time=15:27:18.131 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=和やか交通 増加数=1
+time=15:27:18.139 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子と暮らし舎 増加数=3
+time=15:27:19.059 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMREQ98VTHTM2Y70E9NKS, got: 521, want: 524)"
+time=15:27:19.060 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMZFKJ2H1TSDWCERMYYFT, got: 78, want: 80)"
+time=15:27:19.060 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMPPDYWC2PHGTZX925EQR, got: 617, want: 618)"
+time=15:27:19.061 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMT79F3WJPXJEX8ZSZ5VG, got: 791, want: 795)"
+time=15:27:19.062 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMH5PB3M4BD4Q23EXEYNZ, got: 752, want: 753)"
+time=15:27:19.927 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子と暮らし舎 増加数=1
+time=15:27:19.933 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=和やか交通 増加数=2
+time=15:27:19.934 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=1
+time=15:27:19.934 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=迅行タクシー 増加数=2
+time=15:27:19.947 level=INFO msg=これまでに地域内の評判によって30人、既存ユーザーの招待経由で118人が新規登録しました
+time=15:27:19.947 level=INFO msg=12.9%のライドは椅子がマッチされるまでの時間、68.2%のライドはマッチされた椅子が乗車地点までに掛かる時間、2.3%のライドは椅子の実移動時間に不満がありました
+time=15:27:20.864 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMREQ98VTHTM2Y5PNMN3Q, got: 843, want: 844)"
+time=15:27:20.864 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWN18210EJ4EBM8GBGJA9E, got: 29, want: 30)"
+time=15:27:20.865 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMXQKAWGPW1YET4G1M83C, got: 282, want: 283)"
+time=15:27:21.739 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=EcoChairs 増加数=2
+time=15:27:21.742 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=迅行タクシー 増加数=3
+time=15:27:21.742 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=和やか交通 増加数=1
+time=15:27:21.745 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子と暮らし舎 増加数=2
+time=15:27:22.663 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMW0378SCGTXYZJCRAGCJ, got: 874, want: 876)"
+time=15:27:22.665 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMMXY6J1KNVT1MC2T1FN4, got: 1471, want: 1473)"
+time=15:27:22.674 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMPPK4ZMSN4PPQFNR4EXD, got: 708, want: 709)"
+time=15:27:22.674 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMXQJGGPFDTRGFGWMFBSK, got: 416, want: 418)"
+time=15:27:22.676 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMT6Z28QMQD4H7TCR7HJ4, got: 612, want: 614)"
+time=15:27:23.526 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=2
+time=15:27:23.529 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=EcoChairs 増加数=1
+time=15:27:23.530 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=和やか交通 増加数=2
+time=15:27:23.533 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子と暮らし舎 増加数=2
+time=15:27:23.542 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=迅行タクシー 増加数=2
+time=15:27:24.490 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMXQJGGPFDTRGFGWMFBSK, got: 472, want: 476)"
+time=15:27:24.496 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWN30GMN91XYMBXQAE9YGT, got: 170, want: 171)"
+time=15:27:24.498 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMT6XFC7R0VHA6GT2TXJD, got: 1749, want: 1755)"
+time=15:27:24.499 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMT79F3WJPXJEX8ZSZ5VG, got: 1384, want: 1386)"
+time=15:27:24.500 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMZFW488GASFSMCQBV051, got: 597, want: 598)"
+time=15:27:25.325 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=EcoChairs 増加数=1
+time=15:27:25.327 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=迅行タクシー 増加数=1
+time=15:27:25.327 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=2
+time=15:27:25.329 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子と暮らし舎 増加数=2
+time=15:27:25.347 level=INFO msg=これまでに地域内の評判によって42人、既存ユーザーの招待経由で136人が新規登録しました
+time=15:27:25.347 level=INFO msg=これまでに低評価なライドによって13人が利用をやめました
+time=15:27:25.347 level=INFO msg=39.4%のライドは椅子がマッチされるまでの時間、70.7%のライドはマッチされた椅子が乗車地点までに掛かる時間、10.6%のライドは椅子の実移動時間に不満がありました
+time=15:27:25.350 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=和やか交通 増加数=1
+time=15:27:26.261 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMT79F3WJPXJEX8ZSZ5VG, got: 1453, want: 1455)"
+time=15:27:26.263 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMRENNHB4XJQE1C7HDD95, got: 584, want: 585)"
+time=15:27:26.263 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMH4T4KG70W691RGJ1M6R, got: 1160, want: 1161)"
+time=15:27:26.265 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMZH8K4C3T2354VQ8Z7J5, got: 1201, want: 1206)"
+time=15:27:26.265 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMXRE099RQZ291SAGBTPS, got: 680, want: 682)"
+time=15:27:27.130 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=EcoChairs 増加数=1
+time=15:27:27.141 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子と暮らし舎 増加数=2
+time=15:27:27.157 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=迅行タクシー 増加数=1
+time=15:27:27.161 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=和やか交通 増加数=1
+time=15:27:27.163 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=2
+time=15:27:28.057 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMVZ6Z54KH14KM0WHY5C5, got: 622, want: 623)"
+time=15:27:28.057 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMH4J782D25JD44SE5KTV, got: 1260, want: 1261)"
+time=15:27:28.059 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWN6H9V699M0JVNKBCXBP0, got: 78, want: 79)"
+time=15:27:28.061 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWN4RNCM52MBEWJKD61V9E, got: 309, want: 315)"
+time=15:27:28.063 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMH6HWB34HDZHR5DVKEPH, got: 1215, want: 1216)"
+time=15:27:28.928 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=迅行タクシー 増加数=2
+time=15:27:28.932 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=1
+time=15:27:28.936 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=和やか交通 増加数=1
+time=15:27:28.972 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=EcoChairs 増加数=3
+time=15:27:28.975 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子と暮らし舎 増加数=2
+time=15:27:29.861 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWN89X10AF982DMR3WV6EY, got: 133, want: 136)"
+time=15:27:29.861 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMMXY6J1KNVT1MC2T1FN4, got: 2218, want: 2222)"
+time=15:27:29.863 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMT79F3WJPXJEX94M2NR5, got: 1608, want: 1610)"
+time=15:27:29.864 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWN89BW5K3ZDZNRCXH47KG, got: 140, want: 143)"
+time=15:27:29.871 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWN89Z0MDJ68XJT5H2QXTM, got: 46, want: 47)"
+time=15:27:30.742 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=和やか交通 増加数=2
+time=15:27:30.744 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=迅行タクシー 増加数=3
+time=15:27:30.747 level=INFO msg=これまでに地域内の評判によって56人、既存ユーザーの招待経由で144人が新規登録しました
+time=15:27:30.747 level=INFO msg=これまでに低評価なライドによって44人が利用をやめました
+time=15:27:30.747 level=INFO msg=55.4%のライドは椅子がマッチされるまでの時間、70.2%のライドはマッチされた椅子が乗車地点までに掛かる時間、26.1%のライドは椅子の実移動時間に不満がありました
+time=15:27:30.812 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子と暮らし舎 増加数=1
+time=15:27:30.844 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=1
+time=15:27:31.659 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMH3WXWYMQKS8684Y6BGW, got: 1167, want: 1168)"
+time=15:27:31.659 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMXQBG54E6PRCNCF7C86H, got: 1254, want: 1256)"
+time=15:27:31.662 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWN310N31XXBBG3B6RMY68, got: 780, want: 784)"
+time=15:27:31.663 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWN30XV1SEC0XR4JPAWDEV, got: 751, want: 755)"
+time=15:27:31.674 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWNBSST50VSTSB1HA402EZ, got: 13, want: 14)"
+time=15:27:32.525 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=EcoChairs 増加数=1
+time=15:27:32.531 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=和やか交通 増加数=1
+time=15:27:32.540 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=1
+time=15:27:32.541 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子と暮らし舎 増加数=1
+time=15:27:33.469 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWN30GMN91XYMBXQAE9YGT, got: 979, want: 985)"
+time=15:27:33.472 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMPPF6W8SEM2KDXAT3P9T, got: 2409, want: 2410)"
+time=15:27:33.472 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWN4RH2P7V9QQAP544K9AP, got: 937, want: 943)"
+time=15:27:33.473 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWN1881VRDV5JY1HWYR0NF, got: 526, want: 527)"
+time=15:27:33.473 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMH4T4KG70W691RGJ1M6R, got: 1342, want: 1343)"
+time=15:27:34.335 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=1
+time=15:27:34.341 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=EcoChairs 増加数=2
+time=15:27:34.342 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子と暮らし舎 増加数=2
+time=15:27:34.343 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=和やか交通 増加数=2
+time=15:27:34.344 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=迅行タクシー 増加数=1
+time=15:27:35.257 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWN310N31XXBBG3B6RMY68, got: 914, want: 916)"
+time=15:27:35.257 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMT6Z28QMQD4H7TCR7HJ4, got: 1093, want: 1094)"
+time=15:27:35.257 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMPPE5BBFAZV5QXCXRHJT, got: 2507, want: 2509)"
+time=15:27:35.261 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMH50KW7ZRV21WZQK72BP, got: 1279, want: 1280)"
+time=15:27:35.266 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWN30NQEDTF8PDFVERCMFA, got: 827, want: 829)"
+time=15:27:36.134 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=EcoChairs 増加数=4
+time=15:27:36.147 level=INFO msg=これまでに地域内の評判によって66人、既存ユーザーの招待経由で146人が新規登録しました
+time=15:27:36.147 level=INFO msg=これまでに低評価なライドによって73人が利用をやめました
+time=15:27:36.147 level=INFO msg=64.7%のライドは椅子がマッチされるまでの時間、73.4%のライドはマッチされた椅子が乗車地点までに掛かる時間、38.8%のライドは椅子の実移動時間に不満がありました
+time=15:27:36.159 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=迅行タクシー 増加数=2
+time=15:27:36.159 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=3
+time=15:27:36.168 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子と暮らし舎 増加数=1
+time=15:27:37.098 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMZFXCQ1JTQN7W999BMY8, got: 2106, want: 2108)"
+time=15:27:37.106 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMT79F3WJPXJEX8ZSZ5VG, got: 2206, want: 2210)"
+time=15:27:37.134 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWNH2YHDP6C5NW0BG8G8PJ, got: 12, want: 14)"
+time=15:27:37.136 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWN4SJYQ93BNFAZJNZ7EHZ, got: 668, want: 669)"
+time=15:27:37.136 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMH774047S21PGXV9PWAH, got: 1315, want: 1316)"
+time=15:27:37.975 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=EcoChairs 増加数=1
+time=15:27:37.982 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=1
+time=15:27:37.990 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=迅行タクシー 増加数=1
+time=15:27:38.025 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=和やか交通 増加数=3
+time=15:27:38.127 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子と暮らし舎 増加数=2
+time=15:27:38.859 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMZFKJ2H1TSDWCERMYYFT, got: 1573, want: 1575)"
+time=15:27:38.859 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMPPF6W8SEM2KDXAT3P9T, got: 2771, want: 2772)"
+time=15:27:38.860 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWNK22TZ7C19PQ80Z1FQBM, got: 2, want: 3)"
+time=15:27:38.860 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWNH3DT4DMR5DJN42BPBKH, got: 73, want: 74)"
+time=15:27:38.862 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMPPDE6ZCEQD464Z1JDTK, got: 3416, want: 3421)"
+time=15:27:39.729 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=1
+time=15:27:39.735 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=迅行タクシー 増加数=2
+time=15:27:39.740 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=EcoChairs 増加数=2
+time=15:27:39.818 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子と暮らし舎 増加数=2
+time=15:27:39.833 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=和やか交通 増加数=1
+time=15:27:40.699 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMZG870PV4VZ1PW9TX198, got: 1668, want: 1670)"
+time=15:27:40.706 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWNMQSRGMZCRKTBCYVE85X, got: 11, want: 15)"
+time=15:27:40.706 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWNH3AQWRVWGPT2KV3PJQE, got: 214, want: 220)"
+time=15:27:40.707 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWNA2YP2APR33H67RYHVTY, got: 266, want: 268)"
+time=15:27:40.713 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMXQJGGPFDTRGFGWMFBSK, got: 1643, want: 1644)"
+time=15:27:41.548 level=INFO msg=これまでに地域内の評判によって78人、既存ユーザーの招待経由で155人が新規登録しました
+time=15:27:41.548 level=INFO msg=これまでに低評価なライドによって102人が利用をやめました
+time=15:27:41.548 level=INFO msg=61.9%のライドは椅子がマッチされるまでの時間、73.8%のライドはマッチされた椅子が乗車地点までに掛かる時間、48.8%のライドは椅子の実移動時間に不満がありました
+time=15:27:41.554 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=和やか交通 増加数=2
+time=15:27:41.556 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=1
+time=15:27:41.557 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=迅行タクシー 増加数=1
+time=15:27:41.570 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子と暮らし舎 増加数=2
+time=15:27:41.573 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=EcoChairs 増加数=2
+time=15:27:42.477 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWN89X10AF982DMR3WV6EY, got: 836, want: 839)"
+time=15:27:42.480 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWN89W8EV6SW29E41MJAEP, got: 282, want: 283)"
+time=15:27:42.480 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWNJZ7ACY5FZR72NTY4WAD, got: 154, want: 156)"
+time=15:27:42.508 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMT72K7YM6J3EHJY26APW, got: 2732, want: 2736)"
+time=15:27:42.508 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMT79F3WJPXJEX8ZSZ5VG, got: 2414, want: 2416)"
+time=15:27:43.348 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=EcoChairs 増加数=1
+time=15:27:43.382 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=和やか交通 増加数=2
+time=15:27:43.382 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=2
+time=15:27:43.382 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=迅行タクシー 増加数=2
+time=15:27:43.382 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子と暮らし舎 増加数=3
+time=15:27:44.263 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWNMQSRGMZCRKTBCYVE85X, got: 25, want: 26)"
+time=15:27:44.264 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWNMK1B7N3K3SCG8QQPY1E, got: 89, want: 91)"
+time=15:27:44.265 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWNA4XPFXSPAXYM55XHG26, got: 832, want: 836)"
+time=15:27:44.279 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWNA2G3GHZ92G05YRARFYB, got: 297, want: 298)"
+time=15:27:44.280 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMH5E91TGC7GQHTHQP0B7, got: 1357, want: 1358)"
+time=15:27:45.128 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=和やか交通 増加数=4
+time=15:27:45.169 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子と暮らし舎 増加数=1
+time=15:27:45.173 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=3
+time=15:27:45.173 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=迅行タクシー 増加数=1
+time=15:27:45.174 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=EcoChairs 増加数=3
+time=15:27:46.060 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWNH3BE1415J1H1STV8W0D, got: 464, want: 465)"
+time=15:27:46.067 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWNA1GYB0Q4EEXVF8C231M, got: 1046, want: 1048)"
+time=15:27:46.067 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMXQBG54E6PRCNCF7C86H, got: 2245, want: 2250)"
+time=15:27:46.071 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWNMK3VGFWHSZCBA47RMRD, got: 348, want: 354)"
+time=15:27:46.080 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWNR6JY49ZR9JGPF1MQFMA, got: 43, want: 44)"
+time=15:27:46.925 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=和やか交通 増加数=1
+time=15:27:46.936 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=EcoChairs 増加数=2
+time=15:27:46.947 level=INFO msg=これまでに地域内の評判によって90人、既存ユーザーの招待経由で181人が新規登録しました
+time=15:27:46.947 level=INFO msg=これまでに低評価なライドによって122人が利用をやめました
+time=15:27:46.947 level=INFO msg=50.0%のライドは椅子がマッチされるまでの時間、67.4%のライドはマッチされた椅子が乗車地点までに掛かる時間、57.5%のライドは椅子の実移動時間に不満がありました
+time=15:27:46.977 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=迅行タクシー 増加数=2
+time=15:27:46.985 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子と暮らし舎 増加数=3
+time=15:27:47.043 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=1
+time=15:27:47.862 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMZH8K4C3T2354VQ8Z7J5, got: 2897, want: 2902)"
+time=15:27:47.862 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWNR6JY49ZR9JGPF1MQFMA, got: 43, want: 44)"
+time=15:27:47.862 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWN6GNN7Q0WW2JCD3T6C7J, got: 1381, want: 1383)"
+time=15:27:47.863 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWNA1FM8AXHN072T7A2885, got: 1418, want: 1420)"
+time=15:27:47.901 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMVZ5512ANCHZV79Y65X1, got: 1510, want: 1512)"
+time=15:27:48.823 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=迅行タクシー 増加数=3
+time=15:27:48.827 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子と暮らし舎 増加数=2
+time=15:27:48.836 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=EcoChairs 増加数=1
+time=15:27:48.837 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=2
+time=15:27:48.842 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=和やか交通 増加数=3
+time=15:27:49.659 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMZFXCQ1JTQN7W999BMY8, got: 2666, want: 2669)"
+time=15:27:49.660 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMT6Z28QMQD4H7TCR7HJ4, got: 1324, want: 1326)"
+time=15:27:49.664 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWN89BF9Q5EW7GNTQVYC20, got: 1115, want: 1117)"
+time=15:27:49.674 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWNH3DT4DMR5DJN42BPBKH, got: 341, want: 345)"
+time=15:27:49.674 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMH774047S21PGXV9PWAH, got: 1452, want: 1453)"
+time=15:27:50.550 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=和やか交通 増加数=2
+time=15:27:50.551 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=迅行タクシー 増加数=1
+time=15:27:50.551 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=EcoChairs 増加数=4
+time=15:27:50.561 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=2
+time=15:27:50.574 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子と暮らし舎 増加数=2
+time=15:27:51.463 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMREQ98VTHTM2Y5PNMN3Q, got: 2188, want: 2189)"
+time=15:27:51.464 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWNXGHXANF2NH0REKN5PRH, got: 70, want: 67)"
+time=15:27:51.466 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWN89W8EV6SW29E41MJAEP, got: 319, want: 320)"
+time=15:27:51.472 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWNJWETY1BSVK9SQW0PDR0, got: 686, want: 688)"
+time=15:27:51.475 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWNH36445EA1ZNPJSZM2BB, got: 786, want: 787)"
+time=15:27:52.345 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=EcoChairs 増加数=2
+time=15:27:52.347 level=INFO msg=これまでに地域内の評判によって102人、既存ユーザーの招待経由で213人が新規登録しました
+time=15:27:52.347 level=INFO msg=これまでに低評価なライドによって135人が利用をやめました
+time=15:27:52.347 level=INFO msg=39.3%のライドは椅子がマッチされるまでの時間、59.1%のライドはマッチされた椅子が乗車地点までに掛かる時間、64.3%のライドは椅子の実移動時間に不満がありました
+time=15:27:52.351 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=3
+time=15:27:52.365 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=和やか交通 増加数=2
+time=15:27:52.371 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=迅行タクシー 増加数=2
+time=15:27:52.374 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子と暮らし舎 増加数=3
+time=15:27:53.260 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWNJY6T25B17YTTQ5JV1GY, got: 383, want: 386)"
+time=15:27:53.272 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWNH5AVZXRYX4VNZHTTC40, got: 577, want: 578)"
+time=15:27:53.276 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWNR3SPNENP9809XHBA1T4, got: 334, want: 336)"
+time=15:27:53.276 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWNFANVSQF0P6ZSKEZ43W7, got: 679, want: 680)"
+time=15:27:53.279 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMZG870PV4VZ1PW9TX198, got: 1896, want: 1899)"
+time=15:27:54.137 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=迅行タクシー 増加数=3
+time=15:27:54.141 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子と暮らし舎 増加数=2
+time=15:27:54.162 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=EcoChairs 増加数=2
+time=15:27:54.168 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=和やか交通 増加数=2
+time=15:27:54.172 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=2
+time=15:27:55.068 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWN89BF9Q5EW7GNTQVYC20, got: 1288, want: 1289)"
+time=15:27:55.074 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWN89X10AF982DMR3WV6EY, got: 1138, want: 1139)"
+time=15:27:55.074 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWNPBT6EN4S3AV73T9ZFZB, got: 472, want: 475)"
+time=15:27:55.074 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWN6GS5YVQXVJSHK2K23QZ, got: 1612, want: 1616)"
+time=15:27:55.094 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWN310N31XXBBG3B6RMY68, got: 1498, want: 1499)"
+time=15:27:55.937 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=1
+time=15:27:56.007 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=迅行タクシー 増加数=2
+time=15:27:56.008 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=EcoChairs 増加数=2
+time=15:27:56.012 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子と暮らし舎 増加数=2
+time=15:27:56.054 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=和やか交通 増加数=3
+time=15:27:56.867 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWNSZ76QE316TZVW2ZJXZT, got: 104, want: 105)"
+time=15:27:56.868 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWN310N31XXBBG3B6RMY68, got: 1498, want: 1499)"
+time=15:27:56.869 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWNA1FM8AXHN072T7A2885, got: 1683, want: 1686)"
+time=15:27:56.993 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMH4XFKXR7PRP5WHPFHAW, got: 1635, want: 1636)"
+time=15:27:57.071 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWNBT3MRA756MYB8PHWT92, got: 401, want: 403)"
+time=15:27:57.747 level=INFO msg=これまでに地域内の評判によって114人、既存ユーザーの招待経由で255人が新規登録しました
+time=15:27:57.747 level=INFO msg=これまでに低評価なライドによって148人が利用をやめました
+time=15:27:57.747 level=INFO msg=33.0%のライドは椅子がマッチされるまでの時間、53.3%のライドはマッチされた椅子が乗車地点までに掛かる時間、68.2%のライドは椅子の実移動時間に不満がありました
+time=15:27:57.771 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=和やか交通 増加数=2
+time=15:27:57.791 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子と暮らし舎 増加数=2
+time=15:27:57.791 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=EcoChairs 増加数=2
+time=15:27:57.792 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=2
+time=15:27:57.798 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=迅行タクシー 増加数=2
+time=15:27:58.674 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWN18APCF4FXVG80X6393S, got: 2547, want: 2549)"
+time=15:27:58.674 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWN30GMN91XYMBXQAE9YGT, got: 2086, want: 2087)"
+time=15:27:58.699 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWNXF5M6XHNN40EKDDPCNR, got: 45, want: 46)"
+time=15:27:58.726 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWNJWETY1BSVK9SQW0PDR0, got: 737, want: 741)"
+time=15:27:58.729 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWMPPF6W8SEM2KDXAT3P9T, got: 3232, want: 3236)"
+time=15:27:59.539 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=和やか交通 増加数=1
+time=15:27:59.586 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=2
+time=15:27:59.586 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=EcoChairs 増加数=1
+time=15:27:59.597 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=迅行タクシー 増加数=1
+time=15:27:59.659 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子と暮らし舎 増加数=2
+time=15:28:00.469 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWP2Q9026J6VXBWQ4KX4BD, got: 24, want: 26)"
+time=15:28:00.469 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWNFAHYR3Y3B1XBHKXKP27, got: 668, want: 670)"
+time=15:28:00.470 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWNA2ECQVTA2KQ4F708ZJG, got: 786, want: 788)"
+time=15:28:00.471 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWP4GDZX4V7A9B8QBNC7N5, got: 70, want: 65)"
+time=15:28:00.472 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWNH3AQWRVWGPT2KV3PJQE, got: 698, want: 699)"
+time=15:28:01.400 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=和やか交通 増加数=2
+time=15:28:01.408 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子と暮らし舎 増加数=2
+time=15:28:01.411 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=1
+time=15:28:01.412 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=迅行タクシー 増加数=2
+time=15:28:01.431 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=EcoChairs 増加数=3
+time=15:28:02.258 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWP7ZG1FWS9BV2H6C9PGDZ, got: 58, want: 62)"
+time=15:28:02.261 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWNA2G3GHZ92G05YRARFYB, got: 381, want: 382)"
+time=15:28:02.263 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWP85YK4E5019J3QDTDCA4, got: 11, want: 14)"
+time=15:28:02.265 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWNVNY9S4HDGFX50AYB20P, got: 20, want: 21)"
+time=15:28:02.266 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWNSWGXW79JW5DF5N1R1VB, got: 258, want: 260)"
+time=15:28:03.140 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=4
+time=15:28:03.147 level=INFO msg=これまでに地域内の評判によって126人、既存ユーザーの招待経由で268人が新規登録しました
+time=15:28:03.147 level=INFO msg=これまでに低評価なライドによって176人が利用をやめました
+time=15:28:03.148 level=INFO msg=38.1%のライドは椅子がマッチされるまでの時間、48.0%のライドはマッチされた椅子が乗車地点までに掛かる時間、70.9%のライドは椅子の実移動時間に不満がありました
+time=15:28:03.149 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=EcoChairs 増加数=2
+time=15:28:03.150 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=和やか交通 増加数=1
+time=15:28:03.168 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=迅行タクシー 増加数=3
+time=15:28:03.196 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子と暮らし舎 増加数=2
+time=15:28:08.747 level=INFO msg=最終地域情報 名前=チェアタウン ユーザー登録数=239 アクティブユーザー数=139
+time=15:28:08.747 level=INFO msg=最終地域情報 名前=コシカケシティ ユーザー登録数=175 アクティブユーザー数=94
+time=15:28:08.747 level=INFO msg=最終オーナー情報 名前=椅子と暮らし舎 売上=1813700 椅子数=65
+time=15:28:08.747 level=INFO msg=最終オーナー情報 名前=EcoChairs 売上=1444100 椅子数=57
+time=15:28:08.747 level=INFO msg=最終オーナー情報 名前=迅行タクシー 売上=1449000 椅子数=57
+time=15:28:08.747 level=INFO msg=最終オーナー情報 名前=和やか交通 売上=1343200 椅子数=53
+time=15:28:08.747 level=INFO msg=最終オーナー情報 名前=SwiftCab 売上=1183500 椅子数=51
+time=15:28:08.747 level=INFO msg=40.4%のライドは椅子がマッチされるまでの時間、47.0%のライドはマッチされた椅子が乗車地点までに掛かる時間、70.8%のライドは椅子の実移動時間に不満がありました
+time=15:28:08.747 level=INFO msg=結果 pass=true スコア=90099 種別エラー数=map[26:148]
+time=15:28:08.747 level=INFO msg=負荷走行が終了しました

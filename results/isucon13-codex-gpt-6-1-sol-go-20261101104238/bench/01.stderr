@@ -1,0 +1,190 @@
+sudo: unable to resolve host ip-10-0-1-250: Name or service not known
+2026-11-01T10:49:02.534Z	info	staff-logger	bench/bench.go:172	SSL接続が有効になっています
+2026-11-01T10:49:02.536Z	info	staff-logger	bench/bench.go:193	webapp: https://pipe.u.isucon.dev:443
+2026-11-01T10:49:02.536Z	info	staff-logger	bench/bench.go:194	nameserver: 10.0.1.229:53
+2026-11-01T10:49:49.207Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:49:49.207Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:49:49.207Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:49:49.207Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:49:49.207Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:49:49.207Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:49:49.207Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:49:49.207Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:49:49.207Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:49:49.207Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:49:49.708Z	info	staff-logger	scenario/streamer.go:48	change icon
+2026-11-01T10:49:49.795Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:49:49.795Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:49:49.795Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:49:49.803Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:49:49.803Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:49:49.817Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:49:49.817Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:49:49.974Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:49:50.077Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:49:50.077Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:49:50.354Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:49:50.354Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:49:50.542Z	info	staff-logger	scenario/viewer.go:46	change icon
+2026-11-01T10:49:50.553Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:49:50.561Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:49:50.833Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:49:50.968Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:49:50.968Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:49:50.968Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:49:51.245Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:49:51.736Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:49:51.736Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:49:52.010Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:49:52.010Z	info	staff-logger	scenario/streamer.go:48	change icon
+2026-11-01T10:49:52.084Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:49:52.084Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:49:52.675Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:49:53.741Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:49:53.741Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:49:53.741Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:49:54.734Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:49:54.734Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:49:54.734Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:49:54.734Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:49:55.965Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:49:55.965Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:49:55.965Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:49:55.965Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:49:58.607Z	info	staff-logger	scenario/streamer.go:48	change icon
+2026-11-01T10:50:01.853Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:50:01.853Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:50:01.853Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:50:01.853Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:50:06.244Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:50:06.244Z	info	staff-logger	scenario/viewer.go:76	visit user profile
+2026-11-01T10:50:06.945Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:50:06.945Z	info	staff-logger	scenario/viewer.go:76	visit user profile
+2026-11-01T10:50:08.126Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:50:08.126Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:50:10.276Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:50:10.276Z	info	staff-logger	scenario/viewer.go:76	visit user profile
+2026-11-01T10:50:10.486Z	info	staff-logger	scenario/streamer.go:48	change icon
+2026-11-01T10:50:11.312Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:50:11.312Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:50:11.313Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:50:11.313Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:50:14.945Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:50:14.945Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:50:14.945Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:50:14.945Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:50:23.035Z	info	staff-logger	scenario/streamer.go:48	change icon
+2026-11-01T10:50:26.579Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:50:27.013Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:50:30.348Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:50:31.439Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:50:31.439Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:50:31.439Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:50:31.439Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:50:32.891Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:50:32.891Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:50:32.891Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:50:32.891Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:50:35.217Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:50:35.217Z	info	staff-logger	scenario/viewer.go:76	visit user profile
+2026-11-01T10:50:35.434Z	info	staff-logger	scenario/streamer.go:48	change icon
+2026-11-01T10:50:35.470Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:50:35.470Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:50:35.470Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:50:35.470Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:50:35.763Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:50:35.763Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:50:36.779Z	warn	staff-logger	scenario/streamer.go:198	aggressive streamer moderate: failed to visit livestream admin: benchmark-application: [一般エラー] GET /api/livestream/7528/report へのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)
+
+2026-11-01T10:50:42.015Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:50:42.015Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:50:42.015Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:50:42.015Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:50:43.373Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:50:43.373Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:50:43.373Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:50:43.373Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:50:47.185Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:50:47.185Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:50:47.185Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:50:47.185Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:50:47.949Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:50:47.949Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:50:47.949Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:50:47.949Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:50:49.201Z	warn	staff-logger	scenario/viewer.go:78	view: failed to visit user profile: Get "https://pipe.u.isucon.dev:443/api/user/kanasasaki0/statistics": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:50:49.201Z	warn	staff-logger	scenario/viewer.go:121	view: failed to post livecomment: Post "https://nakamuraryohei0.u.isucon.dev:443/api/livestream/7532/livecomment": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:50:49.201Z	warn	staff-logger	scenario/viewer.go:121	view: failed to post livecomment: Post "https://iyamamoto1.u.isucon.dev:443/api/livestream/7531/livecomment": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:50:49.201Z	warn	staff-logger	scenario/streamer.go:139	streamer_moderate: failed to visit livestream admin: Get "https://kazuyasato0.u.isucon.dev:443/api/livestream/7553/ngwords": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:50:49.201Z	warn	staff-logger	scenario/viewer.go:134	view: failed to post reactions: Post "https://atanaka0.u.isucon.dev:443/api/livestream/7528/reaction": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:50:49.201Z	warn	staff-logger	scenario/viewer.go:101	view: failed to get livecomments: Get "https://atanaka0.u.isucon.dev:443/api/livestream/7528/livecomment": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:50:49.201Z	warn	staff-logger	scenario/viewer.go:101	view: failed to get livecomments: Get "https://atanaka0.u.isucon.dev:443/api/livestream/7528/livecomment": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:50:49.202Z	warn	staff-logger	scenario/viewer.go:101	view: failed to get livecomments: Get "https://atanaka0.u.isucon.dev:443/api/livestream/7528/livecomment": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:50:49.202Z	warn	staff-logger	scenario/viewer.go:101	view: failed to get livecomments: Get "https://atanaka0.u.isucon.dev:443/api/livestream/7528/livecomment": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:50:49.202Z	warn	staff-logger	scenario/viewer.go:101	view: failed to get livecomments: Get "https://atanaka0.u.isucon.dev:443/api/livestream/7528/livecomment": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:50:49.202Z	warn	staff-logger	scenario/viewer.go:101	view: failed to get livecomments: Get "https://atanaka0.u.isucon.dev:443/api/livestream/7528/livecomment": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:50:49.202Z	warn	staff-logger	scenario/viewer.go:142	view: failed to leave from livestream: Delete "https://atanaka0.u.isucon.dev:443/api/livestream/7528/exit": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:50:49.202Z	warn	staff-logger	scenario/viewer.go:101	view: failed to get livecomments: Get "https://rei140.u.isucon.dev:443/api/livestream/7552/livecomment": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:50:49.202Z	warn	staff-logger	scenario/viewer.go:101	view: failed to get livecomments: Get "https://rei140.u.isucon.dev:443/api/livestream/7552/livecomment": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:50:49.202Z	warn	staff-logger	scenario/viewer.go:101	view: failed to get livecomments: Get "https://rei140.u.isucon.dev:443/api/livestream/7552/livecomment": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:50:49.202Z	warn	staff-logger	scenario/viewer.go:101	view: failed to get livecomments: Get "https://rei140.u.isucon.dev:443/api/livestream/7552/livecomment": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:50:49.202Z	warn	staff-logger	scenario/viewer.go:142	view: failed to leave from livestream: Delete "https://rei140.u.isucon.dev:443/api/livestream/7552/exit": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:50:49.202Z	warn	staff-logger	scenario/viewer.go:121	view: failed to post livecomment: Post "https://csasaki0.u.isucon.dev:443/api/livestream/7550/livecomment": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:50:49.202Z	warn	staff-logger	scenario/viewer.go:121	view: failed to post livecomment: Post "https://kazuya580.u.isucon.dev:443/api/livestream/7551/livecomment": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:50:49.202Z	warn	staff-logger	scenario/streamer.go:91	reserve: failed to reserve: Post "https://kumikosuzuki0.u.isucon.dev:443/api/livestream/reservation": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:50:49.202Z	warn	staff-logger	scenario/streamer.go:198	aggressive streamer moderate: failed to visit livestream admin: Get "https://pipe.u.isucon.dev:443/api/livestream/search?limit=50": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:50:49.202Z	warn	staff-logger	scenario/viewer.go:59	view: failed to visit top page: Get "https://pipe.u.isucon.dev:443/api/livestream/search?tag=%E7%A4%BE%E4%BC%9A%E5%95%8F%E9%A1%8C": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:50:49.202Z	warn	staff-logger	scenario/streamer.go:204	aggressive streamer moderate: failed to moderate: Post "https://rei140.u.isucon.dev:443/api/livestream/7552/moderate": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:50:49.202Z	warn	staff-logger	scenario/viewer.go:121	view: failed to post livecomment: Post "https://kobayashiyasuhiro1.u.isucon.dev:443/api/livestream/7548/livecomment": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:50:49.202Z	warn	staff-logger	scenario/viewer.go:101	view: failed to get livecomments: Get "https://mtanaka1.u.isucon.dev:443/api/livestream/7529/livecomment": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:50:49.203Z	warn	staff-logger	scenario/viewer.go:101	view: failed to get livecomments: Get "https://mtanaka1.u.isucon.dev:443/api/livestream/7529/livecomment": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:50:49.203Z	warn	staff-logger	scenario/viewer.go:101	view: failed to get livecomments: Get "https://mtanaka1.u.isucon.dev:443/api/livestream/7529/livecomment": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:50:49.203Z	warn	staff-logger	scenario/viewer.go:142	view: failed to leave from livestream: Delete "https://mtanaka1.u.isucon.dev:443/api/livestream/7529/exit": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:50:49.368Z	info	staff-logger	bench/bench.go:260	ベンチマーク走行時間: 1m0.169285001s
+2026-11-01T10:50:49.368Z	info	staff-logger	bench/bench.go:277	ベンチエラーを収集します
+2026-11-01T10:50:49.368Z	info	staff-logger	bench/bench.go:285	内部エラーを収集します
+2026-11-01T10:50:49.368Z	info	staff-logger	bench/bench.go:301	シナリオカウンタを出力します
+2026-11-01T10:50:49.369Z	info	staff-logger	bench/bench.go:323	[シナリオ aggressive-streamer-moderate] 36 回成功, 2 回失敗
+2026-11-01T10:50:49.369Z	info	staff-logger	bench/bench.go:323	[シナリオ dns-watertorture-attack] 17 回成功
+2026-11-01T10:50:49.369Z	info	staff-logger	bench/bench.go:323	[シナリオ streamer-cold-reserve] 61 回成功, 1 回失敗
+2026-11-01T10:50:49.369Z	info	staff-logger	bench/bench.go:323	[シナリオ streamer-moderate] 25 回成功, 1 回失敗
+2026-11-01T10:50:49.369Z	info	staff-logger	bench/bench.go:323	[シナリオ viewer-report] 37 回成功, 5 回失敗
+2026-11-01T10:50:49.369Z	info	staff-logger	bench/bench.go:323	[シナリオ viewer-spam] 38 回成功
+2026-11-01T10:50:49.369Z	info	staff-logger	bench/bench.go:323	[シナリオ viewer] 15 回成功, 9 回失敗
+2026-11-01T10:50:49.369Z	info	staff-logger	bench/bench.go:323	[失敗シナリオ aggressive-streamer-moderate-fail] 2 回失敗
+2026-11-01T10:50:49.369Z	info	staff-logger	bench/bench.go:323	[失敗シナリオ streamer-cold-reserve-fail] 1 回失敗
+2026-11-01T10:50:49.369Z	info	staff-logger	bench/bench.go:323	[失敗シナリオ streamer-moderate-fail] 1 回失敗
+2026-11-01T10:50:49.369Z	info	staff-logger	bench/bench.go:323	[失敗シナリオ viewer-fail] 9 回失敗
+2026-11-01T10:50:49.369Z	info	staff-logger	bench/bench.go:323	[失敗シナリオ viewer-report-fail] 5 回失敗
+2026-11-01T10:50:49.369Z	info	staff-logger	bench/bench.go:329	DNSAttacker並列数: 2
+2026-11-01T10:50:49.369Z	info	staff-logger	bench/bench.go:330	名前解決成功数: 2410
+2026-11-01T10:50:49.369Z	info	staff-logger	bench/bench.go:331	名前解決失敗数: 1
+2026-11-01T10:50:49.369Z	info	staff-logger	bench/bench.go:335	スコア: 3673

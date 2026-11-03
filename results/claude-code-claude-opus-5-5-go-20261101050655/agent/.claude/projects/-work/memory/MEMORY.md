@@ -1,0 +1,1 @@
+- [ISUCON14 architecture & pitfalls](isucon14-architecture.md) — final setup, scores, and what failed (async payment, nearby race)

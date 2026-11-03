@@ -1,0 +1,3 @@
+time=14:50:45.363 level=INFO msg=負荷走行を開始します
+time=14:50:45.387 level=ERROR msg=initializeに失敗しました error="POST /api/initialize へのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:502)"
+time=14:50:45.387 level=INFO msg=負荷走行が終了しました

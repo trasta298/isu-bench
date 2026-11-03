@@ -1,0 +1,38 @@
+time=14:10:02.779 level=INFO msg=負荷走行を開始します
+time=14:10:11.270 level=INFO msg=これまでに地域内の評判によって0人、既存ユーザーの招待経由で0人が新規登録しました
+time=14:10:16.670 level=INFO msg=これまでに地域内の評判によって0人、既存ユーザーの招待経由で0人が新規登録しました
+time=14:10:22.071 level=INFO msg=これまでに地域内の評判によって0人、既存ユーザーの招待経由で0人が新規登録しました
+time=14:10:22.071 level=INFO msg=100.0%のライドは椅子がマッチされるまでの時間、100.0%のライドはマッチされた椅子が乗車地点までに掛かる時間、100.0%のライドは椅子の実移動時間に不満がありました
+time=14:10:27.470 level=INFO msg=これまでに地域内の評判によって0人、既存ユーザーの招待経由で0人が新規登録しました
+time=14:10:27.470 level=INFO msg=100.0%のライドは椅子がマッチされるまでの時間、66.7%のライドはマッチされた椅子が乗車地点までに掛かる時間、100.0%のライドは椅子の実移動時間に不満がありました
+time=14:10:32.871 level=INFO msg=これまでに地域内の評判によって1人、既存ユーザーの招待経由で0人が新規登録しました
+time=14:10:32.871 level=INFO msg=100.0%のライドは椅子がマッチされるまでの時間、80.0%のライドはマッチされた椅子が乗車地点までに掛かる時間、100.0%のライドは椅子の実移動時間に不満がありました
+time=14:10:38.270 level=INFO msg=これまでに地域内の評判によって4人、既存ユーザーの招待経由で0人が新規登録しました
+time=14:10:38.270 level=INFO msg=100.0%のライドは椅子がマッチされるまでの時間、80.0%のライドはマッチされた椅子が乗車地点までに掛かる時間、100.0%のライドは椅子の実移動時間に不満がありました
+time=14:10:43.671 level=INFO msg=これまでに地域内の評判によって6人、既存ユーザーの招待経由で0人が新規登録しました
+time=14:10:43.671 level=INFO msg=100.0%のライドは椅子がマッチされるまでの時間、83.3%のライドはマッチされた椅子が乗車地点までに掛かる時間、100.0%のライドは椅子の実移動時間に不満がありました
+time=14:10:47.378 level=WARN msg="オーナーの椅子一覧の取得に失敗しました (CODE=25): GET /api/owner/chairsのリクエストが失敗しました: Get \"https://isuride.xiv.isucon.net/api/owner/chairs\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)"
+time=14:10:49.071 level=INFO msg=これまでに地域内の評判によって6人、既存ユーザーの招待経由で0人が新規登録しました
+time=14:10:49.071 level=INFO msg=100.0%のライドは椅子がマッチされるまでの時間、85.7%のライドはマッチされた椅子が乗車地点までに掛かる時間、100.0%のライドは椅子の実移動時間に不満がありました
+time=14:10:54.471 level=INFO msg=これまでに地域内の評判によって7人、既存ユーザーの招待経由で0人が新規登録しました
+time=14:10:54.471 level=INFO msg=100.0%のライドは椅子がマッチされるまでの時間、87.5%のライドはマッチされた椅子が乗車地点までに掛かる時間、100.0%のライドは椅子の実移動時間に不満がありました
+time=14:10:58.180 level=WARN msg="オーナーの椅子一覧の取得に失敗しました (CODE=25): GET /api/owner/chairsのリクエストが失敗しました: Get \"https://isuride.xiv.isucon.net/api/owner/chairs\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)"
+time=14:10:58.182 level=WARN msg="オーナーの椅子一覧の取得に失敗しました (CODE=25): GET /api/owner/chairsのリクエストが失敗しました: Get \"https://isuride.xiv.isucon.net/api/owner/chairs\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)"
+time=14:10:59.871 level=INFO msg=これまでに地域内の評判によって10人、既存ユーザーの招待経由で0人が新規登録しました
+time=14:10:59.871 level=INFO msg=これまでに低評価なライドによって3人が利用をやめました
+time=14:10:59.871 level=INFO msg=100.0%のライドは椅子がマッチされるまでの時間、90.9%のライドはマッチされた椅子が乗車地点までに掛かる時間、100.0%のライドは椅子の実移動時間に不満がありました
+time=14:10:59.982 level=WARN msg="オーナーの椅子一覧の取得に失敗しました (CODE=25): GET /api/owner/chairsのリクエストが失敗しました: Get \"https://isuride.xiv.isucon.net/api/owner/chairs\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)"
+time=14:11:01.776 level=WARN msg="オーナーの椅子一覧の取得に失敗しました (CODE=25): GET /api/owner/chairsのリクエストが失敗しました: Get \"https://isuride.xiv.isucon.net/api/owner/chairs\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)"
+time=14:11:05.271 level=INFO msg=これまでに地域内の評判によって12人、既存ユーザーの招待経由で0人が新規登録しました
+time=14:11:05.271 level=INFO msg=これまでに低評価なライドによって3人が利用をやめました
+time=14:11:05.271 level=INFO msg=100.0%のライドは椅子がマッチされるまでの時間、91.7%のライドはマッチされた椅子が乗車地点までに掛かる時間、100.0%のライドは椅子の実移動時間に不満がありました
+time=14:11:10.872 level=INFO msg=最終地域情報 名前=チェアタウン ユーザー登録数=15 アクティブユーザー数=12
+time=14:11:10.872 level=INFO msg=最終地域情報 名前=コシカケシティ ユーザー登録数=8 アクティブユーザー数=8
+time=14:11:10.872 level=INFO msg=最終オーナー情報 名前=暮らしの椅子研究所 売上=2100 椅子数=4
+time=14:11:10.872 level=INFO msg=最終オーナー情報 名前=椅子と暮らし舎 売上=13700 椅子数=4
+time=14:11:10.872 level=INFO msg=最終オーナー情報 名前="Chair Charm" 売上=15500 椅子数=4
+time=14:11:10.872 level=INFO msg=最終オーナー情報 名前=GoEase 売上=19500 椅子数=4
+time=14:11:10.872 level=INFO msg=最終オーナー情報 名前=和やか交通 売上=12700 椅子数=4
+time=14:11:10.872 level=INFO msg=100.0%のライドは椅子がマッチされるまでの時間、91.7%のライドはマッチされた椅子が乗車地点までに掛かる時間、100.0%のライドは椅子の実移動時間に不満がありました
+time=14:11:10.872 level=INFO msg=結果 pass=true スコア=1114 種別エラー数=map[25:5]
+time=14:11:10.872 level=INFO msg=負荷走行が終了しました

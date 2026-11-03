@@ -1,0 +1,3 @@
+time=15:02:27.623 level=INFO msg=負荷走行を開始します
+time=15:02:30.827 level=ERROR msg=初期データのチェックに失敗しました error="GET /api/owner/sales のレスポンスの内容が期待したものと一致しません"
+time=15:02:30.827 level=INFO msg=負荷走行が終了しました

@@ -1,0 +1,197 @@
+time=14:18:07.509 level=INFO msg=負荷走行を開始します
+time=14:18:13.642 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ZenDrive 増加数=1
+time=14:18:13.643 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=1
+time=14:18:13.641 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=EcoChairs 増加数=2
+time=14:18:15.442 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ZenDrive 増加数=2
+time=14:18:15.443 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Orbit Taxi" 増加数=1
+time=14:18:15.443 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=2
+time=14:18:15.443 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=2
+time=14:18:15.444 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=EcoChairs 増加数=1
+time=14:18:15.465 level=INFO msg=これまでに地域内の評判によって9人、既存ユーザーの招待経由で42人が新規登録しました
+time=14:18:15.465 level=INFO msg=0.0%のライドは椅子がマッチされるまでの時間、83.3%のライドはマッチされた椅子が乗車地点までに掛かる時間、0.0%のライドは椅子の実移動時間に不満がありました
+time=14:18:17.241 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=1
+time=14:18:17.245 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ZenDrive 増加数=1
+time=14:18:17.245 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Orbit Taxi" 増加数=1
+time=14:18:17.248 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=EcoChairs 増加数=1
+time=14:18:17.248 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=1
+time=14:18:19.041 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=2
+time=14:18:19.045 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Orbit Taxi" 増加数=1
+time=14:18:19.046 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=EcoChairs 増加数=1
+time=14:18:19.046 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=1
+time=14:18:19.050 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ZenDrive 増加数=1
+time=14:18:20.842 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=2
+time=14:18:20.846 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=EcoChairs 増加数=2
+time=14:18:20.848 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=2
+time=14:18:20.848 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ZenDrive 増加数=1
+time=14:18:20.865 level=INFO msg=これまでに地域内の評判によって19人、既存ユーザーの招待経由で86人が新規登録しました
+time=14:18:20.865 level=INFO msg=0.0%のライドは椅子がマッチされるまでの時間、76.4%のライドはマッチされた椅子が乗車地点までに掛かる時間、0.0%のライドは椅子の実移動時間に不満がありました
+time=14:18:22.647 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=3
+time=14:18:22.650 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ZenDrive 増加数=3
+time=14:18:22.651 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=2
+time=14:18:24.449 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=2
+time=14:18:24.449 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Orbit Taxi" 増加数=2
+time=14:18:24.452 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=2
+time=14:18:24.452 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=EcoChairs 増加数=3
+time=14:18:24.452 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ZenDrive 増加数=3
+time=14:18:26.250 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Orbit Taxi" 増加数=3
+time=14:18:26.251 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ZenDrive 増加数=2
+time=14:18:26.257 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=3
+time=14:18:26.257 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=EcoChairs 増加数=3
+time=14:18:26.261 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=4
+time=14:18:26.265 level=INFO msg=これまでに地域内の評判によって31人、既存ユーザーの招待経由で154人が新規登録しました
+time=14:18:26.265 level=INFO msg=26.5%のライドは椅子がマッチされるまでの時間、75.0%のライドはマッチされた椅子が乗車地点までに掛かる時間、0.0%のライドは椅子の実移動時間に不満がありました
+time=14:18:28.054 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=EcoChairs 増加数=4
+time=14:18:28.058 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Orbit Taxi" 増加数=2
+time=14:18:28.066 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ZenDrive 増加数=5
+time=14:18:28.066 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=3
+time=14:18:28.066 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=4
+time=14:18:29.874 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Orbit Taxi" 増加数=3
+time=14:18:29.887 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=5
+time=14:18:29.890 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=EcoChairs 増加数=3
+time=14:18:29.895 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ZenDrive 増加数=3
+time=14:18:29.899 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=5
+time=14:18:31.666 level=INFO msg=これまでに地域内の評判によって47人、既存ユーザーの招待経由で346人が新規登録しました
+time=14:18:31.666 level=INFO msg=14.5%のライドは椅子がマッチされるまでの時間、68.6%のライドはマッチされた椅子が乗車地点までに掛かる時間、0.5%のライドは椅子の実移動時間に不満がありました
+time=14:18:31.704 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Orbit Taxi" 増加数=4
+time=14:18:31.718 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ZenDrive 増加数=5
+time=14:18:31.727 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=EcoChairs 増加数=6
+time=14:18:31.748 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=5
+time=14:18:31.748 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=4
+time=14:18:33.527 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Orbit Taxi" 増加数=3
+time=14:18:33.548 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=6
+time=14:18:33.551 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=6
+time=14:18:33.558 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ZenDrive 増加数=7
+time=14:18:33.564 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=EcoChairs 増加数=4
+time=14:18:35.403 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=EcoChairs 増加数=5
+time=14:18:35.408 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Orbit Taxi" 増加数=5
+time=14:18:35.453 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ZenDrive 増加数=5
+time=14:18:35.502 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=5
+time=14:18:35.507 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=6
+time=14:18:37.065 level=INFO msg=これまでに地域内の評判によって58人、既存ユーザーの招待経由で567人が新規登録しました
+time=14:18:37.065 level=INFO msg=これまでに低評価なライドによって4人が利用をやめました
+time=14:18:37.065 level=INFO msg=34.8%のライドは椅子がマッチされるまでの時間、64.2%のライドはマッチされた椅子が乗車地点までに掛かる時間、1.7%のライドは椅子の実移動時間に不満がありました
+time=14:18:37.220 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Orbit Taxi" 増加数=3
+time=14:18:37.286 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ZenDrive 増加数=4
+time=14:18:37.304 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=EcoChairs 増加数=3
+time=14:18:37.314 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=5
+time=14:18:37.319 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=5
+time=14:18:39.012 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Orbit Taxi" 増加数=4
+time=14:18:39.054 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=4
+time=14:18:39.075 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=EcoChairs 増加数=5
+time=14:18:39.086 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ZenDrive 増加数=6
+time=14:18:39.092 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=5
+time=14:18:40.834 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Orbit Taxi" 増加数=4
+time=14:18:40.857 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=EcoChairs 増加数=5
+time=14:18:40.896 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=6
+time=14:18:40.908 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ZenDrive 増加数=5
+time=14:18:40.919 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=5
+time=14:18:42.465 level=INFO msg=これまでに地域内の評判によって67人、既存ユーザーの招待経由で700人が新規登録しました
+time=14:18:42.465 level=INFO msg=これまでに低評価なライドによって65人が利用をやめました
+time=14:18:42.465 level=INFO msg=56.9%のライドは椅子がマッチされるまでの時間、62.4%のライドはマッチされた椅子が乗車地点までに掛かる時間、10.0%のライドは椅子の実移動時間に不満がありました
+time=14:18:42.652 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Orbit Taxi" 増加数=3
+time=14:18:42.724 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=EcoChairs 増加数=3
+time=14:18:42.759 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=7
+time=14:18:42.781 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=5
+time=14:18:42.798 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ZenDrive 増加数=7
+time=14:18:44.445 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Orbit Taxi" 増加数=4
+time=14:18:44.468 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=6
+time=14:18:44.502 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=EcoChairs 増加数=4
+time=14:18:44.560 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=6
+time=14:18:44.590 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ZenDrive 増加数=8
+time=14:18:46.304 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Orbit Taxi" 増加数=3
+time=14:18:46.405 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=EcoChairs 増加数=5
+time=14:18:46.478 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=5
+time=14:18:46.482 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ZenDrive 増加数=7
+time=14:18:46.485 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=7
+time=14:18:47.865 level=INFO msg=これまでに地域内の評判によって79人、既存ユーザーの招待経由で804人が新規登録しました
+time=14:18:47.865 level=INFO msg=これまでに低評価なライドによって165人が利用をやめました
+time=14:18:47.865 level=INFO msg=70.3%のライドは椅子がマッチされるまでの時間、56.6%のライドはマッチされた椅子が乗車地点までに掛かる時間、20.9%のライドは椅子の実移動時間に不満がありました
+time=14:18:48.172 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Orbit Taxi" 増加数=4
+time=14:18:48.206 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=EcoChairs 増加数=6
+time=14:18:48.292 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=6
+time=14:18:48.298 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=8
+time=14:18:48.299 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ZenDrive 増加数=7
+time=14:18:49.964 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Orbit Taxi" 増加数=3
+time=14:18:50.044 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=EcoChairs 増加数=5
+time=14:18:50.079 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=8
+time=14:18:50.086 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ZenDrive 増加数=6
+time=14:18:50.106 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=6
+time=14:18:51.747 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Orbit Taxi" 増加数=4
+time=14:18:51.825 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=EcoChairs 増加数=6
+time=14:18:51.862 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=4
+time=14:18:51.881 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=7
+time=14:18:51.884 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ZenDrive 増加数=6
+time=14:18:53.265 level=INFO msg=これまでに地域内の評判によって92人、既存ユーザーの招待経由で988人が新規登録しました
+time=14:18:53.265 level=INFO msg=これまでに低評価なライドによって212人が利用をやめました
+time=14:18:53.265 level=INFO msg=76.9%のライドは椅子がマッチされるまでの時間、49.4%のライドはマッチされた椅子が乗車地点までに掛かる時間、23.6%のライドは椅子の実移動時間に不満がありました
+time=14:18:53.623 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Orbit Taxi" 増加数=4
+time=14:18:53.740 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=EcoChairs 増加数=4
+time=14:18:53.807 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=7
+time=14:18:53.810 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=6
+time=14:18:53.875 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ZenDrive 増加数=5
+time=14:18:55.398 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Orbit Taxi" 増加数=4
+time=14:18:55.494 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=EcoChairs 増加数=5
+time=14:18:55.613 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=6
+time=14:18:55.615 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ZenDrive 増加数=7
+time=14:18:55.622 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=7
+time=14:18:57.173 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Orbit Taxi" 増加数=2
+time=14:18:57.294 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=EcoChairs 増加数=4
+time=14:18:57.321 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=5
+time=14:18:57.512 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ZenDrive 増加数=5
+time=14:18:57.540 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=6
+time=14:18:58.665 level=INFO msg=これまでに地域内の評判によって104人、既存ユーザーの招待経由で1200人が新規登録しました
+time=14:18:58.665 level=INFO msg=これまでに低評価なライドによって227人が利用をやめました
+time=14:18:58.665 level=INFO msg=81.1%のライドは椅子がマッチされるまでの時間、43.0%のライドはマッチされた椅子が乗車地点までに掛かる時間、24.3%のライドは椅子の実移動時間に不満がありました
+time=14:18:59.076 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Orbit Taxi" 増加数=5
+time=14:18:59.129 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=EcoChairs 増加数=4
+time=14:18:59.196 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=7
+time=14:18:59.221 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=6
+time=14:18:59.233 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ZenDrive 増加数=7
+time=14:18:59.573 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceの反映が遅いデータがあります (id: 01M6ARPG4G67TJX5SZ6RSHCJCN)"
+time=14:19:00.851 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Orbit Taxi" 増加数=3
+time=14:19:00.999 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=EcoChairs 増加数=5
+time=14:19:01.046 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=5
+time=14:19:01.101 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=5
+time=14:19:01.113 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ZenDrive 増加数=5
+time=14:19:01.392 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceの反映が遅いデータがあります (id: 01M6ARQG8FQFAFV8SPHGH818HD)"
+time=14:19:02.681 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Orbit Taxi" 増加数=4
+time=14:19:02.837 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=EcoChairs 増加数=5
+time=14:19:02.883 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=6
+time=14:19:02.982 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ZenDrive 増加数=7
+time=14:19:03.025 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=7
+time=14:19:04.065 level=INFO msg=これまでに地域内の評判によって116人、既存ユーザーの招待経由で1444人が新規登録しました
+time=14:19:04.065 level=INFO msg=これまでに低評価なライドによって237人が利用をやめました
+time=14:19:04.065 level=INFO msg=83.8%のライドは椅子がマッチされるまでの時間、38.6%のライドはマッチされた椅子が乗車地点までに掛かる時間、23.6%のライドは椅子の実移動時間に不満がありました
+time=14:19:04.536 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Orbit Taxi" 増加数=3
+time=14:19:04.687 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=EcoChairs 増加数=5
+time=14:19:04.716 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ZenDrive 増加数=4
+time=14:19:04.757 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=5
+time=14:19:04.811 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=5
+time=14:19:06.219 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Orbit Taxi" 増加数=3
+time=14:19:06.441 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=EcoChairs 増加数=2
+time=14:19:06.458 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=6
+time=14:19:06.526 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ZenDrive 増加数=5
+time=14:19:06.540 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=5
+time=14:19:08.302 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Orbit Taxi" 増加数=3
+time=14:19:08.383 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=7
+time=14:19:08.391 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=EcoChairs 増加数=5
+time=14:19:08.418 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=5
+time=14:19:08.591 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ZenDrive 増加数=7
+time=14:19:09.465 level=INFO msg=これまでに地域内の評判によって127人、既存ユーザーの招待経由で1649人が新規登録しました
+time=14:19:09.465 level=INFO msg=これまでに低評価なライドによって254人が利用をやめました
+time=14:19:09.465 level=INFO msg=85.8%のライドは椅子がマッチされるまでの時間、35.0%のライドはマッチされた椅子が乗車地点までに掛かる時間、23.7%のライドは椅子の実移動時間に不満がありました
+time=14:19:10.010 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Orbit Taxi" 増加数=4
+time=14:19:10.153 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=EcoChairs 増加数=4
+time=14:19:10.174 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=4
+time=14:19:10.183 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ZenDrive 増加数=5
+time=14:19:10.213 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=5
+time=14:19:15.066 level=INFO msg=最終地域情報 名前=チェアタウン ユーザー登録数=1349 アクティブユーザー数=1181
+time=14:19:15.066 level=INFO msg=最終地域情報 名前=コシカケシティ ユーザー登録数=487 アクティブユーザー数=401
+time=14:19:15.066 level=INFO msg=最終オーナー情報 名前=EcoChairs 売上=4098700 椅子数=124
+time=14:19:15.066 level=INFO msg=最終オーナー情報 名前=SwiftCab 売上=5095100 椅子数=149
+time=14:19:15.066 level=INFO msg=最終オーナー情報 名前="Orbit Taxi" 売上=3003300 椅子数=96
+time=14:19:15.066 level=INFO msg=最終オーナー情報 名前=ZenDrive 売上=5385300 椅子数=156
+time=14:19:15.066 level=INFO msg=最終オーナー情報 名前="LuxeLine Taxi" 売上=5451900 椅子数=158
+time=14:19:15.066 level=INFO msg=86.0%のライドは椅子がマッチされるまでの時間、34.6%のライドはマッチされた椅子が乗車地点までに掛かる時間、23.5%のライドは椅子の実移動時間に不満がありました
+time=14:19:15.066 level=INFO msg=結果 pass=true スコア=270371 種別エラー数=map[26:2]
+time=14:19:15.066 level=INFO msg=負荷走行が終了しました

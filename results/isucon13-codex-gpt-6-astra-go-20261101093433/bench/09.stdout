@@ -1,0 +1,23 @@
+2026-11-01T10:05:59.221Z	info	isupipe-benchmarker	SSL接続が有効になっています
+2026-11-01T10:05:59.221Z	info	isupipe-benchmarker	静的ファイルチェックを行います
+2026-11-01T10:05:59.221Z	info	isupipe-benchmarker	静的ファイルチェックが完了しました
+2026-11-01T10:05:59.221Z	info	isupipe-benchmarker	webappの初期化を行います
+2026-11-01T10:06:02.206Z	info	isupipe-benchmarker	ベンチマーク走行前のデータ整合性チェックを行います
+2026-11-01T10:06:06.556Z	info	isupipe-benchmarker	整合性チェックが成功しました
+2026-11-01T10:06:06.556Z	info	isupipe-benchmarker	ベンチマーク走行を開始します
+2026-11-01T10:06:08.564Z	info	isupipe-benchmarker	DNS水責め負荷が上昇します	{"parallelis": 3}
+2026-11-01T10:06:10.564Z	info	isupipe-benchmarker	DNS水責め負荷が上昇します	{"parallelis": 4}
+2026-11-01T10:06:12.564Z	info	isupipe-benchmarker	DNS水責め負荷が上昇します	{"parallelis": 6}
+2026-11-01T10:06:14.564Z	info	isupipe-benchmarker	DNS水責め負荷が上昇します	{"parallelis": 9}
+2026-11-01T10:06:16.564Z	info	isupipe-benchmarker	DNS水責め負荷が上昇します	{"parallelis": 13}
+2026-11-01T10:06:18.564Z	info	isupipe-benchmarker	DNS水責め負荷が上昇します	{"parallelis": 15}
+2026-11-01T10:07:06.556Z	info	isupipe-benchmarker	ベンチマーク走行を停止します
+2026-11-01T10:07:06.557Z	warn	isupipe-benchmarker	ライブコメントを配信に投稿できないため、視聴者が離脱します	{"viewer": "xshimizu4", "livestream_id": 7635, "error": "ベンチマーク走行が継続できないエラーが発生しました"}
+2026-11-01T10:07:06.557Z	warn	isupipe-benchmarker	ライブコメントを配信に投稿できないため、視聴者が離脱します	{"viewer": "yoko880", "livestream_id": 8255, "error": "ベンチマーク走行が継続できないエラーが発生しました"}
+2026-11-01T10:07:06.558Z	warn	isupipe-benchmarker	ライブコメントを配信に投稿できないため、視聴者が離脱します	{"viewer": "rwatanabe0", "livestream_id": 8351, "error": "ベンチマーク走行が継続できないエラーが発生しました"}
+2026-11-01T10:07:06.558Z	warn	isupipe-benchmarker	ライブコメントを配信に投稿できないため、視聴者が離脱します	{"viewer": "ishiichiyo1", "livestream_id": 8328, "error": "ベンチマーク走行が継続できないエラーが発生しました"}
+2026-11-01T10:07:07.015Z	info	isupipe-benchmarker	ベンチマーク走行終了
+2026-11-01T10:07:07.015Z	info	isupipe-benchmarker	最終チェックを実施します
+2026-11-01T10:07:07.015Z	info	isupipe-benchmarker	最終チェックが成功しました
+2026-11-01T10:07:07.015Z	info	isupipe-benchmarker	重複排除したログを以下に出力します
+2026-11-01T10:07:07.019Z	info	isupipe-benchmarker	配信を最後まで視聴できた視聴者数	{"viewers": 2121}

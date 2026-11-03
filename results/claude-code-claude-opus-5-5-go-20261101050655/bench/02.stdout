@@ -1,0 +1,193 @@
+time=14:17:23.656 level=INFO msg=負荷走行を開始します
+time=14:17:28.737 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子再生工房 増加数=2
+time=14:17:28.738 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=1
+time=14:17:28.738 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Urban Wheels" 増加数=1
+time=14:17:30.537 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=3
+time=14:17:30.538 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=3
+time=14:17:30.539 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Urban Wheels" 増加数=3
+time=14:17:30.539 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=いすの道 増加数=2
+time=14:17:30.540 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子再生工房 増加数=2
+time=14:17:30.560 level=INFO msg=これまでに地域内の評判によって7人、既存ユーザーの招待経由で52人が新規登録しました
+time=14:17:30.560 level=INFO msg=0.0%のライドは椅子がマッチされるまでの時間、53.6%のライドはマッチされた椅子が乗車地点までに掛かる時間、0.9%のライドは椅子の実移動時間に不満がありました
+time=14:17:32.335 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=3
+time=14:17:32.337 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=3
+time=14:17:32.337 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Urban Wheels" 増加数=3
+time=14:17:32.337 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=いすの道 増加数=4
+time=14:17:32.337 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子再生工房 増加数=4
+time=14:17:34.141 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Urban Wheels" 増加数=6
+time=14:17:34.142 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子再生工房 増加数=5
+time=14:17:34.142 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=5
+time=14:17:34.143 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=3
+time=14:17:34.143 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=いすの道 増加数=4
+time=14:17:35.939 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=5
+time=14:17:35.940 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=8
+time=14:17:35.940 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子再生工房 増加数=7
+time=14:17:35.943 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=いすの道 増加数=6
+time=14:17:35.943 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Urban Wheels" 増加数=8
+time=14:17:35.960 level=INFO msg=これまでに地域内の評判によって20人、既存ユーザーの招待経由で263人が新規登録しました
+time=14:17:35.960 level=INFO msg=4.4%のライドは椅子がマッチされるまでの時間、19.5%のライドはマッチされた椅子が乗車地点までに掛かる時間、0.5%のライドは椅子の実移動時間に不満がありました
+time=14:17:37.745 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Urban Wheels" 増加数=7
+time=14:17:37.746 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=7
+time=14:17:37.752 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子再生工房 増加数=8
+time=14:17:37.752 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=いすの道 増加数=7
+time=14:17:37.761 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=7
+time=14:17:39.550 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=いすの道 増加数=6
+time=14:17:39.551 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Urban Wheels" 増加数=6
+time=14:17:39.551 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=5
+time=14:17:39.563 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=7
+time=14:17:39.563 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子再生工房 増加数=6
+time=14:17:41.352 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Urban Wheels" 増加数=6
+time=14:17:41.354 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=いすの道 増加数=5
+time=14:17:41.354 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=6
+time=14:17:41.360 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=6
+time=14:17:41.360 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子再生工房 増加数=6
+time=14:17:41.360 level=INFO msg=これまでに地域内の評判によって36人、既存ユーザーの招待経由で592人が新規登録しました
+time=14:17:41.360 level=INFO msg=9.8%のライドは椅子がマッチされるまでの時間、10.3%のライドはマッチされた椅子が乗車地点までに掛かる時間、2.3%のライドは椅子の実移動時間に不満がありました
+time=14:17:43.152 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Urban Wheels" 増加数=5
+time=14:17:43.152 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=いすの道 増加数=5
+time=14:17:43.152 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=5
+time=14:17:43.166 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=6
+time=14:17:44.688 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARNBGBQYEMF4HKKCHFSW8Vの椅子は既にライド中です"
+time=14:17:44.954 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子再生工房 増加数=9
+time=14:17:45.472 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARNEZJBNTPT7HTM1261HC1の椅子は既にライド中です"
+time=14:17:46.756 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=9
+time=14:17:46.759 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=いすの道 増加数=8
+time=14:17:46.760 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Urban Wheels" 増加数=11
+time=14:17:46.760 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=10
+time=14:17:46.760 level=INFO msg=これまでに地域内の評判によって54人、既存ユーザーの招待経由で925人が新規登録しました
+time=14:17:46.760 level=INFO msg=これまでに低評価なライドによって6人が利用をやめました
+time=14:17:46.760 level=INFO msg=18.1%のライドは椅子がマッチされるまでの時間、10.5%のライドはマッチされた椅子が乗車地点までに掛かる時間、6.8%のライドは椅子の実移動時間に不満がありました
+time=14:17:47.155 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARNH7BCQ0B23NC030YEJCTの椅子は既にライド中です"
+time=14:17:48.048 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARNGZBX9S075A6QSMB6JYEの椅子は既にライド中です"
+time=14:17:48.295 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARNJQKJQW9794HETYFF5TRの椅子は既にライド中です"
+time=14:17:50.606 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARNJ4DNKYE8BK0WEH8ABMSの椅子は既にライド中です"
+time=14:17:50.748 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARNJAQPCVTNXD7GMREX784の椅子は既にライド中です"
+time=14:17:50.748 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARNJAQPCVTNXD7GMREX784の椅子は既にライド中です"
+time=14:17:51.497 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARN0MT2F1Z9QN32B9YJ9M3の椅子は既にライド中です"
+time=14:17:52.130 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARNPG9XVWDJ5G5VB0RZGD7の椅子は既にライド中です"
+time=14:17:52.154 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子再生工房 増加数=20
+time=14:17:52.160 level=INFO msg=これまでに地域内の評判によって68人、既存ユーザーの招待経由で1243人が新規登録しました
+time=14:17:52.160 level=INFO msg=これまでに低評価なライドによって15人が利用をやめました
+time=14:17:52.160 level=INFO msg=25.2%のライドは椅子がマッチされるまでの時間、9.5%のライドはマッチされた椅子が乗車地点までに掛かる時間、11.0%のライドは椅子の実移動時間に不満がありました
+time=14:17:53.237 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARN0M76ZRFTF8SB6XY8C7Sの椅子は既にライド中です"
+time=14:17:53.710 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARN9M1BAFEXXV6D19Y3EQZの椅子は既にライド中です"
+time=14:17:53.896 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARN61HKXGACQB41D7G0AWMの椅子は既にライド中です"
+time=14:17:53.963 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARN7T7561FHQ8TNG1YQ1E1の椅子は既にライド中です"
+time=14:17:53.964 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARN7T7561FHQ8TNG1YQ1E1の椅子は既にライド中です"
+time=14:17:53.965 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARN7T7561FHQ8TNG1YQ1E1の椅子は既にライド中です"
+time=14:17:53.968 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=いすの道 増加数=17
+time=14:17:54.192 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARNBAVNDRN3PK268HA8JDTの椅子は既にライド中です"
+time=14:17:54.777 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARN0MT2F1Z9QN32B9YJ9M3の椅子は既にライド中です"
+time=14:17:55.717 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARN0KDBDB54T5PA3QAEXT5の椅子は既にライド中です"
+time=14:17:55.754 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=28
+time=14:17:56.396 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARNBEDSNS7GJ4MEYRNBN4Nの椅子は既にライド中です"
+time=14:17:56.985 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARN0JR0VYE8RFKDCK4HGKSの椅子は既にライド中です"
+time=14:17:56.986 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARN0JR0VYE8RFKDCK4HGKSの椅子は既にライド中です"
+time=14:17:57.201 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARNG4MCYMB8ZT14TA2ZJJHの椅子は既にライド中です"
+time=14:17:57.560 level=INFO msg=これまでに地域内の評判によって80人、既存ユーザーの招待経由で1548人が新規登録しました
+time=14:17:57.560 level=INFO msg=これまでに低評価なライドによって21人が利用をやめました
+time=14:17:57.560 level=INFO msg=31.6%のライドは椅子がマッチされるまでの時間、8.8%のライドはマッチされた椅子が乗車地点までに掛かる時間、12.6%のライドは椅子の実移動時間に不満がありました
+time=14:17:57.566 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=28
+time=14:17:58.452 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARNBC750K9BVE6F1E1YF4Qの椅子は既にライド中です"
+time=14:17:58.454 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARNBC750K9BVE6F1E1YF4Qの椅子は既にライド中です"
+time=14:17:58.749 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Urban Wheels" 増加数=31
+time=14:17:59.338 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARN0JMXMS7W0BGBCHB1EH3の椅子は既にライド中です"
+time=14:17:59.424 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARNHSB3BZWGKPWY6PE2FQ6の椅子は既にライド中です"
+time=14:18:00.174 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARNBBAE98268X19AC57KNHの椅子は既にライド中です"
+time=14:18:00.349 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARN0MWFEDHN9SB1Y3DT7SZの椅子は既にライド中です"
+time=14:18:00.467 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARNMTMF765YFSF2QEVDFEQの椅子は既にライド中です"
+time=14:18:00.469 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARNMTMF765YFSF2QEVDFEQの椅子は既にライド中です"
+time=14:18:00.470 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARNMTMF765YFSF2QEVDFEQの椅子は既にライド中です"
+time=14:18:00.470 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARNMTMF765YFSF2QEVDFEQの椅子は既にライド中です"
+time=14:18:01.444 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARNQ7FM49B5V1MS8X5CJ55の椅子は既にライド中です"
+time=14:18:01.890 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARN0K7WHKVD16BA9NS6CJ4の椅子は既にライド中です"
+time=14:18:02.352 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARNDEC044D8HY1RSYHJV8Xの椅子は既にライド中です"
+time=14:18:02.662 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARN62ANPWYNPB709V4HZ5Jの椅子は既にライド中です"
+time=14:18:02.692 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARNSJ9K1VZ3VNWKC9WSRNJの椅子は既にライド中です"
+time=14:18:02.960 level=INFO msg=これまでに地域内の評判によって91人、既存ユーザーの招待経由で1840人が新規登録しました
+time=14:18:02.960 level=INFO msg=これまでに低評価なライドによって28人が利用をやめました
+time=14:18:02.960 level=INFO msg=38.8%のライドは椅子がマッチされるまでの時間、8.7%のライドはマッチされた椅子が乗車地点までに掛かる時間、14.0%のライドは椅子の実移動時間に不満がありました
+time=14:18:04.260 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARNBEDSNS7GJ4MEYRNBN4Nの椅子は既にライド中です"
+time=14:18:04.260 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARNBEDSNS7GJ4MEYRNBN4Nの椅子は既にライド中です"
+time=14:18:05.525 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARNM34KCKE787W3RGCFV9Tの椅子は既にライド中です"
+time=14:18:05.908 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARN0JMXMS7W0BGBCHB1EH3の椅子は既にライド中です"
+time=14:18:06.616 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARNDQCT39C8R11KCVQP278の椅子は既にライド中です"
+time=14:18:06.616 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARNDQCT39C8R11KCVQP278の椅子は既にライド中です"
+time=14:18:06.616 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARNDQCT39C8R11KCVQP278の椅子は既にライド中です"
+time=14:18:06.617 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARNDQCT39C8R11KCVQP278の椅子は既にライド中です"
+time=14:18:06.657 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARNKJQPPWW9SSHM23XYH7Hの椅子は既にライド中です"
+time=14:18:07.122 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARNEZS6QF5S49WBM3ZF077の椅子は既にライド中です"
+time=14:18:07.122 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARNEZS6QF5S49WBM3ZF077の椅子は既にライド中です"
+time=14:18:07.907 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARNBEDSNS7GJ4MEYRNBN4Nの椅子は既にライド中です"
+time=14:18:08.360 level=INFO msg=これまでに地域内の評判によって105人、既存ユーザーの招待経由で2097人が新規登録しました
+time=14:18:08.360 level=INFO msg=これまでに低評価なライドによって43人が利用をやめました
+time=14:18:08.360 level=INFO msg=45.0%のライドは椅子がマッチされるまでの時間、10.6%のライドはマッチされた椅子が乗車地点までに掛かる時間、15.2%のライドは椅子の実移動時間に不満がありました
+time=14:18:09.173 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARN0K7WHKVD16BA9NS6CJ4の椅子は既にライド中です"
+time=14:18:09.549 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARP0FTWZNHD9C1GE0T68GNの椅子は既にライド中です"
+time=14:18:09.551 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARP0FTWZNHD9C1GE0T68GNの椅子は既にライド中です"
+time=14:18:10.035 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARN0JMXMS7W0BGBCHB1EH3の椅子は既にライド中です"
+time=14:18:10.378 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARNF0Z4V24KT8QNP0MSN4Zの椅子は既にライド中です"
+time=14:18:10.976 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARNTG6XB3XY92QT9ZW5YNRの椅子は既にライド中です"
+time=14:18:10.976 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARNTG6XB3XY92QT9ZW5YNRの椅子は既にライド中です"
+time=14:18:11.157 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARNBAKXXWGBR100PBRW2QEの椅子は既にライド中です"
+time=14:18:11.158 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARNBAKXXWGBR100PBRW2QEの椅子は既にライド中です"
+time=14:18:11.168 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARNBAKXXWGBR100PBRW2QEの椅子は既にライド中です"
+time=14:18:11.734 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARN7SQ34SFHQPRWH6EF6A3の椅子は既にライド中です"
+time=14:18:12.365 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARP9M7WD0QV79W272ZVD35の椅子は既にライド中です"
+time=14:18:13.184 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARNJR4PBZ257WD64SZ7ZM5の椅子は既にライド中です"
+time=14:18:13.760 level=INFO msg=これまでに地域内の評判によって117人、既存ユーザーの招待経由で2294人が新規登録しました
+time=14:18:13.760 level=INFO msg=これまでに低評価なライドによって94人が利用をやめました
+time=14:18:13.760 level=INFO msg=51.5%のライドは椅子がマッチされるまでの時間、13.9%のライドはマッチされた椅子が乗車地点までに掛かる時間、17.6%のライドは椅子の実移動時間に不満がありました
+time=14:18:13.766 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=いすの道 増加数=49
+time=14:18:14.173 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARNYGZX7WVCY3BB9AWE1B7の椅子は既にライド中です"
+time=14:18:14.268 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子再生工房 増加数=57
+time=14:18:15.809 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARNFKHF5S3ZE0CQ8WD3YYNの椅子は既にライド中です"
+time=14:18:17.139 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARNDEKKYRE827C7G3HB8H7の椅子は既にライド中です"
+time=14:18:17.217 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARP5A3SXS4WEC7ANWW9PJEの椅子は既にライド中です"
+time=14:18:17.220 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARP5A3SXS4WEC7ANWW9PJEの椅子は既にライド中です"
+time=14:18:17.261 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARNBCQX12X0J66QM17KKS5の椅子は既にライド中です"
+time=14:18:18.009 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARN0KS8FCHNB05HKJ2J3ZDの椅子は既にライド中です"
+time=14:18:18.294 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARNSJ9K1VZ3VNWKC9WSRNJの椅子は既にライド中です"
+time=14:18:18.930 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARN0M76ZRFTF8SB6XY8C7Sの椅子は既にライド中です"
+time=14:18:19.160 level=INFO msg=これまでに地域内の評判によって129人、既存ユーザーの招待経由で2434人が新規登録しました
+time=14:18:19.160 level=INFO msg=これまでに低評価なライドによって179人が利用をやめました
+time=14:18:19.160 level=INFO msg=57.4%のライドは椅子がマッチされるまでの時間、18.2%のライドはマッチされた椅子が乗車地点までに掛かる時間、20.0%のライドは椅子の実移動時間に不満がありました
+time=14:18:19.472 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARPE1ZGZBV1GTZ7K761YWPの椅子は既にライド中です"
+time=14:18:19.637 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARND7CK8KK7Z1HSKSJFQ20の椅子は既にライド中です"
+time=14:18:19.821 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARNBD85TXEP6TMCXVKARVJの椅子は既にライド中です"
+time=14:18:19.974 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARNNNQKX0AR6EAHERGN94Jの椅子は既にライド中です"
+time=14:18:19.977 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARNNNQKX0AR6EAHERGN94Jの椅子は既にライド中です"
+time=14:18:19.993 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARNNB0WAW9NPK18RJV1B8Nの椅子は既にライド中です"
+time=14:18:20.276 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARNBD85TXEP6TMD37MA5ZFの椅子は既にライド中です"
+time=14:18:20.398 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARNGQF9J66YG3ZVB9PAMKTの椅子は既にライド中です"
+time=14:18:20.404 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARNGQF9J66YG3ZVB9PAMKTの椅子は既にライド中です"
+time=14:18:20.714 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARN498E82AV5Q8AEG36FEKの椅子は既にライド中です"
+time=14:18:20.833 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARN7SQ34SFHQPRWE1K6ANEの椅子は既にライド中です"
+time=14:18:21.764 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=75
+time=14:18:21.912 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARN0JTPKWX5EE7G2RG5C86の椅子は既にライド中です"
+time=14:18:22.318 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARP2AFTHQBBSDY50VQQP7Bの椅子は既にライド中です"
+time=14:18:22.323 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARNVC8FT7QDS885603W915の椅子は既にライド中です"
+time=14:18:22.325 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARNVC8FT7QDS885603W915の椅子は既にライド中です"
+time=14:18:22.383 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARNXAN8SVR4GV3JM6KR60Zの椅子は既にライド中です"
+time=14:18:22.608 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARNQ6DW3AC64XB7J38AA03の椅子は既にライド中です"
+time=14:18:22.885 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARPHDQEP2DFTFAXAD7MGVJの椅子は既にライド中です"
+time=14:18:23.773 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARNF60P0V52N8SY4HWA9ZDの椅子は既にライド中です"
+time=14:18:23.777 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARNF60P0V52N8SY4HWA9ZDの椅子は既にライド中です"
+time=14:18:23.925 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARNMBEWYAG5KACY9H51GKWの椅子は既にライド中です"
+time=14:18:23.965 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARNF0Z4V24KT8QNP0MSN4Zの椅子は既にライド中です"
+time=14:18:24.529 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARN61HKXGACQB41J4QPX3Qの椅子は既にライド中です"
+time=14:18:24.560 level=INFO msg=これまでに地域内の評判によって141人、既存ユーザーの招待経由で2549人が新規登録しました
+time=14:18:24.560 level=INFO msg=これまでに低評価なライドによって267人が利用をやめました
+time=14:18:24.560 level=INFO msg=62.4%のライドは椅子がマッチされるまでの時間、21.7%のライドはマッチされた椅子が乗車地点までに掛かる時間、22.5%のライドは椅子の実移動時間に不満がありました
+time=14:18:24.572 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=69
+time=14:18:25.157 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ARN61TV68A9YG4A1RGWG2Pの椅子は既にライド中です"
+time=14:18:30.160 level=INFO msg=最終地域情報 名前=チェアタウン ユーザー登録数=1649 アクティブユーザー数=1501
+time=14:18:30.160 level=INFO msg=最終地域情報 名前=コシカケシティ ユーザー登録数=1119 アクティブユーザー数=987
+time=14:18:30.161 level=INFO msg=最終オーナー情報 名前=PulseRide 売上=6299600 椅子数=162
+time=14:18:30.161 level=INFO msg=最終オーナー情報 名前=椅子再生工房 売上=5787500 椅子数=130
+time=14:18:30.161 level=INFO msg=最終オーナー情報 名前="LuxeLine Taxi" 売上=5288300 椅子数=148
+time=14:18:30.161 level=INFO msg=最終オーナー情報 名前=いすの道 売上=5220200 椅子数=117
+time=14:18:30.161 level=INFO msg=最終オーナー情報 名前="Urban Wheels" 売上=6204600 椅子数=91
+time=14:18:30.161 level=INFO msg=64.0%のライドは椅子がマッチされるまでの時間、23.0%のライドはマッチされた椅子が乗車地点までに掛かる時間、23.6%のライドは椅子の実移動時間に不満がありました
+time=14:18:30.161 level=INFO msg=結果 pass=true スコア=324523 種別エラー数=map[30:96]
+time=14:18:30.161 level=INFO msg=負荷走行が終了しました

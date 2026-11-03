@@ -1,0 +1,4 @@
+sudo: unable to resolve host ip-10-0-1-120: Name or service not known
+2026-11-01T12:11:59.954Z	info	staff-logger	bench/bench.go:172	SSL接続が有効になっています
+2026-11-01T12:11:59.954Z	info	staff-logger	bench/bench.go:193	webapp: https://pipe.u.isucon.dev:443
+2026-11-01T12:11:59.954Z	info	staff-logger	bench/bench.go:194	nameserver: 10.0.1.89:53

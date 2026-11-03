@@ -1,0 +1,361 @@
+time=14:47:43.363 level=INFO msg=負荷走行を開始します
+time=14:47:49.543 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子のめぐりや 増加数=1
+time=14:47:49.543 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=GoEase 増加数=1
+time=14:47:49.543 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子工藝舎 増加数=1
+time=14:47:49.550 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=おもてなしタクシー 増加数=2
+time=14:47:49.552 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="PreLoved Chairs" 増加数=1
+time=14:47:51.351 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="PreLoved Chairs" 増加数=1
+time=14:47:51.359 level=INFO msg=これまでに地域内の評判によって7人、既存ユーザーの招待経由で37人が新規登録しました
+time=14:47:51.359 level=INFO msg=0.0%のライドは椅子がマッチされるまでの時間、68.4%のライドはマッチされた椅子が乗車地点までに掛かる時間、0.0%のライドは椅子の実移動時間に不満がありました
+time=14:47:51.359 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=おもてなしタクシー 増加数=1
+time=14:47:51.362 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=GoEase 増加数=1
+time=14:47:51.369 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子工藝舎 増加数=2
+time=14:47:51.373 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子のめぐりや 増加数=1
+time=14:47:52.995 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATCPE3RNWFBXD82FHGA5A4の椅子は既にライド中です"
+time=14:47:53.145 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="PreLoved Chairs" 増加数=1
+time=14:47:53.150 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子のめぐりや 増加数=1
+time=14:47:53.154 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=GoEase 増加数=2
+time=14:47:53.157 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子工藝舎 増加数=1
+time=14:47:54.948 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="PreLoved Chairs" 増加数=2
+time=14:47:54.952 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子のめぐりや 増加数=1
+time=14:47:54.954 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=おもてなしタクシー 増加数=1
+time=14:47:54.954 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子工藝舎 増加数=2
+time=14:47:54.955 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=GoEase 増加数=1
+time=14:47:56.759 level=INFO msg=これまでに地域内の評判によって19人、既存ユーザーの招待経由で80人が新規登録しました
+time=14:47:56.759 level=INFO msg=0.0%のライドは椅子がマッチされるまでの時間、69.1%のライドはマッチされた椅子が乗車地点までに掛かる時間、0.0%のライドは椅子の実移動時間に不満がありました
+time=14:47:56.761 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子のめぐりや 増加数=1
+time=14:47:56.774 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="PreLoved Chairs" 増加数=1
+time=14:47:56.777 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=おもてなしタクシー 増加数=1
+time=14:47:56.783 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子工藝舎 増加数=2
+time=14:47:56.788 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=GoEase 増加数=2
+time=14:47:58.574 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子のめぐりや 増加数=1
+time=14:47:58.577 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="PreLoved Chairs" 増加数=2
+time=14:47:58.585 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=GoEase 増加数=1
+time=14:47:58.585 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=おもてなしタクシー 増加数=2
+time=14:47:58.587 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子工藝舎 増加数=4
+time=14:48:00.370 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子のめぐりや 増加数=1
+time=14:48:00.373 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="PreLoved Chairs" 増加数=2
+time=14:48:00.389 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=おもてなしタクシー 増加数=1
+time=14:48:00.393 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=GoEase 増加数=2
+time=14:48:00.399 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子工藝舎 増加数=3
+time=14:48:02.158 level=INFO msg=これまでに地域内の評判によって31人、既存ユーザーの招待経由で144人が新規登録しました
+time=14:48:02.158 level=INFO msg=18.6%のライドは椅子がマッチされるまでの時間、67.1%のライドはマッチされた椅子が乗車地点までに掛かる時間、1.8%のライドは椅子の実移動時間に不満がありました
+time=14:48:02.188 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子のめぐりや 増加数=1
+time=14:48:02.203 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=おもてなしタクシー 増加数=2
+time=14:48:02.213 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=GoEase 増加数=2
+time=14:48:02.214 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="PreLoved Chairs" 増加数=2
+time=14:48:02.218 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子工藝舎 増加数=2
+time=14:48:03.978 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=おもてなしタクシー 増加数=2
+time=14:48:03.988 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=GoEase 増加数=3
+time=14:48:04.018 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子のめぐりや 増加数=3
+time=14:48:04.033 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="PreLoved Chairs" 増加数=2
+time=14:48:04.046 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子工藝舎 増加数=2
+time=14:48:05.812 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="PreLoved Chairs" 増加数=1
+time=14:48:05.812 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=おもてなしタクシー 増加数=2
+time=14:48:05.816 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子のめぐりや 増加数=3
+time=14:48:05.841 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=GoEase 増加数=4
+time=14:48:05.845 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子工藝舎 増加数=3
+time=14:48:07.558 level=INFO msg=これまでに地域内の評判によって43人、既存ユーザーの招待経由で188人が新規登録しました
+time=14:48:07.558 level=INFO msg=これまでに低評価なライドによって10人が利用をやめました
+time=14:48:07.558 level=INFO msg=48.9%のライドは椅子がマッチされるまでの時間、66.2%のライドはマッチされた椅子が乗車地点までに掛かる時間、7.0%のライドは椅子の実移動時間に不満がありました
+time=14:48:07.645 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子のめぐりや 増加数=2
+time=14:48:07.669 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=おもてなしタクシー 増加数=4
+time=14:48:07.670 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="PreLoved Chairs" 増加数=3
+time=14:48:07.677 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=GoEase 増加数=4
+time=14:48:07.737 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子工藝舎 増加数=4
+time=14:48:09.430 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=おもてなしタクシー 増加数=3
+time=14:48:09.438 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子のめぐりや 増加数=2
+time=14:48:09.443 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="PreLoved Chairs" 増加数=2
+time=14:48:09.472 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子工藝舎 増加数=3
+time=14:48:09.501 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=GoEase 増加数=3
+time=14:48:09.626 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATD2RVYD4T2EH3NJDGEF1Cの椅子は既にライド中です"
+time=14:48:11.261 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="PreLoved Chairs" 増加数=2
+time=14:48:11.296 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子のめぐりや 増加数=3
+time=14:48:11.306 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=GoEase 増加数=3
+time=14:48:11.323 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=おもてなしタクシー 増加数=3
+time=14:48:11.384 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子工藝舎 増加数=4
+time=14:48:12.958 level=INFO msg=これまでに地域内の評判によって55人、既存ユーザーの招待経由で257人が新規登録しました
+time=14:48:12.958 level=INFO msg=これまでに低評価なライドによって34人が利用をやめました
+time=14:48:12.958 level=INFO msg=68.9%のライドは椅子がマッチされるまでの時間、59.5%のライドはマッチされた椅子が乗車地点までに掛かる時間、14.1%のライドは椅子の実移動時間に不満がありました
+time=14:48:13.127 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子のめぐりや 増加数=3
+time=14:48:13.137 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="PreLoved Chairs" 増加数=3
+time=14:48:13.153 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=おもてなしタクシー 増加数=5
+time=14:48:13.165 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=GoEase 増加数=4
+time=14:48:13.222 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子工藝舎 増加数=4
+time=14:48:14.910 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子のめぐりや 増加数=2
+time=14:48:14.913 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="PreLoved Chairs" 増加数=3
+time=14:48:14.952 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=おもてなしタクシー 増加数=2
+time=14:48:14.979 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=GoEase 増加数=4
+time=14:48:15.010 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子工藝舎 増加数=3
+time=14:48:16.616 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子のめぐりや 増加数=3
+time=14:48:16.620 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="PreLoved Chairs" 増加数=4
+time=14:48:16.666 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=おもてなしタクシー 増加数=2
+time=14:48:16.690 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子工藝舎 増加数=2
+time=14:48:16.724 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=GoEase 増加数=3
+time=14:48:17.369 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATCJK88YVB5F0KEFR2M223の椅子は既にライド中です"
+time=14:48:18.358 level=INFO msg=これまでに地域内の評判によって67人、既存ユーザーの招待経由で364人が新規登録しました
+time=14:48:18.358 level=INFO msg=これまでに低評価なライドによって55人が利用をやめました
+time=14:48:18.358 level=INFO msg=78.4%のライドは椅子がマッチされるまでの時間、50.9%のライドはマッチされた椅子が乗車地点までに掛かる時間、16.8%のライドは椅子の実移動時間に不満がありました
+time=14:48:18.571 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子のめぐりや 増加数=2
+time=14:48:18.614 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=おもてなしタクシー 増加数=3
+time=14:48:18.622 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="PreLoved Chairs" 増加数=3
+time=14:48:18.665 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=GoEase 増加数=4
+time=14:48:18.705 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子工藝舎 増加数=4
+time=14:48:20.352 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="PreLoved Chairs" 増加数=4
+time=14:48:20.354 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=おもてなしタクシー 増加数=2
+time=14:48:20.360 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子のめぐりや 増加数=3
+time=14:48:20.397 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=GoEase 増加数=2
+time=14:48:20.422 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子工藝舎 増加数=3
+time=14:48:22.145 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子のめぐりや 増加数=1
+time=14:48:22.147 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATD4JFM6NY7KPJPVXSYT1Xの椅子は既にライド中です"
+time=14:48:22.152 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATD832Q3V1860AWB6XK0ARの椅子は既にライド中です"
+time=14:48:22.185 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATD4JFM6NY7KPJPVXSYT1Xの椅子は既にライド中です"
+time=14:48:22.198 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=おもてなしタクシー 増加数=3
+time=14:48:22.206 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="PreLoved Chairs" 増加数=2
+time=14:48:22.219 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATD4JFM6NY7KPJPVXSYT1Xの椅子は既にライド中です"
+time=14:48:22.221 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATD4JFM6NY7KPJPVXSYT1Xの椅子は既にライド中です"
+time=14:48:22.247 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子工藝舎 増加数=3
+time=14:48:22.258 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=GoEase 増加数=5
+time=14:48:23.758 level=INFO msg=これまでに地域内の評判によって79人、既存ユーザーの招待経由で490人が新規登録しました
+time=14:48:23.758 level=INFO msg=これまでに低評価なライドによって67人が利用をやめました
+time=14:48:23.758 level=INFO msg=83.8%のライドは椅子がマッチされるまでの時間、43.7%のライドはマッチされた椅子が乗車地点までに掛かる時間、17.2%のライドは椅子の実移動時間に不満がありました
+time=14:48:24.030 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子のめぐりや 増加数=5
+time=14:48:24.088 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=おもてなしタクシー 増加数=2
+time=14:48:24.090 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="PreLoved Chairs" 増加数=2
+time=14:48:24.138 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子工藝舎 増加数=2
+time=14:48:24.144 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=GoEase 増加数=3
+time=14:48:24.300 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:24.300 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:24.300 level=WARN msg="椅子がライドを受理できませんでした (CODE=3): POST /api/chair/rides/{rideID}/statusへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:204, actual:500)"
+time=14:48:24.300 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:24.300 level=WARN msg="ユーザーがライド履歴の取得に失敗しました (CODE=7): ユーザーがライド履歴の取得に失敗しました (CODE=7): GET /clientへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200～399, actual:500)"
+time=14:48:24.301 level=WARN msg="ユーザーのライド評価に失敗しました (CODE=5): GET /images/buildings1.svgへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200～399, actual:500)"
+time=14:48:24.361 level=WARN msg="ユーザーの支払い情報の登録に失敗しました (CODE=21): POST /api/app/payment-methodsへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:204, actual:500)"
+time=14:48:24.362 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATDBMZ1AB1RP0DWRX3DYEFの椅子は既にライド中です"
+time=14:48:24.692 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:24.692 level=WARN msg="ユーザーがライド履歴の取得に失敗しました (CODE=7): ユーザーがライド履歴の取得に失敗しました (CODE=7): GET /clientへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200～399, actual:500)"
+time=14:48:24.990 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:24.990 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:24.990 level=WARN msg="ユーザーの支払い情報の登録に失敗しました (CODE=21): GET /assets/route-BbZUnrjQ.jsへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200～399, actual:500)"
+time=14:48:24.990 level=WARN msg="ユーザーの支払い情報の登録に失敗しました (CODE=21): POST /api/app/payment-methodsへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:204, actual:500)"
+time=14:48:25.023 level=WARN msg="ユーザーの支払い情報の登録に失敗しました (CODE=21): POST /api/app/payment-methodsへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:204, actual:500)"
+time=14:48:25.023 level=WARN msg="ユーザーがライド履歴の取得に失敗しました (CODE=7): ユーザーがライド履歴の取得に失敗しました (CODE=7): GET /assets/entry.client-BwsCJ-uh.jsへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200～399, actual:500)"
+time=14:48:25.023 level=WARN msg="ユーザーの支払い情報の登録に失敗しました (CODE=21): POST /api/app/payment-methodsへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:204, actual:500)"
+time=14:48:25.110 level=WARN msg="ユーザーがライド履歴の取得に失敗しました (CODE=7): ユーザーがライド履歴の取得に失敗しました (CODE=7): GET /clientへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200～399, actual:500)"
+time=14:48:25.110 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:25.110 level=WARN msg="ユーザーがライド履歴の取得に失敗しました (CODE=7): ユーザーがライド履歴の取得に失敗しました (CODE=7): GET /clientへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200～399, actual:500)"
+time=14:48:25.111 level=WARN msg="ユーザーがライド履歴の取得に失敗しました (CODE=7): ユーザーがライド履歴の取得に失敗しました (CODE=7): GET /clientへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200～399, actual:500)"
+time=14:48:25.111 level=WARN msg="ユーザーがライド履歴の取得に失敗しました (CODE=7): ユーザーがライド履歴の取得に失敗しました (CODE=7): GET /clientへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200～399, actual:500)"
+time=14:48:25.147 level=WARN msg="ユーザーの支払い情報の登録に失敗しました (CODE=21): POST /api/app/payment-methodsへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:204, actual:500)"
+time=14:48:25.147 level=WARN msg="ユーザーが新しくライドを作成できませんでした (CODE=8): POST /app/rides/estimated-fareへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:25.172 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:25.172 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:25.173 level=WARN msg="ユーザーの支払い情報の登録に失敗しました (CODE=21): GET /assets/route-BbZUnrjQ.jsへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200～399, actual:500)"
+time=14:48:25.200 level=WARN msg="椅子が出発できませんでした (CODE=2): POST /api/chair/rides/{rideID}/statusへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:204, actual:500)"
+time=14:48:25.200 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:25.200 level=WARN msg="ユーザーがライド履歴の取得に失敗しました (CODE=7): ユーザーがライド履歴の取得に失敗しました (CODE=7): GET /clientへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200～399, actual:500)"
+time=14:48:25.506 level=WARN msg="ユーザーがライド履歴の取得に失敗しました (CODE=7): ユーザーがライド履歴の取得に失敗しました (CODE=7): GET /assets/jsx-runtime-56DGgGmo.jsへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200～399, actual:500)"
+time=14:48:25.530 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:25.530 level=WARN msg="ユーザーがライド履歴の取得に失敗しました (CODE=7): ユーザーがライド履歴の取得に失敗しました (CODE=7): GET /clientへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200～399, actual:500)"
+time=14:48:25.530 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:25.534 level=WARN msg="オーナーの売り上げ情報の取得に失敗しました (CODE=22): GET /api/owner/salesへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:25.534 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:25.534 level=WARN msg="ユーザーがライド履歴の取得に失敗しました (CODE=7): ユーザーがライド履歴の取得に失敗しました (CODE=7): GET /assets/entry.client-BwsCJ-uh.jsへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200～399, actual:500)"
+time=14:48:25.590 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:25.590 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:25.590 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:25.590 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:25.590 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:25.590 level=WARN msg="ユーザーがライド履歴の取得に失敗しました (CODE=7): ユーザーがライド履歴の取得に失敗しました (CODE=7): GET /clientへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200～399, actual:500)"
+time=14:48:25.591 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:25.591 level=WARN msg="ユーザーの支払い情報の登録に失敗しました (CODE=21): GET /assets/route-BbZUnrjQ.jsへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200～399, actual:500)"
+time=14:48:25.591 level=WARN msg="ユーザーの支払い情報の登録に失敗しました (CODE=21): GET /assets/route-BbZUnrjQ.jsへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200～399, actual:500)"
+time=14:48:25.652 level=WARN msg="ユーザーがライド履歴の取得に失敗しました (CODE=7): ユーザーがライド履歴の取得に失敗しました (CODE=7): GET /clientへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200～399, actual:500)"
+time=14:48:25.652 level=WARN msg="ユーザーがライド履歴の取得に失敗しました (CODE=7): ユーザーがライド履歴の取得に失敗しました (CODE=7): GET /assets/entry.client-BwsCJ-uh.jsへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200～399, actual:500)"
+time=14:48:25.681 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:25.681 level=WARN msg="椅子がライドを受理できませんでした (CODE=3): POST /api/chair/rides/{rideID}/statusへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:204, actual:500)"
+time=14:48:25.681 level=WARN msg="ユーザーがライド履歴の取得に失敗しました (CODE=7): ユーザーがライド履歴の取得に失敗しました (CODE=7): GET /clientへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200～399, actual:500)"
+time=14:48:25.711 level=WARN msg="ユーザーがライド履歴の取得に失敗しました (CODE=7): ユーザーがライド履歴の取得に失敗しました (CODE=7): GET /clientへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200～399, actual:500)"
+time=14:48:25.781 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子のめぐりや 増加数=2
+time=14:48:25.870 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="PreLoved Chairs" 増加数=4
+time=14:48:25.916 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=おもてなしタクシー 増加数=3
+time=14:48:25.947 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=GoEase 増加数=3
+time=14:48:26.210 level=WARN msg="ユーザーのライド評価に失敗しました (CODE=5): GET /clientへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200～399, actual:500)"
+time=14:48:26.221 level=WARN msg="ユーザーのライド評価に失敗しました (CODE=5): GET /clientへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200～399, actual:500)"
+time=14:48:26.224 level=WARN msg="ユーザーのライド評価に失敗しました (CODE=5): GET /assets/components-Cbm4tYXz.jsへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200～399, actual:500)"
+time=14:48:26.231 level=WARN msg="椅子が出発できませんでした (CODE=2): POST /api/chair/rides/{rideID}/statusへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:204, actual:500)"
+time=14:48:26.231 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:26.231 level=WARN msg="椅子がライドを受理できませんでした (CODE=3): POST /api/chair/rides/{rideID}/statusへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:204, actual:500)"
+time=14:48:26.257 level=WARN msg="ユーザーのライド評価に失敗しました (CODE=5): GET /assets/route-B_Zm-GyU.jsへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200～399, actual:500)"
+time=14:48:26.257 level=WARN msg="ユーザーのライド評価に失敗しました (CODE=5): GET /assets/components-Cbm4tYXz.jsへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200～399, actual:500)"
+time=14:48:26.260 level=WARN msg="ユーザーのライド評価に失敗しました (CODE=5): GET /assets/jsx-runtime-56DGgGmo.jsへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200～399, actual:500)"
+time=14:48:26.260 level=WARN msg="ユーザーのライド評価に失敗しました (CODE=5): GET /assets/index-9ZhTBp7q.jsへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200～399, actual:500)"
+time=14:48:26.264 level=WARN msg="椅子が出発できませんでした (CODE=2): POST /api/chair/rides/{rideID}/statusへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:204, actual:500)"
+time=14:48:26.264 level=WARN msg="椅子が出発できませんでした (CODE=2): POST /api/chair/rides/{rideID}/statusへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:204, actual:500)"
+time=14:48:26.264 level=WARN msg="ユーザーがライド履歴の取得に失敗しました (CODE=7): ユーザーがライド履歴の取得に失敗しました (CODE=7): GET /clientへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200～399, actual:500)"
+time=14:48:26.264 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:26.264 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:26.264 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:26.264 level=WARN msg="ユーザーがライド履歴の取得に失敗しました (CODE=7): ユーザーがライド履歴の取得に失敗しました (CODE=7): GET /favicon.icoへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200～399, actual:500)"
+time=14:48:26.276 level=WARN msg="ユーザーのライド評価に失敗しました (CODE=5): GET /assets/route-B_Zm-GyU.jsへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200～399, actual:500)"
+time=14:48:26.276 level=WARN msg="ユーザーのライド評価に失敗しました (CODE=5): GET /assets/get-cookie-value-B3QhECDc.jsへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200～399, actual:500)"
+time=14:48:26.277 level=WARN msg="ユーザー登録に失敗しました (CODE=17): ユーザー登録に失敗しました (CODE=17): GET /assets/api-base-url-Bd0x18OB.jsへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200～399, actual:500)"
+time=14:48:26.286 level=WARN msg="椅子がライドを受理できませんでした (CODE=3): POST /api/chair/rides/{rideID}/statusへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:204, actual:500)"
+time=14:48:26.286 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:26.295 level=WARN msg="椅子がライドを受理できませんでした (CODE=3): POST /api/chair/rides/{rideID}/statusへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:204, actual:500)"
+time=14:48:26.295 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:26.296 level=WARN msg="椅子が出発できませんでした (CODE=2): POST /api/chair/rides/{rideID}/statusへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:204, actual:500)"
+time=14:48:26.299 level=WARN msg="ユーザー登録に失敗しました (CODE=17): ユーザー登録に失敗しました (CODE=17): GET /assets/index-9ZhTBp7q.jsへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200～399, actual:500)"
+time=14:48:26.315 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:26.315 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:26.315 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:26.315 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:26.315 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:26.315 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:26.315 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:26.315 level=WARN msg="椅子が出発できませんでした (CODE=2): POST /api/chair/rides/{rideID}/statusへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:204, actual:500)"
+time=14:48:26.316 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:26.316 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:26.316 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:26.316 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:26.317 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:26.317 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:26.317 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:26.317 level=WARN msg="椅子がライドを受理できませんでした (CODE=3): POST /api/chair/rides/{rideID}/statusへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:204, actual:500)"
+time=14:48:26.319 level=WARN msg="椅子がライドを受理できませんでした (CODE=3): POST /api/chair/rides/{rideID}/statusへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:204, actual:500)"
+time=14:48:26.319 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:26.320 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:26.326 level=WARN msg="ユーザーのライド評価に失敗しました (CODE=5): GET /assets/api-base-url-Bd0x18OB.jsへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200～399, actual:500)"
+time=14:48:26.347 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:26.347 level=WARN msg="椅子がアクティベートに失敗しました (CODE=13): POST /api/chair/activityへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:204, actual:500)"
+time=14:48:26.347 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:26.347 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:26.348 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:26.348 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:26.348 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:26.348 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:26.348 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:26.348 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:26.348 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:26.348 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:26.348 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:26.348 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:26.349 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:26.349 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:26.349 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:26.349 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:26.350 level=WARN msg="ユーザーのライド評価に失敗しました (CODE=5): GET /clientへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200～399, actual:500)"
+time=14:48:26.350 level=WARN msg="ユーザーがライド履歴の取得に失敗しました (CODE=7): ユーザーがライド履歴の取得に失敗しました (CODE=7): GET /assets/components-Cbm4tYXz.jsへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200～399, actual:500)"
+time=14:48:26.352 level=WARN msg="ユーザーのライド評価に失敗しました (CODE=5): GET /assets/entry.client-BwsCJ-uh.jsへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200～399, actual:500)"
+time=14:48:26.396 level=WARN msg="ユーザーが新しくライドを作成できませんでした (CODE=8): POST /app/rides/estimated-fareへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:26.396 level=WARN msg="ユーザー登録に失敗しました (CODE=17): ユーザー登録に失敗しました (CODE=17): GET /assets/responses-Cu7_GOWP.jsへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200～399, actual:500)"
+time=14:48:26.397 level=WARN msg="ユーザーのライド評価に失敗しました (CODE=5): POST /api/app/rides/{ride_id}/evaluationへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:26.397 level=WARN msg="ユーザーのライド評価に失敗しました (CODE=5): GET /favicon.icoへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200～399, actual:500)"
+time=14:48:26.401 level=WARN msg="ユーザーがライド履歴の取得に失敗しました (CODE=7): ユーザーがライド履歴の取得に失敗しました (CODE=7): GET /assets/bundle-mjs-Dnoi3Axr.jsへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200～399, actual:500)"
+time=14:48:26.424 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:26.424 level=WARN msg="椅子がライドを受理できませんでした (CODE=3): POST /api/chair/rides/{rideID}/statusへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:204, actual:500)"
+time=14:48:26.424 level=WARN msg="ユーザー登録に失敗しました (CODE=17): ユーザー登録に失敗しました (CODE=17): GET /assets/route-B_Zm-GyU.jsへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200～399, actual:500)"
+time=14:48:26.424 level=WARN msg="椅子が出発できませんでした (CODE=2): POST /api/chair/rides/{rideID}/statusへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:204, actual:500)"
+time=14:48:26.426 level=WARN msg="椅子がアクティベートに失敗しました (CODE=13): POST /api/chair/activityへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:204, actual:500)"
+time=14:48:26.427 level=WARN msg="ユーザーのライド評価に失敗しました (CODE=5): GET /clientへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200～399, actual:500)"
+time=14:48:26.429 level=WARN msg="ユーザーのライド評価に失敗しました (CODE=5): GET /assets/frame-CJ9SHS1U.jsへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200～399, actual:500)"
+time=14:48:26.435 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:26.435 level=WARN msg="椅子がライドを受理できませんでした (CODE=3): POST /api/chair/rides/{rideID}/statusへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:204, actual:500)"
+time=14:48:26.435 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:26.437 level=WARN msg="ユーザーのライド評価に失敗しました (CODE=5): GET /assets/storage-Coaj7Roq.jsへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200～399, actual:500)"
+time=14:48:26.437 level=WARN msg="ユーザーのライド評価に失敗しました (CODE=5): GET /assets/colors-DB9lnfSt.jsへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200～399, actual:500)"
+time=14:48:26.460 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:26.461 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:26.461 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:26.461 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:26.461 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:26.461 level=WARN msg="オーナーの椅子一覧の取得に失敗しました (CODE=25): GET /ownerへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200～399, actual:500)"
+time=14:48:26.463 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:26.463 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:26.463 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:26.463 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:26.464 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:26.464 level=WARN msg="椅子が出発できませんでした (CODE=2): POST /api/chair/rides/{rideID}/statusへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:204, actual:500)"
+time=14:48:26.464 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:26.464 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:26.464 level=WARN msg="椅子がアクティベートに失敗しました (CODE=13): POST /api/chair/activityへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:204, actual:500)"
+time=14:48:26.464 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:26.464 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:26.464 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:26.466 level=WARN msg="ユーザーのライド評価に失敗しました (CODE=5): GET /assets/client-context-C6wEaUbS.jsへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200～399, actual:500)"
+time=14:48:26.491 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:26.492 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:26.492 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:26.492 level=WARN msg="椅子がライドを受理できませんでした (CODE=3): POST /api/chair/rides/{rideID}/statusへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:204, actual:500)"
+time=14:48:26.492 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:26.492 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:26.492 level=WARN msg="椅子がライドを受理できませんでした (CODE=3): POST /api/chair/rides/{rideID}/statusへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:204, actual:500)"
+time=14:48:26.492 level=WARN msg="ユーザーの支払い情報の登録に失敗しました (CODE=21): GET /assets/route-BbZUnrjQ.jsへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200～399, actual:500)"
+time=14:48:26.492 level=WARN msg="椅子がライドを受理できませんでした (CODE=3): POST /api/chair/rides/{rideID}/statusへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:204, actual:500)"
+time=14:48:26.492 level=WARN msg="椅子が出発できませんでした (CODE=2): POST /api/chair/rides/{rideID}/statusへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:204, actual:500)"
+time=14:48:26.492 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:26.492 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:26.492 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:26.492 level=WARN msg="ユーザーのライド評価に失敗しました (CODE=5): GET /assets/storage-Coaj7Roq.jsへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200～399, actual:500)"
+time=14:48:26.530 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATCJKVTFQWTX8AZ9A36GPHの椅子は既にライド中です"
+time=14:48:26.974 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:26.974 level=WARN msg="ユーザーのライド評価に失敗しました (CODE=5): GET /clientへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200～399, actual:500)"
+time=14:48:26.977 level=WARN msg="ユーザーのライド評価に失敗しました (CODE=5): GET /assets/entry.client-BwsCJ-uh.jsへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200～399, actual:500)"
+time=14:48:26.994 level=WARN msg="ユーザー登録に失敗しました (CODE=17): ユーザー登録に失敗しました (CODE=17): GET /assets/entry.client-BwsCJ-uh.jsへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200～399, actual:500)"
+time=14:48:27.003 level=WARN msg="ユーザーがライド履歴の取得に失敗しました (CODE=7): ユーザーがライド履歴の取得に失敗しました (CODE=7): GET /clientへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200～399, actual:500)"
+time=14:48:27.003 level=WARN msg="ユーザーのライド評価に失敗しました (CODE=5): GET /assets/client-context-C6wEaUbS.jsへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200～399, actual:500)"
+time=14:48:27.046 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:27.046 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:27.046 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:27.047 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:27.051 level=WARN msg="ユーザー登録に失敗しました (CODE=17): ユーザー登録に失敗しました (CODE=17): GET /assets/colors-DB9lnfSt.jsへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200～399, actual:500)"
+time=14:48:27.068 level=WARN msg="椅子が出発できませんでした (CODE=2): POST /api/chair/rides/{rideID}/statusへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:204, actual:500)"
+time=14:48:27.068 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:27.068 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:27.069 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:27.069 level=WARN msg="椅子が出発できませんでした (CODE=2): POST /api/chair/rides/{rideID}/statusへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:204, actual:500)"
+time=14:48:27.069 level=WARN msg="ユーザー登録に失敗しました (CODE=17): ユーザー登録に失敗しました (CODE=17): GET /assets/jsx-runtime-56DGgGmo.jsへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200～399, actual:500)"
+time=14:48:27.071 level=WARN msg="ユーザーのライド評価に失敗しました (CODE=5): GET /assets/entry.client-BwsCJ-uh.jsへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200～399, actual:500)"
+time=14:48:27.072 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:27.073 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:27.073 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:27.073 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:27.073 level=WARN msg="椅子が出発できませんでした (CODE=2): POST /api/chair/rides/{rideID}/statusへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:204, actual:500)"
+time=14:48:27.073 level=ERROR msg=クリティカルエラーが発生しました error=発生しているエラーが多すぎます
+time=14:48:27.073 level=WARN msg="椅子の座標送信に失敗しました (CODE=1): POST /api/chair/coordinateへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:27.073 level=WARN msg="ユーザー登録に失敗しました (CODE=17): ユーザー登録に失敗しました (CODE=17): GET /images/buildings1.svgへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200～399, actual:500)"
+time=14:48:27.073 level=WARN msg="ユーザーのライド評価に失敗しました (CODE=5): GET /images/buildings3.svgへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200～399, actual:500)"
+time=14:48:27.175 level=WARN msg="ユーザーのライド評価に失敗しました (CODE=5): GET /assets/text-DfCqYLRl.jsへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200～399, actual:500)"
+time=14:48:27.176 level=WARN msg="ユーザーのライド評価に失敗しました (CODE=5): GET /images/house2.svgへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200～399, actual:500)"
+time=14:48:27.182 level=WARN msg="ユーザーのライド評価に失敗しました (CODE=5): GET /assets/jsx-runtime-56DGgGmo.jsへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200～399, actual:500)"
+time=14:48:27.182 level=WARN msg="ユーザーのライド評価に失敗しました (CODE=5): GET /images/buildings2.svgへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200～399, actual:500)"
+time=14:48:27.186 level=WARN msg="ユーザーのライド評価に失敗しました (CODE=5): GET /assets/client-context-C6wEaUbS.jsへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200～399, actual:500)"
+time=14:48:27.186 level=WARN msg="ユーザーのライド評価に失敗しました (CODE=5): GET /assets/text-DfCqYLRl.jsへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200～399, actual:500)"
+time=14:48:27.186 level=WARN msg="ユーザーのライド評価に失敗しました (CODE=5): GET /images/buildings5.svgへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200～399, actual:500)"
+time=14:48:27.188 level=WARN msg="ユーザーのライド評価に失敗しました (CODE=5): GET /assets/root-BoSp76zW.cssへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200～399, actual:500)"
+time=14:48:27.188 level=WARN msg="ユーザーのライド評価に失敗しました (CODE=5): GET /images/house1.svgへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200～399, actual:500)"
+time=14:48:27.199 level=WARN msg="ユーザー登録に失敗しました (CODE=17): ユーザー登録に失敗しました (CODE=17): GET /assets/date-input-Br46mw6i.jsへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200～399, actual:500)"
+time=14:48:27.199 level=WARN msg="ユーザーのライド評価に失敗しました (CODE=5): POST /api/app/rides/{ride_id}/evaluationへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)"
+time=14:48:27.648 level=WARN msg="ユーザー登録に失敗しました (CODE=17): ユーザー登録に失敗しました (CODE=17): GET /images/buildings1.svgへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200～399, actual:500)"
+time=14:48:27.648 level=WARN msg="ユーザー登録に失敗しました (CODE=17): ユーザー登録に失敗しました (CODE=17): GET /assets/text-DfCqYLRl.jsへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200～399, actual:500)"
+time=14:48:27.652 level=WARN msg="ユーザー登録に失敗しました (CODE=17): ユーザー登録に失敗しました (CODE=17): GET /images/buildings2.svgへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200～399, actual:500)"
+time=14:48:27.653 level=WARN msg="ユーザー登録に失敗しました (CODE=17): ユーザー登録に失敗しました (CODE=17): GET /images/buildings6.svgへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200～399, actual:500)"
+time=14:48:27.654 level=WARN msg="ユーザー登録に失敗しました (CODE=17): ユーザー登録に失敗しました (CODE=17): GET /images/house1.svgへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200～399, actual:500)"
+time=14:48:30.094 level=WARN msg="付近の椅子情報が想定よりも足りていません (CODE=31): 不足数1台"
+time=14:48:30.101 level=WARN msg="付近の椅子情報が想定よりも足りていません (CODE=31): 不足数3台"
+time=14:48:30.173 level=WARN msg="付近の椅子情報が想定よりも足りていません (CODE=31): 不足数7台"
+time=14:48:30.174 level=WARN msg="付近の椅子情報が想定よりも足りていません (CODE=31): 不足数5台"
+time=14:48:30.198 level=WARN msg="付近の椅子情報が想定よりも足りていません (CODE=31): 不足数3台"
+time=14:48:30.209 level=WARN msg="付近の椅子情報が想定よりも足りていません (CODE=31): 不足数6台"
+time=14:48:30.655 level=WARN msg="付近の椅子情報が想定よりも足りていません (CODE=31): 不足数8台"
+time=14:48:30.657 level=WARN msg="付近の椅子情報が想定よりも足りていません (CODE=31): 不足数3台"
+time=14:48:32.073 level=INFO msg=最終地域情報 名前=チェアタウン ユーザー登録数=434 アクティブユーザー数=387
+time=14:48:32.073 level=INFO msg=最終地域情報 名前=コシカケシティ ユーザー登録数=233 アクティブユーザー数=203
+time=14:48:32.073 level=INFO msg=最終オーナー情報 名前="PreLoved Chairs" 売上=1242900 椅子数=51
+time=14:48:32.073 level=INFO msg=最終オーナー情報 名前=GoEase 売上=1677500 椅子数=61
+time=14:48:32.073 level=INFO msg=最終オーナー情報 名前=おもてなしタクシー 売上=1217400 椅子数=50
+time=14:48:32.073 level=INFO msg=最終オーナー情報 名前=椅子工藝舎 売上=1701600 椅子数=58
+time=14:48:32.073 level=INFO msg=最終オーナー情報 名前=椅子のめぐりや 売上=1067300 椅子数=46
+time=14:48:32.073 level=INFO msg=86.2%のライドは椅子がマッチされるまでの時間、39.0%のライドはマッチされた椅子が乗車地点までに掛かる時間、17.8%のライドは椅子の実移動時間に不満がありました
+time=14:48:32.073 level=INFO msg=結果 pass=false スコア=84421 種別エラー数="map[1:98 2:12 3:12 5:36 7:21 8:2 13:3 17:14 21:10 22:1 25:1 30:10 31:8]"
+time=14:48:32.073 level=INFO msg=負荷走行が終了しました

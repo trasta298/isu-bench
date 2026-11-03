@@ -1,0 +1,419 @@
+{"time": 1793512455.6119387, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793512455.637319, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793512457.2102048, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793512457.6978416, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793512458.9462755, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793512460.5846484, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793512463.138506, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793512464.98923, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793512473.5963578, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793512474.005889, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793512474.5350661, "method": "CONNECT", "host": "18.179.11.220", "port": 22, "allowed": true}
+{"time": 1793512544.8113146, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793512548.8188322, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793512549.3112357, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793512549.6980278, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793512550.0695698, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793512570.952238, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793512571.4163432, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793512571.9472919, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793512572.3444772, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793512580.8081787, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793512581.6087797, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793512589.8471744, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793512590.1810617, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793512590.7191155, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793512591.0924697, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793512627.4255953, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793512635.77249, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793512636.130083, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793512643.4427855, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793512643.7607954, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793512644.220933, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793512646.8658595, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793512647.2717388, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793512683.7071218, "method": "CONNECT", "host": "proxy.golang.org", "port": 443, "allowed": true}
+{"time": 1793512683.7075624, "method": "CONNECT", "host": "proxy.golang.org", "port": 443, "allowed": true}
+{"time": 1793512683.707725, "method": "CONNECT", "host": "proxy.golang.org", "port": 443, "allowed": true}
+{"time": 1793512683.7095976, "method": "CONNECT", "host": "proxy.golang.org", "port": 443, "allowed": true}
+{"time": 1793512690.9786055, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793512691.4366467, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793512718.3743353, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793512722.3345652, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793512728.6212857, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793512733.9658954, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793512738.0705805, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793512757.9767628, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793512767.0670128, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793512769.4054646, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793512776.4088676, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793512781.7528024, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793512786.202139, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793512794.5398858, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793512797.376227, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793512804.7726994, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793512807.9975193, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793512812.0754032, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793512812.7597964, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793512815.3262954, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793512815.7511048, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793512819.2252762, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793512821.2732174, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793512826.751672, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793512829.491213, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793512831.3545341, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793512834.6762855, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793512834.998235, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793512841.5364099, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793512845.6930919, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793512849.345078, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793512853.8874497, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793512854.3358521, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793512858.0001183, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793512861.355897, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793512862.6761522, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793512865.4583042, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793512865.824837, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793512871.775926, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793512872.14284, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793512877.0797067, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793512877.7545125, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793512881.886935, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793512888.4332905, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793512888.7691765, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793512895.8188825, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793512896.6230044, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793512901.3662813, "method": "CONNECT", "host": "18.179.11.220", "port": 22, "allowed": true}
+{"time": 1793512902.265609, "method": "CONNECT", "host": "18.179.11.220", "port": 22, "allowed": true}
+{"time": 1793512906.2204194, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793512910.5593736, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793512910.9213333, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793512917.8595624, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793512918.4128602, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793512922.8770895, "method": "CONNECT", "host": "18.179.11.220", "port": 22, "allowed": true}
+{"time": 1793512923.4670506, "method": "CONNECT", "host": "18.179.11.220", "port": 22, "allowed": true}
+{"time": 1793512928.3264413, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793512931.639432, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793512935.0237546, "method": "CONNECT", "host": "18.179.11.220", "port": 22, "allowed": true}
+{"time": 1793512938.1819134, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793512942.7253869, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793512943.062803, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793512950.6954994, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793512961.328415, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793512962.0930202, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793512962.438226, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793512977.4057217, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793512982.183227, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793512982.7417936, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793512985.6664977, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793512986.3801792, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793512989.1756706, "method": "CONNECT", "host": "18.179.11.220", "port": 22, "allowed": true}
+{"time": 1793512989.9984508, "method": "CONNECT", "host": "18.179.11.220", "port": 22, "allowed": true}
+{"time": 1793512992.9859972, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793512995.9879432, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793512996.4514823, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793512996.7846165, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793513000.7935498, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793513001.2865713, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793513005.1082797, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793513005.4637587, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793513019.1835866, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793513029.9831495, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793513033.036178, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793513033.8346825, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793513035.9392536, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793513036.4632246, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793513038.513524, "method": "CONNECT", "host": "18.179.11.220", "port": 22, "allowed": true}
+{"time": 1793513039.0026357, "method": "CONNECT", "host": "18.179.11.220", "port": 22, "allowed": true}
+{"time": 1793513042.7620494, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793513049.7554357, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793513050.549941, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793513053.8292353, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793513058.205538, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793513068.2648308, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793513073.2912557, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793513077.2071774, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793513077.6611702, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793513079.7887547, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793513080.1917932, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793513082.2352512, "method": "CONNECT", "host": "18.179.11.220", "port": 22, "allowed": true}
+{"time": 1793513083.0540073, "method": "CONNECT", "host": "18.179.11.220", "port": 22, "allowed": true}
+{"time": 1793513085.1475616, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793513156.4918802, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793513179.8051527, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793513183.8895025, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793513184.4104736, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793513187.9767232, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793513188.3041725, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793513194.400974, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793513196.7126746, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793513197.0684457, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793513203.5154588, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793513204.3095725, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793513208.8412304, "method": "CONNECT", "host": "18.179.11.220", "port": 22, "allowed": true}
+{"time": 1793513209.686272, "method": "CONNECT", "host": "18.179.11.220", "port": 22, "allowed": true}
+{"time": 1793513214.4480631, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793513216.762135, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793513219.9479954, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793513226.0827527, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793513226.5624127, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793513226.8872678, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793513230.1127055, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793513230.4683366, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793513230.799849, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793513236.086013, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793513236.4391675, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793513236.7730362, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793513308.4046757, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793513312.4112427, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793513312.8907487, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793513319.622209, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793513325.726569, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793513326.8112433, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793513362.300964, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793513363.1655884, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793513363.4938865, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793513378.1419902, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793513381.3564608, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793513385.8032742, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793513386.1597404, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793513395.6592257, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793513396.0250866, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793513397.138725, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793513397.6561196, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793513398.7400777, "method": "CONNECT", "host": "18.179.11.220", "port": 22, "allowed": true}
+{"time": 1793513399.4792085, "method": "CONNECT", "host": "18.179.11.220", "port": 22, "allowed": true}
+{"time": 1793513400.6131618, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793513404.5698435, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793513404.9317899, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793513405.3058314, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793513405.7334313, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793513406.0976994, "method": "CONNECT", "host": "18.179.11.220", "port": 22, "allowed": true}
+{"time": 1793513406.4567733, "method": "CONNECT", "host": "18.179.11.220", "port": 22, "allowed": true}
+{"time": 1793513406.8497286, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793513410.726146, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793513411.1515777, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793513411.5806963, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793513414.620651, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793513415.9401429, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793513417.335568, "method": "CONNECT", "host": "18.179.11.220", "port": 22, "allowed": true}
+{"time": 1793513418.7428608, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793513419.1071324, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793513427.557376, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793513427.932821, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793513431.0366004, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793513434.1204407, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793513434.5205367, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793513437.6494436, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793513438.339763, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793513446.0553198, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793513446.351325, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793513447.0089273, "method": "CONNECT", "host": "18.179.11.220", "port": 22, "allowed": true}
+{"time": 1793513448.4284594, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793513448.7841918, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793513521.8414001, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793513528.3115861, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793513529.0398428, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793513529.4632473, "method": "CONNECT", "host": "18.179.11.220", "port": 22, "allowed": true}
+{"time": 1793513530.1316144, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793513537.830602, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793513538.6935198, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793513539.5025306, "method": "CONNECT", "host": "18.179.11.220", "port": 22, "allowed": true}
+{"time": 1793513540.356739, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793513540.6946614, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793513541.0323205, "method": "CONNECT", "host": "18.179.11.220", "port": 22, "allowed": true}
+{"time": 1793513541.3917007, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793513613.4854898, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793513616.1751578, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793513616.8934302, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793513617.32502, "method": "CONNECT", "host": "18.179.11.220", "port": 22, "allowed": true}
+{"time": 1793513618.0662405, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793513636.4732788, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793513639.2903323, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793513639.657693, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793513641.5268939, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793513641.8889065, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793513645.3847752, "method": "CONNECT", "host": "18.179.11.220", "port": 22, "allowed": true}
+{"time": 1793513645.7406948, "method": "CONNECT", "host": "18.179.11.220", "port": 22, "allowed": true}
+{"time": 1793513647.5470948, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793513651.4515886, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793513654.4812431, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793513657.9017289, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793513658.2506442, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793513661.389051, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793513665.5647972, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793513665.909199, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793513670.6119335, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793513670.937277, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793513676.9056025, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793513677.5313656, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793513677.8794112, "method": "CONNECT", "host": "18.179.11.220", "port": 22, "allowed": true}
+{"time": 1793513678.4845958, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793513678.81593, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793513682.1763558, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793513682.5360487, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793513684.196806, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793513684.5480719, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793513686.1212373, "method": "CONNECT", "host": "18.179.11.220", "port": 22, "allowed": true}
+{"time": 1793513686.553999, "method": "CONNECT", "host": "18.179.11.220", "port": 22, "allowed": true}
+{"time": 1793513688.2192993, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793513690.613788, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793513693.6532137, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793513696.696888, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793513696.9896822, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793513697.2455869, "method": "CONNECT", "host": "18.179.11.220", "port": 22, "allowed": true}
+{"time": 1793513697.6124797, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793513768.6884537, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793513774.0013566, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793513774.6472826, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793513775.0773108, "method": "CONNECT", "host": "18.179.11.220", "port": 22, "allowed": true}
+{"time": 1793513775.7799177, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793513789.8213923, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793513792.4785922, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793513796.4151099, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793513799.5122957, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793513799.869928, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793513803.2351167, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793513803.6637805, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793513805.2897122, "method": "CONNECT", "host": "18.179.11.220", "port": 22, "allowed": true}
+{"time": 1793513805.710643, "method": "CONNECT", "host": "18.179.11.220", "port": 22, "allowed": true}
+{"time": 1793513807.3545125, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793513810.0323555, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793513813.1346052, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793513813.4283175, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793513813.7652085, "method": "CONNECT", "host": "18.179.11.220", "port": 22, "allowed": true}
+{"time": 1793513814.098557, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793513885.3706262, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793513888.6416004, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793513889.3434608, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793513889.7726905, "method": "CONNECT", "host": "18.179.11.220", "port": 22, "allowed": true}
+{"time": 1793513890.3773522, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793513894.6574998, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793513895.4091792, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793513896.112841, "method": "CONNECT", "host": "18.179.11.220", "port": 22, "allowed": true}
+{"time": 1793513898.5498476, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793513898.875133, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793513899.1922028, "method": "CONNECT", "host": "18.179.11.220", "port": 22, "allowed": true}
+{"time": 1793513899.5393884, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793513970.565602, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793513973.8469856, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793513974.4811542, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793513974.92319, "method": "CONNECT", "host": "18.179.11.220", "port": 22, "allowed": true}
+{"time": 1793513975.5916831, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793513986.1495275, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793513986.9112504, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793513987.66312, "method": "CONNECT", "host": "18.179.11.220", "port": 22, "allowed": true}
+{"time": 1793513988.4103863, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793513988.7432318, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793513989.0393796, "method": "CONNECT", "host": "18.179.11.220", "port": 22, "allowed": true}
+{"time": 1793513989.3940141, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793514062.4013486, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793514066.4042568, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793514067.0547671, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793514067.405307, "method": "CONNECT", "host": "18.179.11.220", "port": 22, "allowed": true}
+{"time": 1793514068.0759165, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793514077.7904491, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793514084.559755, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793514085.3258104, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793514086.0276706, "method": "CONNECT", "host": "18.179.11.220", "port": 22, "allowed": true}
+{"time": 1793514088.4316266, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793514088.7157788, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793514088.962844, "method": "CONNECT", "host": "18.179.11.220", "port": 22, "allowed": true}
+{"time": 1793514089.2840495, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793514092.5485628, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793514161.428436, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793514164.713952, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793514165.0971248, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793514186.177733, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793514191.3535247, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793514191.9748836, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793514193.124613, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793514193.5374327, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793514194.613405, "method": "CONNECT", "host": "18.179.11.220", "port": 22, "allowed": true}
+{"time": 1793514195.3093886, "method": "CONNECT", "host": "18.179.11.220", "port": 22, "allowed": true}
+{"time": 1793514196.3839855, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793514199.4427466, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793514200.0992615, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793514200.8343475, "method": "CONNECT", "host": "18.179.11.220", "port": 22, "allowed": true}
+{"time": 1793514201.603035, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793514204.7236187, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793514207.8806272, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793514208.2045305, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793514212.3673623, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793514212.65339, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793514212.9775732, "method": "CONNECT", "host": "18.179.11.220", "port": 22, "allowed": true}
+{"time": 1793514214.0369482, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793514286.6701517, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793514294.4867537, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793514294.8540993, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793514305.5922277, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793514312.9594953, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793514313.3350978, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793514318.9786797, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793514319.2631555, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793514328.726896, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793514338.2471547, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793514343.6310265, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793514344.3288212, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793514345.4330406, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793514345.738998, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793514346.8129537, "method": "CONNECT", "host": "18.179.11.220", "port": 22, "allowed": true}
+{"time": 1793514347.4329689, "method": "CONNECT", "host": "18.179.11.220", "port": 22, "allowed": true}
+{"time": 1793514348.5153902, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793514351.5318933, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793514352.1433356, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793514352.785341, "method": "CONNECT", "host": "18.179.11.220", "port": 22, "allowed": true}
+{"time": 1793514353.4611075, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793514357.5470512, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793514357.8897212, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793514358.2978504, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793514363.1412795, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793514363.4600954, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793514366.523555, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793514366.8912985, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793514371.4982576, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793514373.6303544, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793514374.0108404, "method": "CONNECT", "host": "18.179.11.220", "port": 22, "allowed": true}
+{"time": 1793514374.4744477, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793514389.8858294, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793514393.854722, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793514394.335194, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793514395.474731, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793514395.938523, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793514396.9635355, "method": "CONNECT", "host": "18.179.11.220", "port": 22, "allowed": true}
+{"time": 1793514397.5179768, "method": "CONNECT", "host": "18.179.11.220", "port": 22, "allowed": true}
+{"time": 1793514398.6063585, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793514401.5234194, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793514402.1346111, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793514402.779535, "method": "CONNECT", "host": "18.179.11.220", "port": 22, "allowed": true}
+{"time": 1793514404.2070992, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793514408.6947622, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793514411.9489338, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793514414.8390312, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793514415.139494, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793514415.5939133, "method": "CONNECT", "host": "18.179.11.220", "port": 22, "allowed": true}
+{"time": 1793514416.3394814, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793514487.7532916, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793514497.7301216, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793514498.0834904, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793514498.437166, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793514500.4645433, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793514500.7691529, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793514501.0619335, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793514521.463486, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793514529.0497348, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793514529.6743248, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793514532.9092093, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793514533.3234518, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793514534.8104973, "method": "CONNECT", "host": "18.179.11.220", "port": 22, "allowed": true}
+{"time": 1793514535.424362, "method": "CONNECT", "host": "18.179.11.220", "port": 22, "allowed": true}
+{"time": 1793514536.9727538, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793514540.7411978, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793514541.0898838, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793514541.5168767, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793514544.7478533, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793514549.1831782, "method": "CONNECT", "host": "13.230.96.188", "port": 22, "allowed": true}
+{"time": 1793514549.4974804, "method": "CONNECT", "host": "18.179.11.220", "port": 22, "allowed": true}
+{"time": 1793514549.7670417, "method": "CONNECT", "host": "43.207.142.134", "port": 22, "allowed": true}
+{"time": 1793514550.1349804, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}
+{"time": 1793514621.7866035, "method": "FORWARD", "host": "ollama.com", "port": 443, "allowed": true, "path": "/v1/messages"}

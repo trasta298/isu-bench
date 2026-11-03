@@ -1,0 +1,257 @@
+{
+  "run_id": "dsh-deepseek-v4-1-flash-1017-go-20261101055253",
+  "problem": "isucon14",
+  "agent": "dsh",
+  "agent_version": "0.2.1-rc.5",
+  "model": "deepseek-v4.1-flash:1017",
+  "effort": "max",
+  "lang": "go",
+  "provider": "ollama.com",
+  "upstream_commit": "53f8b627e040c30ebec600457c6c97da008b84b0",
+  "started_at": "2026-11-01T05:52:53.709253+00:00",
+  "image": {
+    "ImageId": "ami-0fcf9e8e8675a9ee4",
+    "Name": "isucon14-20260818100152",
+    "OwnerId": "839726181030",
+    "CreationDate": "2026-08-18T10:42:25.000Z"
+  },
+  "host_resources": {
+    "s1": [
+      "2",
+      "3792"
+    ],
+    "s2": [
+      "2",
+      "3792"
+    ],
+    "s3": [
+      "2",
+      "3766"
+    ],
+    "bench": [
+      "8",
+      "15615"
+    ]
+  },
+  "resumes": 0,
+  "agent_seconds": 2054,
+  "status": "completed",
+  "reboot_check": {
+    "passed": true,
+    "rebooted": {
+      "s1": true,
+      "s2": true,
+      "s3": true
+    },
+    "root_status": 200,
+    "api_status": 401
+  },
+  "runs": [
+    {
+      "n": 1,
+      "started_at": "2026-11-01T05:54:35.071332+00:00",
+      "exit": 0,
+      "finished_at": "2026-11-01T05:55:44.780741+00:00",
+      "passed": true,
+      "score": 874
+    },
+    {
+      "n": 2,
+      "started_at": "2026-11-01T06:02:25.273886+00:00",
+      "exit": 0,
+      "finished_at": "2026-11-01T06:02:30.668712+00:00",
+      "passed": false,
+      "score": null
+    },
+    {
+      "n": 3,
+      "started_at": "2026-11-01T06:03:27.619357+00:00",
+      "exit": 0,
+      "finished_at": "2026-11-01T06:03:39.157552+00:00",
+      "passed": false,
+      "score": 463
+    },
+    {
+      "n": 4,
+      "started_at": "2026-11-01T06:04:47.791710+00:00",
+      "exit": 0,
+      "finished_at": "2026-11-01T06:05:56.456796+00:00",
+      "passed": true,
+      "score": 15367
+    },
+    {
+      "n": 5,
+      "started_at": "2026-11-01T06:07:19.665783+00:00",
+      "exit": 0,
+      "finished_at": "2026-11-01T06:08:28.377705+00:00",
+      "passed": true,
+      "score": 24127
+    },
+    {
+      "n": 6,
+      "started_at": "2026-11-01T06:10:51.698453+00:00",
+      "exit": 0,
+      "finished_at": "2026-11-01T06:12:01.813739+00:00",
+      "passed": true,
+      "score": 28901
+    },
+    {
+      "n": 7,
+      "started_at": "2026-11-01T06:12:23.229167+00:00",
+      "exit": 0,
+      "finished_at": "2026-11-01T06:13:33.451961+00:00",
+      "passed": true,
+      "score": 39520
+    },
+    {
+      "n": 8,
+      "started_at": "2026-11-01T06:15:00.191699+00:00",
+      "exit": 0,
+      "finished_at": "2026-11-01T06:16:08.656266+00:00",
+      "passed": true,
+      "score": 41843
+    },
+    {
+      "n": 9,
+      "started_at": "2026-11-01T06:16:56.809754+00:00",
+      "exit": 0,
+      "finished_at": "2026-11-01T06:18:05.345963+00:00",
+      "passed": true,
+      "score": 35748
+    },
+    {
+      "n": 10,
+      "started_at": "2026-11-01T06:18:22.064978+00:00",
+      "exit": 0,
+      "finished_at": "2026-11-01T06:19:30.537027+00:00",
+      "passed": true,
+      "score": 46183
+    },
+    {
+      "n": 11,
+      "started_at": "2026-11-01T06:19:53.854900+00:00",
+      "exit": 0,
+      "finished_at": "2026-11-01T06:21:02.372141+00:00",
+      "passed": true,
+      "score": 45897
+    },
+    {
+      "n": 12,
+      "started_at": "2026-11-01T06:21:32.897426+00:00",
+      "exit": 0,
+      "finished_at": "2026-11-01T06:22:41.396524+00:00",
+      "passed": true,
+      "score": 44156
+    },
+    {
+      "n": 13,
+      "started_at": "2026-11-01T06:23:37.327149+00:00",
+      "exit": 0,
+      "finished_at": "2026-11-01T06:24:46.641466+00:00",
+      "passed": true,
+      "score": 74162
+    },
+    {
+      "n": 14,
+      "started_at": "2026-11-01T06:26:59.033265+00:00",
+      "exit": 0,
+      "finished_at": "2026-11-01T06:28:07.709789+00:00",
+      "passed": true,
+      "score": 90099
+    },
+    {
+      "n": 15,
+      "started_at": "2026-11-01T06:29:12.190779+00:00",
+      "exit": 0,
+      "finished_at": "2026-11-01T06:30:21.750122+00:00",
+      "passed": true,
+      "score": 85863
+    }
+  ],
+  "infra_failures": [],
+  "final_score": 85863,
+  "finished_at": "2026-11-01T06:31:08.418372+00:00",
+  "usage": {
+    "input_tokens": 335798,
+    "output_tokens": 177386,
+    "cache_read_tokens": 34249088,
+    "cache_write_tokens": 0
+  },
+  "pace": [
+    {
+      "minutes": 0.3,
+      "tool_calls": 12,
+      "output_tokens": 2212
+    },
+    {
+      "minutes": 8.1,
+      "tool_calls": 54,
+      "output_tokens": 68157
+    },
+    {
+      "minutes": 9.2,
+      "tool_calls": 7,
+      "output_tokens": 6873
+    },
+    {
+      "minutes": 10.5,
+      "tool_calls": 8,
+      "output_tokens": 8381
+    },
+    {
+      "minutes": 13.0,
+      "tool_calls": 10,
+      "output_tokens": 10120
+    },
+    {
+      "minutes": 16.6,
+      "tool_calls": 14,
+      "output_tokens": 20446
+    },
+    {
+      "minutes": 18.1,
+      "tool_calls": 3,
+      "output_tokens": 2871
+    },
+    {
+      "minutes": 20.7,
+      "tool_calls": 12,
+      "output_tokens": 10692
+    },
+    {
+      "minutes": 22.7,
+      "tool_calls": 7,
+      "output_tokens": 5678
+    },
+    {
+      "minutes": 24.1,
+      "tool_calls": 3,
+      "output_tokens": 1143
+    },
+    {
+      "minutes": 25.6,
+      "tool_calls": 3,
+      "output_tokens": 2302
+    },
+    {
+      "minutes": 27.3,
+      "tool_calls": 3,
+      "output_tokens": 2494
+    },
+    {
+      "minutes": 29.3,
+      "tool_calls": 6,
+      "output_tokens": 8637
+    },
+    {
+      "minutes": 32.7,
+      "tool_calls": 15,
+      "output_tokens": 17166
+    },
+    {
+      "minutes": 34.9,
+      "tool_calls": 6,
+      "output_tokens": 10214
+    }
+  ]
+}

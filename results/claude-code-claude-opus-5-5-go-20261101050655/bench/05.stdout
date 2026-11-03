@@ -1,0 +1,166 @@
+time=14:27:12.191 level=INFO msg=負荷走行を開始します
+time=14:27:17.451 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Vintage Vibe Seats" 増加数=1
+time=14:27:17.452 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="CraftChair Co., Ltd." 増加数=1
+time=14:27:17.451 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ChairCycle 増加数=1
+time=14:27:17.451 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=座り心地再生所 増加数=1
+time=14:27:17.452 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=晴れ道タクシー 増加数=2
+time=14:27:19.250 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="CraftChair Co., Ltd." 増加数=1
+time=14:27:19.250 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ChairCycle 増加数=2
+time=14:27:19.257 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=晴れ道タクシー 増加数=1
+time=14:27:19.257 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=座り心地再生所 増加数=1
+time=14:27:19.278 level=INFO msg=これまでに地域内の評判によって10人、既存ユーザーの招待経由で45人が新規登録しました
+time=14:27:19.278 level=INFO msg=0.0%のライドは椅子がマッチされるまでの時間、45.7%のライドはマッチされた椅子が乗車地点までに掛かる時間、0.0%のライドは椅子の実移動時間に不満がありました
+time=14:27:21.050 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="CraftChair Co., Ltd." 増加数=1
+time=14:27:21.051 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Vintage Vibe Seats" 増加数=2
+time=14:27:21.051 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ChairCycle 増加数=2
+time=14:27:21.052 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=座り心地再生所 増加数=2
+time=14:27:21.053 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=晴れ道タクシー 増加数=2
+time=14:27:22.849 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="CraftChair Co., Ltd." 増加数=3
+time=14:27:22.851 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Vintage Vibe Seats" 増加数=3
+time=14:27:22.853 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=座り心地再生所 増加数=3
+time=14:27:22.853 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ChairCycle 増加数=2
+time=14:27:22.854 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=晴れ道タクシー 増加数=3
+time=14:27:24.650 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="CraftChair Co., Ltd." 増加数=3
+time=14:27:24.655 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ChairCycle 増加数=5
+time=14:27:24.656 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Vintage Vibe Seats" 増加数=3
+time=14:27:24.658 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=座り心地再生所 増加数=3
+time=14:27:24.658 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=晴れ道タクシー 増加数=4
+time=14:27:24.678 level=INFO msg=これまでに地域内の評判によって19人、既存ユーザーの招待経由で152人が新規登録しました
+time=14:27:24.678 level=INFO msg=0.0%のライドは椅子がマッチされるまでの時間、30.7%のライドはマッチされた椅子が乗車地点までに掛かる時間、0.6%のライドは椅子の実移動時間に不満がありました
+time=14:27:26.453 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ChairCycle 増加数=6
+time=14:27:26.456 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="CraftChair Co., Ltd." 増加数=5
+time=14:27:26.457 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Vintage Vibe Seats" 増加数=6
+time=14:27:26.457 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=晴れ道タクシー 増加数=5
+time=14:27:26.462 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=座り心地再生所 増加数=5
+time=14:27:28.404 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="CraftChair Co., Ltd." 増加数=8
+time=14:27:28.404 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Vintage Vibe Seats" 増加数=8
+time=14:27:28.415 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ChairCycle 増加数=8
+time=14:27:28.427 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=晴れ道タクシー 増加数=6
+time=14:27:28.428 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=座り心地再生所 増加数=7
+time=14:27:30.203 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="CraftChair Co., Ltd." 増加数=10
+time=14:27:30.204 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ChairCycle 増加数=9
+time=14:27:30.204 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Vintage Vibe Seats" 増加数=8
+time=14:27:30.209 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=座り心地再生所 増加数=7
+time=14:27:30.209 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=晴れ道タクシー 増加数=7
+time=14:27:30.228 level=INFO msg=これまでに地域内の評判によって32人、既存ユーザーの招待経由で500人が新規登録しました
+time=14:27:30.228 level=INFO msg=1.0%のライドは椅子がマッチされるまでの時間、16.4%のライドはマッチされた椅子が乗車地点までに掛かる時間、0.5%のライドは椅子の実移動時間に不満がありました
+time=14:27:32.016 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=晴れ道タクシー 増加数=8
+time=14:27:32.017 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ChairCycle 増加数=9
+time=14:27:32.020 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=座り心地再生所 増加数=10
+time=14:27:32.021 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Vintage Vibe Seats" 増加数=8
+time=14:27:32.033 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="CraftChair Co., Ltd." 増加数=8
+time=14:27:33.813 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Vintage Vibe Seats" 増加数=9
+time=14:27:33.816 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=座り心地再生所 増加数=6
+time=14:27:33.819 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=晴れ道タクシー 増加数=8
+time=14:27:33.819 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="CraftChair Co., Ltd." 増加数=8
+time=14:27:33.822 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ChairCycle 増加数=8
+time=14:27:35.611 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="CraftChair Co., Ltd." 増加数=6
+time=14:27:35.613 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ChairCycle 増加数=7
+time=14:27:35.621 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Vintage Vibe Seats" 増加数=6
+time=14:27:35.628 level=INFO msg=これまでに地域内の評判によって50人、既存ユーザーの招待経由で1027人が新規登録しました
+time=14:27:35.628 level=INFO msg=2.5%のライドは椅子がマッチされるまでの時間、13.3%のライドはマッチされた椅子が乗車地点までに掛かる時間、2.6%のライドは椅子の実移動時間に不満がありました
+time=14:27:35.634 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=晴れ道タクシー 増加数=8
+time=14:27:35.635 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=座り心地再生所 増加数=8
+time=14:27:37.431 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ChairCycle 増加数=6
+time=14:27:37.438 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="CraftChair Co., Ltd." 増加数=6
+time=14:27:37.439 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=晴れ道タクシー 増加数=6
+time=14:27:37.440 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Vintage Vibe Seats" 増加数=5
+time=14:27:37.442 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=座り心地再生所 増加数=7
+time=14:27:39.217 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="CraftChair Co., Ltd." 増加数=7
+time=14:27:39.218 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Vintage Vibe Seats" 増加数=5
+time=14:27:39.220 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ChairCycle 増加数=8
+time=14:27:39.227 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=座り心地再生所 増加数=6
+time=14:27:39.236 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=晴れ道タクシー 増加数=5
+time=14:27:41.012 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Vintage Vibe Seats" 増加数=7
+time=14:27:41.014 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="CraftChair Co., Ltd." 増加数=7
+time=14:27:41.022 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=座り心地再生所 増加数=6
+time=14:27:41.026 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=晴れ道タクシー 増加数=6
+time=14:27:41.027 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ChairCycle 増加数=8
+time=14:27:41.031 level=INFO msg=これまでに地域内の評判によって65人、既存ユーザーの招待経由で1480人が新規登録しました
+time=14:27:41.031 level=INFO msg=これまでに低評価なライドによって9人が利用をやめました
+time=14:27:41.031 level=INFO msg=2.1%のライドは椅子がマッチされるまでの時間、14.4%のライドはマッチされた椅子が乗車地点までに掛かる時間、8.8%のライドは椅子の実移動時間に不満がありました
+time=14:27:42.814 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ChairCycle 増加数=6
+time=14:27:42.817 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Vintage Vibe Seats" 増加数=5
+time=14:27:42.819 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="CraftChair Co., Ltd." 増加数=5
+time=14:27:42.856 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=座り心地再生所 増加数=3
+time=14:27:42.858 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=晴れ道タクシー 増加数=3
+time=14:27:44.623 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ChairCycle 増加数=9
+time=14:27:44.627 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Vintage Vibe Seats" 増加数=6
+time=14:27:44.628 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="CraftChair Co., Ltd." 増加数=9
+time=14:27:44.646 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=晴れ道タクシー 増加数=4
+time=14:27:44.646 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=座り心地再生所 増加数=6
+time=14:27:46.421 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="CraftChair Co., Ltd." 増加数=6
+time=14:27:46.423 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Vintage Vibe Seats" 増加数=8
+time=14:27:46.428 level=INFO msg=これまでに地域内の評判によって79人、既存ユーザーの招待経由で1895人が新規登録しました
+time=14:27:46.428 level=INFO msg=これまでに低評価なライドによって24人が利用をやめました
+time=14:27:46.428 level=INFO msg=1.8%のライドは椅子がマッチされるまでの時間、15.4%のライドはマッチされた椅子が乗車地点までに掛かる時間、15.1%のライドは椅子の実移動時間に不満がありました
+time=14:27:46.436 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ChairCycle 増加数=10
+time=14:27:46.464 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=座り心地再生所 増加数=5
+time=14:27:46.464 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=晴れ道タクシー 増加数=6
+time=14:27:48.227 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ChairCycle 増加数=6
+time=14:27:48.229 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="CraftChair Co., Ltd." 増加数=8
+time=14:27:48.230 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Vintage Vibe Seats" 増加数=6
+time=14:27:50.022 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="CraftChair Co., Ltd." 増加数=8
+time=14:27:50.024 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ChairCycle 増加数=9
+time=14:27:50.028 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Vintage Vibe Seats" 増加数=6
+time=14:27:51.818 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="CraftChair Co., Ltd." 増加数=5
+time=14:27:51.820 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ChairCycle 増加数=6
+time=14:27:51.827 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Vintage Vibe Seats" 増加数=7
+time=14:27:51.828 level=INFO msg=これまでに地域内の評判によって91人、既存ユーザーの招待経由で2306人が新規登録しました
+time=14:27:51.828 level=INFO msg=これまでに低評価なライドによって54人が利用をやめました
+time=14:27:51.828 level=INFO msg=1.6%のライドは椅子がマッチされるまでの時間、16.1%のライドはマッチされた椅子が乗車地点までに掛かる時間、19.4%のライドは椅子の実移動時間に不満がありました
+time=14:27:53.631 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Vintage Vibe Seats" 増加数=6
+time=14:27:53.632 level=WARN msg="取得したオーナーの売り上げ情報が想定しているものと異なります (CODE=24): salesが大きいデータがあります (id: 01M6AS7ZPGCJH7SMG88TF0Q3M0, got: 9700)"
+time=14:27:53.632 level=WARN msg="取得したオーナーの売り上げ情報が想定しているものと異なります (CODE=24): salesが大きいデータがあります (id: 01M6AS7Q391X0YCEVWSWWMBZYM, got: 20100)"
+time=14:27:55.429 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Vintage Vibe Seats" 増加数=6
+time=14:27:55.435 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ChairCycle 増加数=16
+time=14:27:55.436 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="CraftChair Co., Ltd." 増加数=13
+time=14:27:57.225 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Vintage Vibe Seats" 増加数=5
+time=14:27:57.228 level=INFO msg=これまでに地域内の評判によって100人、既存ユーザーの招待経由で2603人が新規登録しました
+time=14:27:57.228 level=INFO msg=これまでに低評価なライドによって77人が利用をやめました
+time=14:27:57.228 level=INFO msg=1.4%のライドは椅子がマッチされるまでの時間、16.6%のライドはマッチされた椅子が乗車地点までに掛かる時間、23.2%のライドは椅子の実移動時間に不満がありました
+time=14:27:57.316 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=晴れ道タクシー 増加数=25
+time=14:27:59.036 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="CraftChair Co., Ltd." 増加数=12
+time=14:27:59.038 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ChairCycle 増加数=13
+time=14:27:59.039 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Vintage Vibe Seats" 増加数=6
+time=14:28:00.831 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ChairCycle 増加数=5
+time=14:28:00.837 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="CraftChair Co., Ltd." 増加数=7
+time=14:28:00.839 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Vintage Vibe Seats" 増加数=6
+time=14:28:00.911 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=座り心地再生所 増加数=31
+time=14:28:02.625 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Vintage Vibe Seats" 増加数=7
+time=14:28:02.628 level=INFO msg=これまでに地域内の評判によって114人、既存ユーザーの招待経由で2879人が新規登録しました
+time=14:28:02.628 level=INFO msg=これまでに低評価なライドによって106人が利用をやめました
+time=14:28:02.628 level=INFO msg=1.2%のライドは椅子がマッチされるまでの時間、16.8%のライドはマッチされた椅子が乗車地点までに掛かる時間、26.7%のライドは椅子の実移動時間に不満がありました
+time=14:28:02.635 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ChairCycle 増加数=10
+time=14:28:02.640 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="CraftChair Co., Ltd." 増加数=7
+time=14:28:04.440 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="CraftChair Co., Ltd." 増加数=6
+time=14:28:04.442 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Vintage Vibe Seats" 増加数=7
+time=14:28:06.234 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Vintage Vibe Seats" 増加数=6
+time=14:28:06.235 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="CraftChair Co., Ltd." 増加数=7
+time=14:28:06.236 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ChairCycle 増加数=13
+time=14:28:08.038 level=INFO msg=これまでに地域内の評判によって127人、既存ユーザーの招待経由で3129人が新規登録しました
+time=14:28:08.038 level=INFO msg=これまでに低評価なライドによって161人が利用をやめました
+time=14:28:08.038 level=INFO msg=1.1%のライドは椅子がマッチされるまでの時間、18.8%のライドはマッチされた椅子が乗車地点までに掛かる時間、31.5%のライドは椅子の実移動時間に不満がありました
+time=14:28:08.038 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Vintage Vibe Seats" 増加数=7
+time=14:28:08.040 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="CraftChair Co., Ltd." 増加数=6
+time=14:28:09.885 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Vintage Vibe Seats" 増加数=5
+time=14:28:09.887 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="CraftChair Co., Ltd." 増加数=5
+time=14:28:09.890 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ChairCycle 増加数=14
+time=14:28:11.672 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Vintage Vibe Seats" 増加数=8
+time=14:28:11.678 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="CraftChair Co., Ltd." 増加数=7
+time=14:28:13.458 level=INFO msg=これまでに地域内の評判によって136人、既存ユーザーの招待経由で3361人が新規登録しました
+time=14:28:13.458 level=INFO msg=これまでに低評価なライドによって228人が利用をやめました
+time=14:28:13.458 level=INFO msg=1.0%のライドは椅子がマッチされるまでの時間、20.2%のライドはマッチされた椅子が乗車地点までに掛かる時間、35.3%のライドは椅子の実移動時間に不満がありました
+time=14:28:13.468 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="CraftChair Co., Ltd." 増加数=8
+time=14:28:13.473 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Vintage Vibe Seats" 増加数=7
+time=14:28:13.485 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ChairCycle 増加数=15
+time=14:28:18.879 level=INFO msg=最終地域情報 名前=チェアタウン ユーザー登録数=2809 アクティブユーザー数=2636
+time=14:28:18.879 level=INFO msg=最終地域情報 名前=コシカケシティ ユーザー登録数=938 アクティブユーザー数=877
+time=14:28:18.879 level=INFO msg=最終オーナー情報 名前=座り心地再生所 売上=5271500 椅子数=121
+time=14:28:18.879 level=INFO msg=最終オーナー情報 名前="CraftChair Co., Ltd." 売上=7486600 椅子数=197
+time=14:28:18.879 level=INFO msg=最終オーナー情報 名前=ChairCycle 売上=8190000 椅子数=217
+time=14:28:18.879 level=INFO msg=最終オーナー情報 名前=晴れ道タクシー 売上=5347900 椅子数=113
+time=14:28:18.879 level=INFO msg=最終オーナー情報 名前="Vintage Vibe Seats" 売上=7083800 椅子数=189
+time=14:28:18.879 level=INFO msg=0.9%のライドは椅子がマッチされるまでの時間、20.6%のライドはマッチされた椅子が乗車地点までに掛かる時間、37.1%のライドは椅子の実移動時間に不満がありました
+time=14:28:18.879 level=INFO msg=結果 pass=true スコア=381426 種別エラー数=map[24:2]
+time=14:28:18.880 level=INFO msg=負荷走行が終了しました

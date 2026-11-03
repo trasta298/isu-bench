@@ -1,0 +1,11 @@
+time=14:39:43.932 level=INFO msg=負荷走行を開始します
+time=14:39:46.380 level=ERROR msg=クリティカルエラーが発生しました error="評価は完了しているが、支払いが行われていないライドが存在します (CODE=34)"
+time=14:39:51.383 level=INFO msg=最終地域情報 名前=チェアタウン ユーザー登録数=5 アクティブユーザー数=5
+time=14:39:51.383 level=INFO msg=最終地域情報 名前=コシカケシティ ユーザー登録数=5 アクティブユーザー数=5
+time=14:39:51.383 level=INFO msg=最終オーナー情報 名前=CityRide 売上=0 椅子数=4
+time=14:39:51.383 level=INFO msg=最終オーナー情報 名前="Sit Second Life" 売上=0 椅子数=4
+time=14:39:51.383 level=INFO msg=最終オーナー情報 名前=迅行タクシー 売上=0 椅子数=4
+time=14:39:51.383 level=INFO msg=最終オーナー情報 名前=快旅タクシー 売上=0 椅子数=4
+time=14:39:51.383 level=INFO msg=最終オーナー情報 名前=椅子のめぐりや 売上=0 椅子数=4
+time=14:39:51.383 level=INFO msg=結果 pass=false スコア=151 種別エラー数=map[34:1]
+time=14:39:51.383 level=INFO msg=負荷走行が終了しました

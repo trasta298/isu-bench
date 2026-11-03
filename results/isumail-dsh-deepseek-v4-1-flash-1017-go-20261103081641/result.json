@@ -1,0 +1,382 @@
+{
+  "run_id": "isumail-dsh-deepseek-v4-1-flash-1017-go-20261103081641",
+  "problem": "isumail",
+  "agent": "dsh",
+  "agent_version": "0.2.1-rc.5",
+  "model": "deepseek-v4.1-flash:1017",
+  "effort": "max",
+  "lang": "go",
+  "provider": "ollama.com",
+  "upstream_commit": null,
+  "started_at": "2026-11-03T08:16:41.494970+00:00",
+  "image": {
+    "ImageId": "ami-0c07931bc35138ebf",
+    "Name": "isumail-app-x86-202611030222",
+    "OwnerId": "253433207414",
+    "CreationDate": "2026-11-03T02:25:47.000Z"
+  },
+  "images": {
+    "s1": {
+      "ImageId": "ami-0c07931bc35138ebf",
+      "Name": "isumail-app-x86-202611030222",
+      "OwnerId": "253433207414",
+      "CreationDate": "2026-11-03T02:25:47.000Z",
+      "Architecture": "x86_64"
+    },
+    "s2": {
+      "ImageId": "ami-0386de926573364e3",
+      "Name": "isumail-app-arm64-202611030222",
+      "OwnerId": "253433207414",
+      "CreationDate": "2026-11-03T02:24:30.000Z",
+      "Architecture": "arm64"
+    },
+    "s3": {
+      "ImageId": "ami-0386de926573364e3",
+      "Name": "isumail-app-arm64-202611030222",
+      "OwnerId": "253433207414",
+      "CreationDate": "2026-11-03T02:24:30.000Z",
+      "Architecture": "arm64"
+    },
+    "router": {
+      "ImageId": "ami-0cc8249ffb25653a1",
+      "Name": "isumail-router-arm64-202611030504",
+      "OwnerId": "253433207414",
+      "CreationDate": "2026-11-03T05:04:59.000Z",
+      "Architecture": "arm64"
+    },
+    "bench": {
+      "ImageId": "ami-026c9e398c9d0e68e",
+      "Name": "isumail-bench-arm64-202611030222",
+      "OwnerId": "253433207414",
+      "CreationDate": "2026-11-03T02:23:57.000Z",
+      "Architecture": "arm64"
+    }
+  },
+  "host_resources": {
+    "s1": [
+      "2",
+      "3790",
+      "Intel(R) Xeon(R) Platinum 8275CL CPU @ 3.00GHz"
+    ],
+    "s2": [
+      "1",
+      "1823",
+      "Neoverse-V1"
+    ],
+    "s3": [
+      "1",
+      "1823",
+      "Neoverse-N1"
+    ],
+    "router": [
+      "1",
+      "1823",
+      "Neoverse-N1"
+    ],
+    "bench": [
+      "8",
+      "15665",
+      "Neoverse-V1"
+    ]
+  },
+  "aws_checks": [
+    {
+      "stage": "provisioned",
+      "differences": []
+    },
+    {
+      "stage": "ssh closed",
+      "differences": []
+    },
+    {
+      "stage": "after reboot",
+      "differences": []
+    }
+  ],
+  "resumes": 0,
+  "agent_seconds": 4460,
+  "status": "completed",
+  "reboot_check": {
+    "passed": true,
+    "rebooted": {
+      "s1": true,
+      "s2": true,
+      "s3": true
+    },
+    "probe_status": {
+      "s1": 401
+    },
+    "persist": {
+      "passed": true,
+      "infra": false,
+      "errors": 0
+    },
+    "router": {
+      "ok": true,
+      "text": "isumail-router: ok\ns1 sent_bytes=4464923318 sent_packets=14925129 dropped=10 overlimits=318601 backlog=0b\ns2 sent_bytes=1877819041 sent_packets=8073752 dropped=8 overlimits=106502 backlog=0b\ns3 sent_bytes=1601331295 sent_packets=7755847 dropped=4 overlimits=352581 backlog=0b\nconntrack count=1083 max=1048576\ncpu  2757 0 2246 441897 1349 0 2971 0 0 0\n"
+    },
+    "infra": false
+  },
+  "runs": [
+    {
+      "n": 1,
+      "attempt": 2,
+      "started_at": "2026-11-03T08:53:51.818722+00:00",
+      "exit": 1,
+      "finished_at": "2026-11-03T08:54:51.539788+00:00",
+      "passed": false,
+      "score": 0,
+      "run_id": "r-20261103-0656ad65b62d",
+      "state_sha256": null
+    },
+    {
+      "n": 2,
+      "attempt": 3,
+      "started_at": "2026-11-03T08:57:25.155431+00:00",
+      "exit": 1,
+      "finished_at": "2026-11-03T08:58:33.028934+00:00",
+      "passed": false,
+      "score": 0,
+      "run_id": "r-20261103-e4c20b3fd236",
+      "state_sha256": null
+    },
+    {
+      "n": 3,
+      "attempt": 4,
+      "started_at": "2026-11-03T09:00:29.900331+00:00",
+      "exit": 0,
+      "finished_at": "2026-11-03T09:02:32.586724+00:00",
+      "passed": true,
+      "score": 10244,
+      "run_id": "r-20261103-d6a27eb2ece5",
+      "state_sha256": "69ff9713b1b31b807a162c15da59bac5a85218d545660d9632f7ec6b51086b2d"
+    },
+    {
+      "n": 4,
+      "attempt": 5,
+      "started_at": "2026-11-03T09:05:23.741846+00:00",
+      "exit": 1,
+      "finished_at": "2026-11-03T09:06:05.290793+00:00",
+      "passed": false,
+      "score": 0,
+      "run_id": "r-20261103-b9b5a185297d",
+      "state_sha256": null
+    },
+    {
+      "n": 5,
+      "attempt": 6,
+      "started_at": "2026-11-03T09:08:04.518697+00:00",
+      "exit": 0,
+      "finished_at": "2026-11-03T09:09:47.505626+00:00",
+      "passed": true,
+      "score": 33360,
+      "run_id": "r-20261103-cf76da90067a",
+      "state_sha256": "21d8d10cae5eb45f3c60177f19d4129333c63452aa7c4c81f4c4e6d0eb89fda9"
+    },
+    {
+      "n": 6,
+      "attempt": 7,
+      "started_at": "2026-11-03T09:10:54.799340+00:00",
+      "exit": 1,
+      "finished_at": "2026-11-03T09:11:44.052304+00:00",
+      "passed": false,
+      "score": 0,
+      "run_id": "r-20261103-ff9a25efa5cd",
+      "state_sha256": null
+    },
+    {
+      "n": 7,
+      "attempt": 8,
+      "started_at": "2026-11-03T09:13:06.480517+00:00",
+      "exit": 0,
+      "finished_at": "2026-11-03T09:15:13.126197+00:00",
+      "passed": true,
+      "score": 18339,
+      "run_id": "r-20261103-68f747a1d3b4",
+      "state_sha256": "6f1cbfb844cd78bd9c976f0501162df4265a599d2898728005a4b88d206645f9"
+    },
+    {
+      "n": 8,
+      "attempt": 9,
+      "started_at": "2026-11-03T09:16:32.331753+00:00",
+      "exit": 0,
+      "finished_at": "2026-11-03T09:18:14.892405+00:00",
+      "passed": true,
+      "score": 42760,
+      "run_id": "r-20261103-3e29bbf57d4b",
+      "state_sha256": "815f8d2ad62322f8c4d6c23b2e57a7f9a158c782d9a08c152df24597d6a8cdb1"
+    },
+    {
+      "n": 9,
+      "attempt": 10,
+      "started_at": "2026-11-03T09:19:03.097494+00:00",
+      "exit": 1,
+      "finished_at": "2026-11-03T09:19:46.432743+00:00",
+      "passed": false,
+      "score": 0,
+      "run_id": "r-20261103-5326897d5747",
+      "state_sha256": null
+    },
+    {
+      "n": 10,
+      "attempt": 11,
+      "started_at": "2026-11-03T09:21:00.904051+00:00",
+      "exit": 0,
+      "finished_at": "2026-11-03T09:22:43.243693+00:00",
+      "passed": true,
+      "score": 41052,
+      "run_id": "r-20261103-a32876fda756",
+      "state_sha256": "79c136d7e1682efd2cd817f5b7c6e178662253c3d963f73e0d2a228516ff6017"
+    },
+    {
+      "n": 11,
+      "attempt": 12,
+      "started_at": "2026-11-03T09:23:07.905228+00:00",
+      "exit": 0,
+      "finished_at": "2026-11-03T09:24:49.898839+00:00",
+      "passed": true,
+      "score": 42678,
+      "run_id": "r-20261103-4ae8b45b4bf0",
+      "state_sha256": "858e2efc6e99c3710da63dd62361712b4f6892d913f9a508ef9f9936a110b3ad"
+    },
+    {
+      "n": 12,
+      "attempt": 13,
+      "started_at": "2026-11-03T09:25:18.883652+00:00",
+      "exit": 0,
+      "finished_at": "2026-11-03T09:27:01.381803+00:00",
+      "passed": true,
+      "score": 39756,
+      "run_id": "r-20261103-937f20c5ae9e",
+      "state_sha256": "0aa0a3c2ccfe1543d9c0977e64166404f7335f087269e9f2a6d04013426077df"
+    },
+    {
+      "n": 13,
+      "attempt": 14,
+      "started_at": "2026-11-03T09:27:34.006924+00:00",
+      "exit": 0,
+      "finished_at": "2026-11-03T09:29:16.036202+00:00",
+      "passed": true,
+      "score": 39640,
+      "run_id": "r-20261103-bac896308379",
+      "state_sha256": "7ce7ece5186543c22dadfd3c2307037ab19be089c96316bad936711018a3a19e"
+    },
+    {
+      "n": 14,
+      "attempt": 15,
+      "started_at": "2026-11-03T09:29:43.248159+00:00",
+      "exit": 0,
+      "finished_at": "2026-11-03T09:31:26.014922+00:00",
+      "passed": true,
+      "score": 43054,
+      "run_id": "r-20261103-a6fa9f40693c",
+      "state_sha256": "405f00a32b0e3db5f47aa07cd84573de11ff9ed35b36fae20d799fab84d1c714"
+    },
+    {
+      "n": 15,
+      "attempt": 16,
+      "started_at": "2026-11-03T09:32:01.731671+00:00",
+      "exit": 0,
+      "finished_at": "2026-11-03T09:33:55.016610+00:00",
+      "passed": true,
+      "score": 41791,
+      "run_id": "r-20261103-22d8263d89f3",
+      "state_sha256": "85b8ea256f2ebe708566762a9d22e70b054997a52caefbedff71e22bd7dff0ce"
+    }
+  ],
+  "infra_failures": [
+    {
+      "n": 1,
+      "attempt": 1,
+      "started_at": "2026-11-03T08:19:54.673717+00:00",
+      "exit": 255,
+      "finished_at": "2026-11-03T08:21:00.898638+00:00",
+      "files": "infra-01"
+    }
+  ],
+  "final_score": 41791,
+  "finished_at": "2026-11-03T09:34:47.497232+00:00",
+  "usage": {
+    "input_tokens": 457177,
+    "output_tokens": 235222,
+    "cache_read_tokens": 37573160,
+    "cache_write_tokens": 0
+  },
+  "pace": [
+    {
+      "minutes": 34.3,
+      "tool_calls": 136,
+      "output_tokens": 157113
+    },
+    {
+      "minutes": 37.9,
+      "tool_calls": 8,
+      "output_tokens": 16453
+    },
+    {
+      "minutes": 40.9,
+      "tool_calls": 6,
+      "output_tokens": 7971
+    },
+    {
+      "minutes": 45.8,
+      "tool_calls": 9,
+      "output_tokens": 17301
+    },
+    {
+      "minutes": 48.5,
+      "tool_calls": 7,
+      "output_tokens": 8336
+    },
+    {
+      "minutes": 51.4,
+      "tool_calls": 5,
+      "output_tokens": 6159
+    },
+    {
+      "minutes": 53.5,
+      "tool_calls": 3,
+      "output_tokens": 4260
+    },
+    {
+      "minutes": 57.0,
+      "tool_calls": 5,
+      "output_tokens": 5244
+    },
+    {
+      "minutes": 59.5,
+      "tool_calls": 4,
+      "output_tokens": 1891
+    },
+    {
+      "minutes": 61.5,
+      "tool_calls": 2,
+      "output_tokens": 3715
+    },
+    {
+      "minutes": 63.6,
+      "tool_calls": 1,
+      "output_tokens": 539
+    },
+    {
+      "minutes": 65.8,
+      "tool_calls": 1,
+      "output_tokens": 1599
+    },
+    {
+      "minutes": 68.0,
+      "tool_calls": 1,
+      "output_tokens": 1919
+    },
+    {
+      "minutes": 70.2,
+      "tool_calls": 1,
+      "output_tokens": 1042
+    },
+    {
+      "minutes": 72.5,
+      "tool_calls": 2,
+      "output_tokens": 1680
+    }
+  ]
+}

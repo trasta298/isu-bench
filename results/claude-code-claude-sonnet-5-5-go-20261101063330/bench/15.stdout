@@ -1,0 +1,175 @@
+time=16:45:41.870 level=INFO msg=負荷走行を開始します
+time=16:45:47.098 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ComfortWorks 増加数=1
+time=16:45:47.100 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=1
+time=16:45:47.100 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子やいちば 増加数=1
+time=16:45:47.100 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="PreLoved Chairs" 増加数=1
+time=16:45:47.102 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="CraftChair Co., Ltd." 増加数=1
+time=16:45:48.899 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子やいちば 増加数=2
+time=16:45:48.899 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="PreLoved Chairs" 増加数=1
+time=16:45:48.901 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=1
+time=16:45:48.902 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="CraftChair Co., Ltd." 増加数=2
+time=16:45:48.903 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ComfortWorks 増加数=1
+time=16:45:48.934 level=INFO msg=これまでに地域内の評判によって8人、既存ユーザーの招待経由で44人が新規登録しました
+time=16:45:48.934 level=INFO msg=0.0%のライドは椅子がマッチされるまでの時間、59.1%のライドはマッチされた椅子が乗車地点までに掛かる時間、0.0%のライドは椅子の実移動時間に不満がありました
+time=16:45:50.699 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=1
+time=16:45:50.701 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="PreLoved Chairs" 増加数=2
+time=16:45:50.701 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子やいちば 増加数=2
+time=16:45:50.702 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ComfortWorks 増加数=2
+time=16:45:50.703 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="CraftChair Co., Ltd." 増加数=2
+time=16:45:52.559 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="PreLoved Chairs" 増加数=2
+time=16:45:52.560 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子やいちば 増加数=3
+time=16:45:52.562 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=3
+time=16:45:52.564 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="CraftChair Co., Ltd." 増加数=3
+time=16:45:52.564 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ComfortWorks 増加数=3
+time=16:45:54.359 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="CraftChair Co., Ltd." 増加数=4
+time=16:45:54.363 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=4
+time=16:45:54.363 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ComfortWorks 増加数=4
+time=16:45:54.368 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子やいちば 増加数=5
+time=16:45:54.368 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="PreLoved Chairs" 増加数=4
+time=16:45:54.387 level=INFO msg=これまでに地域内の評判によって20人、既存ユーザーの招待経由で154人が新規登録しました
+time=16:45:54.387 level=INFO msg=0.0%のライドは椅子がマッチされるまでの時間、48.5%のライドはマッチされた椅子が乗車地点までに掛かる時間、1.2%のライドは椅子の実移動時間に不満がありました
+time=16:45:56.160 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="CraftChair Co., Ltd." 増加数=4
+time=16:45:56.162 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="PreLoved Chairs" 増加数=5
+time=16:45:56.163 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ComfortWorks 増加数=3
+time=16:45:56.166 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=4
+time=16:45:56.168 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子やいちば 増加数=5
+time=16:45:57.960 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ComfortWorks 増加数=5
+time=16:45:57.962 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="PreLoved Chairs" 増加数=4
+time=16:45:57.963 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=5
+time=16:45:57.963 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="CraftChair Co., Ltd." 増加数=4
+time=16:45:57.964 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子やいちば 増加数=4
+time=16:45:59.761 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=5
+time=16:45:59.762 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子やいちば 増加数=6
+time=16:45:59.764 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ComfortWorks 増加数=4
+time=16:45:59.767 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="PreLoved Chairs" 増加数=5
+time=16:45:59.767 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="CraftChair Co., Ltd." 増加数=6
+time=16:45:59.787 level=INFO msg=これまでに地域内の評判によって32人、既存ユーザーの招待経由で371人が新規登録しました
+time=16:45:59.787 level=INFO msg=0.0%のライドは椅子がマッチされるまでの時間、38.2%のライドはマッチされた椅子が乗車地点までに掛かる時間、1.8%のライドは椅子の実移動時間に不満がありました
+time=16:46:01.571 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子やいちば 増加数=5
+time=16:46:01.575 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=6
+time=16:46:01.577 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="PreLoved Chairs" 増加数=5
+time=16:46:01.583 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="CraftChair Co., Ltd." 増加数=5
+time=16:46:01.586 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ComfortWorks 増加数=5
+time=16:46:03.364 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="PreLoved Chairs" 増加数=6
+time=16:46:03.365 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="CraftChair Co., Ltd." 増加数=5
+time=16:46:03.367 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=5
+time=16:46:03.372 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子やいちば 増加数=5
+time=16:46:03.375 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ComfortWorks 増加数=4
+time=16:46:05.165 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="PreLoved Chairs" 増加数=6
+time=16:46:05.168 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=6
+time=16:46:05.172 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ComfortWorks 増加数=6
+time=16:46:05.178 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="CraftChair Co., Ltd." 増加数=6
+time=16:46:05.179 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子やいちば 増加数=6
+time=16:46:05.187 level=INFO msg=これまでに地域内の評判によって45人、既存ユーザーの招待経由で700人が新規登録しました
+time=16:46:05.188 level=INFO msg=0.0%のライドは椅子がマッチされるまでの時間、31.9%のライドはマッチされた椅子が乗車地点までに掛かる時間、1.1%のライドは椅子の実移動時間に不満がありました
+time=16:46:06.975 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ComfortWorks 増加数=4
+time=16:46:06.979 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=6
+time=16:46:06.979 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子やいちば 増加数=6
+time=16:46:06.980 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="PreLoved Chairs" 増加数=6
+time=16:46:06.981 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="CraftChair Co., Ltd." 増加数=6
+time=16:46:08.772 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=6
+time=16:46:08.773 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="PreLoved Chairs" 増加数=7
+time=16:46:08.775 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子やいちば 増加数=6
+time=16:46:08.777 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="CraftChair Co., Ltd." 増加数=6
+time=16:46:08.777 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ComfortWorks 増加数=6
+time=16:46:10.581 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子やいちば 増加数=5
+time=16:46:10.581 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="PreLoved Chairs" 増加数=6
+time=16:46:10.583 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="CraftChair Co., Ltd." 増加数=6
+time=16:46:10.583 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=7
+time=16:46:10.587 level=INFO msg=これまでに地域内の評判によって62人、既存ユーザーの招待経由で1149人が新規登録しました
+time=16:46:10.587 level=INFO msg=0.0%のライドは椅子がマッチされるまでの時間、24.8%のライドはマッチされた椅子が乗車地点までに掛かる時間、2.6%のライドは椅子の実移動時間に不満がありました
+time=16:46:10.593 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ComfortWorks 増加数=5
+time=16:46:12.373 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ComfortWorks 増加数=4
+time=16:46:12.380 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="PreLoved Chairs" 増加数=3
+time=16:46:12.383 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=5
+time=16:46:12.389 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="CraftChair Co., Ltd." 増加数=5
+time=16:46:12.390 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子やいちば 増加数=5
+time=16:46:14.222 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子やいちば 増加数=6
+time=16:46:14.223 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="CraftChair Co., Ltd." 増加数=7
+time=16:46:14.224 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="PreLoved Chairs" 増加数=9
+time=16:46:14.225 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=7
+time=16:46:14.227 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ComfortWorks 増加数=7
+time=16:46:15.982 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="PreLoved Chairs" 増加数=7
+time=16:46:15.987 level=INFO msg=これまでに地域内の評判によって76人、既存ユーザーの招待経由で1667人が新規登録しました
+time=16:46:15.988 level=INFO msg=これまでに低評価なライドによって7人が利用をやめました
+time=16:46:15.988 level=INFO msg=0.0%のライドは椅子がマッチされるまでの時間、24.3%のライドはマッチされた椅子が乗車地点までに掛かる時間、7.6%のライドは椅子の実移動時間に不満がありました
+time=16:46:15.989 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子やいちば 増加数=6
+time=16:46:15.989 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="CraftChair Co., Ltd." 増加数=8
+time=16:46:15.990 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=7
+time=16:46:15.991 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ComfortWorks 増加数=4
+time=16:46:17.795 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="PreLoved Chairs" 増加数=6
+time=16:46:17.795 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=7
+time=16:46:17.799 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="CraftChair Co., Ltd." 増加数=6
+time=16:46:17.804 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ComfortWorks 増加数=5
+time=16:46:17.805 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子やいちば 増加数=6
+time=16:46:19.690 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子やいちば 増加数=7
+time=16:46:19.691 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="CraftChair Co., Ltd." 増加数=7
+time=16:46:19.691 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=6
+time=16:46:19.696 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ComfortWorks 増加数=5
+time=16:46:19.696 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="PreLoved Chairs" 増加数=6
+time=16:46:21.388 level=INFO msg=これまでに地域内の評判によって88人、既存ユーザーの招待経由で1995人が新規登録しました
+time=16:46:21.388 level=INFO msg=これまでに低評価なライドによって38人が利用をやめました
+time=16:46:21.388 level=INFO msg=0.0%のライドは椅子がマッチされるまでの時間、25.6%のライドはマッチされた椅子が乗車地点までに掛かる時間、15.3%のライドは椅子の実移動時間に不満がありました
+time=16:46:21.395 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="CraftChair Co., Ltd." 増加数=7
+time=16:46:21.396 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子やいちば 増加数=5
+time=16:46:21.397 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=6
+time=16:46:21.400 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ComfortWorks 増加数=5
+time=16:46:21.403 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="PreLoved Chairs" 増加数=7
+time=16:46:23.188 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="PreLoved Chairs" 増加数=7
+time=16:46:23.200 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ComfortWorks 増加数=6
+time=16:46:23.906 level=WARN msg="ユーザー登録に失敗しました (CODE=17): POST /api/app/usersへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:201, actual:500)"
+time=16:46:24.990 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子やいちば 増加数=12
+time=16:46:24.998 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=14
+time=16:46:24.999 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="PreLoved Chairs" 増加数=7
+time=16:46:25.000 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="CraftChair Co., Ltd." 増加数=15
+time=16:46:25.002 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ComfortWorks 増加数=3
+time=16:46:26.792 level=INFO msg=これまでに地域内の評判によって102人、既存ユーザーの招待経由で2341人が新規登録しました
+time=16:46:26.792 level=INFO msg=これまでに低評価なライドによって89人が利用をやめました
+time=16:46:26.792 level=INFO msg=0.0%のライドは椅子がマッチされるまでの時間、26.7%のライドはマッチされた椅子が乗車地点までに掛かる時間、21.9%のライドは椅子の実移動時間に不満がありました
+time=16:46:26.799 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=5
+time=16:46:26.800 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子やいちば 増加数=6
+time=16:46:26.809 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="PreLoved Chairs" 増加数=5
+time=16:46:28.597 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=8
+time=16:46:28.602 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="CraftChair Co., Ltd." 増加数=12
+time=16:46:28.607 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ComfortWorks 増加数=9
+time=16:46:28.608 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="PreLoved Chairs" 増加数=10
+time=16:46:28.609 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子やいちば 増加数=7
+time=16:46:29.716 level=WARN msg="ユーザー登録に失敗しました (CODE=17): POST /api/app/usersへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:201, actual:500)"
+time=16:46:30.382 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子やいちば 増加数=6
+time=16:46:30.382 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="PreLoved Chairs" 増加数=6
+time=16:46:30.387 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="CraftChair Co., Ltd." 増加数=7
+time=16:46:30.389 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ComfortWorks 増加数=3
+time=16:46:30.391 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=6
+time=16:46:32.184 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="PreLoved Chairs" 増加数=11
+time=16:46:32.187 level=INFO msg=これまでに地域内の評判によって114人、既存ユーザーの招待経由で2748人が新規登録しました
+time=16:46:32.187 level=INFO msg=これまでに低評価なライドによって145人が利用をやめました
+time=16:46:32.187 level=INFO msg=0.0%のライドは椅子がマッチされるまでの時間、26.3%のライドはマッチされた椅子が乗車地点までに掛かる時間、28.0%のライドは椅子の実移動時間に不満がありました
+time=16:46:32.195 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ComfortWorks 増加数=7
+time=16:46:32.196 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="CraftChair Co., Ltd." 増加数=11
+time=16:46:32.201 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=12
+time=16:46:32.201 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子やいちば 増加数=9
+time=16:46:34.013 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="PreLoved Chairs" 増加数=7
+time=16:46:34.017 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="CraftChair Co., Ltd." 増加数=8
+time=16:46:34.022 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=7
+time=16:46:35.812 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="PreLoved Chairs" 増加数=9
+time=16:46:35.813 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=8
+time=16:46:35.814 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="CraftChair Co., Ltd." 増加数=9
+time=16:46:37.587 level=INFO msg=これまでに地域内の評判によって124人、既存ユーザーの招待経由で3309人が新規登録しました
+time=16:46:37.587 level=INFO msg=これまでに低評価なライドによって187人が利用をやめました
+time=16:46:37.587 level=INFO msg=7.3%のライドは椅子がマッチされるまでの時間、22.9%のライドはマッチされた椅子が乗車地点までに掛かる時間、32.0%のライドは椅子の実移動時間に不満がありました
+time=16:46:37.615 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="PreLoved Chairs" 増加数=12
+time=16:46:37.616 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=SwiftCab 増加数=13
+time=16:46:37.621 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="CraftChair Co., Ltd." 増加数=12
+time=16:46:43.347 level=INFO msg=これまでに地域内の評判によって135人、既存ユーザーの招待経由で3407人が新規登録しました
+time=16:46:43.347 level=INFO msg=これまでに低評価なライドによって242人が利用をやめました
+time=16:46:43.347 level=INFO msg=13.0%のライドは椅子がマッチされるまでの時間、21.5%のライドはマッチされた椅子が乗車地点までに掛かる時間、36.0%のライドは椅子の実移動時間に不満がありました
+time=16:46:48.528 level=INFO msg=最終地域情報 名前=チェアタウン ユーザー登録数=2634 アクティブユーザー数=2475
+time=16:46:48.528 level=INFO msg=最終地域情報 名前=コシカケシティ ユーザー登録数=1145 アクティブユーザー数=1059
+time=16:46:48.528 level=INFO msg=最終オーナー情報 名前="PreLoved Chairs" 売上=7700100 椅子数=176
+time=16:46:48.528 level=INFO msg=最終オーナー情報 名前=ComfortWorks 売上=5498600 椅子数=115
+time=16:46:48.528 level=INFO msg=最終オーナー情報 名前="CraftChair Co., Ltd." 売上=7729000 椅子数=178
+time=16:46:48.528 level=INFO msg=最終オーナー情報 名前=SwiftCab 売上=7670500 椅子数=175
+time=16:46:48.528 level=INFO msg=最終オーナー情報 名前=椅子やいちば 売上=6784500 椅子数=140
+time=16:46:48.528 level=INFO msg=12.7%のライドは椅子がマッチされるまでの時間、21.8%のライドはマッチされた椅子が乗車地点までに掛かる時間、36.9%のライドは椅子の実移動時間に不満がありました
+time=16:46:48.528 level=INFO msg=結果 pass=true スコア=401689 種別エラー数=map[17:2]
+time=16:46:48.528 level=INFO msg=負荷走行が終了しました

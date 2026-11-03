@@ -1,0 +1,1162 @@
+sudo: unable to resolve host ip-10-0-1-250: Name or service not known
+2026-11-01T10:54:08.910Z	info	staff-logger	bench/bench.go:172	SSL接続が有効になっています
+2026-11-01T10:54:08.910Z	info	staff-logger	bench/bench.go:193	webapp: https://pipe.u.isucon.dev:443
+2026-11-01T10:54:08.910Z	info	staff-logger	bench/bench.go:194	nameserver: 10.0.1.229:53
+2026-11-01T10:54:17.462Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:17.462Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:17.463Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:17.463Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:17.463Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:17.463Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:17.463Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:17.463Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:17.463Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:17.463Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:17.584Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:17.584Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:17.660Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:17.660Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:17.767Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:17.767Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:17.768Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:17.841Z	info	staff-logger	scenario/streamer.go:48	change icon
+2026-11-01T10:54:17.927Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:17.927Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:17.965Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:18.004Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:18.034Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:18.043Z	info	staff-logger	scenario/streamer.go:48	change icon
+2026-11-01T10:54:18.064Z	info	staff-logger	scenario/viewer.go:46	change icon
+2026-11-01T10:54:18.081Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:18.127Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:18.138Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:18.350Z	info	staff-logger	scenario/streamer.go:48	change icon
+2026-11-01T10:54:18.370Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:18.370Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:18.371Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:18.575Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:18.689Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:18.689Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:18.689Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:18.689Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:18.720Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:18.720Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:18.720Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:18.879Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:18.880Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:18.880Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:18.974Z	info	staff-logger	scenario/streamer.go:48	change icon
+2026-11-01T10:54:19.169Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:19.169Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:19.169Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:19.513Z	info	staff-logger	scenario/streamer.go:48	change icon
+2026-11-01T10:54:19.768Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:19.769Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:19.769Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:19.769Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:20.191Z	info	staff-logger	scenario/streamer.go:48	change icon
+2026-11-01T10:54:20.237Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:20.238Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:20.238Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:20.238Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:20.384Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:20.384Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:20.732Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:20.732Z	info	staff-logger	scenario/viewer.go:76	visit user profile
+2026-11-01T10:54:20.754Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:20.754Z	info	staff-logger	scenario/viewer.go:76	visit user profile
+2026-11-01T10:54:21.108Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:21.108Z	info	staff-logger	scenario/viewer.go:76	visit user profile
+2026-11-01T10:54:21.166Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:21.195Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:21.195Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:21.195Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:21.195Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:21.248Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:21.436Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:21.554Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:21.554Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:21.554Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:21.554Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:21.824Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:21.824Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:21.824Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:21.824Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:22.218Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:22.218Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:22.218Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:22.218Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:22.249Z	info	staff-logger	scenario/streamer.go:48	change icon
+2026-11-01T10:54:22.318Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:22.318Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:22.318Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:22.318Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:22.434Z	info	staff-logger	scenario/streamer.go:48	change icon
+2026-11-01T10:54:22.469Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:22.469Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:22.746Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:22.746Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:22.746Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:22.746Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:22.868Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:22.868Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:22.868Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:22.868Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:22.922Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:22.922Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:22.922Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:22.922Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:23.038Z	info	staff-logger	scenario/streamer.go:48	change icon
+2026-11-01T10:54:23.042Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:23.042Z	info	staff-logger	scenario/viewer.go:76	visit user profile
+2026-11-01T10:54:23.109Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:23.109Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:23.109Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:23.109Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:23.160Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:23.160Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:23.160Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:23.160Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:23.210Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:23.211Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:23.211Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:23.211Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:23.259Z	info	staff-logger	scenario/streamer.go:48	change icon
+2026-11-01T10:54:23.454Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:23.845Z	info	staff-logger	scenario/streamer.go:48	change icon
+2026-11-01T10:54:23.906Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:23.906Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:23.906Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:23.906Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:24.058Z	info	staff-logger	scenario/streamer.go:48	change icon
+2026-11-01T10:54:24.305Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:24.305Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:24.305Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:24.305Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:24.359Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:24.359Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:24.359Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:24.359Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:24.891Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:24.891Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:24.891Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:24.891Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:24.951Z	info	staff-logger	scenario/streamer.go:48	change icon
+2026-11-01T10:54:24.986Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:24.986Z	info	staff-logger	scenario/viewer.go:46	change icon
+2026-11-01T10:54:25.049Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:25.531Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:25.531Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:25.531Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:25.531Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:25.553Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:25.553Z	info	staff-logger	scenario/viewer.go:76	visit user profile
+2026-11-01T10:54:25.634Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:25.634Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:25.634Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:25.634Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:25.845Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:25.846Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:25.846Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:25.846Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:25.948Z	info	staff-logger	scenario/streamer.go:48	change icon
+2026-11-01T10:54:25.990Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:26.048Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:26.048Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:26.048Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:26.048Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:26.201Z	info	staff-logger	scenario/streamer.go:48	change icon
+2026-11-01T10:54:26.210Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:26.210Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:26.210Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:26.210Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:26.235Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:26.235Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:26.303Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:26.303Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:26.427Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:26.427Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:26.427Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:26.427Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:26.438Z	info	staff-logger	scenario/streamer.go:48	change icon
+2026-11-01T10:54:26.543Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:26.543Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:26.799Z	info	staff-logger	scenario/streamer.go:48	change icon
+2026-11-01T10:54:26.832Z	info	staff-logger	scenario/streamer.go:48	change icon
+2026-11-01T10:54:26.878Z	info	staff-logger	scenario/streamer.go:48	change icon
+2026-11-01T10:54:27.003Z	info	staff-logger	scenario/streamer.go:48	change icon
+2026-11-01T10:54:27.660Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:27.660Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:27.661Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:27.661Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:27.710Z	info	staff-logger	scenario/streamer.go:48	change icon
+2026-11-01T10:54:27.851Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:27.851Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:27.851Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:27.851Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:27.909Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:27.909Z	info	staff-logger	scenario/viewer.go:76	visit user profile
+2026-11-01T10:54:28.050Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:28.050Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:28.050Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:28.050Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:28.195Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:28.252Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:28.252Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:28.252Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:28.252Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:28.284Z	info	staff-logger	scenario/streamer.go:48	change icon
+2026-11-01T10:54:28.426Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:28.426Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:28.426Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:28.426Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:28.843Z	info	staff-logger	scenario/streamer.go:48	change icon
+2026-11-01T10:54:28.901Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:28.901Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:28.901Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:28.901Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:28.981Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:28.981Z	info	staff-logger	scenario/viewer.go:76	visit user profile
+2026-11-01T10:54:29.027Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:29.027Z	info	staff-logger	scenario/viewer.go:76	visit user profile
+2026-11-01T10:54:29.357Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:29.433Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:29.812Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:29.812Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:29.812Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:29.812Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:29.922Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:29.922Z	info	staff-logger	scenario/viewer.go:76	visit user profile
+2026-11-01T10:54:30.000Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:30.000Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:30.000Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:30.000Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:30.043Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:30.043Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:30.043Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:30.043Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:30.240Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:30.240Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:30.240Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:30.240Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:30.247Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:30.368Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:30.368Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:30.368Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:30.368Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:30.378Z	info	staff-logger	scenario/streamer.go:48	change icon
+2026-11-01T10:54:30.530Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:30.531Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:30.531Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:30.531Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:30.555Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:30.555Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:30.555Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:30.555Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:30.573Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:30.573Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:30.589Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:30.589Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:30.589Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:30.589Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:30.747Z	info	staff-logger	scenario/streamer.go:48	change icon
+2026-11-01T10:54:31.376Z	info	staff-logger	scenario/streamer.go:48	change icon
+2026-11-01T10:54:31.416Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:31.416Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:31.841Z	info	staff-logger	scenario/streamer.go:48	change icon
+2026-11-01T10:54:32.128Z	info	staff-logger	scenario/streamer.go:48	change icon
+2026-11-01T10:54:32.248Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:32.248Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:32.248Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:32.248Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:32.378Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:32.378Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:32.378Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:32.378Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:32.402Z	info	staff-logger	scenario/viewer.go:90	get livestream stats
+2026-11-01T10:54:32.408Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:32.408Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:32.408Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:32.408Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:32.588Z	info	staff-logger	scenario/streamer.go:48	change icon
+2026-11-01T10:54:32.723Z	info	staff-logger	scenario/streamer.go:48	change icon
+2026-11-01T10:54:32.856Z	info	staff-logger	scenario/streamer.go:48	change icon
+2026-11-01T10:54:32.871Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:32.871Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:32.871Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:32.872Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:32.977Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:32.977Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:32.977Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:32.977Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:33.009Z	info	staff-logger	scenario/viewer.go:90	get livestream stats
+2026-11-01T10:54:33.010Z	info	staff-logger	scenario/streamer.go:48	change icon
+2026-11-01T10:54:33.686Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:33.686Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:33.686Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:33.686Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:33.739Z	info	staff-logger	scenario/viewer.go:90	get livestream stats
+2026-11-01T10:54:33.769Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:33.769Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:33.769Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:33.769Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:33.773Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:33.773Z	info	staff-logger	scenario/viewer.go:76	visit user profile
+2026-11-01T10:54:33.952Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:33.952Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:33.952Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:33.952Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:34.060Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:34.090Z	info	staff-logger	scenario/streamer.go:48	change icon
+2026-11-01T10:54:34.203Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:34.203Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:34.203Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:34.203Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:34.229Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:34.230Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:34.230Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:34.230Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:34.303Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:34.303Z	info	staff-logger	scenario/viewer.go:76	visit user profile
+2026-11-01T10:54:34.431Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:34.431Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:34.431Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:34.431Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:34.496Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:34.496Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:34.496Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:34.496Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:34.539Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:34.841Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:34.842Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:34.842Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:34.842Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:35.084Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:35.084Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:35.084Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:35.084Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:35.586Z	info	staff-logger	scenario/streamer.go:48	change icon
+2026-11-01T10:54:35.885Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:35.885Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:35.919Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:35.919Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:35.919Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:35.919Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:36.147Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:36.147Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:36.147Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:36.147Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:37.026Z	info	staff-logger	scenario/streamer.go:48	change icon
+2026-11-01T10:54:37.190Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:37.190Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:37.190Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:37.190Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:37.674Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:37.674Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:38.043Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:38.043Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:38.043Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:38.043Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:38.114Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:38.114Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:38.114Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:38.114Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:38.618Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:38.618Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:38.618Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:38.618Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:38.717Z	info	staff-logger	scenario/streamer.go:48	change icon
+2026-11-01T10:54:39.000Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:39.000Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:39.000Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:39.000Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:39.034Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:39.034Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:39.034Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:39.034Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:39.069Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:39.069Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:39.378Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:39.378Z	info	staff-logger	scenario/viewer.go:76	visit user profile
+2026-11-01T10:54:39.622Z	info	staff-logger	scenario/streamer.go:48	change icon
+2026-11-01T10:54:39.723Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:39.766Z	info	staff-logger	scenario/streamer.go:48	change icon
+2026-11-01T10:54:39.772Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:39.772Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:39.772Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:39.772Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:39.998Z	info	staff-logger	scenario/streamer.go:48	change icon
+2026-11-01T10:54:40.098Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:40.098Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:40.098Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:40.098Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:40.174Z	info	staff-logger	scenario/streamer.go:48	change icon
+2026-11-01T10:54:40.418Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:40.418Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:40.418Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:40.418Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:40.665Z	info	staff-logger	scenario/streamer.go:48	change icon
+2026-11-01T10:54:40.683Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:40.683Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:40.683Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:40.683Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:40.860Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:40.860Z	info	staff-logger	scenario/viewer.go:76	visit user profile
+2026-11-01T10:54:41.017Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:41.017Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:41.017Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:41.017Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:41.194Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:41.194Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:41.194Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:41.194Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:41.298Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:41.343Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:41.343Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:41.343Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:41.343Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:41.358Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:41.358Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:41.358Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:41.358Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:41.370Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:41.370Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:41.370Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:41.370Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:41.474Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:41.474Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:41.474Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:41.474Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:41.543Z	info	staff-logger	scenario/streamer.go:48	change icon
+2026-11-01T10:54:41.665Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:41.665Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:41.665Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:41.665Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:41.802Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:41.802Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:41.802Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:41.802Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:41.926Z	info	staff-logger	scenario/viewer.go:90	get livestream stats
+2026-11-01T10:54:41.998Z	info	staff-logger	scenario/streamer.go:48	change icon
+2026-11-01T10:54:42.148Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:42.148Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:42.148Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:42.148Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:42.169Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:42.169Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:42.169Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:42.169Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:42.202Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:42.202Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:42.202Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:42.202Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:42.212Z	info	staff-logger	scenario/streamer.go:48	change icon
+2026-11-01T10:54:42.263Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:42.263Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:42.263Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:42.263Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:42.331Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:42.331Z	info	staff-logger	scenario/viewer.go:76	visit user profile
+2026-11-01T10:54:42.401Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:42.401Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:42.401Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:42.401Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:42.539Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:42.539Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:42.539Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:42.539Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:42.739Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:42.739Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:42.739Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:42.739Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:42.905Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:43.161Z	info	staff-logger	scenario/streamer.go:48	change icon
+2026-11-01T10:54:43.186Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:43.186Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:43.186Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:43.186Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:43.496Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:43.496Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:43.496Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:43.496Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:43.548Z	info	staff-logger	scenario/viewer.go:90	get livestream stats
+2026-11-01T10:54:43.881Z	info	staff-logger	scenario/streamer.go:48	change icon
+2026-11-01T10:54:44.121Z	warn	staff-logger	scenario/streamer.go:198	aggressive streamer moderate: failed to visit livestream admin: benchmark-application: [一般エラー] GET /api/livestream/7523/report へのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)
+
+2026-11-01T10:54:44.139Z	info	staff-logger	scenario/streamer.go:48	change icon
+2026-11-01T10:54:44.207Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:44.207Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:44.207Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:44.207Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:44.238Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:44.238Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:44.238Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:44.238Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:44.529Z	info	staff-logger	scenario/streamer.go:48	change icon
+2026-11-01T10:54:44.680Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:44.680Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:44.680Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:44.680Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:44.812Z	info	staff-logger	scenario/streamer.go:48	change icon
+2026-11-01T10:54:45.501Z	info	staff-logger	scenario/streamer.go:48	change icon
+2026-11-01T10:54:45.726Z	info	staff-logger	scenario/streamer.go:48	change icon
+2026-11-01T10:54:45.936Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:45.936Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:45.936Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:45.936Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:46.314Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:46.314Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:46.314Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:46.314Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:47.362Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:47.362Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:47.362Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:47.362Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:47.364Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:47.364Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:47.364Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:47.364Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:47.788Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:47.788Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:47.788Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:47.788Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:47.946Z	info	staff-logger	scenario/streamer.go:48	change icon
+2026-11-01T10:54:48.233Z	info	staff-logger	scenario/streamer.go:48	change icon
+2026-11-01T10:54:48.233Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:48.234Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:48.295Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:48.295Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:48.561Z	info	staff-logger	scenario/streamer.go:48	change icon
+2026-11-01T10:54:48.561Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:48.561Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:48.561Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:48.562Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:48.848Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:48.848Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:49.132Z	info	staff-logger	scenario/streamer.go:48	change icon
+2026-11-01T10:54:49.312Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:49.312Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:49.312Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:49.312Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:49.314Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:49.314Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:49.314Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:49.314Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:49.345Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:49.345Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:49.345Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:49.345Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:50.063Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:50.063Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:50.063Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:50.063Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:50.253Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:50.253Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:50.253Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:50.253Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:50.351Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:50.351Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:50.351Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:50.351Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:50.504Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:50.504Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:50.504Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:50.504Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:50.561Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:50.561Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:50.561Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:50.561Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:51.012Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:51.012Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:51.012Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:51.012Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:51.100Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:51.100Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:51.100Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:51.100Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:51.314Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:51.314Z	info	staff-logger	scenario/viewer.go:46	change icon
+2026-11-01T10:54:51.485Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:51.485Z	info	staff-logger	scenario/viewer.go:76	visit user profile
+2026-11-01T10:54:51.509Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:51.514Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:51.514Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:51.514Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:51.514Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:51.592Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:51.592Z	info	staff-logger	scenario/viewer.go:76	visit user profile
+2026-11-01T10:54:51.832Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:51.832Z	info	staff-logger	scenario/viewer.go:76	visit user profile
+2026-11-01T10:54:51.919Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:51.919Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:51.919Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:51.919Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:51.927Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:51.927Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:51.927Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:51.927Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:51.933Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:51.968Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:52.261Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:52.687Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:52.687Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:52.687Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:52.687Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:52.738Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:52.738Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:52.738Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:52.738Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:52.887Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:52.887Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:52.887Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:52.887Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:53.049Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:53.049Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:53.049Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:53.049Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:53.073Z	info	staff-logger	scenario/viewer.go:90	get livestream stats
+2026-11-01T10:54:53.369Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:53.369Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:53.369Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:53.369Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:53.387Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:53.387Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:53.387Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:53.387Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:53.387Z	info	staff-logger	scenario/viewer.go:90	get livestream stats
+2026-11-01T10:54:53.672Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:53.672Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:53.672Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:53.672Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:54.180Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:54.180Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:54.180Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:54.180Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:54.361Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:54.361Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:54.361Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:54.361Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:54.651Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:54.651Z	info	staff-logger	scenario/viewer.go:76	visit user profile
+2026-11-01T10:54:54.692Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:54.693Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:54.693Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:54.693Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:54.998Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:55.035Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:55.035Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:55.035Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:55.035Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:55.320Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:55.320Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:55.320Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:55.320Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:55.337Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:55.337Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:55.337Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:55.337Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:55.715Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:55.716Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:55.716Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:55.716Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:55.812Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:55.812Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:55.835Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:55.835Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:55.835Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:55.835Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:55.855Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:55.855Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:55.855Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:55.855Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:56.337Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:56.337Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:56.337Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:56.337Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:56.340Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:56.340Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:56.340Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:56.340Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:56.399Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:56.399Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:56.399Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:56.399Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:56.456Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:56.456Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:56.456Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:56.456Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:57.016Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:57.016Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:57.016Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:57.016Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:57.108Z	info	staff-logger	scenario/streamer.go:48	change icon
+2026-11-01T10:54:57.256Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:57.256Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:57.256Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:57.256Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:57.400Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:57.400Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:57.582Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:57.582Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:57.582Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:57.582Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:57.691Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:57.691Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:57.691Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:57.691Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:58.706Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:58.706Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:58.706Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:58.706Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:58.970Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:54:58.970Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:54:58.970Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:58.970Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:54:59.296Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:54:59.296Z	info	staff-logger	scenario/viewer.go:76	visit user profile
+2026-11-01T10:54:59.715Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:55:00.755Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:55:00.755Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:55:00.755Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:55:00.755Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:55:00.859Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:55:00.859Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:55:00.859Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:55:00.859Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:55:00.864Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:55:00.864Z	info	staff-logger	scenario/viewer.go:76	visit user profile
+2026-11-01T10:55:00.880Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:55:00.880Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:55:00.880Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:55:00.880Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:55:01.082Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:55:01.082Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:55:01.082Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:55:01.082Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:55:01.146Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:55:01.146Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:55:01.146Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:55:01.146Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:55:01.226Z	warn	staff-logger	scenario/viewer.go:178	viewer_spam: failed to post livecomment (moderated spam): benchmark-application: [一般エラー] POST /api/livestream/7677/livecomment へのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:400, actual:201)
+
+2026-11-01T10:55:01.357Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:55:01.357Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:55:01.357Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:55:01.357Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:55:01.373Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:55:01.850Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:55:01.850Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:55:01.850Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:55:01.850Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:55:01.873Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:55:01.873Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:55:01.873Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:55:01.873Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:55:01.875Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:55:01.875Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:55:01.875Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:55:01.875Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:55:01.997Z	warn	staff-logger	scenario/streamer.go:198	aggressive streamer moderate: failed to visit livestream admin: benchmark-application: [一般エラー] GET /api/livestream/7523/report へのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)
+
+2026-11-01T10:55:02.148Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:55:02.148Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:55:02.148Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:55:02.148Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:55:02.521Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:55:02.521Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:55:02.521Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:55:02.521Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:55:02.770Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:55:02.770Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:55:02.770Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:55:02.770Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:55:02.881Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:55:02.881Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:55:02.881Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:55:02.881Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:55:03.069Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:55:03.069Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:55:03.069Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:55:03.069Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:55:03.426Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:55:03.426Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:55:03.426Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:55:03.426Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:55:03.638Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:55:03.638Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:55:03.639Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:55:03.639Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:55:03.774Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:55:03.774Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:55:03.774Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:55:03.774Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:55:03.830Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:55:03.830Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:55:03.830Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:55:03.830Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:55:04.020Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:55:04.020Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:55:04.020Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:55:04.020Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:55:04.191Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:55:04.192Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:55:04.192Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:55:04.192Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:55:04.236Z	info	staff-logger	scenario/streamer.go:48	change icon
+2026-11-01T10:55:04.340Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:55:04.340Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:55:04.340Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:55:04.340Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:55:04.697Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:55:04.697Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:55:04.926Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:55:04.926Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:55:04.926Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:55:04.926Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:55:05.000Z	warn	staff-logger	scenario/streamer.go:198	aggressive streamer moderate: failed to visit livestream admin: benchmark-application: [一般エラー] GET /api/livestream/7543/report へのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:200, actual:500)
+
+2026-11-01T10:55:05.009Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:55:05.009Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:55:05.516Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:55:05.516Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:55:05.516Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:55:05.516Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:55:05.911Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:55:05.911Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:55:05.911Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:55:05.911Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:55:05.927Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:55:05.927Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:55:06.145Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:55:06.145Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:55:06.145Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:55:06.145Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:55:06.169Z	info	staff-logger	scenario/viewer.go:90	get livestream stats
+2026-11-01T10:55:06.300Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:55:06.300Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:55:06.300Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:55:06.300Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:55:06.327Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:55:06.327Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:55:06.327Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:55:06.327Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:55:06.983Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:55:06.983Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:55:06.983Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:55:06.983Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:55:07.005Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:55:07.005Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:55:07.005Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:55:07.005Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:55:07.836Z	info	staff-logger	scenario/streamer.go:48	change icon
+2026-11-01T10:55:08.183Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:55:08.183Z	info	staff-logger	scenario/viewer.go:76	visit user profile
+2026-11-01T10:55:08.223Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:55:08.223Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:55:08.234Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:55:08.234Z	info	staff-logger	scenario/viewer.go:76	visit user profile
+2026-11-01T10:55:08.305Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:55:08.305Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:55:08.305Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:55:08.305Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:55:08.439Z	info	staff-logger	scenario/streamer.go:48	change icon
+2026-11-01T10:55:08.626Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:55:08.626Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:55:08.626Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:55:08.626Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:55:08.741Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:55:08.851Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:55:08.868Z	info	staff-logger	scenario/streamer.go:48	change icon
+2026-11-01T10:55:09.395Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:55:09.395Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:55:09.395Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:55:09.395Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:55:09.688Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:55:09.688Z	info	staff-logger	scenario/viewer.go:76	visit user profile
+2026-11-01T10:55:10.245Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:55:10.245Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:55:10.245Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:55:10.245Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:55:10.256Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:55:10.488Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:55:10.488Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:55:10.488Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:55:10.488Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:55:10.518Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:55:10.518Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:55:10.518Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:55:10.518Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:55:10.555Z	info	staff-logger	scenario/viewer.go:90	get livestream stats
+2026-11-01T10:55:10.672Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:55:10.673Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:55:10.673Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:55:10.673Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:55:10.721Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:55:10.721Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:55:10.721Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:55:10.721Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:55:10.762Z	info	staff-logger	scenario/streamer.go:48	change icon
+2026-11-01T10:55:10.795Z	info	staff-logger	scenario/viewer.go:90	get livestream stats
+2026-11-01T10:55:11.407Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:55:11.407Z	info	staff-logger	scenario/viewer.go:76	visit user profile
+2026-11-01T10:55:11.467Z	info	staff-logger	scenario/streamer.go:48	change icon
+2026-11-01T10:55:11.752Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:55:11.863Z	info	staff-logger	scenario/streamer.go:48	change icon
+2026-11-01T10:55:11.891Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:55:11.891Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:55:11.891Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:55:11.891Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:55:11.958Z	info	staff-logger	scenario/viewer.go:90	get livestream stats
+2026-11-01T10:55:12.083Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:55:12.083Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:55:12.083Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:55:12.083Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:55:12.126Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:55:12.126Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:55:12.126Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:55:12.126Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:55:12.264Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:55:12.264Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:55:12.264Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:55:12.264Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:55:12.429Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:55:12.429Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:55:12.429Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:55:12.429Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:55:12.583Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:55:12.583Z	info	staff-logger	scenario/viewer.go:46	change icon
+2026-11-01T10:55:12.632Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:55:12.946Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:55:12.946Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:55:12.946Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:55:12.946Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:55:13.029Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:55:13.029Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:55:13.029Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:55:13.029Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:55:13.093Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:55:13.093Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:55:13.093Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:55:13.093Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:55:13.193Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:55:13.193Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:55:13.193Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:55:13.193Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:55:13.494Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:55:13.494Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:55:13.494Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:55:13.494Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:55:13.544Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:55:13.544Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:55:13.544Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:55:13.544Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:55:13.632Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:55:13.632Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:55:13.632Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:55:13.632Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:55:13.724Z	info	staff-logger	scenario/streamer.go:48	change icon
+2026-11-01T10:55:13.806Z	info	staff-logger	scenario/streamer.go:48	change icon
+2026-11-01T10:55:14.023Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:55:14.023Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:55:14.023Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:55:14.023Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:55:14.070Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:55:14.070Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:55:14.070Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:55:14.070Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:55:14.226Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:55:14.226Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:55:14.226Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:55:14.226Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:55:14.258Z	info	staff-logger	scenario/streamer.go:48	change icon
+2026-11-01T10:55:14.618Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:55:14.618Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:55:14.618Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:55:14.618Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:55:14.783Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:55:14.783Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:55:14.783Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:55:14.783Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:55:15.153Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:55:15.153Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:55:15.153Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:55:15.153Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:55:15.450Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:55:15.450Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:55:15.450Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:55:15.450Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:55:15.749Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:55:15.749Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:55:15.749Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:55:15.749Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:55:15.862Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:55:15.862Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:55:15.862Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:55:15.862Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:55:15.882Z	info	staff-logger	scenario/streamer.go:48	change icon
+2026-11-01T10:55:15.906Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:55:15.906Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:55:15.906Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:55:15.906Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:55:15.920Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:55:15.920Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:55:15.921Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:55:15.921Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:55:16.174Z	info	staff-logger	scenario/streamer.go:48	change icon
+2026-11-01T10:55:16.181Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:55:16.181Z	info	staff-logger	scenario/viewer.go:76	visit user profile
+2026-11-01T10:55:16.318Z	info	staff-logger	scenario/streamer.go:48	change icon
+2026-11-01T10:55:16.488Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:55:16.489Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:55:16.489Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:55:16.489Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:55:16.518Z	info	staff-logger	scenario/viewer.go:90	get livestream stats
+2026-11-01T10:55:16.665Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:55:16.665Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:55:16.665Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:55:16.665Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:55:16.796Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:55:17.013Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:55:17.013Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:55:17.013Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:55:17.013Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:55:17.108Z	info	staff-logger	scenario/viewer.go:32	basic viewer scenario
+2026-11-01T10:55:17.108Z	info	staff-logger	scenario/viewer.go:56	visit top
+2026-11-01T10:55:17.108Z	info	staff-logger	scenario/viewer.go:64	get livestream
+2026-11-01T10:55:17.108Z	info	staff-logger	scenario/viewer.go:83	visit livestream
+2026-11-01T10:55:17.452Z	warn	staff-logger	scenario/streamer.go:76	reserve: failed to get random livestream tags: benchmark-timeout: [リクエストタイムアウト] GET /api/tag: Get "https://pipe.u.isucon.dev:443/api/tag": read udp 10.0.1.250:18569->10.0.1.229:53: i/o timeout: タイムアウトによりリクエスト失敗
+
+2026-11-01T10:55:17.452Z	warn	staff-logger	scenario/streamer.go:198	aggressive streamer moderate: failed to visit livestream admin: Get "https://pipe.u.isucon.dev:443/api/livestream/search?limit=50": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:55:17.452Z	warn	staff-logger	scenario/viewer.go:121	view: failed to post livecomment: Post "https://yamamotomai0.u.isucon.dev:443/api/livestream/7744/livecomment": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:55:17.453Z	warn	staff-logger	scenario/viewer.go:121	view: failed to post livecomment: Post "https://manabu070.u.isucon.dev:443/api/livestream/7745/livecomment": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:55:17.453Z	warn	staff-logger	scenario/viewer.go:134	view: failed to post reactions: Post "https://nakamurataro0.u.isucon.dev:443/api/livestream/7741/reaction": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:55:17.453Z	warn	staff-logger	scenario/viewer.go:101	view: failed to get livecomments: Get "https://nakamurataro0.u.isucon.dev:443/api/livestream/7741/livecomment": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:55:17.453Z	warn	staff-logger	scenario/viewer.go:101	view: failed to get livecomments: Get "https://nakamurataro0.u.isucon.dev:443/api/livestream/7741/livecomment": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:55:17.453Z	warn	staff-logger	scenario/viewer.go:101	view: failed to get livecomments: Get "https://nakamurataro0.u.isucon.dev:443/api/livestream/7741/livecomment": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:55:17.453Z	warn	staff-logger	scenario/viewer.go:101	view: failed to get livecomments: Get "https://nakamurataro0.u.isucon.dev:443/api/livestream/7741/livecomment": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:55:17.453Z	warn	staff-logger	scenario/viewer.go:101	view: failed to get livecomments: Get "https://nakamurataro0.u.isucon.dev:443/api/livestream/7741/livecomment": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:55:17.453Z	warn	staff-logger	scenario/viewer.go:101	view: failed to get livecomments: Get "https://nakamurataro0.u.isucon.dev:443/api/livestream/7741/livecomment": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:55:17.453Z	warn	staff-logger	scenario/viewer.go:101	view: failed to get livecomments: Get "https://nakamurataro0.u.isucon.dev:443/api/livestream/7741/livecomment": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:55:17.453Z	warn	staff-logger	scenario/viewer.go:101	view: failed to get livecomments: Get "https://nakamurataro0.u.isucon.dev:443/api/livestream/7741/livecomment": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:55:17.453Z	warn	staff-logger	scenario/viewer.go:101	view: failed to get livecomments: Get "https://nakamurataro0.u.isucon.dev:443/api/livestream/7741/livecomment": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:55:17.453Z	warn	staff-logger	scenario/viewer.go:101	view: failed to get livecomments: Get "https://nakamurataro0.u.isucon.dev:443/api/livestream/7741/livecomment": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:55:17.453Z	warn	staff-logger	scenario/viewer.go:101	view: failed to get livecomments: Get "https://nakamurataro0.u.isucon.dev:443/api/livestream/7741/livecomment": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:55:17.453Z	warn	staff-logger	scenario/viewer.go:101	view: failed to get livecomments: Get "https://nakamurataro0.u.isucon.dev:443/api/livestream/7741/livecomment": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:55:17.453Z	warn	staff-logger	scenario/viewer.go:142	view: failed to leave from livestream: Delete "https://nakamurataro0.u.isucon.dev:443/api/livestream/7741/exit": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:55:17.454Z	warn	staff-logger	scenario/streamer.go:145	streamer_moderate: failed to get livecomment reports: Get "https://maiokamoto0.u.isucon.dev:443/api/livestream/7615/report": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:55:17.454Z	warn	staff-logger	scenario/streamer.go:139	streamer_moderate: failed to visit livestream admin: Get "https://pipe.u.isucon.dev:443/api/livestream/search?limit=50": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:55:17.454Z	warn	staff-logger	scenario/viewer.go:121	view: failed to post livecomment: Post "https://shimizumai0.u.isucon.dev:443/api/livestream/7730/livecomment": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:55:17.454Z	warn	staff-logger	scenario/viewer.go:121	view: failed to post livecomment: Post "https://maiokamoto0.u.isucon.dev:443/api/livestream/7560/livecomment": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:55:17.454Z	warn	staff-logger	scenario/viewer.go:126	view: failed to get reactions: Get "https://bhasegawa0.u.isucon.dev:443/api/livestream/7740/reaction": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:55:17.454Z	warn	staff-logger	scenario/viewer.go:101	view: failed to get livecomments: Get "https://bhasegawa0.u.isucon.dev:443/api/livestream/7740/livecomment": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:55:17.454Z	warn	staff-logger	scenario/viewer.go:101	view: failed to get livecomments: Get "https://bhasegawa0.u.isucon.dev:443/api/livestream/7740/livecomment": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:55:17.454Z	warn	staff-logger	scenario/viewer.go:101	view: failed to get livecomments: Get "https://bhasegawa0.u.isucon.dev:443/api/livestream/7740/livecomment": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:55:17.454Z	warn	staff-logger	scenario/viewer.go:101	view: failed to get livecomments: Get "https://bhasegawa0.u.isucon.dev:443/api/livestream/7740/livecomment": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:55:17.454Z	warn	staff-logger	scenario/viewer.go:101	view: failed to get livecomments: Get "https://bhasegawa0.u.isucon.dev:443/api/livestream/7740/livecomment": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:55:17.454Z	warn	staff-logger	scenario/viewer.go:101	view: failed to get livecomments: Get "https://ogawayoichi0.u.isucon.dev:443/api/livestream/7735/livecomment": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:55:17.454Z	warn	staff-logger	scenario/viewer.go:126	view: failed to get reactions: Get "https://rikanakagawa0.u.isucon.dev:443/api/livestream/7737/reaction": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:55:17.454Z	warn	staff-logger	scenario/viewer.go:101	view: failed to get livecomments: Get "https://ogawayoichi0.u.isucon.dev:443/api/livestream/7735/livecomment": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:55:17.454Z	warn	staff-logger	scenario/viewer.go:142	view: failed to leave from livestream: Delete "https://rikanakagawa0.u.isucon.dev:443/api/livestream/7737/exit": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:55:17.454Z	warn	staff-logger	scenario/viewer.go:126	view: failed to get reactions: Get "https://kobayashiyasuhiro1.u.isucon.dev:443/api/livestream/7733/reaction": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:55:17.454Z	warn	staff-logger	scenario/viewer.go:101	view: failed to get livecomments: Get "https://kobayashiyasuhiro1.u.isucon.dev:443/api/livestream/7733/livecomment": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:55:17.454Z	warn	staff-logger	scenario/viewer.go:101	view: failed to get livecomments: Get "https://kobayashiyasuhiro1.u.isucon.dev:443/api/livestream/7733/livecomment": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:55:17.454Z	warn	staff-logger	scenario/viewer.go:101	view: failed to get livecomments: Get "https://ogawayoichi0.u.isucon.dev:443/api/livestream/7735/livecomment": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:55:17.454Z	warn	staff-logger	scenario/viewer.go:101	view: failed to get livecomments: Get "https://kobayashiyasuhiro1.u.isucon.dev:443/api/livestream/7733/livecomment": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:55:17.454Z	warn	staff-logger	scenario/viewer.go:101	view: failed to get livecomments: Get "https://ogawayoichi0.u.isucon.dev:443/api/livestream/7735/livecomment": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:55:17.454Z	warn	staff-logger	scenario/viewer.go:101	view: failed to get livecomments: Get "https://kobayashiyasuhiro1.u.isucon.dev:443/api/livestream/7733/livecomment": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:55:17.455Z	warn	staff-logger	scenario/viewer.go:101	view: failed to get livecomments: Get "https://ogawayoichi0.u.isucon.dev:443/api/livestream/7735/livecomment": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:55:17.455Z	warn	staff-logger	scenario/viewer.go:101	view: failed to get livecomments: Get "https://ogawayoichi0.u.isucon.dev:443/api/livestream/7735/livecomment": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:55:17.455Z	warn	staff-logger	scenario/viewer.go:142	view: failed to leave from livestream: Delete "https://ogawayoichi0.u.isucon.dev:443/api/livestream/7735/exit": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:55:17.455Z	warn	staff-logger	scenario/viewer.go:101	view: failed to get livecomments: Get "https://kobayashiyasuhiro1.u.isucon.dev:443/api/livestream/7733/livecomment": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:55:17.455Z	warn	staff-logger	scenario/viewer.go:101	view: failed to get livecomments: Get "https://kobayashiyasuhiro1.u.isucon.dev:443/api/livestream/7733/livecomment": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:55:17.454Z	warn	staff-logger	scenario/streamer.go:198	aggressive streamer moderate: failed to visit livestream admin: Get "https://pipe.u.isucon.dev:443/api/livestream/search?limit=50": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:55:17.455Z	warn	staff-logger	scenario/viewer.go:142	view: failed to leave from livestream: Delete "https://kobayashiyasuhiro1.u.isucon.dev:443/api/livestream/7733/exit": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:55:17.454Z	warn	staff-logger	scenario/viewer.go:126	view: failed to get reactions: Get "https://yasuhiro280.u.isucon.dev:443/api/livestream/7736/reaction": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:55:17.455Z	warn	staff-logger	scenario/viewer.go:101	view: failed to get livecomments: Get "https://yasuhiro280.u.isucon.dev:443/api/livestream/7736/livecomment": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:55:17.455Z	warn	staff-logger	scenario/viewer.go:101	view: failed to get livecomments: Get "https://yasuhiro280.u.isucon.dev:443/api/livestream/7736/livecomment": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:55:17.454Z	warn	staff-logger	scenario/viewer.go:101	view: failed to get livecomments: Get "https://bhasegawa0.u.isucon.dev:443/api/livestream/7740/livecomment": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:55:17.455Z	warn	staff-logger	scenario/viewer.go:101	view: failed to get livecomments: Get "https://yasuhiro280.u.isucon.dev:443/api/livestream/7736/livecomment": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:55:17.455Z	warn	staff-logger	scenario/viewer.go:142	view: failed to leave from livestream: Delete "https://bhasegawa0.u.isucon.dev:443/api/livestream/7740/exit": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:55:17.455Z	warn	staff-logger	scenario/viewer.go:101	view: failed to get livecomments: Get "https://yasuhiro280.u.isucon.dev:443/api/livestream/7736/livecomment": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:55:17.455Z	warn	staff-logger	scenario/viewer.go:101	view: failed to get livecomments: Get "https://yasuhiro280.u.isucon.dev:443/api/livestream/7736/livecomment": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:55:17.455Z	warn	staff-logger	scenario/viewer.go:101	view: failed to get livecomments: Get "https://yasuhiro280.u.isucon.dev:443/api/livestream/7736/livecomment": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:55:17.455Z	warn	staff-logger	scenario/viewer.go:101	view: failed to get livecomments: Get "https://yasuhiro280.u.isucon.dev:443/api/livestream/7736/livecomment": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:55:17.455Z	warn	staff-logger	scenario/viewer.go:101	view: failed to get livecomments: Get "https://yasuhiro280.u.isucon.dev:443/api/livestream/7736/livecomment": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:55:17.455Z	warn	staff-logger	scenario/viewer.go:142	view: failed to leave from livestream: Delete "https://yasuhiro280.u.isucon.dev:443/api/livestream/7736/exit": context canceled: ベンチマーク走行が継続できないエラーが発生しました
+
+2026-11-01T10:55:18.283Z	info	staff-logger	bench/bench.go:260	ベンチマーク走行時間: 1m0.831992306s
+2026-11-01T10:55:18.283Z	info	staff-logger	bench/bench.go:277	ベンチエラーを収集します
+2026-11-01T10:55:18.284Z	info	staff-logger	bench/bench.go:285	内部エラーを収集します
+2026-11-01T10:55:18.284Z	info	staff-logger	bench/bench.go:301	シナリオカウンタを出力します
+2026-11-01T10:55:18.284Z	info	staff-logger	bench/bench.go:323	[シナリオ aggressive-streamer-moderate] 46 回成功, 4 回失敗
+2026-11-01T10:55:18.284Z	info	staff-logger	bench/bench.go:323	[シナリオ dns-watertorture-attack] 40 回成功
+2026-11-01T10:55:18.284Z	info	staff-logger	bench/bench.go:323	[シナリオ streamer-cold-reserve] 799 回成功, 1 回失敗
+2026-11-01T10:55:18.284Z	info	staff-logger	bench/bench.go:323	[シナリオ streamer-moderate] 57 回成功
+2026-11-01T10:55:18.284Z	info	staff-logger	bench/bench.go:323	[シナリオ viewer-report] 50 回成功, 5 回失敗
+2026-11-01T10:55:18.284Z	info	staff-logger	bench/bench.go:323	[シナリオ viewer-spam] 50 回成功, 1 回失敗
+2026-11-01T10:55:18.284Z	info	staff-logger	bench/bench.go:323	[シナリオ viewer] 216 回成功, 2 回失敗
+2026-11-01T10:55:18.284Z	info	staff-logger	bench/bench.go:323	[失敗シナリオ aggressive-streamer-moderate-fail] 4 回失敗
+2026-11-01T10:55:18.284Z	info	staff-logger	bench/bench.go:323	[失敗シナリオ streamer-cold-reserve-fail] 1 回失敗
+2026-11-01T10:55:18.284Z	info	staff-logger	bench/bench.go:323	[失敗シナリオ viewer-fail] 2 回失敗
+2026-11-01T10:55:18.284Z	info	staff-logger	bench/bench.go:323	[失敗シナリオ viewer-report-fail] 5 回失敗
+2026-11-01T10:55:18.284Z	info	staff-logger	bench/bench.go:323	[失敗シナリオ viewer-spam-fail] 1 回失敗
+2026-11-01T10:55:18.284Z	info	staff-logger	bench/bench.go:329	DNSAttacker並列数: 3
+2026-11-01T10:55:18.284Z	info	staff-logger	bench/bench.go:330	名前解決成功数: 6330
+2026-11-01T10:55:18.284Z	info	staff-logger	bench/bench.go:331	名前解決失敗数: 2
+2026-11-01T10:55:18.284Z	info	staff-logger	bench/bench.go:335	スコア: 43549

@@ -1,0 +1,162 @@
+time=16:41:54.533 level=INFO msg=負荷走行を開始します
+time=16:41:59.743 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=1
+time=16:41:59.743 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="PreLoved Chairs" 増加数=1
+time=16:41:59.747 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Chair Charm" 増加数=2
+time=16:41:59.747 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=CityRide 増加数=1
+time=16:42:01.543 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=2
+time=16:42:01.543 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="PreLoved Chairs" 増加数=2
+time=16:42:01.546 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Chair Charm" 増加数=1
+time=16:42:01.546 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=CityRide 増加数=1
+time=16:42:01.546 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Urban Wheels" 増加数=2
+time=16:42:01.571 level=INFO msg=これまでに地域内の評判によって8人、既存ユーザーの招待経由で41人が新規登録しました
+time=16:42:01.571 level=INFO msg=0.0%のライドは椅子がマッチされるまでの時間、54.8%のライドはマッチされた椅子が乗車地点までに掛かる時間、0.0%のライドは椅子の実移動時間に不満がありました
+time=16:42:03.344 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=3
+time=16:42:03.347 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Urban Wheels" 増加数=1
+time=16:42:03.348 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="PreLoved Chairs" 増加数=1
+time=16:42:03.348 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=CityRide 増加数=2
+time=16:42:03.347 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Chair Charm" 増加数=2
+time=16:42:05.144 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=3
+time=16:42:05.144 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Urban Wheels" 増加数=2
+time=16:42:05.144 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Chair Charm" 増加数=2
+time=16:42:05.144 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=CityRide 増加数=2
+time=16:42:05.146 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="PreLoved Chairs" 増加数=1
+time=16:42:06.952 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="PreLoved Chairs" 増加数=4
+time=16:42:06.953 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=CityRide 増加数=4
+time=16:42:06.953 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Chair Charm" 増加数=2
+time=16:42:06.953 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=4
+time=16:42:06.954 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Urban Wheels" 増加数=3
+time=16:42:06.971 level=INFO msg=これまでに地域内の評判によって20人、既存ユーザーの招待経由で136人が新規登録しました
+time=16:42:06.971 level=INFO msg=0.0%のライドは椅子がマッチされるまでの時間、46.7%のライドはマッチされた椅子が乗車地点までに掛かる時間、0.3%のライドは椅子の実移動時間に不満がありました
+time=16:42:08.773 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=4
+time=16:42:08.774 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=CityRide 増加数=3
+time=16:42:08.774 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="PreLoved Chairs" 増加数=2
+time=16:42:08.774 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Chair Charm" 増加数=2
+time=16:42:08.774 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Urban Wheels" 増加数=3
+time=16:42:10.575 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=4
+time=16:42:10.578 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="PreLoved Chairs" 増加数=3
+time=16:42:10.582 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=CityRide 増加数=4
+time=16:42:10.582 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Urban Wheels" 増加数=4
+time=16:42:10.583 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Chair Charm" 増加数=4
+time=16:42:12.375 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="PreLoved Chairs" 増加数=4
+time=16:42:12.378 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=6
+time=16:42:12.378 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Chair Charm" 増加数=3
+time=16:42:12.378 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Urban Wheels" 増加数=4
+time=16:42:12.379 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=CityRide 増加数=4
+time=16:42:12.401 level=INFO msg=これまでに地域内の評判によって32人、既存ユーザーの招待経由で317人が新規登録しました
+time=16:42:12.401 level=INFO msg=0.0%のライドは椅子がマッチされるまでの時間、37.5%のライドはマッチされた椅子が乗車地点までに掛かる時間、0.6%のライドは椅子の実移動時間に不満がありました
+time=16:42:14.179 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=7
+time=16:42:14.180 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Urban Wheels" 増加数=4
+time=16:42:14.182 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="PreLoved Chairs" 増加数=3
+time=16:42:14.183 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=CityRide 増加数=5
+time=16:42:14.185 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Chair Charm" 増加数=5
+time=16:42:15.983 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Chair Charm" 増加数=5
+time=16:42:15.984 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=CityRide 増加数=6
+time=16:42:15.986 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=6
+time=16:42:15.986 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Urban Wheels" 増加数=6
+time=16:42:15.996 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="PreLoved Chairs" 増加数=6
+time=16:42:17.203 level=WARN msg="ユーザー登録に失敗しました (CODE=17): POST /api/app/usersへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:201, actual:500)"
+time=16:42:17.779 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=7
+time=16:42:17.780 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="PreLoved Chairs" 増加数=5
+time=16:42:17.783 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=CityRide 増加数=6
+time=16:42:17.786 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Urban Wheels" 増加数=5
+time=16:42:17.786 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Chair Charm" 増加数=4
+time=16:42:17.801 level=INFO msg=これまでに地域内の評判によって44人、既存ユーザーの招待経由で612人が新規登録しました
+time=16:42:17.801 level=INFO msg=0.0%のライドは椅子がマッチされるまでの時間、34.6%のライドはマッチされた椅子が乗車地点までに掛かる時間、0.4%のライドは椅子の実移動時間に不満がありました
+time=16:42:19.585 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=5
+time=16:42:19.586 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Urban Wheels" 増加数=6
+time=16:42:19.587 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Chair Charm" 増加数=6
+time=16:42:19.587 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="PreLoved Chairs" 増加数=5
+time=16:42:19.589 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=CityRide 増加数=7
+time=16:42:21.384 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="PreLoved Chairs" 増加数=5
+time=16:42:21.385 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=CityRide 増加数=7
+time=16:42:21.386 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=8
+time=16:42:21.391 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Urban Wheels" 増加数=7
+time=16:42:21.392 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Chair Charm" 増加数=4
+time=16:42:23.186 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=CityRide 増加数=6
+time=16:42:23.186 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Urban Wheels" 増加数=5
+time=16:42:23.195 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="PreLoved Chairs" 増加数=3
+time=16:42:23.196 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=7
+time=16:42:23.197 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Chair Charm" 増加数=4
+time=16:42:23.201 level=INFO msg=これまでに地域内の評判によって57人、既存ユーザーの招待経由で965人が新規登録しました
+time=16:42:23.201 level=INFO msg=0.0%のライドは椅子がマッチされるまでの時間、28.3%のライドはマッチされた椅子が乗車地点までに掛かる時間、1.5%のライドは椅子の実移動時間に不満がありました
+time=16:42:25.000 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=CityRide 増加数=6
+time=16:42:25.001 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Chair Charm" 増加数=6
+time=16:42:25.003 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=8
+time=16:42:25.004 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="PreLoved Chairs" 増加数=4
+time=16:42:25.005 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Urban Wheels" 増加数=8
+time=16:42:26.802 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=CityRide 増加数=6
+time=16:42:26.805 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=6
+time=16:42:26.808 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Urban Wheels" 増加数=3
+time=16:42:26.810 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Chair Charm" 増加数=4
+time=16:42:26.811 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="PreLoved Chairs" 増加数=5
+time=16:42:28.601 level=INFO msg=これまでに地域内の評判によって70人、既存ユーザーの招待経由で1447人が新規登録しました
+time=16:42:28.601 level=INFO msg=0.0%のライドは椅子がマッチされるまでの時間、26.1%のライドはマッチされた椅子が乗車地点までに掛かる時間、6.8%のライドは椅子の実移動時間に不満がありました
+time=16:42:28.616 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Chair Charm" 増加数=5
+time=16:42:28.617 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=CityRide 増加数=6
+time=16:42:28.618 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="PreLoved Chairs" 増加数=5
+time=16:42:28.619 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Urban Wheels" 増加数=8
+time=16:42:28.620 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=9
+time=16:42:30.400 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=10
+time=16:42:30.402 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Urban Wheels" 増加数=7
+time=16:42:30.403 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Chair Charm" 増加数=6
+time=16:42:30.405 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="PreLoved Chairs" 増加数=6
+time=16:42:30.407 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=CityRide 増加数=8
+time=16:42:32.201 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Urban Wheels" 増加数=7
+time=16:42:32.216 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Chair Charm" 増加数=5
+time=16:42:32.216 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=CityRide 増加数=8
+time=16:42:32.217 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="PreLoved Chairs" 増加数=5
+time=16:42:32.218 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=10
+time=16:42:33.996 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="PreLoved Chairs" 増加数=4
+time=16:42:33.998 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Chair Charm" 増加数=5
+time=16:42:33.998 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=CityRide 増加数=8
+time=16:42:34.001 level=INFO msg=これまでに地域内の評判によって82人、既存ユーザーの招待経由で1863人が新規登録しました
+time=16:42:34.001 level=INFO msg=これまでに低評価なライドによって15人が利用をやめました
+time=16:42:34.001 level=INFO msg=0.0%のライドは椅子がマッチされるまでの時間、25.1%のライドはマッチされた椅子が乗車地点までに掛かる時間、12.2%のライドは椅子の実移動時間に不満がありました
+time=16:42:35.811 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="PreLoved Chairs" 増加数=6
+time=16:42:35.813 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Urban Wheels" 増加数=16
+time=16:42:35.818 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Chair Charm" 増加数=5
+time=16:42:35.821 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=CityRide 増加数=10
+time=16:42:35.822 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=19
+time=16:42:37.611 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=CityRide 増加数=5
+time=16:42:37.613 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Urban Wheels" 増加数=5
+time=16:42:39.400 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="PreLoved Chairs" 増加数=8
+time=16:42:39.401 level=INFO msg=これまでに地域内の評判によって96人、既存ユーザーの招待経由で2238人が新規登録しました
+time=16:42:39.401 level=INFO msg=これまでに低評価なライドによって65人が利用をやめました
+time=16:42:39.401 level=INFO msg=0.0%のライドは椅子がマッチされるまでの時間、25.7%のライドはマッチされた椅子が乗車地点までに掛かる時間、20.1%のライドは椅子の実移動時間に不満がありました
+time=16:42:39.418 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Chair Charm" 増加数=8
+time=16:42:39.419 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=CityRide 増加数=9
+time=16:42:39.422 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Urban Wheels" 増加数=9
+time=16:42:39.422 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=16
+time=16:42:41.217 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Urban Wheels" 増加数=5
+time=16:42:43.023 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=16
+time=16:42:43.025 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="PreLoved Chairs" 増加数=8
+time=16:42:43.028 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Urban Wheels" 増加数=10
+time=16:42:43.023 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Chair Charm" 増加数=10
+time=16:42:43.039 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=CityRide 増加数=15
+time=16:42:44.831 level=INFO msg=これまでに地域内の評判によって104人、既存ユーザーの招待経由で2625人が新規登録しました
+time=16:42:44.831 level=INFO msg=これまでに低評価なライドによって129人が利用をやめました
+time=16:42:44.831 level=INFO msg=0.0%のライドは椅子がマッチされるまでの時間、26.7%のライドはマッチされた椅子が乗車地点までに掛かる時間、27.1%のライドは椅子の実移動時間に不満がありました
+time=16:42:44.920 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Urban Wheels" 増加数=7
+time=16:42:44.921 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Chair Charm" 増加数=4
+time=16:42:44.922 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="PreLoved Chairs" 増加数=6
+time=16:42:46.657 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Urban Wheels" 増加数=8
+time=16:42:48.459 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Urban Wheels" 増加数=8
+time=16:42:50.231 level=INFO msg=これまでに地域内の評判によって116人、既存ユーザーの招待経由で2988人が新規登録しました
+time=16:42:50.231 level=INFO msg=これまでに低評価なライドによって195人が利用をやめました
+time=16:42:50.231 level=INFO msg=0.0%のライドは椅子がマッチされるまでの時間、26.2%のライドはマッチされた椅子が乗車地点までに掛かる時間、31.8%のライドは椅子の実移動時間に不満がありました
+time=16:42:50.265 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Urban Wheels" 増加数=8
+time=16:42:52.063 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Urban Wheels" 増加数=10
+time=16:42:54.761 level=WARN msg="ユーザー登録に失敗しました (CODE=17): POST /api/app/usersへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:201, actual:500)"
+time=16:42:55.633 level=INFO msg=これまでに地域内の評判によって128人、既存ユーザーの招待経由で3365人が新規登録しました
+time=16:42:55.633 level=INFO msg=これまでに低評価なライドによって248人が利用をやめました
+time=16:42:55.633 level=INFO msg=0.0%のライドは椅子がマッチされるまでの時間、26.1%のライドはマッチされた椅子が乗車地点までに掛かる時間、35.8%のライドは椅子の実移動時間に不満がありました
+time=16:43:01.175 level=INFO msg=最終地域情報 名前=チェアタウン ユーザー登録数=3140 アクティブユーザー数=2935
+time=16:43:01.175 level=INFO msg=最終地域情報 名前=コシカケシティ ユーザー登録数=677 アクティブユーザー数=623
+time=16:43:01.175 level=INFO msg=最終オーナー情報 名前=PulseRide 売上=8783800 椅子数=165
+time=16:43:01.175 level=INFO msg=最終オーナー情報 名前="Urban Wheels" 売上=7334400 椅子数=175
+time=16:43:01.175 level=INFO msg=最終オーナー情報 名前="Chair Charm" 売上=4892300 椅子数=108
+time=16:43:01.175 level=INFO msg=最終オーナー情報 名前=CityRide 売上=7272600 椅子数=143
+time=16:43:01.175 level=INFO msg=最終オーナー情報 名前="PreLoved Chairs" 売上=4843500 椅子数=106
+time=16:43:01.175 level=INFO msg=0.0%のライドは椅子がマッチされるまでの時間、27.1%のライドはマッチされた椅子が乗車地点までに掛かる時間、38.4%のライドは椅子の実移動時間に不満がありました
+time=16:43:01.175 level=INFO msg=結果 pass=true スコア=370326 種別エラー数=map[17:2]
+time=16:43:01.175 level=INFO msg=負荷走行が終了しました

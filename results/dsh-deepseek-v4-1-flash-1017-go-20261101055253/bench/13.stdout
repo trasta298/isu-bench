@@ -1,0 +1,316 @@
+time=15:23:38.255 level=INFO msg=負荷走行を開始します
+time=15:23:45.633 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=1
+time=15:23:45.633 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子工藝舎 増加数=1
+time=15:23:45.635 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=つばさ交通 増加数=1
+time=15:23:47.433 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ゆったり号 増加数=2
+time=15:23:47.434 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=1
+time=15:23:47.436 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=1
+time=15:23:47.437 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子工藝舎 増加数=1
+time=15:23:47.440 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=つばさ交通 増加数=1
+time=15:23:47.455 level=INFO msg=これまでに地域内の評判によって6人、既存ユーザーの招待経由で34人が新規登録しました
+time=15:23:47.456 level=INFO msg=0.0%のライドは椅子がマッチされるまでの時間、64.7%のライドはマッチされた椅子が乗車地点までに掛かる時間、0.0%のライドは椅子の実移動時間に不満がありました
+time=15:23:48.368 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEC67M7GQ8X8GJ0WA56HX, got: 130, want: 128)"
+time=15:23:48.369 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEC7RTWCHD4YAQ1FVW3YF, got: 218, want: 216)"
+time=15:23:48.369 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEC5S9TNEH3DF0QKQYEMQ, got: 286, want: 284)"
+time=15:23:48.370 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEC4MNCQ1TTT59KQXXSWR, got: 168, want: 166)"
+time=15:23:48.373 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEHQEEYC8S7NH3VST5F46, got: 133, want: 126)"
+time=15:23:49.232 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=1
+time=15:23:49.233 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=1
+time=15:23:49.233 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子工藝舎 増加数=1
+time=15:23:49.233 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=つばさ交通 増加数=1
+time=15:23:50.167 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEHQKDBS4WRJ3MR6SRKNB, got: 226, want: 219)"
+time=15:23:50.169 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEC79DMCJHHFZGENE8J2X, got: 448, want: 446)"
+time=15:23:50.169 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEC4MNCQ1TTT59KQXXSWR, got: 222, want: 220)"
+time=15:23:50.169 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEC5DZYWN249QXC06B9CD, got: 304, want: 302)"
+time=15:23:50.171 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEC8599VQN7GJ91E9NTZA, got: 347, want: 345)"
+time=15:23:51.033 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=つばさ交通 増加数=1
+time=15:23:51.034 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=1
+time=15:23:51.034 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子工藝舎 増加数=1
+time=15:23:51.036 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=1
+time=15:23:51.970 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEC73K9RWVNA75KPMFTH7, got: 451, want: 449)"
+time=15:23:51.970 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEN841XATK2Z0893SXBN9, got: 90, want: 85)"
+time=15:23:51.971 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEC6A404RFHEXS0J2AK9W, got: 542, want: 540)"
+time=15:23:51.972 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEFZ7JY3YYH2WHZYJH606, got: 952, want: 945)"
+time=15:23:52.833 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=1
+time=15:23:52.836 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子工藝舎 増加数=1
+time=15:23:52.840 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=つばさ交通 増加数=1
+time=15:23:52.856 level=INFO msg=これまでに地域内の評判によって18人、既存ユーザーの招待経由で63人が新規登録しました
+time=15:23:52.856 level=INFO msg=4.5%のライドは椅子がマッチされるまでの時間、69.7%のライドはマッチされた椅子が乗車地点までに掛かる時間、0.8%のライドは椅子の実移動時間に不満がありました
+time=15:23:53.770 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEC5S9TNEH3DF0QKQYEMQ, got: 644, want: 642)"
+time=15:23:53.770 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEC6GTDP69HSDHSBJSW2Y, got: 332, want: 330)"
+time=15:23:53.772 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEC73K9RWVNA75KPMFTH7, got: 571, want: 569)"
+time=15:23:53.772 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEC7ZRX9VY80BKR76MGGM, got: 652, want: 650)"
+time=15:23:54.634 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=1
+time=15:23:54.638 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=2
+time=15:23:54.639 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子工藝舎 増加数=1
+time=15:23:55.575 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEQ0CNQ3EGVK8C5K03PE7, got: 187, want: 180)"
+time=15:23:55.576 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEN878415CN5A1M3WY763, got: 443, want: 438)"
+time=15:23:55.576 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEC6DBE6173KHERY0PP00, got: 521, want: 519)"
+time=15:23:55.576 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEC79DMCJHHFZGENE8J2X, got: 808, want: 806)"
+time=15:23:55.578 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEC5S9TNEH3DF0QKQYEMQ, got: 764, want: 762)"
+time=15:23:56.434 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ゆったり号 増加数=1
+time=15:23:56.435 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=つばさ交通 増加数=1
+time=15:23:56.436 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子工藝舎 増加数=1
+time=15:23:56.443 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=2
+time=15:23:57.370 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEC6A404RFHEXS0J2AK9W, got: 845, want: 843)"
+time=15:23:57.371 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEC5G0ZD6Z7Q5NM8QVQ1C, got: 780, want: 778)"
+time=15:23:57.371 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEFZ7JY3YYH2WHZYJH606, got: 1991, want: 1984)"
+time=15:23:57.371 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEFZ7JY3YYH2WHZPQH058, got: 1672, want: 1665)"
+time=15:23:57.373 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEHQEEYC8S7NH3VST5F46, got: 987, want: 980)"
+time=15:23:58.237 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=2
+time=15:23:58.251 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子工藝舎 増加数=1
+time=15:23:58.252 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ゆったり号 増加数=1
+time=15:23:58.256 level=INFO msg=これまでに地域内の評判によって30人、既存ユーザーの招待経由で88人が新規登録しました
+time=15:23:58.256 level=INFO msg=28.7%のライドは椅子がマッチされるまでの時間、69.4%のライドはマッチされた椅子が乗車地点までに掛かる時間、0.5%のライドは椅子の実移動時間に不満がありました
+time=15:23:59.179 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEC73K9RWVNA75KPMFTH7, got: 814, want: 812)"
+time=15:23:59.180 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEFZ878KJAZ1PTNWYJSMT, got: 1746, want: 1739)"
+time=15:23:59.185 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEFZ7JY3YYH2WHZYJH606, got: 2164, want: 2157)"
+time=15:23:59.186 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWETH6DHXRQPYN58VXNEMH, got: 166, want: 163)"
+time=15:23:59.186 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEC7RTWCHD4YAQ1FVW3YF, got: 831, want: 829)"
+time=15:24:00.036 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=つばさ交通 増加数=2
+time=15:24:00.046 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ゆったり号 増加数=1
+time=15:24:00.049 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=2
+time=15:24:00.049 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子工藝舎 増加数=1
+time=15:24:00.055 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=1
+time=15:24:00.966 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEC67M7GQ8X8GJ0WA56HX, got: 764, want: 762)"
+time=15:24:00.967 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEFZ878KJAZ1PTNWYJSMT, got: 2061, want: 2054)"
+time=15:24:01.835 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子工藝舎 増加数=2
+time=15:24:01.836 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=1
+time=15:24:01.841 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ゆったり号 増加数=1
+time=15:24:01.843 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=1
+time=15:24:02.765 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEKFT6Q90A7ZP29QCR37R, got: 934, want: 932)"
+time=15:24:03.637 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=2
+time=15:24:03.638 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=つばさ交通 増加数=2
+time=15:24:03.642 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子工藝舎 増加数=1
+time=15:24:03.645 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ゆったり号 増加数=3
+time=15:24:03.650 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=1
+time=15:24:03.656 level=INFO msg=これまでに地域内の評判によって42人、既存ユーザーの招待経由で99人が新規登録しました
+time=15:24:03.656 level=INFO msg=これまでに低評価なライドによって11人が利用をやめました
+time=15:24:03.656 level=INFO msg=50.0%のライドは椅子がマッチされるまでの時間、75.6%のライドはマッチされた椅子が乗車地点までに掛かる時間、10.5%のライドは椅子の実移動時間に不満がありました
+time=15:24:04.573 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEZSRACPXA3G2W4TK6CJ0, got: 109, want: 107)"
+time=15:24:04.573 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEC4VGTP4ZDPWFFFCAY2B, got: 1155, want: 1153)"
+time=15:24:04.573 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEKFS330SQ5W9XT9C5JG2, got: 822, want: 820)"
+time=15:24:04.574 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWF1JVNMWB5T3DGRXZ6W1C, got: 45, want: 40)"
+time=15:24:04.576 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEC5K77HQTS5Q18G6EYVX, got: 1184, want: 1182)"
+time=15:24:05.439 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子工藝舎 増加数=1
+time=15:24:05.444 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=1
+time=15:24:05.444 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=つばさ交通 増加数=1
+time=15:24:05.454 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=2
+time=15:24:06.367 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEZSRACPXA3G2W4TK6CJ0, got: 145, want: 143)"
+time=15:24:06.368 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWF1J04KTVDT51Z3Q4F2QM, got: 230, want: 225)"
+time=15:24:06.368 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEC79DMCJHHFZGENE8J2X, got: 1175, want: 1173)"
+time=15:24:06.368 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWF1JENN89FMQ9PK919NW1, got: 92, want: 90)"
+time=15:24:06.370 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEY21S3K0CP79AE2472RM, got: 787, want: 780)"
+time=15:24:07.234 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=2
+time=15:24:07.234 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子工藝舎 増加数=2
+time=15:24:07.234 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=1
+time=15:24:07.239 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ゆったり号 増加数=1
+time=15:24:08.167 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWF1J04KTVDT51Z3Q4F2QM, got: 395, want: 390)"
+time=15:24:08.168 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEC7ZRX9VY80BKR76MGGM, got: 1318, want: 1316)"
+time=15:24:09.038 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=2
+time=15:24:09.038 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子工藝舎 増加数=1
+time=15:24:09.056 level=INFO msg=これまでに地域内の評判によって54人、既存ユーザーの招待経由で104人が新規登録しました
+time=15:24:09.056 level=INFO msg=これまでに低評価なライドによって30人が利用をやめました
+time=15:24:09.056 level=INFO msg=61.5%のライドは椅子がマッチされるまでの時間、76.5%のライドはマッチされた椅子が乗車地点までに掛かる時間、24.8%のライドは椅子の実移動時間に不満がありました
+time=15:24:09.073 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=つばさ交通 増加数=1
+time=15:24:09.073 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ゆったり号 増加数=1
+time=15:24:09.073 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=1
+time=15:24:09.976 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEC70TS1B9X8G12YD850A, got: 1286, want: 1284)"
+time=15:24:09.976 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEC67M7GQ8X8GJ0WA56HX, got: 1082, want: 1080)"
+time=15:24:09.981 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEC5G0ZD6Z7Q5NM8QVQ1C, got: 1274, want: 1272)"
+time=15:24:09.982 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEC7ZRX9VY80BKR76MGGM, got: 1384, want: 1382)"
+time=15:24:09.988 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEY1BZ98VP7BZTWNA1BD9, got: 503, want: 500)"
+time=15:24:10.841 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=つばさ交通 増加数=2
+time=15:24:10.885 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=2
+time=15:24:10.887 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=1
+time=15:24:10.913 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ゆったり号 増加数=1
+time=15:24:10.913 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子工藝舎 増加数=1
+time=15:24:11.766 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEHQMHC3XEBX1DSV47CPD, got: 1081, want: 1079)"
+time=15:24:11.766 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWF6VQJFGSF9HP0VGAEHZH, got: 45, want: 42)"
+time=15:24:11.767 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEKFS330SQ5W9XT9C5JG2, got: 1070, want: 1068)"
+time=15:24:11.773 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEC4DF8RRWRY5Y60YY35T, got: 1346, want: 1344)"
+time=15:24:11.777 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEQ0AWWE4XT563S49689N, got: 2012, want: 2005)"
+time=15:24:12.635 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=2
+time=15:24:12.638 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子工藝舎 増加数=2
+time=15:24:12.643 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ゆったり号 増加数=2
+time=15:24:13.564 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWFAB3H8T3VYNQR3HHKQTE, got: 16, want: 14)"
+time=15:24:13.565 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEC4QYH7CA9CN6V5HYKWA, got: 1316, want: 1314)"
+time=15:24:13.566 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEZSRACPXA3G2W4TK6CJ0, got: 403, want: 401)"
+time=15:24:13.568 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEZSWQG5ZJ0F4Y1YTD3AJ, got: 278, want: 276)"
+time=15:24:13.572 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEHQEEYC8S7NH3VST5F46, got: 2180, want: 2173)"
+time=15:24:14.454 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子工藝舎 増加数=1
+time=15:24:14.455 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ゆったり号 増加数=1
+time=15:24:14.455 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=1
+time=15:24:14.456 level=INFO msg=これまでに地域内の評判によって66人、既存ユーザーの招待経由で110人が新規登録しました
+time=15:24:14.456 level=INFO msg=これまでに低評価なライドによって59人が利用をやめました
+time=15:24:14.456 level=INFO msg=70.0%のライドは椅子がマッチされるまでの時間、76.3%のライドはマッチされた椅子が乗車地点までに掛かる時間、38.5%のライドは椅子の実移動時間に不満がありました
+time=15:24:14.458 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=つばさ交通 増加数=1
+time=15:24:14.458 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=2
+time=15:24:15.371 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEC8599VQN7GJ91E9NTZA, got: 1395, want: 1393)"
+time=15:24:15.371 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEC4DF8RRWRY5Y60YY35T, got: 1432, want: 1430)"
+time=15:24:15.381 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWF1JQVYH9GG6EQYR7Z93A, got: 800, want: 795)"
+time=15:24:15.384 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEZT7VD69D431JHG1KQC6, got: 706, want: 703)"
+time=15:24:15.390 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWETGYEB2HA4AMQEZNTQAZ, got: 1113, want: 1110)"
+time=15:24:16.239 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子工藝舎 増加数=2
+time=15:24:16.256 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=2
+time=15:24:16.260 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=2
+time=15:24:17.174 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEC70TS1B9X8G12YD850A, got: 1522, want: 1520)"
+time=15:24:17.178 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEZSWQG5ZJ0F4Y1YTD3AJ, got: 387, want: 385)"
+time=15:24:17.182 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEQ0CNQ3EGVK8C5K03PE7, got: 2337, want: 2330)"
+time=15:24:17.183 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEC7WCJRWYHES44WHX5SN, got: 1404, want: 1402)"
+time=15:24:17.183 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWFAB3H8T3VYNQR3HHKQTE, got: 138, want: 136)"
+time=15:24:18.047 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=つばさ交通 増加数=3
+time=15:24:18.051 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子工藝舎 増加数=2
+time=15:24:18.051 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ゆったり号 増加数=1
+time=15:24:18.056 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=1
+time=15:24:18.058 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=1
+time=15:24:18.972 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWFC42WK0VH3MA405W2JJT, got: 118, want: 115)"
+time=15:24:18.972 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEY1N8ER28S6D01DQ0M7B, got: 1705, want: 1698)"
+time=15:24:18.986 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEC67M7GQ8X8GJ0WA56HX, got: 1368, want: 1366)"
+time=15:24:18.986 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEW9F69B2RWHH4VG1J159, got: 1691, want: 1686)"
+time=15:24:18.987 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEC5S9TNEH3DF0QKQYEMQ, got: 1574, want: 1572)"
+time=15:24:19.838 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=1
+time=15:24:19.856 level=INFO msg=これまでに地域内の評判によって78人、既存ユーザーの招待経由で124人が新規登録しました
+time=15:24:19.856 level=INFO msg=これまでに低評価なライドによって80人が利用をやめました
+time=15:24:19.856 level=INFO msg=63.8%のライドは椅子がマッチされるまでの時間、75.8%のライドはマッチされた椅子が乗車地点までに掛かる時間、47.3%のライドは椅子の実移動時間に不満がありました
+time=15:24:19.874 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=つばさ交通 増加数=1
+time=15:24:19.875 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子工藝舎 増加数=2
+time=15:24:19.878 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ゆったり号 増加数=1
+time=15:24:19.878 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=2
+time=15:24:20.768 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEC7WCJRWYHES44WHX5SN, got: 1498, want: 1496)"
+time=15:24:20.787 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWF8NAEVJQ9BQP863FCWRB, got: 584, want: 579)"
+time=15:24:20.793 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEN81EMT4C4FSHYP5Y6E4, got: 1570, want: 1567)"
+time=15:24:20.794 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEC4DF8RRWRY5Y60YY35T, got: 1584, want: 1582)"
+time=15:24:20.802 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWFABX3VQY5S6HPWXX5CGG, got: 363, want: 360)"
+time=15:24:21.642 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ゆったり号 増加数=1
+time=15:24:21.649 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=つばさ交通 増加数=1
+time=15:24:21.661 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子工藝舎 増加数=1
+time=15:24:21.666 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=2
+time=15:24:21.698 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=2
+time=15:24:22.570 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEHQMHC3XEBX1DSV47CPD, got: 1401, want: 1399)"
+time=15:24:22.571 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEQ0AWWE4XT563S49689N, got: 2854, want: 2847)"
+time=15:24:22.573 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEC4MNCQ1TTT59KQXXSWR, got: 1530, want: 1528)"
+time=15:24:22.574 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWF6VQJFGSF9HP0VGAEHZH, got: 457, want: 454)"
+time=15:24:22.575 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWF1J33KHNFTD2110TQ5R5, got: 778, want: 775)"
+time=15:24:23.473 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子工藝舎 増加数=2
+time=15:24:23.485 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=1
+time=15:24:23.495 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=1
+time=15:24:23.551 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ゆったり号 増加数=1
+time=15:24:23.628 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=つばさ交通 増加数=3
+time=15:24:24.367 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEC7WCJRWYHES44WHX5SN, got: 1538, want: 1536)"
+time=15:24:24.367 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEZSXGBCRPQVNJ9ZHA26T, got: 666, want: 664)"
+time=15:24:24.411 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEFZ878KJAZ1PTNWYJSMT, got: 4002, want: 3995)"
+time=15:24:24.420 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEC67M7GQ8X8GJ0WA56HX, got: 1504, want: 1502)"
+time=15:24:24.420 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEN841XATK2Z086YTW42Y, got: 2238, want: 2233)"
+time=15:24:25.252 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=つばさ交通 増加数=1
+time=15:24:25.252 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ゆったり号 増加数=2
+time=15:24:25.255 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=2
+time=15:24:25.256 level=INFO msg=これまでに地域内の評判によって90人、既存ユーザーの招待経由で145人が新規登録しました
+time=15:24:25.256 level=INFO msg=これまでに低評価なライドによって99人が利用をやめました
+time=15:24:25.256 level=INFO msg=53.5%のライドは椅子がマッチされるまでの時間、73.0%のライドはマッチされた椅子が乗車地点までに掛かる時間、55.8%のライドは椅子の実移動時間に不満がありました
+time=15:24:25.256 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=2
+time=15:24:26.167 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEC73K9RWVNA75KPMFTH7, got: 1696, want: 1694)"
+time=15:24:26.179 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWFK635Y2HQDQCKWX7BMWF, got: 155, want: 150)"
+time=15:24:26.182 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEFZ7JY3YYH2WHZPQH058, got: 3747, want: 3740)"
+time=15:24:26.182 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEC5K77HQTS5Q18G6EYVX, got: 1829, want: 1827)"
+time=15:24:26.183 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWETGX62PHYRNSXCZ3Z926, got: 877, want: 875)"
+time=15:24:27.041 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ゆったり号 増加数=2
+time=15:24:27.047 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=つばさ交通 増加数=2
+time=15:24:27.054 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=1
+time=15:24:27.054 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子工藝舎 増加数=3
+time=15:24:27.287 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=2
+time=15:24:27.969 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWF8M4TQJEHTTYPZAKDP5Y, got: 410, want: 408)"
+time=15:24:27.970 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWF52A9ECRK92RV70KBG3D, got: 480, want: 478)"
+time=15:24:27.973 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEC73K9RWVNA75KPMFTH7, got: 1740, want: 1738)"
+time=15:24:27.984 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWFAB4DATH5TMDWC0XTV4Q, got: 376, want: 373)"
+time=15:24:27.998 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWFAB3H8T3VYNQR3HHKQTE, got: 412, want: 410)"
+time=15:24:28.863 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=つばさ交通 増加数=2
+time=15:24:28.887 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子工藝舎 増加数=2
+time=15:24:28.910 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=2
+time=15:24:29.022 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ゆったり号 増加数=1
+time=15:24:29.023 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=3
+time=15:24:30.424 level=WARN msg="ユーザー登録に失敗しました (CODE=17): POST /api/app/usersへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:201, actual:500)"
+time=15:24:30.655 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=3
+time=15:24:30.656 level=INFO msg=これまでに地域内の評判によって102人、既存ユーザーの招待経由で157人が新規登録しました
+time=15:24:30.656 level=INFO msg=これまでに低評価なライドによって121人が利用をやめました
+time=15:24:30.656 level=INFO msg=42.4%のライドは椅子がマッチされるまでの時間、68.9%のライドはマッチされた椅子が乗車地点までに掛かる時間、63.4%のライドは椅子の実移動時間に不満がありました
+time=15:24:30.656 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子工藝舎 増加数=3
+time=15:24:30.659 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ゆったり号 増加数=1
+time=15:24:30.771 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=3
+time=15:24:30.805 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=つばさ交通 増加数=2
+time=15:24:31.582 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEC5G0ZD6Z7Q5NM8QVQ1C, got: 1782, want: 1780)"
+time=15:24:31.605 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWF52G7Q0JYM8VV0VFVC81, got: 907, want: 904)"
+time=15:24:31.608 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEC4DF8RRWRY5Y60YY35T, got: 1866, want: 1864)"
+time=15:24:31.611 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWFRDXY3948DNXWDYBN5VG, got: 104, want: 97)"
+time=15:24:31.630 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWF1JVNMWB5T3DGRXZ6W1C, got: 1261, want: 1256)"
+time=15:24:32.433 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=2
+time=15:24:32.437 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ゆったり号 増加数=3
+time=15:24:32.450 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=つばさ交通 増加数=2
+time=15:24:32.485 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子工藝舎 増加数=1
+time=15:24:32.573 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=2
+time=15:24:33.369 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWF8NP70MPJ3XVRXXNTANX, got: 918, want: 915)"
+time=15:24:33.376 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEC6DBE6173KHERY0PP00, got: 1260, want: 1258)"
+time=15:24:33.385 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEC5G0ZD6Z7Q5NM8QVQ1C, got: 1840, want: 1838)"
+time=15:24:33.385 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWF6VQJFGSF9HP0VGAEHZH, got: 719, want: 718)"
+time=15:24:33.408 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWF1JENN89FMQ9PK919NW1, got: 751, want: 749)"
+time=15:24:34.232 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=3
+time=15:24:34.266 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ゆったり号 増加数=1
+time=15:24:34.270 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=つばさ交通 増加数=2
+time=15:24:34.274 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=3
+time=15:24:34.274 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子工藝舎 増加数=2
+time=15:24:35.175 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWF52FDFW4XBQ98GQA88KG, got: 795, want: 792)"
+time=15:24:35.177 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEZSRACPXA3G2W4TK6CJ0, got: 955, want: 953)"
+time=15:24:35.178 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWFXP6EF9AB8R18VMVSMJY, got: 50, want: 45)"
+time=15:24:35.179 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEHQEEYC8S7NH3VST5F46, got: 3238, want: 3231)"
+time=15:24:35.209 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWF8M4TQJEHTTYPZAKDP5Y, got: 610, want: 608)"
+time=15:24:36.056 level=INFO msg=これまでに地域内の評判によって114人、既存ユーザーの招待経由で190人が新規登録しました
+time=15:24:36.056 level=INFO msg=これまでに低評価なライドによって133人が利用をやめました
+time=15:24:36.056 level=INFO msg=34.0%のライドは椅子がマッチされるまでの時間、60.4%のライドはマッチされた椅子が乗車地点までに掛かる時間、67.6%のライドは椅子の実移動時間に不満がありました
+time=15:24:36.083 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子工藝舎 増加数=1
+time=15:24:36.084 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=2
+time=15:24:36.084 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=つばさ交通 増加数=3
+time=15:24:36.086 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ゆったり号 増加数=2
+time=15:24:36.129 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=2
+time=15:24:36.970 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWFMYB63GFP8ZCDJB9B1FY, got: 113, want: 111)"
+time=15:24:36.971 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEKFV43BD9CH5ZKSM6QFC, got: 2386, want: 2383)"
+time=15:24:36.972 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEC5G0ZD6Z7Q5NM8QVQ1C, got: 1946, want: 1944)"
+time=15:24:36.973 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWFZF8RQ4NZKNXSS1HBHBZ, got: 66, want: 59)"
+time=15:24:36.976 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWFFMDFRVDRF0BEH438F7S, got: 881, want: 876)"
+time=15:24:37.911 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子工藝舎 増加数=3
+time=15:24:37.919 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=つばさ交通 増加数=2
+time=15:24:37.937 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ゆったり号 増加数=3
+time=15:24:37.945 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=1
+time=15:24:37.947 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=1
+time=15:24:38.765 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWFDWE07M6HMF765H17C5E, got: 504, want: 502)"
+time=15:24:38.768 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWFMYB63GFP8ZCDJB9B1FY, got: 156, want: 154)"
+time=15:24:38.773 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWFHDCY6SZQ7F9SEF20T18, got: 479, want: 472)"
+time=15:24:38.774 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWFC42WK0VH3MA405W2JJT, got: 490, want: 487)"
+time=15:24:38.775 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWFAB4DATH5TMDWC0XTV4Q, got: 484, want: 481)"
+time=15:24:39.646 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ゆったり号 増加数=1
+time=15:24:39.654 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=3
+time=15:24:39.706 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=つばさ交通 増加数=1
+time=15:24:39.732 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=2
+time=15:24:39.738 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子工藝舎 増加数=2
+time=15:24:40.568 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEC73K9RWVNA75KPMFTH7, got: 2107, want: 2105)"
+time=15:24:40.569 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEY1BZ98VP7BZTWNA1BD9, got: 1520, want: 1517)"
+time=15:24:40.569 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEZSSG3E4MF04XGPTQ87S, got: 1161, want: 1159)"
+time=15:24:40.570 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWFK565MKD8YRZBWFD1SRC, got: 276, want: 273)"
+time=15:24:40.573 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWEZSRACPXA3G2W4TK6CJ0, got: 1109, want: 1107)"
+time=15:24:41.442 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ゆったり号 増加数=1
+time=15:24:41.456 level=INFO msg=これまでに地域内の評判によって126人、既存ユーザーの招待経由で242人が新規登録しました
+time=15:24:41.456 level=INFO msg=これまでに低評価なライドによって140人が利用をやめました
+time=15:24:41.456 level=INFO msg=28.4%のライドは椅子がマッチされるまでの時間、53.1%のライドはマッチされた椅子が乗車地点までに掛かる時間、69.4%のライドは椅子の実移動時間に不満がありました
+time=15:24:41.507 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=1
+time=15:24:41.521 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=つばさ交通 増加数=2
+time=15:24:41.538 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=2
+time=15:24:41.556 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子工藝舎 増加数=1
+time=15:24:47.056 level=INFO msg=最終地域情報 名前=チェアタウン ユーザー登録数=240 アクティブユーザー数=161
+time=15:24:47.056 level=INFO msg=最終地域情報 名前=コシカケシティ ユーザー登録数=147 アクティブユーザー数=86
+time=15:24:47.056 level=INFO msg=最終オーナー情報 名前=つばさ交通 売上=1033200 椅子数=46
+time=15:24:47.056 level=INFO msg=最終オーナー情報 名前=椅子工藝舎 売上=1223100 椅子数=51
+time=15:24:47.056 level=INFO msg=最終オーナー情報 名前="LuxeLine Taxi" 売上=1334400 椅子数=54
+time=15:24:47.056 level=INFO msg=最終オーナー情報 名前=ゆったり号 売上=835100 椅子数=40
+time=15:24:47.056 level=INFO msg=最終オーナー情報 名前=PulseRide 売上=1208900 椅子数=51
+time=15:24:47.056 level=INFO msg=28.2%のライドは椅子がマッチされるまでの時間、51.7%のライドはマッチされた椅子が乗車地点までに掛かる時間、70.0%のライドは椅子の実移動時間に不満がありました
+time=15:24:47.056 level=INFO msg=結果 pass=true スコア=74162 種別エラー数="map[17:1 26:133]"
+time=15:24:47.057 level=INFO msg=負荷走行が終了しました

@@ -1,0 +1,132 @@
+time=15:04:49.328 level=INFO msg=負荷走行を開始します
+time=15:04:56.052 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="CraftChair Co., Ltd." 増加数=1
+time=15:04:57.835 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=暮らしの椅子研究所 増加数=1
+time=15:04:57.835 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Chair Charm" 増加数=2
+time=15:04:57.850 level=INFO msg=これまでに地域内の評判によって7人、既存ユーザーの招待経由で11人が新規登録しました
+time=15:04:57.850 level=INFO msg=これまでに低評価なライドによって2人が利用をやめました
+time=15:04:57.850 level=INFO msg=0.0%のライドは椅子がマッチされるまでの時間、75.0%のライドはマッチされた椅子が乗車地点までに掛かる時間、43.8%のライドは椅子の実移動時間に不満がありました
+time=15:04:58.810 level=WARN msg="ユーザーが受け取った通知の内容が想定と異なります (CODE=33): 椅子の総乗車回数が一致しません。(ride_id: 01M6AVBZ6XRCX7YRCX92XJR3X2, chair_id: 01M6AVBX420Z8BT3GT9YQFZR9V, got: 1, want: 0)"
+time=15:04:59.230 level=WARN msg="ユーザーが受け取った通知の内容が想定と異なります (CODE=33): 椅子の総乗車回数が一致しません。(ride_id: 01M6AVC12KCHVTYTY6FSV47EDG, chair_id: 01M6AVC0VXJW6YGBYHQFNEZVBT, got: 1, want: 0)"
+time=15:04:59.641 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子再生工房 増加数=1
+time=15:04:59.644 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="CraftChair Co., Ltd." 増加数=1
+time=15:04:59.645 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ComfortWorks 増加数=1
+time=15:05:00.070 level=WARN msg="ユーザーが受け取った通知の内容が想定と異なります (CODE=33): 椅子の総乗車回数が一致しません。(ride_id: 01M6AVBZ01DGM1R3XP7VVH4WPJ, chair_id: 01M6AVBX3BZK3HZ9BEMYK6GWE5, got: 1, want: 0)"
+time=15:05:00.430 level=WARN msg="ユーザーが受け取った通知の内容が想定と異なります (CODE=33): 椅子の総乗車回数が一致しません。(ride_id: 01M6AVC17K8EQMB2M06V53AM2F, chair_id: 01M6AVBX1WWH2R2MBTZ21GSBVC, got: 3, want: 2)"
+time=15:05:01.390 level=WARN msg="ユーザーが受け取った通知の内容が想定と異なります (CODE=33): 椅子の総乗車回数が一致しません。(ride_id: 01M6AVBZVT23FWHNHSVXSKT3VM, chair_id: 01M6AVBX454NG6JB5NGCQXVGAS, got: 2, want: 1)"
+time=15:05:01.495 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子再生工房 増加数=1
+time=15:05:01.495 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=暮らしの椅子研究所 増加数=1
+time=15:05:01.501 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Chair Charm" 増加数=1
+time=15:05:01.520 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="CraftChair Co., Ltd." 増加数=1
+time=15:05:03.232 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="CraftChair Co., Ltd." 増加数=1
+time=15:05:03.250 level=INFO msg=これまでに地域内の評判によって19人、既存ユーザーの招待経由で13人が新規登録しました
+time=15:05:03.250 level=INFO msg=これまでに低評価なライドによって10人が利用をやめました
+time=15:05:03.250 level=INFO msg=0.0%のライドは椅子がマッチされるまでの時間、80.5%のライドはマッチされた椅子が乗車地点までに掛かる時間、64.6%のライドは椅子の実移動時間に不満がありました
+time=15:05:04.090 level=WARN msg="ユーザーが受け取った通知の内容が想定と異なります (CODE=33): 椅子の総乗車回数が一致しません。(ride_id: 01M6AVC62ZMPGRR7ZWP1HDZ68B, chair_id: 01M6AVC66299JKKMZZM96Q3875, got: 1, want: 0)"
+time=15:05:05.069 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Chair Charm" 増加数=1
+time=15:05:05.073 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=暮らしの椅子研究所 増加数=1
+time=15:05:06.843 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="CraftChair Co., Ltd." 増加数=1
+time=15:05:06.877 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Chair Charm" 増加数=1
+time=15:05:08.637 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ComfortWorks 増加数=1
+time=15:05:08.650 level=INFO msg=これまでに地域内の評判によって30人、既存ユーザーの招待経由で15人が新規登録しました
+time=15:05:08.650 level=INFO msg=これまでに低評価なライドによって19人が利用をやめました
+time=15:05:08.650 level=INFO msg=0.0%のライドは椅子がマッチされるまでの時間、79.7%のライドはマッチされた椅子が乗車地点までに掛かる時間、72.9%のライドは椅子の実移動時間に不満がありました
+time=15:05:08.741 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子再生工房 増加数=1
+time=15:05:08.777 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=暮らしの椅子研究所 増加数=1
+time=15:05:09.940 level=WARN msg="ユーザーが受け取った通知の内容が想定と異なります (CODE=33): 椅子の総乗車回数が一致しません。(ride_id: 01M6AVC6ECFE0NFRKY0YNQY146, chair_id: 01M6AVBX1FSH7S9PFE5TKCCRVY, got: 4, want: 3)"
+time=15:05:10.437 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子再生工房 増加数=1
+time=15:05:10.457 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="CraftChair Co., Ltd." 増加数=1
+time=15:05:10.708 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=暮らしの椅子研究所 増加数=1
+time=15:05:12.249 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="CraftChair Co., Ltd." 増加数=2
+time=15:05:12.326 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=暮らしの椅子研究所 増加数=1
+time=15:05:12.413 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ComfortWorks 増加数=1
+time=15:05:14.050 level=INFO msg=これまでに地域内の評判によって42人、既存ユーザーの招待経由で16人が新規登録しました
+time=15:05:14.050 level=INFO msg=これまでに低評価なライドによって28人が利用をやめました
+time=15:05:14.050 level=INFO msg=0.0%のライドは椅子がマッチされるまでの時間、77.2%のライドはマッチされた椅子が乗車地点までに掛かる時間、79.1%のライドは椅子の実移動時間に不満がありました
+time=15:05:14.050 level=WARN msg="ユーザーが受け取った通知の内容が想定と異なります (CODE=33): 椅子の総乗車回数が一致しません。(ride_id: 01M6AVCDHSE2HD86FT0M994FDD, chair_id: 01M6AVCD5XWCZ5S5T7P7R7XZ83, got: 1, want: 0)"
+time=15:05:14.055 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Chair Charm" 増加数=1
+time=15:05:15.854 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="CraftChair Co., Ltd." 増加数=1
+time=15:05:17.655 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=暮らしの椅子研究所 増加数=1
+time=15:05:19.450 level=INFO msg=これまでに地域内の評判によって54人、既存ユーザーの招待経由で17人が新規登録しました
+time=15:05:19.450 level=INFO msg=これまでに低評価なライドによって35人が利用をやめました
+time=15:05:19.450 level=INFO msg=4.2%のライドは椅子がマッチされるまでの時間、68.8%のライドはマッチされた椅子が乗車地点までに掛かる時間、81.8%のライドは椅子の実移動時間に不満がありました
+time=15:05:19.474 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子再生工房 増加数=1
+time=15:05:19.477 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ComfortWorks 増加数=1
+time=15:05:19.486 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="CraftChair Co., Ltd." 増加数=1
+time=15:05:19.612 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=暮らしの椅子研究所 増加数=1
+time=15:05:20.710 level=WARN msg="ユーザーが受け取った通知の内容が想定と異なります (CODE=33): 椅子の総乗車回数が一致しません。(ride_id: 01M6AVCDDJARD64PQ4F9DMBQQ5, chair_id: 01M6AVBX3BZK3HZ9BEMYK6GWE5, got: 4, want: 3)"
+time=15:05:21.010 level=WARN msg="ユーザーが受け取った通知の内容が想定と異なります (CODE=33): 椅子の総乗車回数が一致しません。(ride_id: 01M6AVCNBAF59HNYRAEFZ8222P, chair_id: 01M6AVCGTY3A1YRBPQXRKKPBXB, got: 2, want: 1)"
+time=15:05:21.305 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="CraftChair Co., Ltd." 増加数=1
+time=15:05:21.306 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Chair Charm" 増加数=2
+time=15:05:24.850 level=INFO msg=これまでに地域内の評判によって66人、既存ユーザーの招待経由で18人が新規登録しました
+time=15:05:24.850 level=INFO msg=これまでに低評価なライドによって41人が利用をやめました
+time=15:05:24.850 level=INFO msg=9.7%のライドは椅子がマッチされるまでの時間、65.5%のライドはマッチされた椅子が乗車地点までに掛かる時間、83.6%のライドは椅子の実移動時間に不満がありました
+time=15:05:24.854 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子再生工房 増加数=1
+time=15:05:24.856 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=暮らしの椅子研究所 増加数=1
+time=15:05:25.540 level=WARN msg="ユーザーが受け取った通知の内容が想定と異なります (CODE=33): 椅子の総乗車回数が一致しません。(ride_id: 01M6AVCPPXBKHVD63KF19X14NC, chair_id: 01M6AVBX454NG6JB5NGCQXVGAS, got: 4, want: 3)"
+time=15:05:26.646 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="CraftChair Co., Ltd." 増加数=1
+time=15:05:28.525 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=暮らしの椅子研究所 増加数=1
+time=15:05:30.250 level=INFO msg=これまでに地域内の評判によって78人、既存ユーザーの招待経由で18人が新規登録しました
+time=15:05:30.250 level=INFO msg=これまでに低評価なライドによって50人が利用をやめました
+time=15:05:30.250 level=INFO msg=16.4%のライドは椅子がマッチされるまでの時間、60.9%のライドはマッチされた椅子が乗車地点までに掛かる時間、85.2%のライドは椅子の実移動時間に不満がありました
+time=15:05:30.271 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ComfortWorks 増加数=1
+time=15:05:30.279 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Chair Charm" 増加数=1
+time=15:05:31.391 level=WARN msg="ユーザーが受け取った通知の内容が想定と異なります (CODE=33): 椅子の総乗車回数が一致しません。(ride_id: 01M6AVC3C4C7E47TCZDKQX21AB, chair_id: 01M6AVBX13AZJVZM2VQ4V98HB7, got: 3, want: 2)"
+time=15:05:32.110 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子再生工房 増加数=1
+time=15:05:32.328 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="CraftChair Co., Ltd." 増加数=1
+time=15:05:32.372 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=暮らしの椅子研究所 増加数=1
+time=15:05:32.470 level=WARN msg="ユーザーが受け取った通知の内容が想定と異なります (CODE=33): 椅子の総乗車回数が一致しません。(ride_id: 01M6AVCRVTZEWTTZK9FX3Q4SPF, chair_id: 01M6AVCSH3Y7XSNAWYQF4HVMZY, got: 1, want: 0)"
+time=15:05:33.914 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="CraftChair Co., Ltd." 増加数=1
+time=15:05:34.121 level=WARN msg="ユーザーが受け取った通知の内容が想定と異なります (CODE=33): 椅子の総乗車回数が一致しません。(ride_id: 01M6AVCW176B6WGD40TCZ6424S, chair_id: 01M6AVCYR1YZWZMWY34KW940Y9, got: 1, want: 0)"
+time=15:05:35.501 level=WARN msg="ユーザーが受け取った通知の内容が想定と異なります (CODE=33): 椅子の総乗車回数が一致しません。(ride_id: 01M6AVCY46Z7NSYVB5VBD6ZQVV, chair_id: 01M6AVBX3ED5J2GT08H6M8175C, got: 5, want: 4)"
+time=15:05:35.650 level=INFO msg=これまでに地域内の評判によって89人、既存ユーザーの招待経由で18人が新規登録しました
+time=15:05:35.650 level=INFO msg=これまでに低評価なライドによって58人が利用をやめました
+time=15:05:35.650 level=INFO msg=24.2%のライドは椅子がマッチされるまでの時間、62.4%のライドはマッチされた椅子が乗車地点までに掛かる時間、87.2%のライドは椅子の実移動時間に不満がありました
+time=15:05:35.686 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="CraftChair Co., Ltd." 増加数=1
+time=15:05:35.693 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=暮らしの椅子研究所 増加数=1
+time=15:05:35.965 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Chair Charm" 増加数=1
+time=15:05:37.240 level=WARN msg="ユーザーが受け取った通知の内容が想定と異なります (CODE=33): 椅子の総乗車回数が一致しません。(ride_id: 01M6AVD0XTVWGY85GQ6BW46H7M, chair_id: 01M6AVCSZ9Y47YHVB6F02CV897, got: 2, want: 1)"
+time=15:05:37.464 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ComfortWorks 増加数=1
+time=15:05:37.471 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子再生工房 増加数=1
+time=15:05:39.264 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=暮らしの椅子研究所 増加数=1
+time=15:05:39.267 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子再生工房 増加数=1
+time=15:05:39.268 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Chair Charm" 増加数=1
+time=15:05:39.490 level=WARN msg="ユーザーが受け取った通知の内容が想定と異なります (CODE=33): 椅子の総乗車回数が一致しません。(ride_id: 01M6AVD2Q9DP0436NF979RCVCV, chair_id: 01M6AVCBE775TG02R3YH094K21, got: 3, want: 2)"
+time=15:05:39.971 level=WARN msg="ユーザーが受け取った通知の内容が想定と異なります (CODE=33): 椅子の総乗車回数が一致しません。(ride_id: 01M6AVD29GG7GCVXYBNTRRM3Y2, chair_id: 01M6AVCQWDFT35NJREFZ0JQWDD, got: 2, want: 1)"
+time=15:05:41.050 level=INFO msg=これまでに地域内の評判によって99人、既存ユーザーの招待経由で18人が新規登録しました
+time=15:05:41.050 level=INFO msg=これまでに低評価なライドによって73人が利用をやめました
+time=15:05:41.050 level=INFO msg=32.4%のライドは椅子がマッチされるまでの時間、60.0%のライドはマッチされた椅子が乗車地点までに掛かる時間、88.8%のライドは椅子の実移動時間に不満がありました
+time=15:05:42.820 level=WARN msg="ユーザーが受け取った通知の内容が想定と異なります (CODE=33): 椅子の総乗車回数が一致しません。(ride_id: 01M6AVD3AS1D2GPZKFCXCQMPXF, chair_id: 01M6AVCGTY3A1YRBPQXRKKPBXB, got: 4, want: 3)"
+time=15:05:43.001 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="CraftChair Co., Ltd." 増加数=1
+time=15:05:44.630 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子再生工房 増加数=1
+time=15:05:44.649 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ComfortWorks 増加数=1
+time=15:05:44.822 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=暮らしの椅子研究所 増加数=1
+time=15:05:45.490 level=WARN msg="ユーザーが受け取った通知の内容が想定と異なります (CODE=33): 椅子の総乗車回数が一致しません。(ride_id: 01M6AVD47CPM774JJ1TXEWE17C, chair_id: 01M6AVC67NR7ZYQZZXNVCAVBXJ, got: 3, want: 2)"
+time=15:05:46.450 level=INFO msg=これまでに地域内の評判によって110人、既存ユーザーの招待経由で18人が新規登録しました
+time=15:05:46.450 level=INFO msg=これまでに低評価なライドによって80人が利用をやめました
+time=15:05:46.450 level=INFO msg=36.4%のライドは椅子がマッチされるまでの時間、59.2%のライドはマッチされた椅子が乗車地点までに掛かる時間、89.7%のライドは椅子の実移動時間に不満がありました
+time=15:05:46.522 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="CraftChair Co., Ltd." 増加数=1
+time=15:05:46.541 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=暮らしの椅子研究所 増加数=1
+time=15:05:48.220 level=WARN msg="ユーザーが受け取った通知の内容が想定と異なります (CODE=33): 椅子の総乗車回数が一致しません。(ride_id: 01M6AVD8C0FJK2AJVM39R93A26, chair_id: 01M6AVC9NSGPKFS4D7K0SR1CTC, got: 6, want: 5)"
+time=15:05:48.263 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=暮らしの椅子研究所 増加数=1
+time=15:05:48.273 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Chair Charm" 増加数=1
+time=15:05:48.325 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ComfortWorks 増加数=1
+time=15:05:48.382 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="CraftChair Co., Ltd." 増加数=1
+time=15:05:48.880 level=WARN msg="ユーザーが受け取った通知の内容が想定と異なります (CODE=33): 椅子の総乗車回数が一致しません。(ride_id: 01M6AVD9Y1WVVVYZ2C3Y7XAD86, chair_id: 01M6AVC66299JKKMZZM96Q3875, got: 7, want: 6)"
+time=15:05:50.117 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Chair Charm" 増加数=1
+time=15:05:50.269 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=暮らしの椅子研究所 増加数=1
+time=15:05:51.220 level=WARN msg="ユーザーが受け取った通知の内容が想定と異なります (CODE=33): 椅子の総乗車回数が一致しません。(ride_id: 01M6AVDDYEY287VPH0FFQ74619, chair_id: 01M6AVBX2SXQHYTA11XBX7RM1Q, got: 4, want: 3)"
+time=15:05:51.850 level=INFO msg=これまでに地域内の評判によって119人、既存ユーザーの招待経由で18人が新規登録しました
+time=15:05:51.850 level=INFO msg=これまでに低評価なライドによって101人が利用をやめました
+time=15:05:51.850 level=INFO msg=42.8%のライドは椅子がマッチされるまでの時間、57.7%のライドはマッチされた椅子が乗車地点までに掛かる時間、91.2%のライドは椅子の実移動時間に不満がありました
+time=15:05:51.885 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="CraftChair Co., Ltd." 増加数=2
+time=15:05:51.921 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子再生工房 増加数=1
+time=15:05:57.451 level=INFO msg=最終地域情報 名前=チェアタウン ユーザー登録数=83 アクティブユーザー数=28
+time=15:05:57.451 level=INFO msg=最終地域情報 名前=コシカケシティ ユーザー登録数=68 アクティブユーザー数=21
+time=15:05:57.451 level=INFO msg=最終オーナー情報 名前="CraftChair Co., Ltd." 売上=371500 椅子数=24
+time=15:05:57.451 level=INFO msg=最終オーナー情報 名前=暮らしの椅子研究所 売上=316800 椅子数=21
+time=15:05:57.451 level=INFO msg=最終オーナー情報 名前="Chair Charm" 売上=245400 椅子数=17
+time=15:05:57.451 level=INFO msg=最終オーナー情報 名前=ComfortWorks 売上=148900 椅子数=12
+time=15:05:57.451 level=INFO msg=最終オーナー情報 名前=椅子再生工房 売上=207300 椅子数=15
+time=15:05:57.451 level=INFO msg=43.9%のライドは椅子がマッチされるまでの時間、57.0%のライドはマッチされた椅子が乗車地点までに掛かる時間、91.2%のライドは椅子の実移動時間に不満がありました
+time=15:05:57.451 level=INFO msg=結果 pass=true スコア=15367 種別エラー数=map[33:23]
+time=15:05:57.451 level=INFO msg=負荷走行が終了しました

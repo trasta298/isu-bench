@@ -1,0 +1,257 @@
+{
+  "run_id": "claude-code-claude-opus-5-5-go-20261101050655",
+  "problem": "isucon14",
+  "agent": "claude-code",
+  "agent_version": "2.1.316 (Claude Code)",
+  "model": "claude-opus-5-5",
+  "effort": "high",
+  "lang": "go",
+  "provider": "direct",
+  "upstream_commit": "53f8b627e040c30ebec600457c6c97da008b84b0",
+  "started_at": "2026-11-01T05:06:55.117817+00:00",
+  "image": {
+    "ImageId": "ami-0fcf9e8e8675a9ee4",
+    "Name": "isucon14-20260818100152",
+    "OwnerId": "839726181030",
+    "CreationDate": "2026-08-18T10:42:25.000Z"
+  },
+  "host_resources": {
+    "s1": [
+      "2",
+      "3766"
+    ],
+    "s2": [
+      "2",
+      "3792"
+    ],
+    "s3": [
+      "2",
+      "3792"
+    ],
+    "bench": [
+      "8",
+      "15503"
+    ]
+  },
+  "resumes": 0,
+  "agent_seconds": 2461,
+  "status": "completed",
+  "reboot_check": {
+    "passed": true,
+    "rebooted": {
+      "s1": true,
+      "s2": true,
+      "s3": true
+    },
+    "root_status": 200,
+    "api_status": 401
+  },
+  "runs": [
+    {
+      "n": 1,
+      "started_at": "2026-11-01T05:10:01.165800+00:00",
+      "exit": 0,
+      "finished_at": "2026-11-01T05:11:09.850295+00:00",
+      "passed": true,
+      "score": 1114
+    },
+    {
+      "n": 2,
+      "started_at": "2026-11-01T05:17:22.295612+00:00",
+      "exit": 0,
+      "finished_at": "2026-11-01T05:18:29.580175+00:00",
+      "passed": true,
+      "score": 324523
+    },
+    {
+      "n": 3,
+      "started_at": "2026-11-01T05:20:23.180961+00:00",
+      "exit": 0,
+      "finished_at": "2026-11-01T05:21:29.672661+00:00",
+      "passed": true,
+      "score": 218158
+    },
+    {
+      "n": 4,
+      "started_at": "2026-11-01T05:23:59.097845+00:00",
+      "exit": 0,
+      "finished_at": "2026-11-01T05:25:08.145240+00:00",
+      "passed": true,
+      "score": 329892
+    },
+    {
+      "n": 5,
+      "started_at": "2026-11-01T05:27:11.324931+00:00",
+      "exit": 0,
+      "finished_at": "2026-11-01T05:28:18.926396+00:00",
+      "passed": true,
+      "score": 381426
+    },
+    {
+      "n": 6,
+      "started_at": "2026-11-01T05:30:20.308249+00:00",
+      "exit": 0,
+      "finished_at": "2026-11-01T05:31:27.880224+00:00",
+      "passed": true,
+      "score": 404605
+    },
+    {
+      "n": 7,
+      "started_at": "2026-11-01T05:33:07.027861+00:00",
+      "exit": 0,
+      "finished_at": "2026-11-01T05:34:14.628304+00:00",
+      "passed": true,
+      "score": 394506
+    },
+    {
+      "n": 8,
+      "started_at": "2026-11-01T05:35:14.056947+00:00",
+      "exit": 0,
+      "finished_at": "2026-11-01T05:36:21.670513+00:00",
+      "passed": true,
+      "score": 448640
+    },
+    {
+      "n": 9,
+      "started_at": "2026-11-01T05:37:15.626919+00:00",
+      "exit": 0,
+      "finished_at": "2026-11-01T05:38:23.201601+00:00",
+      "passed": true,
+      "score": 448739
+    },
+    {
+      "n": 10,
+      "started_at": "2026-11-01T05:39:41.769194+00:00",
+      "exit": 0,
+      "finished_at": "2026-11-01T05:39:51.227784+00:00",
+      "passed": false,
+      "score": 151
+    },
+    {
+      "n": 11,
+      "started_at": "2026-11-01T05:41:59.670000+00:00",
+      "exit": 0,
+      "finished_at": "2026-11-01T05:43:07.600605+00:00",
+      "passed": true,
+      "score": 451455
+    },
+    {
+      "n": 12,
+      "started_at": "2026-11-01T05:45:12.217895+00:00",
+      "exit": 0,
+      "finished_at": "2026-11-01T05:46:19.832571+00:00",
+      "passed": true,
+      "score": 452172
+    },
+    {
+      "n": 13,
+      "started_at": "2026-11-01T05:46:46.439456+00:00",
+      "exit": 0,
+      "finished_at": "2026-11-01T05:47:54.117618+00:00",
+      "passed": true,
+      "score": 430462
+    },
+    {
+      "n": 14,
+      "started_at": "2026-11-01T05:48:24.232942+00:00",
+      "exit": 0,
+      "finished_at": "2026-11-01T05:49:31.887072+00:00",
+      "passed": true,
+      "score": 477541
+    },
+    {
+      "n": 15,
+      "started_at": "2026-11-01T05:50:13.411421+00:00",
+      "exit": 0,
+      "finished_at": "2026-11-01T05:51:21.035331+00:00",
+      "passed": true,
+      "score": 432211
+    }
+  ],
+  "infra_failures": [],
+  "final_score": 432211,
+  "finished_at": "2026-11-01T05:52:06.939613+00:00",
+  "usage": {
+    "input_tokens": 204,
+    "output_tokens": 132294,
+    "cache_read_tokens": 16614324,
+    "cache_write_tokens": 246288
+  },
+  "pace": [
+    {
+      "minutes": 1.7,
+      "tool_calls": 16,
+      "output_tokens": 7931
+    },
+    {
+      "minutes": 9.1,
+      "tool_calls": 21,
+      "output_tokens": 44371
+    },
+    {
+      "minutes": 12.1,
+      "tool_calls": 7,
+      "output_tokens": 7989
+    },
+    {
+      "minutes": 15.7,
+      "tool_calls": 9,
+      "output_tokens": 12074
+    },
+    {
+      "minutes": 18.9,
+      "tool_calls": 10,
+      "output_tokens": 9855
+    },
+    {
+      "minutes": 22.1,
+      "tool_calls": 9,
+      "output_tokens": 7940
+    },
+    {
+      "minutes": 24.8,
+      "tool_calls": 7,
+      "output_tokens": 7524
+    },
+    {
+      "minutes": 27.0,
+      "tool_calls": 5,
+      "output_tokens": 5312
+    },
+    {
+      "minutes": 29.0,
+      "tool_calls": 2,
+      "output_tokens": 4586
+    },
+    {
+      "minutes": 31.4,
+      "tool_calls": 7,
+      "output_tokens": 6017
+    },
+    {
+      "minutes": 33.7,
+      "tool_calls": 6,
+      "output_tokens": 3833
+    },
+    {
+      "minutes": 36.9,
+      "tool_calls": 7,
+      "output_tokens": 10053
+    },
+    {
+      "minutes": 38.5,
+      "tool_calls": 4,
+      "output_tokens": 1953
+    },
+    {
+      "minutes": 40.1,
+      "tool_calls": 2,
+      "output_tokens": 1441
+    },
+    {
+      "minutes": 41.9,
+      "tool_calls": 4,
+      "output_tokens": 1415
+    }
+  ]
+}

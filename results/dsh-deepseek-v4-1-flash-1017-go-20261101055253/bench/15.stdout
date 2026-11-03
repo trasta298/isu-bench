@@ -1,0 +1,313 @@
+time=15:29:14.111 level=INFO msg=負荷走行を開始します
+time=15:29:20.841 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=座心工房 増加数=1
+time=15:29:20.841 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=CityRide 増加数=1
+time=15:29:20.841 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ReSit 増加数=1
+time=15:29:22.643 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ReSit 増加数=2
+time=15:29:22.643 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子のめぐりや 増加数=2
+time=15:29:22.643 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=暮らしの椅子研究所 増加数=1
+time=15:29:22.664 level=INFO msg=これまでに地域内の評判によって6人、既存ユーザーの招待経由で31人が新規登録しました
+time=15:29:22.664 level=INFO msg=0.0%のライドは椅子がマッチされるまでの時間、67.7%のライドはマッチされた椅子が乗車地点までに掛かる時間、0.0%のライドは椅子の実移動時間に不満がありました
+time=15:29:24.442 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ReSit 増加数=1
+time=15:29:24.443 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=CityRide 増加数=1
+time=15:29:24.444 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=座心工房 増加数=2
+time=15:29:24.444 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=暮らしの椅子研究所 増加数=1
+time=15:29:24.445 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子のめぐりや 増加数=1
+time=15:29:25.381 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWRKHCM8A58E8BXSBHD5PR, got: 279, want: 277)"
+time=15:29:25.382 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWRKGWDJKJJSBX4T0TBVW2, got: 367, want: 365)"
+time=15:29:25.382 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWRQAGT34RG4ANB4C3RTX4, got: 224, want: 222)"
+time=15:29:25.383 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWRKJK7E8YKPDSHGEPGBK8, got: 470, want: 468)"
+time=15:29:25.384 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWRTV5K7TFB5SFR507A88Q, got: 36, want: 33)"
+time=15:29:26.253 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ReSit 増加数=1
+time=15:29:26.253 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=座心工房 増加数=1
+time=15:29:26.255 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=CityRide 増加数=2
+time=15:29:28.041 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=暮らしの椅子研究所 増加数=2
+time=15:29:28.045 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子のめぐりや 増加数=1
+time=15:29:28.048 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=CityRide 増加数=1
+time=15:29:28.064 level=INFO msg=これまでに地域内の評判によって18人、既存ユーザーの招待経由で67人が新規登録しました
+time=15:29:28.064 level=INFO msg=0.0%のライドは椅子がマッチされるまでの時間、76.1%のライドはマッチされた椅子が乗車地点までに掛かる時間、0.0%のライドは椅子の実移動時間に不満がありました
+time=15:29:28.976 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWRKJCKEWAH899FVHEPJBW, got: 573, want: 571)"
+time=15:29:28.977 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWRKHFEBBTEETE1320PA68, got: 579, want: 577)"
+time=15:29:28.977 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWRKGNXZD8R6D24BKDEDZX, got: 608, want: 606)"
+time=15:29:28.977 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWRQAGT34RG4ANB4C3RTX4, got: 464, want: 462)"
+time=15:29:28.977 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWRKKK4TS19H21Q2T68060, got: 528, want: 526)"
+time=15:29:29.841 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=座心工房 増加数=1
+time=15:29:29.842 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ReSit 増加数=1
+time=15:29:29.843 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=CityRide 増加数=2
+time=15:29:29.849 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=暮らしの椅子研究所 増加数=1
+time=15:29:30.781 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWRWKKR3B6YDNSMAC0WR16, got: 256, want: 251)"
+time=15:29:30.784 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWS03WCZBCZZC4NDQR28GJ, got: 57, want: 54)"
+time=15:29:30.785 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWRS2S95NZ3CEQ4AVZG0QC, got: 403, want: 401)"
+time=15:29:31.641 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=CityRide 増加数=2
+time=15:29:31.644 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ReSit 増加数=1
+time=15:29:31.646 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=暮らしの椅子研究所 増加数=1
+time=15:29:31.646 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子のめぐりや 増加数=1
+time=15:29:32.576 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWRS2S95NZ3CEQ4CNR63MJ, got: 473, want: 471)"
+time=15:29:32.576 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWRYBJ9C7AQ59VE356MX2D, got: 355, want: 350)"
+time=15:29:32.578 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWRQADTVRBNJE4F1S4FG8M, got: 688, want: 686)"
+time=15:29:32.579 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWRKKCP62Q0Z7SZ74RXQC6, got: 753, want: 751)"
+time=15:29:32.580 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWS03RACH3JFB7JDXG4D33, got: 115, want: 113)"
+time=15:29:33.442 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ReSit 増加数=1
+time=15:29:33.442 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=暮らしの椅子研究所 増加数=1
+time=15:29:33.443 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=CityRide 増加数=1
+time=15:29:33.448 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子のめぐりや 増加数=2
+time=15:29:33.448 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=座心工房 増加数=2
+time=15:29:33.465 level=INFO msg=これまでに地域内の評判によって30人、既存ユーザーの招待経由で97人が新規登録しました
+time=15:29:33.465 level=INFO msg=24.4%のライドは椅子がマッチされるまでの時間、76.5%のライドはマッチされた椅子が乗車地点までに掛かる時間、0.8%のライドは椅子の実移動時間に不満がありました
+time=15:29:34.381 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWS1W4JTNT6KAB8HXSARJB, got: 385, want: 380)"
+time=15:29:34.384 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWRKHR678G323XNQ6RGFYX, got: 870, want: 868)"
+time=15:29:34.389 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWRWKMNGK7D41KEM2TCFR5, got: 1216, want: 1209)"
+time=15:29:34.390 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWRKJK7E8YKPDSHGEPGBK8, got: 1008, want: 1006)"
+time=15:29:34.393 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWS1WBT1C9HHEN5AJ9A3R0, got: 141, want: 139)"
+time=15:29:35.243 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=暮らしの椅子研究所 増加数=1
+time=15:29:35.243 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=座心工房 増加数=2
+time=15:29:35.247 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ReSit 増加数=1
+time=15:29:36.178 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWRKFSD65SFNBBHXJQJZAS, got: 917, want: 915)"
+time=15:29:36.178 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWRKGNXZD8R6D24BKDEDZX, got: 1030, want: 1028)"
+time=15:29:36.179 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWRKJ97TV5N00SGAE913E2, got: 844, want: 842)"
+time=15:29:36.181 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWRYBN3RNP7PQSGNSX464R, got: 390, want: 388)"
+time=15:29:36.182 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWRKHCM8A58E8BXSBHD5PR, got: 890, want: 888)"
+time=15:29:37.043 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子のめぐりや 増加数=1
+time=15:29:37.044 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=CityRide 増加数=3
+time=15:29:37.050 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=座心工房 増加数=1
+time=15:29:37.051 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ReSit 増加数=2
+time=15:29:37.055 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=暮らしの椅子研究所 増加数=2
+time=15:29:37.980 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWRYBTJ0YT783T59GF9K7H, got: 1132, want: 1125)"
+time=15:29:37.983 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWRS2S95NZ3CEQ4CNR63MJ, got: 809, want: 807)"
+time=15:29:37.984 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWRKGRYEGF1PR6M76275BT, got: 1020, want: 1018)"
+time=15:29:37.984 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWRKKK4TS19H21Q2T68060, got: 1050, want: 1048)"
+time=15:29:38.849 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=座心工房 増加数=2
+time=15:29:38.850 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=暮らしの椅子研究所 増加数=1
+time=15:29:38.853 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=CityRide 増加数=3
+time=15:29:38.854 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ReSit 増加数=1
+time=15:29:38.864 level=INFO msg=これまでに地域内の評判によって42人、既存ユーザーの招待経由で116人が新規登録しました
+time=15:29:38.864 level=INFO msg=これまでに低評価なライドによって2人が利用をやめました
+time=15:29:38.864 level=INFO msg=44.3%のライドは椅子がマッチされるまでの時間、80.9%のライドはマッチされた椅子が乗車地点までに掛かる時間、2.2%のライドは椅子の実移動時間に不満がありました
+time=15:29:39.776 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWRKGJ45DF2XFFWB03NHJJ, got: 1180, want: 1178)"
+time=15:29:39.776 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWRKHCM8A58E8BXSBHD5PR, got: 1076, want: 1074)"
+time=15:29:39.783 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWRKJK7E8YKPDSHGEPGBK8, got: 1308, want: 1306)"
+time=15:29:39.784 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWS5CS17WPJZDV12WXV4DC, got: 585, want: 578)"
+time=15:29:39.789 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWRKK3EDYNFG4BDVZPYTC0, got: 1092, want: 1090)"
+time=15:29:40.644 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子のめぐりや 増加数=1
+time=15:29:40.644 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=暮らしの椅子研究所 増加数=2
+time=15:29:40.645 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ReSit 増加数=1
+time=15:29:40.649 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=座心工房 増加数=2
+time=15:29:40.652 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=CityRide 増加数=2
+time=15:29:41.574 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWRKHCM8A58E8BXSBHD5PR, got: 1144, want: 1142)"
+time=15:29:41.574 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWS1W4JTNT6KAB8HXSARJB, got: 1116, want: 1111)"
+time=15:29:41.574 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWS8XB60FDPVFQYN2MET5Y, got: 50, want: 45)"
+time=15:29:41.575 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWRKJ97TV5N00SGAE913E2, got: 1122, want: 1120)"
+time=15:29:41.576 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWRKKK4TS19H21Q2T68060, got: 1218, want: 1216)"
+time=15:29:42.474 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=座心工房 増加数=1
+time=15:29:42.494 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=暮らしの椅子研究所 増加数=1
+time=15:29:42.497 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子のめぐりや 増加数=2
+time=15:29:43.383 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWSCG2REH0XJY3C2B2642F, got: 45, want: 40)"
+time=15:29:43.384 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWRKFSD65SFNBBHXJQJZAS, got: 1162, want: 1160)"
+time=15:29:43.389 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWRKGRYEGF1PR6M76275BT, got: 1150, want: 1148)"
+time=15:29:43.390 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWS8X9Z6V5BZBATT3ZFDKF, got: 121, want: 118)"
+time=15:29:43.391 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWRTV693BB1JFFRMY8JXTJ, got: 929, want: 926)"
+time=15:29:44.243 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=座心工房 増加数=2
+time=15:29:44.246 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ReSit 増加数=2
+time=15:29:44.247 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子のめぐりや 増加数=1
+time=15:29:44.248 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=CityRide 増加数=2
+time=15:29:44.253 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=暮らしの椅子研究所 増加数=1
+time=15:29:44.264 level=INFO msg=これまでに地域内の評判によって54人、既存ユーザーの招待経由で126人が新規登録しました
+time=15:29:44.264 level=INFO msg=これまでに低評価なライドによって21人が利用をやめました
+time=15:29:44.264 level=INFO msg=60.2%のライドは椅子がマッチされるまでの時間、80.1%のライドはマッチされた椅子が乗車地点までに掛かる時間、17.0%のライドは椅子の実移動時間に不満がありました
+time=15:29:45.178 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWRYBTJ0YT783T59GF9K7H, got: 1770, want: 1763)"
+time=15:29:45.178 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWS1W03VYXT8W80XS1DZDX, got: 1609, want: 1602)"
+time=15:29:46.048 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=暮らしの椅子研究所 増加数=2
+time=15:29:46.049 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=座心工房 増加数=1
+time=15:29:46.052 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ReSit 増加数=1
+time=15:29:46.058 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=CityRide 増加数=3
+time=15:29:46.062 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子のめぐりや 増加数=1
+time=15:29:46.976 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWS5CTBFMZXNDS0TB78P6W, got: 431, want: 429)"
+time=15:29:46.976 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWSFYRKX0QJ3MBYBR2MEMW, got: 20, want: 18)"
+time=15:29:46.976 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWRTV6NMY94XYCC4RWGFK0, got: 1504, want: 1501)"
+time=15:29:46.977 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWS03ZV6SM23BEGYV1H7A4, got: 825, want: 823)"
+time=15:29:46.978 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWSFYWCG1F06AXGHZQPXBY, got: 20, want: 18)"
+time=15:29:47.841 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=座心工房 増加数=1
+time=15:29:47.841 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ReSit 増加数=2
+time=15:29:47.842 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子のめぐりや 増加数=1
+time=15:29:47.842 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=CityRide 増加数=1
+time=15:29:47.845 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=暮らしの椅子研究所 増加数=1
+time=15:29:48.791 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWS757F0GH0H5PPDA04X92, got: 1010, want: 1003)"
+time=15:29:48.792 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWSANCX46FQ50WDACZ0M5B, got: 518, want: 511)"
+time=15:29:48.793 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWSCG2REH0XJY3C2B2642F, got: 530, want: 525)"
+time=15:29:48.794 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWSE627PT6VFB6G6KZVMGV, got: 210, want: 207)"
+time=15:29:48.835 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWRKFWW6YHBAQK0CT7KQMR, got: 1125, want: 1123)"
+time=15:29:49.659 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=座心工房 増加数=4
+time=15:29:49.659 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=暮らしの椅子研究所 増加数=1
+time=15:29:49.659 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=CityRide 増加数=2
+time=15:29:49.659 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子のめぐりや 増加数=1
+time=15:29:49.664 level=INFO msg=これまでに地域内の評判によって68人、既存ユーザーの招待経由で130人が新規登録しました
+time=15:29:49.664 level=INFO msg=これまでに低評価なライドによって55人が利用をやめました
+time=15:29:49.664 level=INFO msg=69.8%のライドは椅子がマッチされるまでの時間、78.7%のライドはマッチされた椅子が乗車地点までに掛かる時間、32.1%のライドは椅子の実移動時間に不満がありました
+time=15:29:50.581 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWS74YMPKAYFP0J94D90KR, got: 973, want: 968)"
+time=15:29:50.584 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWRKHFEBBTEETE1320PA68, got: 1440, want: 1438)"
+time=15:29:50.585 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWS1W8G5RYQHQP9BDBFYEQ, got: 755, want: 753)"
+time=15:29:50.585 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWRQAGT34RG4ANB4C3RTX4, got: 1387, want: 1385)"
+time=15:29:50.593 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWSHPHNSCAVSQW1335J11Z, got: 107, want: 104)"
+time=15:29:51.449 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ReSit 増加数=2
+time=15:29:51.452 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=暮らしの椅子研究所 増加数=2
+time=15:29:51.467 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子のめぐりや 増加数=1
+time=15:29:51.468 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=CityRide 増加数=2
+time=15:29:52.385 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWRYBNHT0TFWC6XKD80S3P, got: 3048, want: 3041)"
+time=15:29:52.386 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWSHPC2KK5NKKQWM5X198V, got: 78, want: 75)"
+time=15:29:52.389 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWRS2YZQWEMAP09BYTZGXS, got: 2851, want: 2846)"
+time=15:29:52.390 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWSCEDA25GCV7T6P3VP6Q6, got: 447, want: 442)"
+time=15:29:52.407 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWRKKCP62Q0Z7SZ74RXQC6, got: 1429, want: 1427)"
+time=15:29:53.248 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=CityRide 増加数=2
+time=15:29:53.248 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=座心工房 増加数=3
+time=15:29:53.250 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子のめぐりや 増加数=2
+time=15:29:53.351 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=暮らしの椅子研究所 増加数=2
+time=15:29:53.363 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ReSit 増加数=2
+time=15:29:54.178 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWRKKCP62Q0Z7SZ74RXQC6, got: 1481, want: 1479)"
+time=15:29:54.179 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWRKFZTNG2NN2599KDCQZN, got: 1632, want: 1630)"
+time=15:29:54.188 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWRKHCM8A58E8BXSBHD5PR, got: 1560, want: 1558)"
+time=15:29:54.190 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWSQ2TA5H03T2GEX16D47G, got: 9, want: 6)"
+time=15:29:54.190 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWS8XF9NZ7EBH8W26YHPCR, got: 1354, want: 1347)"
+time=15:29:55.046 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=CityRide 増加数=2
+time=15:29:55.051 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=暮らしの椅子研究所 増加数=1
+time=15:29:55.055 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=座心工房 増加数=2
+time=15:29:55.064 level=INFO msg=これまでに地域内の評判によって78人、既存ユーザーの招待経由で146人が新規登録しました
+time=15:29:55.064 level=INFO msg=これまでに低評価なライドによって90人が利用をやめました
+time=15:29:55.064 level=INFO msg=67.9%のライドは椅子がマッチされるまでの時間、77.2%のライドはマッチされた椅子が乗車地点までに掛かる時間、43.5%のライドは椅子の実移動時間に不満がありました
+time=15:29:55.141 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子のめぐりや 増加数=2
+time=15:29:55.975 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWSHPC2KK5NKKQWHQG8A7M, got: 238, want: 235)"
+time=15:29:55.978 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWSCEDA25GCV7T6P3VP6Q6, got: 614, want: 609)"
+time=15:29:55.979 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWRKGRYEGF1PR6M76275BT, got: 1477, want: 1475)"
+time=15:29:56.000 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWSKH3Q3CYWSBQ4TJK2564, got: 285, want: 282)"
+time=15:29:56.000 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWRKHR678G323XNQ6RGFYX, got: 1649, want: 1647)"
+time=15:29:56.850 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=座心工房 増加数=1
+time=15:29:56.865 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ReSit 増加数=2
+time=15:29:56.869 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=CityRide 増加数=1
+time=15:29:56.890 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=暮らしの椅子研究所 増加数=2
+time=15:29:57.820 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWSQ2TA5H03T2GEX16D47G, got: 165, want: 162)"
+time=15:29:57.822 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWS8XTWGEE6AH6D45DFZMX, got: 1409, want: 1404)"
+time=15:29:57.824 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWRS2S95NZ3CEQ4AVZG0QC, got: 1469, want: 1467)"
+time=15:29:57.824 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWRKFWW6YHBAQK0CT7KQMR, got: 1392, want: 1390)"
+time=15:29:57.824 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWSHPHNSCAVSQW1335J11Z, got: 372, want: 369)"
+time=15:29:58.697 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=暮らしの椅子研究所 増加数=3
+time=15:29:58.704 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=CityRide 増加数=2
+time=15:29:58.712 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子のめぐりや 増加数=1
+time=15:29:58.760 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=座心工房 増加数=2
+time=15:29:59.594 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWS8XB60FDPVFQYN2MET5Y, got: 1149, want: 1144)"
+time=15:29:59.605 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWS8XTWGEE6AH6D45DFZMX, got: 1519, want: 1514)"
+time=15:29:59.607 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWRS2YZQWEMAP09BYTZGXS, got: 3341, want: 3336)"
+time=15:29:59.616 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWRYBTJ0YT783T59GF9K7H, got: 2531, want: 2526)"
+time=15:29:59.619 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWSPZET7N8MV9RWPRAHABD, got: 150, want: 148)"
+time=15:30:00.448 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ReSit 増加数=3
+time=15:30:00.452 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子のめぐりや 増加数=2
+time=15:30:00.464 level=INFO msg=これまでに地域内の評判によって90人、既存ユーザーの招待経由で166人が新規登録しました
+time=15:30:00.464 level=INFO msg=これまでに低評価なライドによって112人が利用をやめました
+time=15:30:00.464 level=INFO msg=56.0%のライドは椅子がマッチされるまでの時間、73.6%のライドはマッチされた椅子が乗車地点までに掛かる時間、53.1%のライドは椅子の実移動時間に不満がありました
+time=15:30:00.579 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=座心工房 増加数=1
+time=15:30:00.619 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=CityRide 増加数=3
+time=15:30:00.655 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=暮らしの椅子研究所 増加数=2
+time=15:30:01.378 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWSFYRKX0QJ3MBYBR2MEMW, got: 422, want: 420)"
+time=15:30:01.381 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWSCFE47TKVW025M3M3CNG, got: 701, want: 698)"
+time=15:30:01.382 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWS5CS17WPJZDV12WXV4DC, got: 2233, want: 2226)"
+time=15:30:01.386 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWRKGWDJKJJSBX4T0TBVW2, got: 1710, want: 1708)"
+time=15:30:01.388 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWS75QT91H2W0E7DVZ9SN0, got: 946, want: 943)"
+time=15:30:02.243 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ReSit 増加数=2
+time=15:30:02.255 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子のめぐりや 増加数=3
+time=15:30:02.256 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=CityRide 増加数=3
+time=15:30:02.256 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=暮らしの椅子研究所 増加数=3
+time=15:30:02.260 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=座心工房 増加数=3
+time=15:30:03.177 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWS3MM3FT4SC9MKN4313YQ, got: 1893, want: 1888)"
+time=15:30:03.183 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWS5CR9XR1RAD2E5FE0NY3, got: 1897, want: 1890)"
+time=15:30:03.183 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWSHPDS68PXJCCPZ50QJSC, got: 440, want: 438)"
+time=15:30:03.185 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWRS2S95NZ3CEQ4CNR63MJ, got: 1551, want: 1549)"
+time=15:30:03.185 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWSFZ50T8S89F728Q7P2J2, got: 831, want: 826)"
+time=15:30:04.064 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ReSit 増加数=1
+time=15:30:04.068 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=暮らしの椅子研究所 増加数=2
+time=15:30:04.079 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子のめぐりや 増加数=2
+time=15:30:04.082 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=座心工房 増加数=3
+time=15:30:04.144 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=CityRide 増加数=2
+time=15:30:04.975 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWS75CJGS4RYMK1YCHYQ2C, got: 2012, want: 2007)"
+time=15:30:04.977 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWS04279CYWYA63WJP3G7B, got: 2551, want: 2546)"
+time=15:30:04.977 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWS3MBTHKPVFYCP4HKAJ89, got: 1959, want: 1954)"
+time=15:30:04.987 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWSWBDTDK2A4VBS9WMPF7A, got: 32, want: 29)"
+time=15:30:04.988 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWSE5XGAF42R5JQZMKHW4H, got: 1003, want: 996)"
+time=15:30:05.864 level=INFO msg=これまでに地域内の評判によって102人、既存ユーザーの招待経由で196人が新規登録しました
+time=15:30:05.864 level=INFO msg=これまでに低評価なライドによって132人が利用をやめました
+time=15:30:05.864 level=INFO msg=44.0%のライドは椅子がマッチされるまでの時間、67.1%のライドはマッチされた椅子が乗車地点までに掛かる時間、61.6%のライドは椅子の実移動時間に不満がありました
+time=15:30:05.889 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ReSit 増加数=3
+time=15:30:05.890 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=座心工房 増加数=2
+time=15:30:05.926 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子のめぐりや 増加数=1
+time=15:30:05.938 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=CityRide 増加数=3
+time=15:30:06.005 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=暮らしの椅子研究所 増加数=4
+time=15:30:06.776 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWSTFTD73VPRJZJSYX4Q51, got: 87, want: 85)"
+time=15:30:06.776 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWSANKZ71PTVX15C5PX65C, got: 740, want: 738)"
+time=15:30:06.782 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWSZSQANV8NW7G9HRSG1E6, got: 136, want: 129)"
+time=15:30:06.783 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWSFYTWQ7GTHYTPJ0KPY4Z, got: 1195, want: 1194)"
+time=15:30:06.784 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWS3MBTHKPVFYCP4HKAJ89, got: 1992, want: 1989)"
+time=15:30:07.651 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ReSit 増加数=2
+time=15:30:07.676 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子のめぐりや 増加数=3
+time=15:30:07.678 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=暮らしの椅子研究所 増加数=1
+time=15:30:07.679 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=CityRide 増加数=3
+time=15:30:07.685 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=座心工房 増加数=3
+time=15:30:08.575 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWSQ2TA5H03T2GEX16D47G, got: 616, want: 613)"
+time=15:30:08.575 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWRKK62WSAH5TA57WS6M96, got: 1608, want: 1606)"
+time=15:30:08.575 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWSZXE6NE8XM96T54YQGE0, got: 63, want: 60)"
+time=15:30:08.576 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWRKGNXZD8R6D24BKDEDZX, got: 2106, want: 2104)"
+time=15:30:09.446 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ReSit 増加数=2
+time=15:30:09.500 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子のめぐりや 増加数=2
+time=15:30:09.513 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=暮らしの椅子研究所 増加数=3
+time=15:30:09.557 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=CityRide 増加数=2
+time=15:30:09.611 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=座心工房 増加数=2
+time=15:30:10.378 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWS757F0GH0H5PPDA04X92, got: 2055, want: 2048)"
+time=15:30:10.386 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWSANCX46FQ50WDACZ0M5B, got: 1465, want: 1458)"
+time=15:30:10.387 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWS03RACH3JFB7JDXG4D33, got: 1413, want: 1411)"
+time=15:30:10.388 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWRYBNHT0TFWC6XKD80S3P, got: 4160, want: 4153)"
+time=15:30:10.392 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWSANGP022E85MJMSCXT52, got: 761, want: 759)"
+time=15:30:11.247 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ReSit 増加数=1
+time=15:30:11.263 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=座心工房 増加数=3
+time=15:30:11.264 level=INFO msg=これまでに地域内の評判によって114人、既存ユーザーの招待経由で238人が新規登録しました
+time=15:30:11.264 level=INFO msg=これまでに低評価なライドによって143人が利用をやめました
+time=15:30:11.264 level=INFO msg=35.8%のライドは椅子がマッチされるまでの時間、58.5%のライドはマッチされた椅子が乗車地点までに掛かる時間、65.7%のライドは椅子の実移動時間に不満がありました
+time=15:30:11.323 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=暮らしの椅子研究所 増加数=2
+time=15:30:11.326 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=CityRide 増加数=3
+time=15:30:11.340 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子のめぐりや 増加数=2
+time=15:30:12.211 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWT1JQW3Z993JZSZPTJRQG, got: 151, want: 148)"
+time=15:30:12.213 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWSKG5SR7PJ9CYQ4GCJYZ5, got: 471, want: 468)"
+time=15:30:12.213 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWSFZ50T8S89F728Q7P2J2, got: 991, want: 986)"
+time=15:30:12.222 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWSW9SW9H9NR7KK8FJV2EN, got: 268, want: 263)"
+time=15:30:12.233 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWS03WCZBCZZC4NDQR28GJ, got: 1557, want: 1554)"
+time=15:30:13.080 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子のめぐりや 増加数=3
+time=15:30:13.117 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=座心工房 増加数=2
+time=15:30:13.133 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ReSit 増加数=3
+time=15:30:13.138 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=暮らしの椅子研究所 増加数=3
+time=15:30:13.143 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=CityRide 増加数=2
+time=15:30:13.976 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWSRT6RX3V1RFPPAHEMP0T, got: 427, want: 420)"
+time=15:30:13.980 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWS1W6DN20C4HXC3E31PYK, got: 1659, want: 1656)"
+time=15:30:13.982 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWS3MDB45BH43BPK9X7ZXT, got: 1485, want: 1482)"
+time=15:30:13.985 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWS5CS17WPJZDV12WXV4DC, got: 2499, want: 2492)"
+time=15:30:14.851 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=暮らしの椅子研究所 増加数=1
+time=15:30:14.852 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子のめぐりや 増加数=1
+time=15:30:14.871 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=座心工房 増加数=2
+time=15:30:14.874 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ReSit 増加数=2
+time=15:30:14.878 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=CityRide 増加数=2
+time=15:30:15.777 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWS04279CYWYA63WJP3G7B, got: 2758, want: 2753)"
+time=15:30:15.779 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWSCFARJ6R60HYGNQT68V9, got: 744, want: 741)"
+time=15:30:15.780 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWT53CNGR28TBBG4MQ4SC6, got: 148, want: 143)"
+time=15:30:15.780 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWT8JGT9MX7GT57XF3K3A8, got: 25, want: 22)"
+time=15:30:15.800 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceが一致しないデータがあります (id: 01M6AWT56GHDJ2KETZYDZE88MD, got: 61, want: 56)"
+time=15:30:16.664 level=INFO msg=これまでに地域内の評判によって126人、既存ユーザーの招待経由で279人が新規登録しました
+time=15:30:16.664 level=INFO msg=これまでに低評価なライドによって159人が利用をやめました
+time=15:30:16.664 level=INFO msg=34.5%のライドは椅子がマッチされるまでの時間、52.4%のライドはマッチされた椅子が乗車地点までに掛かる時間、67.9%のライドは椅子の実移動時間に不満がありました
+time=15:30:16.677 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ReSit 増加数=2
+time=15:30:16.687 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=椅子のめぐりや 増加数=2
+time=15:30:16.694 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=座心工房 増加数=2
+time=15:30:16.762 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=暮らしの椅子研究所 増加数=2
+time=15:30:16.790 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=CityRide 増加数=3
+time=15:30:22.264 level=INFO msg=最終地域情報 名前=チェアタウン ユーザー登録数=259 アクティブユーザー数=169
+time=15:30:22.264 level=INFO msg=最終地域情報 名前=コシカケシティ ユーザー登録数=164 アクティブユーザー数=91
+time=15:30:22.264 level=INFO msg=最終オーナー情報 名前=CityRide 売上=1759500 椅子数=65
+time=15:30:22.265 level=INFO msg=最終オーナー情報 名前=座心工房 売上=1481200 椅子数=58
+time=15:30:22.265 level=INFO msg=最終オーナー情報 名前=ReSit 売上=1115900 椅子数=49
+time=15:30:22.265 level=INFO msg=最終オーナー情報 名前=暮らしの椅子研究所 売上=1427000 椅子数=56
+time=15:30:22.265 level=INFO msg=最終オーナー情報 名前=椅子のめぐりや 売上=1050900 椅子数=46
+time=15:30:22.265 level=INFO msg=36.0%のライドは椅子がマッチされるまでの時間、51.3%のライドはマッチされた椅子が乗車地点までに掛かる時間、68.2%のライドは椅子の実移動時間に不満がありました
+time=15:30:22.265 level=INFO msg=結果 pass=true スコア=85863 種別エラー数=map[26:132]
+time=15:30:22.265 level=INFO msg=負荷走行が終了しました

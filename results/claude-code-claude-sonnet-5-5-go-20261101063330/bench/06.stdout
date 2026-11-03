@@ -1,0 +1,180 @@
+time=16:02:12.609 level=INFO msg=負荷走行を開始します
+time=16:02:17.868 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=1
+time=16:02:17.868 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=1
+time=16:02:17.868 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Timeless Seats" 増加数=1
+time=16:02:17.868 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Sit Second Life" 増加数=1
+time=16:02:19.667 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=2
+time=16:02:19.667 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=1
+time=16:02:19.667 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Timeless Seats" 増加数=2
+time=16:02:19.668 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Sit Second Life" 増加数=2
+time=16:02:19.670 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=GoEase 増加数=2
+time=16:02:19.695 level=INFO msg=これまでに地域内の評判によって8人、既存ユーザーの招待経由で41人が新規登録しました
+time=16:02:19.695 level=INFO msg=0.0%のライドは椅子がマッチされるまでの時間、61.9%のライドはマッチされた椅子が乗車地点までに掛かる時間、0.0%のライドは椅子の実移動時間に不満がありました
+time=16:02:21.468 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Timeless Seats" 増加数=1
+time=16:02:21.469 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Sit Second Life" 増加数=2
+time=16:02:21.471 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=2
+time=16:02:21.473 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=GoEase 増加数=2
+time=16:02:21.479 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=2
+time=16:02:23.280 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Timeless Seats" 増加数=2
+time=16:02:23.281 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=GoEase 増加数=2
+time=16:02:23.285 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=1
+time=16:02:23.297 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Sit Second Life" 増加数=3
+time=16:02:25.069 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Sit Second Life" 増加数=3
+time=16:02:25.072 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=GoEase 増加数=3
+time=16:02:25.078 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Timeless Seats" 増加数=2
+time=16:02:25.081 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=2
+time=16:02:25.095 level=INFO msg=これまでに地域内の評判によって20人、既存ユーザーの招待経由で120人が新規登録しました
+time=16:02:25.095 level=INFO msg=0.0%のライドは椅子がマッチされるまでの時間、58.1%のライドはマッチされた椅子が乗車地点までに掛かる時間、0.4%のライドは椅子の実移動時間に不満がありました
+time=16:02:25.095 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=1
+time=16:02:26.895 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=GoEase 増加数=3
+time=16:02:26.897 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=4
+time=16:02:26.897 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=3
+time=16:02:26.897 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Sit Second Life" 増加数=4
+time=16:02:26.899 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Timeless Seats" 増加数=3
+time=16:02:28.669 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=2
+time=16:02:28.675 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Timeless Seats" 増加数=3
+time=16:02:28.698 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Sit Second Life" 増加数=4
+time=16:02:28.704 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=GoEase 増加数=3
+time=16:02:28.718 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=3
+time=16:02:30.468 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Sit Second Life" 増加数=5
+time=16:02:30.476 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=5
+time=16:02:30.479 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=4
+time=16:02:30.482 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=GoEase 増加数=5
+time=16:02:30.482 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Timeless Seats" 増加数=4
+time=16:02:30.495 level=INFO msg=これまでに地域内の評判によって32人、既存ユーザーの招待経由で257人が新規登録しました
+time=16:02:30.495 level=INFO msg=これまでに低評価なライドによって1人が利用をやめました
+time=16:02:30.495 level=INFO msg=0.0%のライドは椅子がマッチされるまでの時間、53.7%のライドはマッチされた椅子が乗車地点までに掛かる時間、4.0%のライドは椅子の実移動時間に不満がありました
+time=16:02:32.330 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=GoEase 増加数=4
+time=16:02:32.333 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Sit Second Life" 増加数=6
+time=16:02:32.344 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=4
+time=16:02:32.344 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=5
+time=16:02:32.344 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Timeless Seats" 増加数=6
+time=16:02:34.167 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Timeless Seats" 増加数=3
+time=16:02:34.199 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Sit Second Life" 増加数=6
+time=16:02:34.200 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=5
+time=16:02:34.203 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=4
+time=16:02:34.205 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=GoEase 増加数=3
+time=16:02:36.014 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=5
+time=16:02:36.015 level=INFO msg=これまでに地域内の評判によって44人、既存ユーザーの招待経由で463人が新規登録しました
+time=16:02:36.015 level=INFO msg=これまでに低評価なライドによって5人が利用をやめました
+time=16:02:36.015 level=INFO msg=0.0%のライドは椅子がマッチされるまでの時間、44.9%のライドはマッチされた椅子が乗車地点までに掛かる時間、10.6%のライドは椅子の実移動時間に不満がありました
+time=16:02:36.017 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=4
+time=16:02:36.018 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=GoEase 増加数=5
+time=16:02:36.018 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Timeless Seats" 増加数=5
+time=16:02:36.031 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Sit Second Life" 増加数=5
+time=16:02:37.846 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=GoEase 増加数=6
+time=16:02:37.906 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=6
+time=16:02:37.949 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Timeless Seats" 増加数=6
+time=16:02:37.957 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=5
+time=16:02:37.960 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Sit Second Life" 増加数=6
+time=16:02:39.666 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=GoEase 増加数=2
+time=16:02:39.670 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Timeless Seats" 増加数=4
+time=16:02:39.672 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=3
+time=16:02:39.675 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=4
+time=16:02:39.690 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Sit Second Life" 増加数=5
+time=16:02:41.685 level=INFO msg=これまでに地域内の評判によって60人、既存ユーザーの招待経由で710人が新規登録しました
+time=16:02:41.685 level=INFO msg=これまでに低評価なライドによって19人が利用をやめました
+time=16:02:41.685 level=INFO msg=0.0%のライドは椅子がマッチされるまでの時間、39.3%のライドはマッチされた椅子が乗車地点までに掛かる時間、22.3%のライドは椅子の実移動時間に不満がありました
+time=16:02:41.685 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=GoEase 増加数=6
+time=16:02:41.690 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Timeless Seats" 増加数=2
+time=16:02:41.693 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=5
+time=16:02:41.720 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=3
+time=16:02:41.736 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Sit Second Life" 増加数=5
+time=16:02:43.738 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=GoEase 増加数=3
+time=16:02:43.739 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Timeless Seats" 増加数=3
+time=16:02:43.748 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Sit Second Life" 増加数=4
+time=16:02:43.749 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=3
+time=16:02:43.753 level=WARN msg="取得したオーナーの売り上げ情報が想定しているものと異なります (CODE=24): salesが大きいデータがあります (id: 01M6AYNP369C4ENNAJV2K8BXFK, got: 15100)"
+time=16:02:45.786 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Sit Second Life" 増加数=6
+time=16:02:45.794 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=4
+time=16:02:45.800 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=GoEase 増加数=5
+time=16:02:45.802 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Timeless Seats" 増加数=5
+time=16:02:45.806 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=9
+time=16:02:47.230 level=WARN msg="ユーザー登録に失敗しました (CODE=17): POST /api/app/usersへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:201, actual:500)"
+time=16:02:47.896 level=INFO msg=これまでに地域内の評判によって72人、既存ユーザーの招待経由で938人が新規登録しました
+time=16:02:47.896 level=INFO msg=これまでに低評価なライドによって51人が利用をやめました
+time=16:02:47.896 level=INFO msg=0.0%のライドは椅子がマッチされるまでの時間、38.2%のライドはマッチされた椅子が乗車地点までに掛かる時間、30.5%のライドは椅子の実移動時間に不満がありました
+time=16:02:47.934 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Sit Second Life" 増加数=5
+time=16:02:47.962 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=5
+time=16:02:47.964 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=GoEase 増加数=5
+time=16:02:47.964 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Timeless Seats" 増加数=2
+time=16:02:47.965 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=4
+time=16:02:49.831 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Sit Second Life" 増加数=6
+time=16:02:49.927 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=GoEase 増加数=5
+time=16:02:49.930 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=4
+time=16:02:49.930 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Timeless Seats" 増加数=5
+time=16:02:49.931 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=5
+time=16:02:51.871 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Timeless Seats" 増加数=5
+time=16:02:51.894 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Sit Second Life" 増加数=7
+time=16:02:51.901 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=5
+time=16:02:51.909 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=5
+time=16:02:51.911 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=GoEase 増加数=6
+time=16:02:54.037 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=GoEase 増加数=6
+time=16:02:54.038 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Timeless Seats" 増加数=4
+time=16:02:54.039 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=7
+time=16:02:54.040 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Sit Second Life" 増加数=8
+time=16:02:54.046 level=INFO msg=これまでに地域内の評判によって84人、既存ユーザーの招待経由で1177人が新規登録しました
+time=16:02:54.046 level=INFO msg=これまでに低評価なライドによって121人が利用をやめました
+time=16:02:54.046 level=INFO msg=0.0%のライドは椅子がマッチされるまでの時間、37.4%のライドはマッチされた椅子が乗車地点までに掛かる時間、39.6%のライドは椅子の実移動時間に不満がありました
+time=16:02:54.123 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=4
+time=16:02:55.942 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Sit Second Life" 増加数=5
+time=16:02:55.943 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=4
+time=16:02:55.944 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=GoEase 増加数=6
+time=16:02:55.945 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=5
+time=16:02:55.977 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Timeless Seats" 増加数=5
+time=16:02:57.824 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=GoEase 増加数=6
+time=16:02:57.824 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Timeless Seats" 増加数=4
+time=16:02:57.825 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=6
+time=16:02:57.871 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Sit Second Life" 増加数=6
+time=16:02:57.880 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=4
+time=16:02:59.754 level=INFO msg=これまでに地域内の評判によって92人、既存ユーザーの招待経由で1404人が新規登録しました
+time=16:02:59.754 level=INFO msg=これまでに低評価なライドによって196人が利用をやめました
+time=16:02:59.754 level=INFO msg=0.0%のライドは椅子がマッチされるまでの時間、37.0%のライドはマッチされた椅子が乗車地点までに掛かる時間、45.8%のライドは椅子の実移動時間に不満がありました
+time=16:02:59.856 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=GoEase 増加数=7
+time=16:02:59.860 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Timeless Seats" 増加数=6
+time=16:02:59.861 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=5
+time=16:02:59.864 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Sit Second Life" 増加数=9
+time=16:02:59.864 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=4
+time=16:03:01.578 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=GoEase 増加数=7
+time=16:03:01.580 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Timeless Seats" 増加数=3
+time=16:03:01.581 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=6
+time=16:03:01.584 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=4
+time=16:03:03.749 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=GoEase 増加数=7
+time=16:03:03.751 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Sit Second Life" 増加数=14
+time=16:03:03.764 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=6
+time=16:03:03.765 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Timeless Seats" 増加数=6
+time=16:03:03.767 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=4
+time=16:03:05.535 level=INFO msg=これまでに地域内の評判によって104人、既存ユーザーの招待経由で1623人が新規登録しました
+time=16:03:05.535 level=INFO msg=これまでに低評価なライドによって251人が利用をやめました
+time=16:03:05.535 level=INFO msg=0.0%のライドは椅子がマッチされるまでの時間、37.2%のライドはマッチされた椅子が乗車地点までに掛かる時間、50.4%のライドは椅子の実移動時間に不満がありました
+time=16:03:05.544 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=4
+time=16:03:05.552 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Timeless Seats" 増加数=3
+time=16:03:05.553 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=4
+time=16:03:05.583 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=GoEase 増加数=5
+time=16:03:07.674 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=GoEase 増加数=7
+time=16:03:07.681 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Timeless Seats" 増加数=5
+time=16:03:07.682 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=6
+time=16:03:07.685 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=4
+time=16:03:07.687 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Sit Second Life" 増加数=12
+time=16:03:09.544 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Timeless Seats" 増加数=4
+time=16:03:09.558 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=GoEase 増加数=6
+time=16:03:09.560 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=7
+time=16:03:09.562 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=PulseRide 増加数=3
+time=16:03:11.325 level=INFO msg=これまでに地域内の評判によって116人、既存ユーザーの招待経由で1776人が新規登録しました
+time=16:03:11.325 level=INFO msg=これまでに低評価なライドによって308人が利用をやめました
+time=16:03:11.325 level=INFO msg=0.0%のライドは椅子がマッチされるまでの時間、36.0%のライドはマッチされた椅子が乗車地点までに掛かる時間、53.9%のライドは椅子の実移動時間に不満がありました
+time=16:03:11.411 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Timeless Seats" 増加数=4
+time=16:03:11.412 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=GoEase 増加数=6
+time=16:03:11.414 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="LuxeLine Taxi" 増加数=5
+time=16:03:11.415 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Sit Second Life" 増加数=14
+time=16:03:12.953 level=WARN msg="ユーザー登録に失敗しました (CODE=17): POST /api/app/usersへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:201, actual:500)"
+time=16:03:19.295 level=INFO msg=最終地域情報 名前=チェアタウン ユーザー登録数=1528 アクティブユーザー数=1311
+time=16:03:19.295 level=INFO msg=最終地域情報 名前=コシカケシティ ユーザー登録数=667 アクティブユーザー数=551
+time=16:03:19.295 level=INFO msg=最終オーナー情報 名前=GoEase 売上=5259000 椅子数=137
+time=16:03:19.295 level=INFO msg=最終オーナー情報 名前=PulseRide 売上=3826500 椅子数=104
+time=16:03:19.295 level=INFO msg=最終オーナー情報 名前="Sit Second Life" 売上=6107800 椅子数=157
+time=16:03:19.295 level=INFO msg=最終オーナー情報 名前="LuxeLine Taxi" 売上=4851800 椅子数=127
+time=16:03:19.295 level=INFO msg=最終オーナー情報 名前="Timeless Seats" 売上=3952100 椅子数=112
+time=16:03:19.295 level=INFO msg=0.1%のライドは椅子がマッチされるまでの時間、35.3%のライドはマッチされた椅子が乗車地点までに掛かる時間、56.2%のライドは椅子の実移動時間に不満がありました
+time=16:03:19.296 level=INFO msg=結果 pass=true スコア=284013 種別エラー数="map[17:2 24:1]"
+time=16:03:19.296 level=INFO msg=負荷走行が終了しました

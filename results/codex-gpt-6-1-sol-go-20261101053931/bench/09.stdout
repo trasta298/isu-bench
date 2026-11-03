@@ -1,0 +1,241 @@
+time=14:53:41.026 level=INFO msg=負荷走行を開始します
+time=14:53:47.204 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Sit Second Life" 増加数=2
+time=14:53:47.206 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Artisan Seats" 増加数=1
+time=14:53:47.209 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=再座堂 増加数=1
+time=14:53:47.210 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Orbit Taxi" 増加数=3
+time=14:53:49.007 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=再座堂 増加数=2
+time=14:53:49.008 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Orbit Taxi" 増加数=1
+time=14:53:49.008 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ひまわり交通 増加数=2
+time=14:53:49.012 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Sit Second Life" 増加数=2
+time=14:53:49.013 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Artisan Seats" 増加数=1
+time=14:53:49.032 level=INFO msg=これまでに地域内の評判によって7人、既存ユーザーの招待経由で54人が新規登録しました
+time=14:53:49.032 level=INFO msg=0.0%のライドは椅子がマッチされるまでの時間、71.4%のライドはマッチされた椅子が乗車地点までに掛かる時間、0.9%のライドは椅子の実移動時間に不満がありました
+time=14:53:50.808 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Artisan Seats" 増加数=2
+time=14:53:50.815 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=再座堂 増加数=3
+time=14:53:50.815 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ひまわり交通 増加数=3
+time=14:53:50.823 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Sit Second Life" 増加数=4
+time=14:53:50.823 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Orbit Taxi" 増加数=4
+time=14:53:52.609 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Artisan Seats" 増加数=3
+time=14:53:52.610 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Sit Second Life" 増加数=4
+time=14:53:52.615 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=再座堂 増加数=4
+time=14:53:52.615 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ひまわり交通 増加数=4
+time=14:53:52.616 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Orbit Taxi" 増加数=4
+time=14:53:54.412 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Sit Second Life" 増加数=7
+time=14:53:54.418 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Orbit Taxi" 増加数=6
+time=14:53:54.418 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ひまわり交通 増加数=5
+time=14:53:54.419 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Artisan Seats" 増加数=4
+time=14:53:54.419 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=再座堂 増加数=5
+time=14:53:54.433 level=INFO msg=これまでに地域内の評判によって19人、既存ユーザーの招待経由で230人が新規登録しました
+time=14:53:54.433 level=INFO msg=0.0%のライドは椅子がマッチされるまでの時間、42.9%のライドはマッチされた椅子が乗車地点までに掛かる時間、0.4%のライドは椅子の実移動時間に不満がありました
+time=14:53:56.216 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Sit Second Life" 増加数=5
+time=14:53:56.217 level=WARN msg="ユーザー登録に失敗しました (CODE=17): POST /api/app/usersへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:201, actual:500)"
+time=14:53:56.217 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ひまわり交通 増加数=5
+time=14:53:56.217 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Orbit Taxi" 増加数=5
+time=14:53:56.217 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=再座堂 増加数=5
+time=14:53:56.218 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Artisan Seats" 増加数=5
+time=14:53:58.013 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ひまわり交通 増加数=6
+time=14:53:58.013 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Orbit Taxi" 増加数=7
+time=14:53:58.021 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=再座堂 増加数=6
+time=14:53:58.026 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Sit Second Life" 増加数=7
+time=14:53:58.026 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Artisan Seats" 増加数=4
+time=14:53:59.821 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ひまわり交通 増加数=5
+time=14:53:59.823 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Orbit Taxi" 増加数=5
+time=14:53:59.823 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=再座堂 増加数=5
+time=14:53:59.833 level=INFO msg=これまでに地域内の評判によって32人、既存ユーザーの招待経由で517人が新規登録しました
+time=14:53:59.833 level=INFO msg=これまでに低評価なライドによって1人が利用をやめました
+time=14:53:59.833 level=INFO msg=2.7%のライドは椅子がマッチされるまでの時間、22.8%のライドはマッチされた椅子が乗車地点までに掛かる時間、5.0%のライドは椅子の実移動時間に不満がありました
+time=14:53:59.916 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Sit Second Life" 増加数=6
+time=14:53:59.916 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Artisan Seats" 増加数=7
+time=14:54:00.839 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATQFZZHA1A0YQAT8N2XFMWの椅子は既にライド中です"
+time=14:54:00.840 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATQFZZHA1A0YQAT8N2XFMWの椅子は既にライド中です"
+time=14:54:01.620 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Orbit Taxi" 増加数=4
+time=14:54:01.620 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ひまわり交通 増加数=3
+time=14:54:01.620 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=再座堂 増加数=4
+time=14:54:01.622 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Sit Second Life" 増加数=5
+time=14:54:01.622 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Artisan Seats" 増加数=3
+time=14:54:03.424 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Sit Second Life" 増加数=6
+time=14:54:03.424 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Artisan Seats" 増加数=6
+time=14:54:03.445 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ひまわり交通 増加数=6
+time=14:54:03.445 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Orbit Taxi" 増加数=4
+time=14:54:03.448 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=再座堂 増加数=6
+time=14:54:03.586 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATQTYH272SZAWH2HG8Z76Pの椅子は既にライド中です"
+time=14:54:05.220 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=再座堂 増加数=6
+time=14:54:05.221 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ひまわり交通 増加数=5
+time=14:54:05.223 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Orbit Taxi" 増加数=4
+time=14:54:05.224 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Artisan Seats" 増加数=3
+time=14:54:05.224 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Sit Second Life" 増加数=5
+time=14:54:05.232 level=INFO msg=これまでに地域内の評判によって45人、既存ユーザーの招待経由で743人が新規登録しました
+time=14:54:05.232 level=INFO msg=これまでに低評価なライドによって41人が利用をやめました
+time=14:54:05.232 level=INFO msg=21.9%のライドは椅子がマッチされるまでの時間、26.2%のライドはマッチされた椅子が乗車地点までに掛かる時間、13.0%のライドは椅子の実移動時間に不満がありました
+time=14:54:06.069 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATQFX5Q4YG8AZG2K3YR28Xの椅子は既にライド中です"
+time=14:54:06.069 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATQFX5Q4YG8AZG2K3YR28Xの椅子は既にライド中です"
+time=14:54:06.079 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATQFX5Q4YG8AZG2K3YR28Xの椅子は既にライド中です"
+time=14:54:06.084 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATQFX5Q4YG8AZG2K3YR28Xの椅子は既にライド中です"
+time=14:54:06.086 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATQFX5Q4YG8AZG2K3YR28Xの椅子は既にライド中です"
+time=14:54:06.808 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATQYCNB8WPXDRFW0V7XJV7の椅子は既にライド中です"
+time=14:54:07.053 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Sit Second Life" 増加数=4
+time=14:54:07.053 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Artisan Seats" 増加数=2
+time=14:54:07.054 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Orbit Taxi" 増加数=4
+time=14:54:07.060 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=再座堂 増加数=4
+time=14:54:07.061 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ひまわり交通 増加数=4
+time=14:54:08.136 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATR04H9CX0SJ37WERA03KEの椅子は既にライド中です"
+time=14:54:08.848 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ひまわり交通 増加数=4
+time=14:54:08.848 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=再座堂 増加数=3
+time=14:54:08.849 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Orbit Taxi" 増加数=3
+time=14:54:08.855 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Artisan Seats" 増加数=5
+time=14:54:08.857 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Sit Second Life" 増加数=5
+time=14:54:10.654 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=再座堂 増加数=4
+time=14:54:10.659 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ひまわり交通 増加数=2
+time=14:54:10.661 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Sit Second Life" 増加数=4
+time=14:54:10.661 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Artisan Seats" 増加数=2
+time=14:54:10.662 level=INFO msg=これまでに地域内の評判によって57人、既存ユーザーの招待経由で829人が新規登録しました
+time=14:54:10.662 level=INFO msg=これまでに低評価なライドによって121人が利用をやめました
+time=14:54:10.662 level=INFO msg=39.8%のライドは椅子がマッチされるまでの時間、34.0%のライドはマッチされた椅子が乗車地点までに掛かる時間、20.1%のライドは椅子の実移動時間に不満がありました
+time=14:54:10.675 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Orbit Taxi" 増加数=4
+time=14:54:11.061 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATQNESJ01PN4NXHDD5JDHTの椅子は既にライド中です"
+time=14:54:11.915 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATQRZCZ8FH0SVJ5BQQZSEPの椅子は既にライド中です"
+time=14:54:12.464 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=再座堂 増加数=4
+time=14:54:12.466 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Sit Second Life" 増加数=6
+time=14:54:12.466 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Artisan Seats" 増加数=3
+time=14:54:12.467 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ひまわり交通 増加数=3
+time=14:54:12.467 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Orbit Taxi" 増加数=2
+time=14:54:12.912 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATQS12CCHC5B38P0R9FZZ4の椅子は既にライド中です"
+time=14:54:14.162 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATR3PSQWMMNN6990AB9QM1の椅子は既にライド中です"
+time=14:54:14.255 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=再座堂 増加数=2
+time=14:54:14.257 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ひまわり交通 増加数=3
+time=14:54:14.257 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Orbit Taxi" 増加数=4
+time=14:54:14.258 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Sit Second Life" 増加数=3
+time=14:54:14.258 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Artisan Seats" 増加数=3
+time=14:54:14.920 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATR0AV78MBC6R7SSNK210Yの椅子は既にライド中です"
+time=14:54:15.878 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATQS092R3RSNX996WQCF00の椅子は既にライド中です"
+time=14:54:16.055 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Orbit Taxi" 増加数=3
+time=14:54:16.055 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ひまわり交通 増加数=3
+time=14:54:16.055 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=再座堂 増加数=5
+time=14:54:16.057 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Sit Second Life" 増加数=7
+time=14:54:16.057 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Artisan Seats" 増加数=4
+time=14:54:16.062 level=INFO msg=これまでに地域内の評判によって69人、既存ユーザーの招待経由で863人が新規登録しました
+time=14:54:16.062 level=INFO msg=これまでに低評価なライドによって218人が利用をやめました
+time=14:54:16.062 level=INFO msg=52.8%のライドは椅子がマッチされるまでの時間、41.7%のライドはマッチされた椅子が乗車地点までに掛かる時間、28.3%のライドは椅子の実移動時間に不満がありました
+time=14:54:16.312 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATQRZG4Q01SYW6Q8BM0474の椅子は既にライド中です"
+time=14:54:17.377 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATR2E9QZQQ9SR7KA0WAH66の椅子は既にライド中です"
+time=14:54:17.849 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ひまわり交通 増加数=5
+time=14:54:17.849 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=再座堂 増加数=4
+time=14:54:17.851 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Orbit Taxi" 増加数=4
+time=14:54:17.858 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Sit Second Life" 増加数=4
+time=14:54:17.860 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Artisan Seats" 増加数=3
+time=14:54:17.902 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATQFZBC20EEK9G3KKH10XQの椅子は既にライド中です"
+time=14:54:19.653 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Artisan Seats" 増加数=4
+time=14:54:19.657 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Sit Second Life" 増加数=6
+time=14:54:19.661 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ひまわり交通 増加数=3
+time=14:54:19.668 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=再座堂 増加数=4
+time=14:54:19.668 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Orbit Taxi" 増加数=5
+time=14:54:21.393 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATRCDT41VT9AMY7XVGS013の椅子は既にライド中です"
+time=14:54:21.448 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Artisan Seats" 増加数=4
+time=14:54:21.456 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Sit Second Life" 増加数=6
+time=14:54:21.462 level=INFO msg=これまでに地域内の評判によって81人、既存ユーザーの招待経由で899人が新規登録しました
+time=14:54:21.462 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Orbit Taxi" 増加数=4
+time=14:54:21.462 level=INFO msg=これまでに低評価なライドによって310人が利用をやめました
+time=14:54:21.462 level=INFO msg=62.3%のライドは椅子がマッチされるまでの時間、46.9%のライドはマッチされた椅子が乗車地点までに掛かる時間、36.0%のライドは椅子の実移動時間に不満がありました
+time=14:54:21.462 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ひまわり交通 増加数=5
+time=14:54:21.465 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=再座堂 増加数=5
+time=14:54:21.486 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATQKPDAW38S8Y8BXJAE807の椅子は既にライド中です"
+time=14:54:22.657 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATR8VRH8K9ZD43MCHYXG04の椅子は既にライド中です"
+time=14:54:23.257 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ひまわり交通 増加数=3
+time=14:54:23.259 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Orbit Taxi" 増加数=4
+time=14:54:23.261 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=再座堂 増加数=4
+time=14:54:23.266 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Artisan Seats" 増加数=3
+time=14:54:23.266 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Sit Second Life" 増加数=4
+time=14:54:24.625 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATR2BSS2RD4BB74J9672GHの椅子は既にライド中です"
+time=14:54:25.047 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Sit Second Life" 増加数=7
+time=14:54:25.051 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Artisan Seats" 増加数=4
+time=14:54:25.061 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=再座堂 増加数=5
+time=14:54:25.061 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Orbit Taxi" 増加数=6
+time=14:54:25.061 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ひまわり交通 増加数=5
+time=14:54:26.854 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Artisan Seats" 増加数=5
+time=14:54:26.856 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=再座堂 増加数=5
+time=14:54:26.857 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Orbit Taxi" 増加数=4
+time=14:54:26.857 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ひまわり交通 増加数=6
+time=14:54:26.863 level=INFO msg=これまでに地域内の評判によって93人、既存ユーザーの招待経由で961人が新規登録しました
+time=14:54:26.863 level=INFO msg=これまでに低評価なライドによって393人が利用をやめました
+time=14:54:26.863 level=INFO msg=66.5%のライドは椅子がマッチされるまでの時間、47.6%のライドはマッチされた椅子が乗車地点までに掛かる時間、42.7%のライドは椅子の実移動時間に不満がありました
+time=14:54:27.176 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATR8YK66C736NEWD8BPVDCの椅子は既にライド中です"
+time=14:54:27.326 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATR02G5W2H0A43HBJQGV3Aの椅子は既にライド中です"
+time=14:54:27.688 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATR29CS13YKPGEA9H9PGXZの椅子は既にライド中です"
+time=14:54:28.625 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATR3P93CBJYE1JT2DT6RZNの椅子は既にライド中です"
+time=14:54:28.652 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ひまわり交通 増加数=5
+time=14:54:28.652 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Orbit Taxi" 増加数=7
+time=14:54:28.655 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Sit Second Life" 増加数=12
+time=14:54:28.657 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=再座堂 増加数=7
+time=14:54:28.658 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Artisan Seats" 増加数=5
+time=14:54:29.312 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATQQ7EXNC2X9MHMQ70EDXRの椅子は既にライド中です"
+time=14:54:29.537 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATQFXSK2W09V8FS34ZJ132の椅子は既にライド中です"
+time=14:54:29.538 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATQFXSK2W09V8FS34ZJ132の椅子は既にライド中です"
+time=14:54:30.126 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATR3J0WMXW9E9QKCQNTJCCの椅子は既にライド中です"
+time=14:54:30.245 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATRE5RX47PNKJ88K628T5Hの椅子は既にライド中です"
+time=14:54:30.262 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATR5C3C0212Q9P3PQVY91Vの椅子は既にライド中です"
+time=14:54:30.466 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Artisan Seats" 増加数=5
+time=14:54:31.349 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATRKQ5HEK5GJ4QVXSZHR8Tの椅子は既にライド中です"
+time=14:54:31.563 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATR79M46G1EQAAMA0CJYJMの椅子は既にライド中です"
+time=14:54:31.921 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATRV2R2GT7AR5TDR330DHRの椅子は既にライド中です"
+time=14:54:32.258 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ひまわり交通 増加数=11
+time=14:54:32.262 level=INFO msg=これまでに地域内の評判によって105人、既存ユーザーの招待経由で1168人が新規登録しました
+time=14:54:32.262 level=INFO msg=これまでに低評価なライドによって424人が利用をやめました
+time=14:54:32.262 level=INFO msg=61.7%のライドは椅子がマッチされるまでの時間、42.8%のライドはマッチされた椅子が乗車地点までに掛かる時間、46.1%のライドは椅子の実移動時間に不満がありました
+time=14:54:32.286 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=再座堂 増加数=12
+time=14:54:32.290 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Orbit Taxi" 増加数=13
+time=14:54:32.403 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATRN5FBKPF813QVETN5PMPの椅子は既にライド中です"
+time=14:54:32.827 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATRG70SCVFGYKTW3YQT5Q1の椅子は既にライド中です"
+time=14:54:33.007 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATR0XVQC11H1TRVB94VSYDの椅子は既にライド中です"
+time=14:54:33.563 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATRN67G30QEXS6HEJNA98Jの椅子は既にライド中です"
+time=14:54:33.674 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATRAPY6MHYXA0GXSDWY8CQの椅子は既にライド中です"
+time=14:54:33.869 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATRG0JHDNY4VM6QG7ZZ337の椅子は既にライド中です"
+time=14:54:34.080 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Sit Second Life" 増加数=21
+time=14:54:34.087 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Artisan Seats" 増加数=10
+time=14:54:34.189 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATRN63TSZ897S6884D7ZPXの椅子は既にライド中です"
+time=14:54:34.266 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATQTRE3GAXKCXCKVV5MQHKの椅子は既にライド中です"
+time=14:54:35.163 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATRXC5QWQKX3Z7P382ZTC1の椅子は既にライド中です"
+time=14:54:35.328 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATQYBWACBR50VBGMMAJC60の椅子は既にライド中です"
+time=14:54:35.329 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATQFYK1QXZBCGGA5YSTRTRの椅子は既にライド中です"
+time=14:54:35.451 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATQYF2BKSVZ3KZM9T5WG05の椅子は既にライド中です"
+time=14:54:35.518 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATRQ7R9MAFS18ZDDRQ1ZYTの椅子は既にライド中です"
+time=14:54:35.851 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATRHWGFRXVP2NCZWEV5MA5の椅子は既にライド中です"
+time=14:54:36.152 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATRYK338J7N0X40DBPEGX9の椅子は既にライド中です"
+time=14:54:36.152 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATRYK338J7N0X40DBPEGX9の椅子は既にライド中です"
+time=14:54:36.189 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATQYKQ695XC9FXMZ1PJF6Eの椅子は既にライド中です"
+time=14:54:36.392 level=WARN msg="ユーザー登録に失敗しました (CODE=17): POST /api/app/usersへのリクエストに対して、期待されたHTTPステータスコードが確認できませんでした (expected:201, actual:500)"
+time=14:54:36.470 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATRG1WP686F7KGJ6FJ1RTAの椅子は既にライド中です"
+time=14:54:36.665 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATRTJGE04CECQCETVKZH3Mの椅子は既にライド中です"
+time=14:54:37.412 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATRE4KEE4HN8279THYK4EXの椅子は既にライド中です"
+time=14:54:37.412 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATRE4KEE4HN8279THYK4EXの椅子は既にライド中です"
+time=14:54:37.659 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=ひまわり交通 増加数=17
+time=14:54:37.662 level=INFO msg=これまでに地域内の評判によって117人、既存ユーザーの招待経由で1414人が新規登録しました
+time=14:54:37.662 level=INFO msg=これまでに低評価なライドによって438人が利用をやめました
+time=14:54:37.662 level=INFO msg=56.4%のライドは椅子がマッチされるまでの時間、38.1%のライドはマッチされた椅子が乗車地点までに掛かる時間、48.0%のライドは椅子の実移動時間に不満がありました
+time=14:54:37.918 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATR259TNPXNTFWNMGJ2AHKの椅子は既にライド中です"
+time=14:54:39.384 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATQYB1B88R2HYBM08QNV50の椅子は既にライド中です"
+time=14:54:39.397 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATS0SEM96CC2S5C04X9M0Kの椅子は既にライド中です"
+time=14:54:39.445 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前=再座堂 増加数=24
+time=14:54:39.445 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Orbit Taxi" 増加数=22
+time=14:54:39.750 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATS1E2HQ8JKSR7Q518HSZ6の椅子は既にライド中です"
+time=14:54:40.111 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATS2FKETNQ6Z1DE2Z9SWECの椅子は既にライド中です"
+time=14:54:40.264 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATQFZWTA8C5YPZ94NPPSP3の椅子は既にライド中です"
+time=14:54:40.627 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATRAPR0NWD91VSKJEQ4VJ8の椅子は既にライド中です"
+time=14:54:41.110 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATR75QCNZJ213AY2D292SSの椅子は既にライド中です"
+time=14:54:41.247 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Artisan Seats" 増加数=22
+time=14:54:41.432 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATQFYK1QXZBCGGA5YSTRTRの椅子は既にライド中です"
+time=14:54:41.765 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATRAKQRKR511C8EK9CNPWWの椅子は既にライド中です"
+time=14:54:43.062 level=INFO msg=これまでに地域内の評判によって129人、既存ユーザーの招待経由で1548人が新規登録しました
+time=14:54:43.062 level=INFO msg=これまでに低評価なライドによって453人が利用をやめました
+time=14:54:43.062 level=INFO msg=58.2%のライドは椅子がマッチされるまでの時間、33.7%のライドはマッチされた椅子が乗車地点までに掛かる時間、48.6%のライドは椅子の実移動時間に不満がありました
+time=14:54:43.225 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATRQ7MA2NJRW9R7CZW5WH0の椅子は既にライド中です"
+time=14:54:43.499 level=WARN msg="取得した付近の椅子情報に不備があります (CODE=30): ID:01M6ATRG3BSJJPW9CM3RQREE6Bの椅子は既にライド中です"
+time=14:54:48.633 level=INFO msg=最終地域情報 名前=チェアタウン ユーザー登録数=995 アクティブユーザー数=730
+time=14:54:48.634 level=INFO msg=最終地域情報 名前=コシカケシティ ユーザー登録数=707 アクティブユーザー数=517
+time=14:54:48.634 level=INFO msg=最終オーナー情報 名前=再座堂 売上=5512800 椅子数=143
+time=14:54:48.634 level=INFO msg=最終オーナー情報 名前="Orbit Taxi" 売上=5473300 椅子数=140
+time=14:54:48.634 level=INFO msg=最終オーナー情報 名前=ひまわり交通 売上=5052200 椅子数=127
+time=14:54:48.634 level=INFO msg=最終オーナー情報 名前="Artisan Seats" 売上=4511200 椅子数=127
+time=14:54:48.634 level=INFO msg=最終オーナー情報 名前="Sit Second Life" 売上=6569400 椅子数=146
+time=14:54:48.634 level=INFO msg=59.3%のライドは椅子がマッチされるまでの時間、33.2%のライドはマッチされた椅子が乗車地点までに掛かる時間、48.8%のライドは椅子の実移動時間に不満がありました
+time=14:54:48.634 level=INFO msg=結果 pass=true スコア=326604 種別エラー数="map[17:2 30:69]"
+time=14:54:48.634 level=INFO msg=負荷走行が終了しました

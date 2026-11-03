@@ -1,0 +1,12 @@
+time=15:03:29.966 level=INFO msg=負荷走行を開始します
+time=15:03:34.590 level=ERROR msg=クリティカルエラーが発生しました error="椅子がライドの完了通知を受け取る前に、別の新しいライドの通知を受け取りました (CODE=15): chair_id: 01M6AV9FFEFEVYJSBDDYMS7GQD, current_ride_id: 01M6AV9FW5D3SNB2A3BSAXJ64R, got: 01M6AV9H8V1ZKPYTA1M09VMXCF"
+time=15:03:39.590 level=INFO msg=最終地域情報 名前=チェアタウン ユーザー登録数=8 アクティブユーザー数=8
+time=15:03:39.590 level=INFO msg=最終地域情報 名前=コシカケシティ ユーザー登録数=7 アクティブユーザー数=7
+time=15:03:39.590 level=INFO msg=最終オーナー情報 名前=ふたたび椅子堂 売上=3300 椅子数=4
+time=15:03:39.590 level=INFO msg=最終オーナー情報 名前=レトロ椅子館 売上=6800 椅子数=4
+time=15:03:39.590 level=INFO msg=最終オーナー情報 名前=CityRide 売上=0 椅子数=4
+time=15:03:39.590 level=INFO msg=最終オーナー情報 名前="Chair Charm" 売上=0 椅子数=4
+time=15:03:39.590 level=INFO msg=最終オーナー情報 名前=つばさ交通 売上=6800 椅子数=4
+time=15:03:39.590 level=INFO msg=0.0%のライドは椅子がマッチされるまでの時間、80.0%のライドはマッチされた椅子が乗車地点までに掛かる時間、0.0%のライドは椅子の実移動時間に不満がありました
+time=15:03:39.590 level=INFO msg=結果 pass=false スコア=463 種別エラー数=map[15:1]
+time=15:03:39.590 level=INFO msg=負荷走行が終了しました

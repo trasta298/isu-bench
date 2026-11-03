@@ -1,0 +1,6 @@
+2026-11-01T12:11:38.705Z	info	isupipe-benchmarker	SSL接続が有効になっています
+2026-11-01T12:11:38.705Z	info	isupipe-benchmarker	静的ファイルチェックを行います
+2026-11-01T12:11:38.705Z	info	isupipe-benchmarker	静的ファイルチェックが完了しました
+2026-11-01T12:11:38.705Z	info	isupipe-benchmarker	webappの初期化を行います
+2026-11-01T12:11:41.364Z	info	isupipe-benchmarker	ベンチマーク走行前のデータ整合性チェックを行います
+{"pass":false,"score":0,"messages":["整合性チェックに失敗しました","benchmark-critical: [仕様違反] POST /api/livestream/reservation へのリクエストに対して、レスポンスボディに必要なフィールドがありません: Livestream.Tags"],"language":"golang","resolved_count":0}

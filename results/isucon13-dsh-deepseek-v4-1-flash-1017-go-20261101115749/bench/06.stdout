@@ -1,0 +1,21 @@
+2026-11-01T12:18:49.934Z	info	isupipe-benchmarker	SSL接続が有効になっています
+2026-11-01T12:18:49.934Z	info	isupipe-benchmarker	静的ファイルチェックを行います
+2026-11-01T12:18:49.934Z	info	isupipe-benchmarker	静的ファイルチェックが完了しました
+2026-11-01T12:18:49.934Z	info	isupipe-benchmarker	webappの初期化を行います
+2026-11-01T12:18:52.543Z	info	isupipe-benchmarker	ベンチマーク走行前のデータ整合性チェックを行います
+2026-11-01T12:18:58.050Z	info	isupipe-benchmarker	整合性チェックが成功しました
+2026-11-01T12:18:58.050Z	info	isupipe-benchmarker	ベンチマーク走行を開始します
+2026-11-01T12:19:00.063Z	info	isupipe-benchmarker	DNS水責め負荷が上昇します	{"parallelis": 3}
+2026-11-01T12:19:02.062Z	info	isupipe-benchmarker	DNS水責め負荷が上昇します	{"parallelis": 4}
+2026-11-01T12:19:04.062Z	info	isupipe-benchmarker	DNS水責め負荷が上昇します	{"parallelis": 6}
+2026-11-01T12:19:06.062Z	info	isupipe-benchmarker	DNS水責め負荷が上昇します	{"parallelis": 9}
+2026-11-01T12:19:12.062Z	info	isupipe-benchmarker	DNS水責め負荷が上昇します	{"parallelis": 13}
+2026-11-01T12:19:58.050Z	info	isupipe-benchmarker	ベンチマーク走行を停止します
+2026-11-01T12:19:58.051Z	warn	isupipe-benchmarker	ライブコメントを配信に投稿できないため、視聴者が離脱します	{"viewer": "akemi661", "livestream_id": 8212, "error": "Post \"https://yutaito0.u.isucon.dev:443/api/livestream/8212/livecomment\": context canceled: ベンチマーク走行が継続できないエラーが発生しました"}
+2026-11-01T12:19:58.051Z	warn	isupipe-benchmarker	ライブコメントを配信に投稿できないため、視聴者が離脱します	{"viewer": "osamutanaka1", "livestream_id": 8027, "error": "Post \"https://momokosato0.u.isucon.dev:443/api/livestream/8027/livecomment\": context canceled: ベンチマーク走行が継続できないエラーが発生しました"}
+2026-11-01T12:19:58.052Z	warn	isupipe-benchmarker	ライブコメントを配信に投稿できないため、視聴者が離脱します	{"viewer": "satoyuki0", "livestream_id": 7893, "error": "Post \"https://suzukitomoya0.u.isucon.dev:443/api/livestream/7893/livecomment\": context canceled: ベンチマーク走行が継続できないエラーが発生しました"}
+2026-11-01T12:19:58.423Z	info	isupipe-benchmarker	ベンチマーク走行終了
+2026-11-01T12:19:58.423Z	info	isupipe-benchmarker	最終チェックを実施します
+2026-11-01T12:19:58.423Z	info	isupipe-benchmarker	最終チェックが成功しました
+2026-11-01T12:19:58.423Z	info	isupipe-benchmarker	重複排除したログを以下に出力します
+2026-11-01T12:19:58.423Z	info	isupipe-benchmarker	配信を最後まで視聴できた視聴者数	{"viewers": 1053}

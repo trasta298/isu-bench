@@ -1,0 +1,38 @@
+time=15:35:18.389 level=INFO msg=負荷走行を開始します
+time=15:35:26.711 level=INFO msg=これまでに地域内の評判によって0人、既存ユーザーの招待経由で0人が新規登録しました
+time=15:35:32.111 level=INFO msg=これまでに地域内の評判によって0人、既存ユーザーの招待経由で0人が新規登録しました
+time=15:35:37.511 level=INFO msg=これまでに地域内の評判によって0人、既存ユーザーの招待経由で0人が新規登録しました
+time=15:35:38.121 level=WARN msg="取得したオーナーの椅子一覧の情報が想定しているものと異なります (CODE=26): total_distanceの反映が遅いデータがあります (id: 01M6AX3PE2CSTHWJQFKM6071R9)"
+time=15:35:42.911 level=INFO msg=これまでに地域内の評判によって1人、既存ユーザーの招待経由で0人が新規登録しました
+time=15:35:42.911 level=INFO msg=100.0%のライドは椅子がマッチされるまでの時間、75.0%のライドはマッチされた椅子が乗車地点までに掛かる時間、100.0%のライドは椅子の実移動時間に不満がありました
+time=15:35:44.973 level=INFO msg=一定の売上が立ったためオーナーの椅子が増加します 名前="Vintage Vibe Seats" 増加数=1
+time=15:35:48.311 level=INFO msg=これまでに地域内の評判によって4人、既存ユーザーの招待経由で0人が新規登録しました
+time=15:35:48.311 level=INFO msg=100.0%のライドは椅子がマッチされるまでの時間、80.0%のライドはマッチされた椅子が乗車地点までに掛かる時間、100.0%のライドは椅子の実移動時間に不満がありました
+time=15:35:53.710 level=INFO msg=これまでに地域内の評判によって5人、既存ユーザーの招待経由で0人が新規登録しました
+time=15:35:53.710 level=INFO msg=100.0%のライドは椅子がマッチされるまでの時間、71.4%のライドはマッチされた椅子が乗車地点までに掛かる時間、100.0%のライドは椅子の実移動時間に不満がありました
+time=15:35:59.111 level=INFO msg=これまでに地域内の評判によって6人、既存ユーザーの招待経由で0人が新規登録しました
+time=15:35:59.111 level=INFO msg=100.0%のライドは椅子がマッチされるまでの時間、75.0%のライドはマッチされた椅子が乗車地点までに掛かる時間、100.0%のライドは椅子の実移動時間に不満がありました
+time=15:36:04.511 level=INFO msg=これまでに地域内の評判によって6人、既存ユーザーの招待経由で0人が新規登録しました
+time=15:36:04.511 level=INFO msg=100.0%のライドは椅子がマッチされるまでの時間、77.8%のライドはマッチされた椅子が乗車地点までに掛かる時間、100.0%のライドは椅子の実移動時間に不満がありました
+time=15:36:09.911 level=INFO msg=これまでに地域内の評判によって8人、既存ユーザーの招待経由で0人が新規登録しました
+time=15:36:09.911 level=INFO msg=100.0%のライドは椅子がマッチされるまでの時間、77.8%のライドはマッチされた椅子が乗車地点までに掛かる時間、100.0%のライドは椅子の実移動時間に不満がありました
+time=15:36:15.311 level=INFO msg=これまでに地域内の評判によって8人、既存ユーザーの招待経由で0人が新規登録しました
+time=15:36:15.311 level=INFO msg=これまでに低評価なライドによって1人が利用をやめました
+time=15:36:15.311 level=INFO msg=100.0%のライドは椅子がマッチされるまでの時間、80.0%のライドはマッチされた椅子が乗車地点までに掛かる時間、100.0%のライドは椅子の実移動時間に不満がありました
+time=15:36:19.015 level=WARN msg="オーナーの椅子一覧の取得に失敗しました (CODE=25): GET /api/owner/chairsのリクエストが失敗しました: Get \"https://isuride.xiv.isucon.net/api/owner/chairs\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)"
+time=15:36:20.710 level=INFO msg=これまでに地域内の評判によって9人、既存ユーザーの招待経由で0人が新規登録しました
+time=15:36:20.711 level=INFO msg=これまでに低評価なライドによって1人が利用をやめました
+time=15:36:20.711 level=INFO msg=100.0%のライドは椅子がマッチされるまでの時間、81.8%のライドはマッチされた椅子が乗車地点までに掛かる時間、100.0%のライドは椅子の実移動時間に不満がありました
+time=15:36:20.816 level=WARN msg="オーナーの椅子一覧の取得に失敗しました (CODE=25): GET /api/owner/chairsのリクエストが失敗しました: Get \"https://isuride.xiv.isucon.net/api/owner/chairs\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)"
+time=15:36:20.817 level=WARN msg="オーナーの椅子一覧の取得に失敗しました (CODE=25): GET /api/owner/chairsのリクエストが失敗しました: Get \"https://isuride.xiv.isucon.net/api/owner/chairs\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)"
+time=15:36:20.819 level=WARN msg="オーナーの椅子一覧の取得に失敗しました (CODE=25): GET /api/owner/chairsのリクエストが失敗しました: Get \"https://isuride.xiv.isucon.net/api/owner/chairs\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)"
+time=15:36:26.310 level=INFO msg=最終地域情報 名前=チェアタウン ユーザー登録数=9 アクティブユーザー数=9
+time=15:36:26.310 level=INFO msg=最終地域情報 名前=コシカケシティ ユーザー登録数=11 アクティブユーザー数=10
+time=15:36:26.310 level=INFO msg=最終オーナー情報 名前="Timeless Seats" 売上=0 椅子数=4
+time=15:36:26.310 level=INFO msg=最終オーナー情報 名前=EcoChairs 売上=6000 椅子数=4
+time=15:36:26.310 level=INFO msg=最終オーナー情報 名前="SitWell Designs" 売上=7400 椅子数=4
+time=15:36:26.310 level=INFO msg=最終オーナー情報 名前=SwiftCab 売上=22200 椅子数=4
+time=15:36:26.310 level=INFO msg=最終オーナー情報 名前="Vintage Vibe Seats" 売上=32200 椅子数=5
+time=15:36:26.310 level=INFO msg=100.0%のライドは椅子がマッチされるまでの時間、83.3%のライドはマッチされた椅子が乗車地点までに掛かる時間、100.0%のライドは椅子の実移動時間に不満がありました
+time=15:36:26.310 level=INFO msg=結果 pass=true スコア=1146 種別エラー数="map[25:4 26:1]"
+time=15:36:26.311 level=INFO msg=負荷走行が終了しました
