@@ -2,13 +2,46 @@
 
 English | [日本語](README.ja.md)
 
-How far can a coding agent tune an ISUCON web service on its first encounter, given exactly 15 benchmark runs?
+How far can a coding agent tune an ISUCON web service on its first encounter, given exactly 11 benchmark runs?
 
-v1 is scored on [ISUMAIL](#isumail), an ISUCON-style problem written for isu-bench whose source is not published, so no model can have seen it solved. The agent gets the docs, the reference implementation and SSH to three servers, and is scored on its 15th benchmark run. [ISUCON14](https://github.com/isucon/isucon14) and [ISUCON13](https://github.com/isucon/isucon13) results are kept as [extras](#extras-isucon14-and-isucon13). See [REQUIREMENTS.md](REQUIREMENTS.md) for the full rules and [prompt.md](prompt.md) for the exact prompt.
+v1.1 is scored on [ISUMAIL](#isumail), an ISUCON-style problem written for isu-bench whose source is not published, so no model can have seen it solved. The agent gets the docs, the reference implementation and SSH to three servers, and is scored on its 11th benchmark run. [ISUCON14](https://github.com/isucon/isucon14) and [ISUCON13](https://github.com/isucon/isucon13) results are kept as [extras](#extras-isucon14-and-isucon13), and the results of v1 are [below](#changes-from-v1). See [REQUIREMENTS.md](REQUIREMENTS.md) for the full rules and [prompt.md](prompt.md) for the exact prompt.
 
 ## Results
 
 Interactive charts of every run: [isu-bench.trasta.dev](https://isu-bench.trasta.dev/)
+
+**isu-bench score** is the final ISUMAIL score divided by its estimated theoretical maximum, 1,060,000. Language Go. Every trial used all 11 benchmark runs and passed the post-reboot persistence check.
+
+| agent | model | effort | isu-bench score | final | × initial | best | FAIL | uncounted | agent time | output tokens | cache read tokens | API cost |
+|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| Claude Code 2.1.321 | claude-opus-5-5 | high | **43.2%** | 458,137 | 263 | 487,230 | 1 | 0 | 133 min | 289,271 | 66.1M | $22.78 |
+| Codex 0.166.0 | gpt-6.1-sol | xhigh | **15.2%** | 161,341 | 93 | 175,262 | 1 | 0 | 45 min | 76,229 | 13.5M | $2.38 |
+| Codex 0.166.0 | gpt-6-astra | xhigh | **9.7%** | 103,221 | 59 | 104,112 | 1 | 0 | 45 min | 68,381 | 9.2M | $13.72 |
+| DeepSeek Harness 0.2.1-rc.5 | deepseek-v4.1-flash:1017 | max | **0.8%** | 8,279 | 5 | 8,450 | 6 | 0 | 47 min | 147,356 | 22.2M | $0.42 |
+
+<details><summary>Scores of all 11 runs</summary>
+
+| model | effort | runs |
+|---|---|---|
+| claude-opus-5-5 | high | 1,915, 336,358, FAIL, 400,880, 274,280, 449,916, 487,230, 462,396, 476,084, 462,168, 458,137 |
+| gpt-6.1-sol | xhigh | 1,860, 4,756, 25,963, 74,373, 76,652, FAIL, 175,262, 89,290, 152,024, 165,383, 161,341 |
+| gpt-6-astra | xhigh | 1,845, 5,088, 6,266, 38,481, FAIL, 37,457, 75,097, 97,471, 104,112, 102,418, 103,221 |
+| deepseek-v4.1-flash:1017 | max | 1,718, FAIL, FAIL, FAIL, FAIL, FAIL, 5,436, 7,392, FAIL, 8,450, 8,279 |
+
+</details>
+
+- The reference implementation (`initial`) scores 1,744, the median of 5 `calibrate` runs (coefficient of variation 5.1%; all passed persist-check).
+- API cost prices each trial's tokens at the providers' list prices on 2026-11-03, Anthropic's on 2026-11-10 ([isubench/prices.py](isubench/prices.py); DeepSeek at its peak rate, off-peak is half).
+- Only `result.json` of each ISUMAIL trial is committed. Transcripts, workspace diffs and benchmark output contain the source and stay local.
+
+### Changes from v1
+
+- 11 benchmark runs instead of 15.
+- ISUMAIL has a new benchmarker, in a new AMI of the benchmark host. The publishers of its scenario now act the same in every run, and the load was calibrated again so that the strongest implementations have further to go. The specification, the reference implementation and the other AMIs are the same.
+- The theoretical maximum was estimated again: 1,060,000 (1,020,000 in v1).
+- Scores of v1 and v1.1 cannot be compared. `isumail-v1` in [isubench/problems.py](isubench/problems.py) is the problem as it was.
+
+<details><summary>Results of isu-bench v1 (15 runs)</summary>
 
 ![isu-bench v1 results](docs/isu-bench-v1.png)
 
@@ -35,8 +68,8 @@ Interactive charts of every run: [isu-bench.trasta.dev](https://isu-bench.trasta
 </details>
 
 - The reference implementation (`initial`) scores 2,153, the median of 5 `calibrate` runs (coefficient of variation 5.9%; all passed persist-check).
-- API cost prices each trial's tokens at the providers' list prices on 2026-11-03, Anthropic's on 2026-11-10 ([isubench/prices.py](isubench/prices.py); DeepSeek at its peak rate, off-peak is half).
-- Only `result.json` of each ISUMAIL trial is committed. Transcripts, workspace diffs and benchmark output contain the source and stay local.
+
+</details>
 
 ## ISUMAIL
 
@@ -50,14 +83,14 @@ The source (reference implementation, benchmarker, data generator and specificat
 | s2 | `ami-0386de926573364e3` (isumail-app-arm64) | c7g.medium (1 vCPU, 2 GiB) | arm64 |
 | s3 (`t.isumail.test`) | `ami-0386de926573364e3` (isumail-app-arm64) | c6g.medium (1 vCPU, 2 GiB) | arm64 |
 | router (no agent access) | `ami-0cc8249ffb25653a1` (isumail-router-arm64) | c6g.medium | arm64 |
-| benchmark host | `ami-026c9e398c9d0e68e` (isumail-bench-arm64) | c7g.2xlarge | arm64 |
+| benchmark host | `ami-06ede16f4cb5d89d5` (isumail-bench-arm64; v1: `ami-026c9e398c9d0e68e`) | c7g.2xlarge | arm64 |
 
 The AMIs are in ap-northeast-1. EC2 cost is about $0.64 per hour per run (instances $0.60, plus EBS and public IPv4), 13 vCPU.
 
 What the harness does differently for ISUMAIL, all through the problem definition so ISUCON14 and ISUCON13 run as before:
 
 - Fixed private addresses, a router instance with one address per server, and security groups without any app-to-app rule, so the router is the only path between the servers. The harness compares the security groups, interfaces and routes with the definition through the AWS API.
-- The agent's SSH goes through the sidecar proxy with a 100 ms one-way delay and 20 Mbit/s per server and direction, and is closed (open tunnels too) from the start of the 15th run until the post-reboot check ends.
+- The agent's SSH goes through the sidecar proxy with a 100 ms one-way delay and 20 Mbit/s per server and direction, and is closed (open tunnels too) from the start of the last run until the post-reboot check ends.
 - A run that fails because of the benchmark environment (benchmarker error, router or clock check, a lost benchmark host) is not counted, up to 5 per session.
 - Each run writes its own state file; the post-reboot check passes only if all three servers rebooted, s1 answers `GET /api/me` with 401, and `bench persist-check` passes against the run ID and state hash of the last counted run.
 - Before and after each run the harness checks the router's rules and the clocks (all hosts sync to Amazon Time Sync; more than 50 ms between the benchmark host and a server makes the run uncounted).
@@ -71,7 +104,7 @@ python3 -m isubench quota --problem isumail --trials 2
 
 ## Extras: ISUCON14 and ISUCON13
 
-Not part of the isu-bench score: public solutions of these problems predate the models' training data. One trial per configuration, language Go. No run was lost to a benchmark host failure.
+Not part of the isu-bench score: public solutions of these problems predate the models' training data. One trial per configuration, language Go, run under v1 with 15 runs. No run was lost to a benchmark host failure.
 
 ### ISUCON14
 
@@ -125,10 +158,10 @@ Raw benchmark logs, agent transcripts, proxy logs and workspace diffs of these p
 
 ## Rules
 
-- The agent runs `bench` at most 15 times. Every run counts, including failures, and the session ends when the 15th finishes. Only a lost benchmark host (not a failing application) is not counted; for ISUMAIL also a run the benchmark environment broke (above).
-- Score = the 15th run's score. A FAIL scores 0.
+- The agent runs `bench` at most 11 times. Every run counts, including failures, and the session ends when the 11th finishes. Only a lost benchmark host (not a failing application) is not counted; for ISUMAIL also a run the benchmark environment broke (above).
+- Score = the 11th run's score. A FAIL scores 0.
 - The harness then reboots the three servers; if the application does not respond, the score is 0.
-- If the agent stops early, it is resumed up to 3 times with "Continue. N of 15 benchmark runs remain."
+- If the agent stops early, it is resumed up to 3 times with "Continue. N of 11 benchmark runs remain."
 - No wall-clock limit, and the prompt says so.
 - Web search tools are disabled and all traffic goes through an allowlist proxy (model API, package registries, SSH to the servers).
 

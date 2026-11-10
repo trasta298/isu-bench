@@ -1,0 +1,309 @@
+{
+  "run_id": "isumail-claude-code-claude-opus-5-5-go-20261110170328",
+  "problem": "isumail",
+  "agent": "claude-code",
+  "agent_version": "2.1.321 (Claude Code)",
+  "model": "claude-opus-5-5",
+  "effort": "high",
+  "lang": "go",
+  "provider": "direct",
+  "upstream_commit": null,
+  "started_at": "2026-11-10T17:03:28.110929+00:00",
+  "image": {
+    "ImageId": "ami-0c07931bc35138ebf",
+    "Name": "isumail-app-x86-202611030222",
+    "OwnerId": "253433207414",
+    "CreationDate": "2026-11-03T02:25:47.000Z"
+  },
+  "images": {
+    "s1": {
+      "ImageId": "ami-0c07931bc35138ebf",
+      "Name": "isumail-app-x86-202611030222",
+      "OwnerId": "253433207414",
+      "CreationDate": "2026-11-03T02:25:47.000Z",
+      "Architecture": "x86_64"
+    },
+    "s2": {
+      "ImageId": "ami-0386de926573364e3",
+      "Name": "isumail-app-arm64-202611030222",
+      "OwnerId": "253433207414",
+      "CreationDate": "2026-11-03T02:24:30.000Z",
+      "Architecture": "arm64"
+    },
+    "s3": {
+      "ImageId": "ami-0386de926573364e3",
+      "Name": "isumail-app-arm64-202611030222",
+      "OwnerId": "253433207414",
+      "CreationDate": "2026-11-03T02:24:30.000Z",
+      "Architecture": "arm64"
+    },
+    "router": {
+      "ImageId": "ami-0cc8249ffb25653a1",
+      "Name": "isumail-router-arm64-202611030504",
+      "OwnerId": "253433207414",
+      "CreationDate": "2026-11-03T05:04:59.000Z",
+      "Architecture": "arm64"
+    },
+    "bench": {
+      "ImageId": "ami-06ede16f4cb5d89d5",
+      "Name": "isumail-bench-arm64-202611101026",
+      "OwnerId": "253433207414",
+      "CreationDate": "2026-11-10T10:27:36.000Z",
+      "Architecture": "arm64"
+    }
+  },
+  "host_resources": {
+    "s1": [
+      "2",
+      "3790",
+      "Intel(R) Xeon(R) Platinum 8275CL CPU @ 3.00GHz"
+    ],
+    "s2": [
+      "1",
+      "1823",
+      "Neoverse-V1"
+    ],
+    "s3": [
+      "1",
+      "1823",
+      "Neoverse-N1"
+    ],
+    "router": [
+      "1",
+      "1823",
+      "Neoverse-N1"
+    ],
+    "bench": [
+      "8",
+      "15665",
+      "Neoverse-V1"
+    ]
+  },
+  "aws_checks": [
+    {
+      "stage": "provisioned",
+      "differences": []
+    },
+    {
+      "stage": "ssh closed",
+      "differences": []
+    },
+    {
+      "stage": "after reboot",
+      "differences": []
+    }
+  ],
+  "resumes": 0,
+  "agent_seconds": 7983,
+  "status": "completed",
+  "reboot_check": {
+    "passed": true,
+    "rebooted": {
+      "s1": true,
+      "s2": true,
+      "s3": true
+    },
+    "probe_status": {
+      "s1": 401
+    },
+    "persist": {
+      "passed": true,
+      "infra": false,
+      "errors": 0
+    },
+    "router": {
+      "ok": true,
+      "text": "isumail-router: ok\ns1 sent_bytes=3832705244 sent_packets=2954114 dropped=16 overlimits=957452 backlog=0b\ns2 sent_bytes=2480011758 sent_packets=2212321 dropped=8 overlimits=182152 backlog=0b\ns3 sent_bytes=2602043930 sent_packets=7107738 dropped=12 overlimits=3275944 backlog=0b\nconntrack count=1363 max=1048576\ncpu  2236 1 1718 805664 1559 0 1313 0 0 0\n"
+    },
+    "infra": false
+  },
+  "runs": [
+    {
+      "n": 1,
+      "attempt": 1,
+      "started_at": "2026-11-10T17:06:58.069764+00:00",
+      "exit": 0,
+      "finished_at": "2026-11-10T17:08:59.076674+00:00",
+      "passed": true,
+      "score": 1915,
+      "run_id": "r-20261110-c9ffe14faa35",
+      "state_sha256": "5b5ae20af374444177bde4a999c726e6ade7e0a5ec7b65b552e3f54bee18a63c"
+    },
+    {
+      "n": 2,
+      "attempt": 2,
+      "started_at": "2026-11-10T17:47:33.375186+00:00",
+      "exit": 0,
+      "finished_at": "2026-11-10T17:49:13.115571+00:00",
+      "passed": true,
+      "score": 336358,
+      "run_id": "r-20261110-1b21594cab99",
+      "state_sha256": "2433bd20215cadb7027430ae55ddf5f45500f7a217f0e9d400dc350e53525a52"
+    },
+    {
+      "n": 3,
+      "attempt": 3,
+      "started_at": "2026-11-10T18:02:48.957239+00:00",
+      "exit": 1,
+      "finished_at": "2026-11-10T18:03:21.570856+00:00",
+      "passed": false,
+      "score": 0,
+      "run_id": "r-20261110-1d33dbfdd097",
+      "state_sha256": null
+    },
+    {
+      "n": 4,
+      "attempt": 4,
+      "started_at": "2026-11-10T18:20:34.164098+00:00",
+      "exit": 0,
+      "finished_at": "2026-11-10T18:22:18.406188+00:00",
+      "passed": true,
+      "score": 400880,
+      "run_id": "r-20261110-47e936df5d9f",
+      "state_sha256": "0d46124f2bef5dddbe2705c4fe9c5a10cd4ff7be02344a9920ff6d1576472abb"
+    },
+    {
+      "n": 5,
+      "attempt": 5,
+      "started_at": "2026-11-10T18:29:31.572368+00:00",
+      "exit": 0,
+      "finished_at": "2026-11-10T18:31:12.787637+00:00",
+      "passed": true,
+      "score": 274280,
+      "run_id": "r-20261110-dec98ef8adbd",
+      "state_sha256": "92d7384cda52b5d6e217f01cae5af5d31e2f041190fa12ddc31e4f01cb5b74f9"
+    },
+    {
+      "n": 6,
+      "attempt": 6,
+      "started_at": "2026-11-10T18:36:57.309216+00:00",
+      "exit": 0,
+      "finished_at": "2026-11-10T18:38:43.578985+00:00",
+      "passed": true,
+      "score": 449916,
+      "run_id": "r-20261110-599b00b7a37b",
+      "state_sha256": "c56340c2ff81090b9ebc4e02f48c91a88dc7ab554905f1ea4042a077be6e0efd"
+    },
+    {
+      "n": 7,
+      "attempt": 7,
+      "started_at": "2026-11-10T18:50:35.714790+00:00",
+      "exit": 0,
+      "finished_at": "2026-11-10T18:52:24.798761+00:00",
+      "passed": true,
+      "score": 487230,
+      "run_id": "r-20261110-4dbb28be6c73",
+      "state_sha256": "ce9ce93f838e6ea5aee0ade76c1dc8b3c28c6696145b7a1e69f063992227ce9e"
+    },
+    {
+      "n": 8,
+      "attempt": 8,
+      "started_at": "2026-11-10T19:00:55.473587+00:00",
+      "exit": 0,
+      "finished_at": "2026-11-10T19:02:45.255508+00:00",
+      "passed": true,
+      "score": 462396,
+      "run_id": "r-20261110-aacce53bb84b",
+      "state_sha256": "25705ff725f877c4fe949f547b4e861ac28e769817c59ae5aed7b80ae8fa2d14"
+    },
+    {
+      "n": 9,
+      "attempt": 9,
+      "started_at": "2026-11-10T19:09:40.352352+00:00",
+      "exit": 0,
+      "finished_at": "2026-11-10T19:11:29.457154+00:00",
+      "passed": true,
+      "score": 476084,
+      "run_id": "r-20261110-250f6e37137a",
+      "state_sha256": "57288b3b74fed910095df738a979454c47afb85a6ba45d74aab24ea977d423db"
+    },
+    {
+      "n": 10,
+      "attempt": 10,
+      "started_at": "2026-11-10T19:15:09.990686+00:00",
+      "exit": 0,
+      "finished_at": "2026-11-10T19:16:59.358263+00:00",
+      "passed": true,
+      "score": 462168,
+      "run_id": "r-20261110-92af50198134",
+      "state_sha256": "0bf8692180ddc07dd148ac10348c9c4fba6b5f50b60d967596c66627eaa5de5f"
+    },
+    {
+      "n": 11,
+      "attempt": 11,
+      "started_at": "2026-11-10T19:17:54.407818+00:00",
+      "exit": 0,
+      "finished_at": "2026-11-10T19:19:55.272731+00:00",
+      "passed": true,
+      "score": 458137,
+      "run_id": "r-20261110-ba6fa1366b92",
+      "state_sha256": "99e19a87807fffc9685b2ec61a089dce5d58743cb55b28b4ef7616e97781740d"
+    }
+  ],
+  "infra_failures": [],
+  "final_score": 458137,
+  "finished_at": "2026-11-10T19:20:48.806290+00:00",
+  "usage": {
+    "input_tokens": 434,
+    "output_tokens": 289271,
+    "cache_read_tokens": 66056389,
+    "cache_write_tokens": 472718
+  },
+  "pace": [
+    {
+      "minutes": 0.6,
+      "tool_calls": 14,
+      "output_tokens": 2193
+    },
+    {
+      "minutes": 41.2,
+      "tool_calls": 73,
+      "output_tokens": 138733
+    },
+    {
+      "minutes": 56.5,
+      "tool_calls": 25,
+      "output_tokens": 43389
+    },
+    {
+      "minutes": 74.2,
+      "tool_calls": 27,
+      "output_tokens": 23027
+    },
+    {
+      "minutes": 83.2,
+      "tool_calls": 16,
+      "output_tokens": 14115
+    },
+    {
+      "minutes": 90.6,
+      "tool_calls": 12,
+      "output_tokens": 12031
+    },
+    {
+      "minutes": 104.3,
+      "tool_calls": 21,
+      "output_tokens": 21932
+    },
+    {
+      "minutes": 114.6,
+      "tool_calls": 14,
+      "output_tokens": 20951
+    },
+    {
+      "minutes": 123.3,
+      "tool_calls": 11,
+      "output_tokens": 9022
+    },
+    {
+      "minutes": 128.8,
+      "tool_calls": 5,
+      "output_tokens": 2832
+    },
+    {
+      "minutes": 131.6,
+      "tool_calls": 3,
+      "output_tokens": 1046
+    }
+  ]
+}
