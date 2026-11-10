@@ -5,6 +5,7 @@ PRICES = {
     # Claude Code writes its prompt cache with the 1-hour TTL, billed at twice the input price.
     'claude-opus-5-5': {'input': 4.00, 'output': 20.00, 'cache_read': 0.20, 'cache_write': 8.00},
     'claude-sonnet-5-5': {'input': 2.00, 'output': 10.00, 'cache_read': 0.20, 'cache_write': 4.00},
+    'claude-fable-5-2': {'input': 8.00, 'output': 40.00, 'cache_read': 0.20, 'cache_write': 16.00},
     'gpt-6-astra': {'input': 10.00, 'output': 50.00, 'cache_read': 1.00, 'cache_write': 12.50},
     'gpt-6.1-sol': {'input': 2.00, 'output': 10.00, 'cache_read': 0.10, 'cache_write': 2.50},
     'deepseek-v4.1-flash:1017': {'input': 0.30, 'output': 1.20, 'cache_read': 0.006, 'cache_write': 0.30},
