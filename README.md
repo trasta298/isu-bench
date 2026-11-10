@@ -16,6 +16,7 @@ Interactive charts of every run: [isu-bench.trasta.dev](https://isu-bench.trasta
 
 | agent | model | effort | isu-bench score | final | × initial | best | FAIL | uncounted | agent time | output tokens | cache read tokens | API cost |
 |---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| Claude Code 2.1.321 | claude-fable-5-2 | high | **52.4%** | 534,435 | 248 | 549,184 | 0 | 0 | 409 min | 1,229,311 | 157.0M | $122.26 |
 | Claude Code 2.1.316 | claude-opus-5-5 | high | **49.5%** | 505,329 | 235 | 513,920 | 1 | 0 | 138 min | 325,625 | 72.1M | $25.26 |
 | Codex 0.166.0 | gpt-6.1-sol | xhigh | **23.4%** | 238,875 | 111 | 244,371 | 1 | 0 | 73 min | 93,841 | 15.8M | $2.81 |
 | Codex 0.166.0 | gpt-6-astra | xhigh | **13.2%** | 135,079 | 63 | 135,079 | 2 | 1 | 74 min | 87,471 | 16.2M | $23.52 |
@@ -25,6 +26,7 @@ Interactive charts of every run: [isu-bench.trasta.dev](https://isu-bench.trasta
 
 | model | effort | runs |
 |---|---|---|
+| claude-fable-5-2 | high | 1,878, 111,304, 494,406, 546,695, 523,085, 521,990, 526,397, 528,959, 522,380, 526,941, 530,877, 542,267, 538,386, 549,184, 534,435 |
 | claude-opus-5-5 | high | 2,046, 438,146, FAIL, 475,462, 485,090, 473,317, 469,590, 497,013, 511,590, 503,614, 497,994, 513,920, 503,213, 509,469, 505,329 |
 | gpt-6.1-sol | xhigh | 2,069, 4,953, FAIL, 74,129, 114,969, 149,435, 157,324, 194,707, 178,893, 184,809, 244,371, 236,080, 230,362, 244,164, 238,875 |
 | gpt-6-astra | xhigh | 2,136, FAIL, 32,749, FAIL, 45,873, 55,941, 54,433, 81,842, 76,904, 116,076, 116,919, 127,762, 122,236, 131,060, 135,079 |
@@ -33,7 +35,7 @@ Interactive charts of every run: [isu-bench.trasta.dev](https://isu-bench.trasta
 </details>
 
 - The reference implementation (`initial`) scores 2,153, the median of 5 `calibrate` runs (coefficient of variation 5.9%; all passed persist-check).
-- API cost prices each trial's tokens at the providers' list prices on 2026-11-03 ([isubench/prices.py](isubench/prices.py); DeepSeek at its peak rate, off-peak is half).
+- API cost prices each trial's tokens at the providers' list prices on 2026-11-03, Anthropic's on 2026-11-10 ([isubench/prices.py](isubench/prices.py); DeepSeek at its peak rate, off-peak is half).
 - Only `result.json` of each ISUMAIL trial is committed. Transcripts, workspace diffs and benchmark output contain the source and stay local.
 
 ## ISUMAIL
@@ -80,7 +82,7 @@ Contest winner 58,153. Initial Go implementation about 961 in this environment.
 | Codex 0.166.0 | gpt-6-astra | xhigh | **592,820** | 1019% | 617 | 606,582 | 2 | 27 min | 56,487 | 11.7M | $15.93 |
 | Codex 0.166.0 | gpt-6.1-sol | xhigh | **549,308** | 945% | 572 | 559,421 | 2 | 30 min | 67,379 | 11.4M | $2.24 |
 | Claude Code 2.1.316 | claude-opus-5-5 | high | **432,211** | 743% | 450 | 477,541 | 1 | 41 min | 132,294 | 16.6M | $7.94 |
-| Claude Code 2.1.316 | claude-sonnet-5-5 | xhigh | **401,689** | 691% | 418 | 401,689 | 2 | 67 min | 367,717 | 38.5M | $13.50 |
+| Claude Code 2.1.316 | claude-sonnet-5-5 | xhigh | **401,689** | 691% | 418 | 401,689 | 2 | 67 min | 367,717 | 38.5M | $9.65 |
 | Claude Code 2.1.316 | claude-opus-5-5 | xhigh | **329,852** | 567% | 343 | 353,166 | 3 | 80 min | 269,527 | 40.3M | $16.90 |
 | DeepSeek Harness 0.2.1-rc.5 | deepseek-v4.1-flash:1017 | max | **85,863** | 148% | 89 | 90,099 | 2 | 34 min | 177,386 | 34.2M | $0.52 |
 
