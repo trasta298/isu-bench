@@ -16,6 +16,8 @@ class Problem:
     apps = ('s1', 's2', 's3')
     # Only these count toward the isu-bench score; public problems may have their solutions in training data.
     scored = False
+    # Results of an earlier version of the problem: shown apart from the current ones.
+    retired = False
     langs = tuple(LANGS)
     upstream = None
     # role -> fixed private IP and extra private IPs on the same interface; empty means AWS picks.
@@ -191,7 +193,7 @@ class Isumail(Problem):
     title = 'ISUMAIL'
     # Built by isu-new/ami (not in this repository); the source reaches the agent only through s1 of a run.
     amis = {'s1': 'ami-0c07931bc35138ebf', 's2': 'ami-0386de926573364e3', 's3': 'ami-0386de926573364e3',
-            'router': 'ami-0cc8249ffb25653a1', 'bench': 'ami-026c9e398c9d0e68e'}
+            'router': 'ami-0cc8249ffb25653a1', 'bench': 'ami-06ede16f4cb5d89d5'}
     types = {'s1': 'c5.large', 's2': 'c7g.medium', 's3': 'c6g.medium', 'router': 'c6g.medium', 'bench': 'c7g.2xlarge'}
     # Fixed so the AMIs can carry /etc/hosts and the router's rules; the router's primary address stands for the bench.
     addresses = {'s1': '10.0.1.11', 's2': '10.0.1.12', 's3': '10.0.1.13', 'router': '10.0.1.20', 'bench': '10.0.1.30'}
@@ -213,9 +215,9 @@ class Isumail(Problem):
     commit = None
     service = 'isumail'
     # winner is the estimated theoretical maximum; initial is the median of 5 `calibrate` runs of the reference
-    # implementation on AWS (2026-11-03, v5.1).
-    winner = 1_020_000
-    initial = 2_153
+    # implementation on AWS (2026-11-11, v6).
+    winner = 1_060_000
+    initial = 1_744
     probe = ('/api/me', 401)
     no_proxy_hosts = ('.internal', '.isumail.test')
     bench_note = ('It sends isumail.test to s1 and t.isumail.test to s3 through the router for 70 seconds, runs the '
@@ -496,4 +498,15 @@ done
 """
 
 
-PROBLEMS = {p.name: p for p in (Isucon14(), Isucon13(), Isumail())}
+# isu-bench v1: the benchmarker of ISUMAIL v5.1 and 15 runs. Kept so that its results stay readable and reproducible.
+class IsumailV1(Isumail):
+    name = 'isumail-v1'
+    title = 'ISUMAIL v1'
+    amis = {**Isumail.amis, 'bench': 'ami-026c9e398c9d0e68e'}
+    scored = False
+    retired = True
+    winner = 1_020_000
+    initial = 2_153
+
+
+PROBLEMS = {p.name: p for p in (Isucon14(), Isucon13(), Isumail(), IsumailV1())}

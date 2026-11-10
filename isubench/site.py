@@ -9,7 +9,7 @@ from .run import agent_seconds
 ROOT = Path(__file__).resolve().parent.parent
 AGENT_NAMES = {'claude-code': 'Claude Code', 'codex': 'Codex', 'dsh': 'DeepSeek Harness'}
 # ISUMAIL leads: it is the problem no model can have seen solved.
-ORDER = ['isumail', 'isucon14', 'isucon13']
+ORDER = ['isumail', 'isucon14', 'isucon13', 'isumail-v1']
 
 
 def build(out):
@@ -37,8 +37,8 @@ def build(out):
             })
         problems.append({
             'name': name, 'title': problem.title, 'winner': problem.winner, 'initial': problem.initial,
-            'reference': 'theory' if name == 'isumail' else 'winner',
-            'extra': not problem.scored,
+            'reference': 'theory' if name.startswith('isumail') else 'winner',
+            'extra': not problem.scored, 'retired': problem.retired, 'runs': max(len(r['runs']) for r in rows),
             'results': rows,
         })
     data = json.dumps({'configs': configs, 'problems': problems}).replace('<', '\\u003c')

@@ -1,6 +1,6 @@
-# isu-bench v1 requirements
+# isu-bench v1.1 requirements
 
-isu-bench measures how far a coding agent can improve an ISUCON web service on its first encounter. The v1 score is ISUMAIL, an original problem whose source is not published; ISUCON14 (ISURIDE) and ISUCON13 (ISUPipe) run as extras.
+isu-bench measures how far a coding agent can improve an ISUCON web service on its first encounter. The score is ISUMAIL, an original problem whose source is not published; ISUCON14 (ISURIDE) and ISUCON13 (ISUPipe) run as extras.
 
 ## Problem and infrastructure
 
@@ -55,20 +55,20 @@ Each is a `Problem` attribute or hook whose default keeps the v1 behavior.
 - One run at a time. Every invocation that starts counts toward the limit, including FAIL and application errors such as a failed `/api/initialize`.
 - The benchmarker runs detached on the benchmark host with its output in files; when the SSH session breaks, the daemon reconnects and resumes the output where it left off, so the run continues.
 - Exception: when the benchmark host stays unreachable for 15 minutes, it was lost rather than the application failing. That attempt is not counted, its logs are kept as `infra-NN`, the harness reboots the benchmark host, and the agent is told so.
-- Prints only the contestant-facing benchmarker output (stdout: pass/fail, score, error summary) to the agent. The operator-facing output (stderr) is saved and published but not shown. After the 15th run it refuses further invocations.
+- Prints only the contestant-facing benchmarker output (stdout: pass/fail, score, error summary) to the agent. The operator-facing output (stderr) is saved and published but not shown. After the 11th run it refuses further invocations.
 
 ## Scoring and termination
 
-- The run ends when the 15th benchmark finishes. No wall-clock limit.
-- If the agent exits before using 15 runs, the harness resumes it up to 3 times with "Continue. N of 15 benchmark runs remain." If it still stops, the last completed run is scored and the result is flagged as stopped early.
-- After the 15th run the harness reboots the three competition hosts and checks that the service responds. If it does not, the score is 0.
-- Score = result of the 15th run. FAIL scores 0. The isu-bench score is the ISUMAIL score divided by its estimated theoretical maximum (`winner`); problems are marked `scored` in the problem definition.
+- The run ends when the 11th benchmark finishes (the 15th in v1). No wall-clock limit.
+- If the agent exits before using 11 runs, the harness resumes it up to 3 times with "Continue. N of 11 benchmark runs remain." If it still stops, the last completed run is scored and the result is flagged as stopped early.
+- After the 11th run the harness reboots the three competition hosts and checks that the service responds. If it does not, the score is 0.
+- Score = result of the 11th run. FAIL scores 0. The isu-bench score is the ISUMAIL score divided by its estimated theoretical maximum (`winner`); problems are marked `scored` in the problem definition.
 
 ## Recorded per run
 
 - Agent CLI and version, model, reasoning effort (required on the command line), language, model provider.
-- Score and full log of each of the 15 benchmark runs, with timestamps.
-- Wall time from agent start to the 15th run.
+- Score and full log of each of the 11 benchmark runs, with timestamps.
+- Wall time from agent start to the 11th run.
 - Token usage (uncached input, output, cache read/write), summed from the agent transcripts, since the CLI's own totals are lost when the harness stops it at the last run.
 - Agent transcripts (CLI JSON output and session logs) with credential values redacted.
 - Proxy logs from the container and the competition hosts.
@@ -77,15 +77,20 @@ Each is a `Problem` attribute or hook whose default keeps the v1 behavior.
 ## Publishing
 
 - Public repo: harness, `bench` daemon, Dockerfile, prompt, rules, result schema, and results.
-- Results table: agent, model, language, the 15 scores, final score, wall time, tokens, cost. Benchmark logs are published; final code is optional.
+- Results table: agent, model, language, the 11 scores, final score, wall time, tokens, cost. Benchmark logs are published; final code is optional.
 - Known limitations stated in the README:
   - One trial per configuration because of EC2 cost; variance between trials is not measured.
   - Models may have seen public ISUCON14 solutions during training.
   - Data persistence after reboot is checked only as "service responds", not by comparing written data.
 
-## v1 trials
+## Trials
 
 One trial each, language Go.
+
+- ISUMAIL (v1.1, 11 runs): Claude Code + Claude Opus 5.5 (high), Codex + GPT-6 Astra (xhigh), Codex + GPT-6.1 Sol (xhigh), DeepSeek Harness + DeepSeek V4.1 Flash (max)
+- ISUMAIL as of v1 (`isumail-v1`, 15 runs): the same four and Claude Code + Claude Fable 5.2 (high)
+
+The trials below ran under v1, with 15 runs.
 
 - ISUCON14 and ISUCON13: Claude Code + Claude Opus 5.5 (high), Codex + GPT-6 Astra (xhigh), Codex + GPT-6.1 Sol (xhigh), DeepSeek Harness + DeepSeek V4.1 Flash (`deepseek-v4.1-flash:1017` on Ollama Cloud, max)
 - ISUCON14 only: Claude Code + Claude Opus 5.5 (xhigh), Claude Code + Claude Sonnet 5.5 (xhigh)
@@ -96,7 +101,7 @@ isu-bench score = geometric mean over problems of `max(final, initial) / winner`
 
 ## Prompt
 
-[prompt.md](prompt.md). It states facts and rules only, with no strategy hints. `{LANG}` and `{lang}` are filled from `--lang`, `{RUNS}` from the run limit (15).
+[prompt.md](prompt.md). It states facts and rules only, with no strategy hints. `{LANG}` and `{lang}` are filled from `--lang`, `{RUNS}` from the run limit (11).
 
 ## To verify during implementation
 

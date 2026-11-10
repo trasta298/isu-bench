@@ -87,6 +87,7 @@ td:first-child small { margin-left: 18px; }
   <p data-t="intro"></p>
   <p id="meta"></p>
   <div class="tabs" role="tablist" id="tabs"></div>
+  <p class="note"><label><input type="checkbox" id="retired"> <span data-t="showRetired"></span></label></p>
   <section class="card">
     <h2 data-t="final"></h2>
     <svg id="bars" role="img"></svg>
@@ -130,7 +131,8 @@ const color = c => `var(--s${DATA.configs.indexOf(c) % 8 + 1})`;
 const T = {
   en: {
     title: 'isu-bench results',
-    intro: 'How far can a coding agent tune an ISUCON web service on its first encounter, given exactly 15 benchmark runs? Each agent gets the docs, a slow reference implementation and SSH to the servers; its score is the 15th run. The isu-bench score is ISUMAIL, a problem written for isu-bench whose source is not published; ISUCON14 and ISUCON13 are extras.',
+    intro: 'How far can a coding agent tune an ISUCON web service on its first encounter, given exactly 11 benchmark runs? Each agent gets the docs, a slow reference implementation and SSH to the servers; its score is the last run. The isu-bench score is ISUMAIL, a problem written for isu-bench whose source is not published; ISUCON14 and ISUCON13 are extras, measured under v1 with 15 runs.',
+    showRetired: 'Show the results of isu-bench v1',
     final: 'Final score',
     each: 'Score of each benchmark run',
     details: 'Details',
@@ -142,13 +144,14 @@ const T = {
     askEnd: ' on X. Donations toward the EC2 and API costs are welcome too.',
     theory: 'estimated theoretical maximum',
     winner: 'contest winner',
-    tab: p => p.extra ? `${p.title} (extra)` : p.title,
+    tab: p => p.retired ? p.title : p.extra ? `${p.title} (extra)` : p.title,
     summary: p => `${p.title}: ${p.results.length} configurations, one trial each, language Go.` +
-      (p.extra ? " An extra, not part of the isu-bench score: its public solutions may be in the models' training data." : ''),
+      (p.retired ? ' The problem as it was in isu-bench v1, with 15 runs; not part of the current score.'
+       : p.extra ? " An extra, not part of the isu-bench score: its public solutions may be in the models' training data." : ''),
     barsLabel: (p, ref) => `Final score as a percentage of the ${ref} for ${p.title}`,
     barsNote: (p, ref) => `The line marks 100%: the ${ref}, ${fmt(p.winner)}. The initial implementation scores about ${fmt(p.initial)}.`,
     share: (score, ratio, ref) => `${score} (${ratio} of ${ref})`,
-    linesLabel: p => `Score of each of the 15 benchmark runs for ${p.title}`,
+    linesLabel: p => `Score of each of the ${p.runs} benchmark runs for ${p.title}`,
     run: i => `Run ${i}`,
     head: ['Configuration', 'Final', '× initial', 'Best', 'FAIL', 'Uncounted', 'Agent time', 'Output tokens', 'Cache read', 'API cost'],
     minutes: m => `${m} min`,
@@ -158,7 +161,7 @@ const T = {
     elapsed: 'Minutes since the agent started',
     runAt: (i, m) => `Run ${i} · ${m} min`,
     since: c => `${c} tool calls before it`,
-    paceTitle: 'How each agent spent its 15 runs',
+    paceTitle: 'How each agent spent its runs',
     paceHead: ['Configuration', 'Run 2 at', 'Median gap', 'Longest gap', 'Tool calls / run', 'Output tokens / run', 'Agent time'],
     paceNote: ['Run 1 usually measures the initial implementation, so "Run 2 at" is how long the agent worked before measuring its first change.',
                'A gap is the time between the starts of two consecutive runs.',
@@ -166,7 +169,8 @@ const T = {
   },
   ja: {
     title: 'isu-bench の結果',
-    intro: 'コーディングエージェントが、初めて見るISUCON形式のWebサービスを、ベンチマーク15回だけでどこまで速くできるかを測ります。各エージェントには仕様書、遅い参照実装、サーバーへのSSHを渡し、15回目の点で採点します。isu-benchスコアはISUMAILの点で決めます。ISUMAILはisu-benchのために作った問題で、ソースを公開していません。ISUCON14とISUCON13の結果はおまけです。',
+    intro: 'コーディングエージェントが、初めて見るISUCON形式のWebサービスを、ベンチマーク11回だけでどこまで速くできるかを測ります。各エージェントには仕様書、遅い参照実装、サーバーへのSSHを渡し、最後の回の点で採点します。isu-benchスコアはISUMAILの点で決めます。ISUMAILはisu-benchのために作った問題で、ソースを公開していません。ISUCON14とISUCON13の結果はおまけで、v1（15回）で測ったものです。',
+    showRetired: 'isu-bench v1 の結果を表示',
     final: '最終点',
     each: '各ベンチマークの点',
     details: '詳細',
@@ -178,13 +182,14 @@ const T = {
     askEnd: 'まで連絡してください。EC2とAPIの費用への寄付も歓迎します。',
     theory: '理論上の上限の見積もり',
     winner: '競技の優勝スコア',
-    tab: p => p.extra ? `${p.title}（おまけ）` : p.title,
+    tab: p => p.retired ? p.title : p.extra ? `${p.title}（おまけ）` : p.title,
     summary: p => `${p.title}: ${p.results.length}構成、各1試行、言語はGo。` +
-      (p.extra ? 'この問題はおまけで、isu-benchスコアには入りません。公開解がモデルの学習データに含まれている可能性があります。' : ''),
+      (p.retired ? 'isu-bench v1 のときの問題（15回）で、いまのスコアには入りません。'
+       : p.extra ? 'この問題はおまけで、isu-benchスコアには入りません。公開解がモデルの学習データに含まれている可能性があります。' : ''),
     barsLabel: (p, ref) => `${p.title}の最終点（${ref}に対する割合）`,
     barsNote: (p, ref) => `縦線は100%の位置で、${ref}（${fmt(p.winner)}点）を表します。初期実装は約${fmt(p.initial)}点です。`,
     share: (score, ratio, ref) => `${score}（${ref}の${ratio}）`,
-    linesLabel: p => `${p.title}の15回のベンチマークの点`,
+    linesLabel: p => `${p.title}の${p.runs}回のベンチマークの点`,
     run: i => `${i}回目`,
     head: ['構成', '最終点', '初期実装比', '最高点', 'FAIL', '数えない走行', '作業時間', '出力トークン', 'キャッシュ読込', 'API換算の費用'],
     minutes: m => `${m}分`,
@@ -194,7 +199,7 @@ const T = {
     elapsed: 'エージェントが動き始めてからの時間（分）',
     runAt: (i, m) => `${i}回目・${m}分`,
     since: c => `直前までにツール呼び出し${c}回`,
-    paceTitle: '15回の使い方',
+    paceTitle: 'ベンチマーク回数の使い方',
     paceHead: ['構成', '2回目の開始', '間隔の中央値', '最長の間隔', '1回あたりのツール呼び出し', '1回あたりの出力トークン', '作業時間'],
     paceNote: ['1回目はたいてい初期実装を測るので、「2回目の開始」は最初の変更を測るまでに作業した時間です。',
                '間隔は、続けて行った2回のベンチマークの開始時刻の差です。',
@@ -481,9 +486,16 @@ for (const p of DATA.problems) {
   b.role = 'tab';
   b.dataset.name = p.name;
   b.textContent = L.tab(p);
+  b.hidden = p.retired;
   b.addEventListener('click', () => select(p.name));
   tabs.appendChild(b);
 }
+const retired = document.getElementById('retired');
+retired.parentElement.parentElement.hidden = !DATA.problems.some(p => p.retired);
+retired.addEventListener('change', () => {
+  for (const b of tabs.children) b.hidden = !retired.checked && DATA.problems.find(p => p.name === b.dataset.name).retired;
+  if (!retired.checked && DATA.problems.find(p => p.name === current).retired) select(DATA.problems[0].name);
+});
 select(DATA.problems[0].name);
 </script>
 </body>

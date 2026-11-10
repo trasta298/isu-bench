@@ -1,6 +1,6 @@
 {
   "run_id": "isumail-codex-gpt-6-astra-go-20261103064853",
-  "problem": "isumail",
+  "problem": "isumail-v1",
   "agent": "codex",
   "agent_version": "codex-cli 0.166.0",
   "model": "gpt-6-astra",

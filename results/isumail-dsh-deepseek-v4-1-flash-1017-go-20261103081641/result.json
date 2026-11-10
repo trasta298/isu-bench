@@ -1,6 +1,6 @@
 {
   "run_id": "isumail-dsh-deepseek-v4-1-flash-1017-go-20261103081641",
-  "problem": "isumail",
+  "problem": "isumail-v1",
   "agent": "dsh",
   "agent_version": "0.2.1-rc.5",
   "model": "deepseek-v4.1-flash:1017",

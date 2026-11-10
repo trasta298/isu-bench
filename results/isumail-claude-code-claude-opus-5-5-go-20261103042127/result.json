@@ -1,6 +1,6 @@
 {
   "run_id": "isumail-claude-code-claude-opus-5-5-go-20261103042127",
-  "problem": "isumail",
+  "problem": "isumail-v1",
   "agent": "claude-code",
   "agent_version": "2.1.316 (Claude Code)",
   "model": "claude-opus-5-5",

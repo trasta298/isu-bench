@@ -9,7 +9,7 @@ import time
 import uuid
 from pathlib import Path
 
-LIMIT = 15
+LIMIT = 11
 # How long the benchmark host may stay unreachable before a run is given up as lost.
 RECONNECT = 900
 

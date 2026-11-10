@@ -5,7 +5,7 @@ from .problems import LANGS, PROBLEMS
 
 parser = argparse.ArgumentParser(prog='python3 -m isubench')
 sub = parser.add_subparsers(dest='command', required=True)
-p = sub.add_parser('run', help='provision, run one agent until its 15th benchmark, verify, tear down')
+p = sub.add_parser('run', help='provision, run one agent until its last benchmark, verify, tear down')
 p.add_argument('--problem', default='isucon14', choices=PROBLEMS)
 p.add_argument('--agent', required=True, choices=agents.AGENTS)
 p.add_argument('--model', required=True)
