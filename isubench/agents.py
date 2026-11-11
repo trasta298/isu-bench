@@ -153,4 +153,70 @@ class DeepSeekHarness:
                     yield e['time'] / 1000, 0, e['data']['usage'].get('outputTokens') or 0
 
 
-AGENTS = {a.name: a for a in (ClaudeCode(), Codex(), DeepSeekHarness())}
+class Antigravity:
+    name = 'agy'
+    domains = ['generativelanguage.googleapis.com']
+    credentials = ['GEMINI_API_KEY']
+    env = {}
+    version = ['agy', '--version']
+    # The CLI keeps its conversations as protobuf and its events carry no time, so the stream is stamped and kept.
+    stream = '.agy/stream.jsonl'
+    stamp = """
+import json, os, subprocess, sys, time
+path = os.path.expanduser('~/%s')
+os.makedirs(os.path.dirname(path), exist_ok=True)
+proc = subprocess.Popen(sys.argv[1:], stdout=subprocess.PIPE, text=True)
+with open(path, 'a') as keep:
+    for line in proc.stdout:
+        try:
+            line = json.dumps({**json.loads(line), 'time': time.time()}) + '\\n'
+        except ValueError:
+            pass
+        for out in (sys.stdout, keep):
+            out.write(line)
+            out.flush()
+sys.exit(proc.wait())
+""" % stream
+    # search_web runs inside the model API, past the allowlist proxy, and no permission rule names it.
+    web_tools = 'search_web|read_url_content|open_browser_url|browser_.*'
+
+    def home_files(self, model, effort):
+        deny = "cat > /dev/null; echo '%s'" % json.dumps({'decision': 'deny', 'reason': 'Web access is disabled in this environment.'})
+        return {'.gemini/config/hooks.json': json.dumps({'no-web': {'PreToolUse': [
+            {'matcher': self.web_tools, 'hooks': [{'type': 'command', 'command': deny}]}]}})}
+
+    # A model the CLI does not list has to be declared, as an entry of a map: only then does --effort apply to it
+    # (low, medium or high, sent as the API's thinking level; named by its API path alone the model thinks as it likes).
+    def command(self, model, effort, prompt, logs):
+        settings = {'modelProvider': 'gemini', 'permissions': {'deny': ['read_url(*)', 'execute_url(*)']},
+                    'customModelsConfig': {'customModels': {model: {'modelName': f'gemini-api://models/{model}', 'label': model}}}}
+        cmd = ['agy', '-p', prompt, '--model', model, '--effort', effort, '--settings', json.dumps(settings),
+               '--output-format', 'stream-json', '--dangerously-skip-permissions']
+        return ['python3', '-c', self.stamp, *cmd, *(['--continue'] if logs else [])]
+
+    def steps(self, home):
+        log = home / self.stream
+        for e in events(log) if log.exists() else ():
+            step = e.get('step_update') if e.get('event') == 'step_update' else None
+            if step and step.get('state') in ('DONE', 'ERROR'):
+                yield e['time'], step
+
+    def usage(self, home):
+        total = {}
+        for _, step in self.steps(home):
+            u = step.get('usage')
+            if u:
+                # output_tokens includes the thinking; input_tokens leaves out the cached ones.
+                add(total, input_tokens=u.get('input_tokens'), output_tokens=u.get('output_tokens'),
+                    cache_read_tokens=u.get('cache_read_tokens'), reasoning_tokens=u.get('thinking_tokens'))
+        return total
+
+    def activity(self, home):
+        for at, step in self.steps(home):
+            if step.get('step_type') == 'tool':
+                yield at, 1, 0
+            elif step.get('usage'):
+                yield at, 0, step['usage'].get('output_tokens') or 0
+
+
+AGENTS = {a.name: a for a in (ClaudeCode(), Codex(), DeepSeekHarness(), Antigravity())}

@@ -13,6 +13,8 @@ RUN apt-get update \
 RUN curl -fsSL "https://go.dev/dl/go${GO_VERSION}.linux-amd64.tar.gz" | tar -C /usr/local -xz
 RUN npm install -g "@anthropic-ai/claude-code@${CLAUDE_CODE_VERSION}" "@openai/codex@${CODEX_VERSION}" \
     "@deepseek-ai/dsh@${DSH_VERSION}"
+# The installer has no version argument: it always takes the latest release, which the result records.
+RUN curl -fsSL https://antigravity.google/cli/install.sh | bash -s -- --dir /usr/local/bin
 RUN userdel -r node && groupadd -g "${GID}" agent && useradd -m -u "${UID}" -g "${GID}" -s /bin/bash agent
 
 COPY bench /usr/local/bin/bench

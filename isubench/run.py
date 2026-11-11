@@ -16,7 +16,7 @@ ROOT = Path(__file__).resolve().parent.parent
 IMAGE = 'isu-bench-agent:v1'
 RESUMES = 3
 TTL_HOURS = 48
-SESSION_DIRS = ('.claude/projects', '.codex/sessions', '.dsh/sessions')
+SESSION_DIRS = ('.claude/projects', '.codex/sessions', '.dsh/sessions', '.agy')
 # dsh compresses its session logs with zstd; Node in the agent image can read them, Python 3.12 cannot.
 UNZSTD = ("const fs=require('fs'),zlib=require('zlib'),path=require('path');const walk=d=>{for(const n of "
           "fs.readdirSync(d)){const p=path.join(d,n);if(fs.statSync(p).isDirectory())walk(p);else if"
@@ -152,6 +152,9 @@ def run(problem_name, agent_name, model, effort, lang, keep=False):
         auth.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy(auth_store, auth)
         auth.chmod(0o600)
+    for path, text in (adapter.home_files(model, effort) if hasattr(adapter, 'home_files') else {}).items():
+        (home / path).parent.mkdir(parents=True, exist_ok=True)
+        (home / path).write_text(text)
     if hasattr(adapter, 'patch_text'):
         (home / Path(adapter.patch).name).write_text(adapter.patch_text(model, effort))
     registries = (ROOT / 'isubench' / 'registries.txt').read_text()

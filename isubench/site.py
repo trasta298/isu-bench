@@ -7,7 +7,7 @@ from .problems import PROBLEMS
 from .run import agent_seconds
 
 ROOT = Path(__file__).resolve().parent.parent
-AGENT_NAMES = {'claude-code': 'Claude Code', 'codex': 'Codex', 'dsh': 'DeepSeek Harness'}
+AGENT_NAMES = {'claude-code': 'Claude Code', 'codex': 'Codex', 'dsh': 'DeepSeek Harness', 'agy': 'Antigravity CLI'}
 # ISUMAIL leads: it is the problem no model can have seen solved.
 ORDER = ['isumail', 'isucon14', 'isucon13', 'isumail-v1']
 
