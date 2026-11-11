@@ -32,7 +32,8 @@ def build(out):
                 'final': r['final_score'], 'runs': runs, 'best': max((v for v in runs if v is not None), default=0),
                 'fails': runs.count(None), 'uncounted': len(r.get('infra_failures', [])),
                 'agent_seconds': agent_seconds(r), 'output_tokens': u.get('output_tokens', 0),
-                'cost': prices.cost(r['model'], u),
+                'cost': prices.cost(r['model'], u), 'prices': prices.PRICES.get(r['model']),
+                'usage': {k: u.get(f'{k}_tokens', 0) for k in ('input', 'output', 'cache_read', 'cache_write')},
                 'cache_read_tokens': u.get('cache_read_tokens', 0), 'pace': r.get('pace') or [],
             })
         problems.append({
