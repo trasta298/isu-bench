@@ -14,6 +14,8 @@ Interactive charts of every run: [isu-bench.trasta.dev](https://isu-bench.trasta
 
 | agent | model | effort | isu-bench score | final | × initial | best | FAIL | uncounted | agent time | output tokens | cache read tokens | API cost |
 |---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| Claude Code 2.1.321 | claude-fable-5-2 | high | **58.4%** | 619,552 | 355 | 629,557 | 0 | 0 | 270 min | 793,093 | 117.4M | $76.55 |
+| Antigravity CLI 1.5.5 | gemini-4-carbon | medium | **51.9%** | 550,562 | 316 | 550,562 | 2 | 0 | 189 min | 420,441 | 85.9M | $39.27 |
 | Claude Code 2.1.321 | claude-opus-5-5 | high | **43.2%** | 458,137 | 263 | 487,230 | 1 | 0 | 133 min | 289,271 | 66.1M | $22.78 |
 | Codex 0.166.0 | gpt-6.1-sol | xhigh | **15.2%** | 161,341 | 93 | 175,262 | 1 | 0 | 45 min | 76,229 | 13.5M | $2.38 |
 | Codex 0.166.0 | gpt-6-astra | xhigh | **9.7%** | 103,221 | 59 | 104,112 | 1 | 0 | 45 min | 68,381 | 9.2M | $13.72 |
@@ -23,6 +25,8 @@ Interactive charts of every run: [isu-bench.trasta.dev](https://isu-bench.trasta
 
 | model | effort | runs |
 |---|---|---|
+| claude-fable-5-2 | high | 2,110, 209,192, 537,969, 566,475, 598,927, 629,557, 625,553, 525,689, 601,936, 619,298, 619,552 |
+| gemini-4-carbon | medium | 1,965, FAIL, 64,555, FAIL, 385,610, 473,157, 397,730, 321,715, 503,980, 521,106, 550,562 |
 | claude-opus-5-5 | high | 1,915, 336,358, FAIL, 400,880, 274,280, 449,916, 487,230, 462,396, 476,084, 462,168, 458,137 |
 | gpt-6.1-sol | xhigh | 1,860, 4,756, 25,963, 74,373, 76,652, FAIL, 175,262, 89,290, 152,024, 165,383, 161,341 |
 | gpt-6-astra | xhigh | 1,845, 5,088, 6,266, 38,481, FAIL, 37,457, 75,097, 97,471, 104,112, 102,418, 103,221 |
@@ -31,7 +35,8 @@ Interactive charts of every run: [isu-bench.trasta.dev](https://isu-bench.trasta
 </details>
 
 - The reference implementation (`initial`) scores 1,744, the median of 5 `calibrate` runs (coefficient of variation 5.1%; all passed persist-check).
-- API cost prices each trial's tokens at the providers' list prices on 2026-11-03, Anthropic's on 2026-11-10 ([isubench/prices.py](isubench/prices.py); DeepSeek at its peak rate, off-peak is half).
+- API cost prices each trial's tokens at the providers' list prices on 2026-11-03, Anthropic's on 2026-11-10 and Google's on 2026-11-11 ([isubench/prices.py](isubench/prices.py); DeepSeek at its peak rate, off-peak is half; Gemini 4 Carbon at its introductory price, which doubles on 2026-12-01).
+- Gemini 4 Carbon ran in Antigravity CLI, which Google names for the Gemini 4 series, on a Gemini API key. `--effort` goes up to `high` for this model there; the trial used `medium`. The key's credit ran out after the 7th run and the session went on with a second key, as one of the three resumes.
 - Only `result.json` of each ISUMAIL trial is committed. Transcripts, workspace diffs and benchmark output contain the source and stay local.
 
 ### Changes from v1
@@ -170,14 +175,15 @@ Raw benchmark logs, agent transcripts, proxy logs and workspace diffs of these p
 Requirements: Linux with Docker, the AWS CLI v2 with credentials for ap-northeast-1 (13 vCPU of on-demand C instances per ISUMAIL run, 14 for ISUCON14 and ISUCON13), Python 3.10+, git and ssh.
 
 ```sh
-export ANTHROPIC_API_KEY=...   # or CLAUDE_CODE_OAUTH_TOKEN / OPENAI_API_KEY / DEEPSEEK_API_KEY / OLLAMA_API_KEY
+export ANTHROPIC_API_KEY=...   # or CLAUDE_CODE_OAUTH_TOKEN / OPENAI_API_KEY / DEEPSEEK_API_KEY / OLLAMA_API_KEY / GEMINI_API_KEY
 python3 -m isubench run --problem isumail --agent claude-code --model claude-opus-5-5 --effort high
 python3 -m isubench table
 ```
 
-Problems: `isucon14` (default), `isucon13` and `isumail`, chosen with `--problem`. Agents: `claude-code`, `codex`, `dsh` (DeepSeek Harness). `--effort` is required so every result records the reasoning effort it ran with; `--lang` switches the initial implementation (`go`, `rust`, `node`, `perl`, `php`, `python`, `ruby`).
+Problems: `isucon14` (default), `isucon13` and `isumail`, chosen with `--problem`. Agents: `claude-code`, `codex`, `dsh` (DeepSeek Harness), `agy` (Antigravity CLI). `--effort` is required so every result records the reasoning effort it ran with; `--lang` switches the initial implementation (`go`, `rust`, `node`, `perl`, `php`, `python`, `ruby`).
 
 - Codex can also use a ChatGPT login made for isu-bench only: `docker run --rm -it -v ~/.config/isu-bench/codex:/home/agent/.codex isu-bench-agent:v1 codex login --device-auth`.
+- `agy` takes a model of the Gemini API by its name (`--model gemini-4-carbon`) and `--effort low`, `medium` or `high`. Its web search runs inside the model API, past the allowlist proxy, so a hook denies it together with the browser and URL tools.
 - `dsh` with `OLLAMA_API_KEY` runs against Ollama Cloud. The proxy sidecar holds the key and adds it to each request, so the agent container never sees it.
 
 A run creates its own VPC, security groups, key pair and four instances (five for ISUMAIL), and deletes them when it ends. If the harness dies, the instances terminate themselves after 48 hours; `python3 -m isubench teardown <run_id>` deletes everything right away.

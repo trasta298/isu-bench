@@ -87,7 +87,7 @@ Each is a `Problem` attribute or hook whose default keeps the v1 behavior.
 
 One trial each, language Go.
 
-- ISUMAIL (v1.1, 11 runs): Claude Code + Claude Opus 5.5 (high), Codex + GPT-6 Astra (xhigh), Codex + GPT-6.1 Sol (xhigh), DeepSeek Harness + DeepSeek V4.1 Flash (max)
+- ISUMAIL (v1.1, 11 runs): Claude Code + Claude Fable 5.2 (high), Antigravity CLI + Gemini 4 Carbon (medium), Claude Code + Claude Opus 5.5 (high), Codex + GPT-6 Astra (xhigh), Codex + GPT-6.1 Sol (xhigh), DeepSeek Harness + DeepSeek V4.1 Flash (max)
 - ISUMAIL as of v1 (`isumail-v1`, 15 runs): the same four and Claude Code + Claude Fable 5.2 (high)
 
 The trials below ran under v1, with 15 runs.

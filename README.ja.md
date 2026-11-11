@@ -14,6 +14,8 @@ v1.1のスコアは [ISUMAIL](#isumail) の結果で決めます。ISUMAILはisu
 
 | エージェント | モデル | effort | isu-benchスコア | 最終点 | 初期実装比 | 最高点 | FAIL | 数えない走行 | 作業時間 | 出力トークン | キャッシュ読込 | API換算の費用 |
 |---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| Claude Code 2.1.321 | claude-fable-5-2 | high | **58.4%** | 619,552 | 355 | 629,557 | 0 | 0 | 270分 | 793,093 | 117.4M | $76.55 |
+| Antigravity CLI 1.5.5 | gemini-4-carbon | medium | **51.9%** | 550,562 | 316 | 550,562 | 2 | 0 | 189分 | 420,441 | 85.9M | $39.27 |
 | Claude Code 2.1.321 | claude-opus-5-5 | high | **43.2%** | 458,137 | 263 | 487,230 | 1 | 0 | 133分 | 289,271 | 66.1M | $22.78 |
 | Codex 0.166.0 | gpt-6.1-sol | xhigh | **15.2%** | 161,341 | 93 | 175,262 | 1 | 0 | 45分 | 76,229 | 13.5M | $2.38 |
 | Codex 0.166.0 | gpt-6-astra | xhigh | **9.7%** | 103,221 | 59 | 104,112 | 1 | 0 | 45分 | 68,381 | 9.2M | $13.72 |
@@ -23,6 +25,8 @@ v1.1のスコアは [ISUMAIL](#isumail) の結果で決めます。ISUMAILはisu
 
 | モデル | effort | 11回の点 |
 |---|---|---|
+| claude-fable-5-2 | high | 2,110, 209,192, 537,969, 566,475, 598,927, 629,557, 625,553, 525,689, 601,936, 619,298, 619,552 |
+| gemini-4-carbon | medium | 1,965, FAIL, 64,555, FAIL, 385,610, 473,157, 397,730, 321,715, 503,980, 521,106, 550,562 |
 | claude-opus-5-5 | high | 1,915, 336,358, FAIL, 400,880, 274,280, 449,916, 487,230, 462,396, 476,084, 462,168, 458,137 |
 | gpt-6.1-sol | xhigh | 1,860, 4,756, 25,963, 74,373, 76,652, FAIL, 175,262, 89,290, 152,024, 165,383, 161,341 |
 | gpt-6-astra | xhigh | 1,845, 5,088, 6,266, 38,481, FAIL, 37,457, 75,097, 97,471, 104,112, 102,418, 103,221 |
@@ -31,7 +35,8 @@ v1.1のスコアは [ISUMAIL](#isumail) の結果で決めます。ISUMAILはisu
 </details>
 
 - 参照実装（`initial`）は1,744点で、`calibrate` 5回の中央値です（変動係数5.1%。すべてpersist-checkに合格）。
-- API換算の費用は各試行のトークン数に2026年11月3日時点の各社の定価（Anthropicは11月10日時点）を掛けた値です（[isubench/prices.py](isubench/prices.py)。DeepSeekはピーク時の料金で、オフピーク時はその半額）。
+- API換算の費用は各試行のトークン数に2026年11月3日時点の各社の定価（Anthropicは11月10日時点、Googleは11月11日時点）を掛けた値です（[isubench/prices.py](isubench/prices.py)。DeepSeekはピーク時の料金で、オフピーク時はその半額。Gemini 4 Carbonは導入価格で、12月1日から2倍になります）。
+- Gemini 4 Carbonは、GoogleがGemini 4シリーズ向けに案内しているAntigravity CLIで、Gemini APIの鍵を使って動かしました。このモデルで指定できる `--effort` は `high` までで、試行では `medium` を使いました。7回目の後に鍵のクレジットが尽きたため、別の鍵で会話を引き継いで続けています（3回までの再開のうちの1回）。
 - ISUMAILの試行は `result.json` だけをコミットしています。会話記録、作業差分、ベンチマークの出力にはソースが含まれるため、手元にだけ置いています。
 
 ### v1からの変更
@@ -170,14 +175,15 @@ python3 -m isubench quota --problem isumail --trials 2
 必要なもの: Docker の入ったLinux、ap-northeast-1の認証情報を設定したAWS CLI v2（オンデマンドのCインスタンスで、ISUMAILは1走行13 vCPU、ISUCON14とISUCON13は14 vCPU）、Python 3.10以上、git、ssh。
 
 ```sh
-export ANTHROPIC_API_KEY=...   # または CLAUDE_CODE_OAUTH_TOKEN / OPENAI_API_KEY / DEEPSEEK_API_KEY / OLLAMA_API_KEY
+export ANTHROPIC_API_KEY=...   # または CLAUDE_CODE_OAUTH_TOKEN / OPENAI_API_KEY / DEEPSEEK_API_KEY / OLLAMA_API_KEY / GEMINI_API_KEY
 python3 -m isubench run --problem isumail --agent claude-code --model claude-opus-5-5 --effort high
 python3 -m isubench table
 ```
 
-問題は `--problem` で `isucon14`（既定）、`isucon13`、`isumail` から選びます。エージェントは `claude-code`、`codex`、`dsh`（DeepSeek Harness）です。どの結果にも推論のeffortが残るよう `--effort` は必須です。`--lang` で初期実装の言語（`go`、`rust`、`node`、`perl`、`php`、`python`、`ruby`）を切り替えます。
+問題は `--problem` で `isucon14`（既定）、`isucon13`、`isumail` から選びます。エージェントは `claude-code`、`codex`、`dsh`（DeepSeek Harness）、`agy`（Antigravity CLI）です。どの結果にも推論のeffortが残るよう `--effort` は必須です。`--lang` で初期実装の言語（`go`、`rust`、`node`、`perl`、`php`、`python`、`ruby`）を切り替えます。
 
 - Codexでは、isu-bench専用に作ったChatGPTのログインも使えます。ログインには `docker run --rm -it -v ~/.config/isu-bench/codex:/home/agent/.codex isu-bench-agent:v1 codex login --device-auth` を実行します。
+- `agy` はGemini APIのモデルを名前で指定します（`--model gemini-4-carbon`）。`--effort` は `low`・`medium`・`high` です。Antigravity CLIのWeb検索はモデルのAPIの中で実行され、許可リストのプロキシでは止まらないので、ブラウザやURLの取得と合わせてフックで拒否しています。
 - `OLLAMA_API_KEY` を設定した `dsh` はOllama Cloudで動きます。鍵はプロキシのサイドカーが持って要求ごとに付けるので、エージェントのコンテナからは見えません。
 
 1回の実行で専用のVPC、セキュリティグループ、キーペア、4台のインスタンス（ISUMAILは5台）を作り、終わると消します。ハーネスが異常終了しても、インスタンスは48時間後に自分で終了します。`python3 -m isubench teardown <run_id>` ですぐにすべて消せます。
