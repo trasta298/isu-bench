@@ -10,6 +10,8 @@ v1.1のスコアは [ISUMAIL](#isumail) の結果で決めます。ISUMAILはisu
 
 各走行の点まで見られるグラフは [isu-bench.trasta.dev](https://isu-bench.trasta.dev/) にあります。
 
+![isu-bench v1.1 の結果](docs/isu-bench-v1.1.ja.png)
+
 **isu-benchスコア**はISUMAILの最終点を、理論上の上限の見積もり（1,060,000点）で割った値です。言語はGo。すべての試行が11回のベンチマークを使い切り、再起動後の永続性確認に通りました。
 
 | エージェント | モデル | effort | isu-benchスコア | 最終点 | 初期実装比 | 最高点 | FAIL | 数えない走行 | 作業時間 | 出力トークン | キャッシュ読込 | API換算の費用 |

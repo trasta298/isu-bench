@@ -10,6 +10,8 @@ v1.1 is scored on [ISUMAIL](#isumail), an ISUCON-style problem written for isu-b
 
 Interactive charts of every run: [isu-bench.trasta.dev](https://isu-bench.trasta.dev/)
 
+![isu-bench v1.1 results](docs/isu-bench-v1.1.png)
+
 **isu-bench score** is the final ISUMAIL score divided by its estimated theoretical maximum, 1,060,000. Language Go. Every trial used all 11 benchmark runs and passed the post-reboot persistence check.
 
 | agent | model | effort | isu-bench score | final | × initial | best | FAIL | uncounted | agent time | output tokens | cache read tokens | API cost |
