@@ -136,6 +136,8 @@ python3 -m isubench quota --problem isumail --trials 2
 
 Not part of the isu-bench score: public solutions of these problems predate the models' training data. One trial per configuration, language Go, run under v1 with 15 runs. No run was lost to a benchmark host failure.
 
+<details><summary>Results of both problems</summary>
+
 ### ISUCON14
 
 Contest winner 58,153. Initial Go implementation about 961 in this environment.
@@ -185,6 +187,8 @@ Contest winner 468,006. Initial Go implementation about 3,673 in this environmen
 </details>
 
 Raw benchmark logs, agent transcripts, proxy logs and workspace diffs of these problems are in [results/](results/). `python3 -m isubench table` prints all results from `results/*/result.json`.
+
+</details>
 
 ## Rules
 

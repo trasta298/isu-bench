@@ -136,6 +136,8 @@ python3 -m isubench quota --problem isumail --trials 2
 
 この2問の結果はisu-benchスコアに入れていません。2問とも、公開解がモデルの学習データより前からあります。1構成1試行、言語はGo。v1のルール（15回）で測った結果です。ベンチマーク機の喪失で失った走行はありません。
 
+<details><summary>2問の結果</summary>
+
 ### ISUCON14
 
 競技の優勝スコア58,153点。この環境での初期Go実装は約961点。
@@ -185,6 +187,8 @@ python3 -m isubench quota --problem isumail --trials 2
 </details>
 
 これらの問題のベンチマークの生ログ、エージェントの会話記録、プロキシのログ、作業差分は [results/](results/) にあります。`python3 -m isubench table` は `results/*/result.json` から全結果を表にします。
+
+</details>
 
 ## ルール
 

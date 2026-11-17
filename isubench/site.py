@@ -26,7 +26,9 @@ def build(out):
     for i, c in enumerate(sorted({f"{r['model']} {r['effort']}" for r in results} - colors.keys()), len(COLORS)):
         colors[c] = i % 8 + 1
     problems = []
-    for name in sorted({r['problem'] for r in results}, key=lambda p: ORDER.index(p) if p in ORDER else len(ORDER)):
+    # The extras keep their results in the repository but no longer appear on the page.
+    shown = {r['problem'] for r in results if PROBLEMS[r['problem']].scored or PROBLEMS[r['problem']].retired}
+    for name in sorted(shown, key=lambda p: ORDER.index(p) if p in ORDER else len(ORDER)):
         problem = PROBLEMS[name]
         ran = {r['model'] for r in results if r['problem'] == name}
         rows = []
