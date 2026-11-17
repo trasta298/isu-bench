@@ -26,8 +26,8 @@ def build(out):
     for i, c in enumerate(sorted({f"{r['model']} {r['effort']}" for r in results} - colors.keys()), len(COLORS)):
         colors[c] = i % 8 + 1
     problems = []
-    # The extras keep their results in the repository but no longer appear on the page.
-    shown = {r['problem'] for r in results if PROBLEMS[r['problem']].scored or PROBLEMS[r['problem']].retired}
+    # Only the scored problem appears on the page; the others keep their results in the repository.
+    shown = {r['problem'] for r in results if PROBLEMS[r['problem']].scored}
     for name in sorted(shown, key=lambda p: ORDER.index(p) if p in ORDER else len(ORDER)):
         problem = PROBLEMS[name]
         ran = {r['model'] for r in results if r['problem'] == name}
@@ -49,7 +49,7 @@ def build(out):
         problems.append({
             'name': name, 'title': problem.title, 'winner': problem.winner, 'initial': problem.initial,
             'reference': 'theory' if name.startswith('isumail') else 'winner',
-            'extra': not problem.scored, 'retired': problem.retired, 'runs': max(len(r['runs']) for r in rows),
+            'runs': max(len(r['runs']) for r in rows),
             'results': rows,
         })
     data = json.dumps({'colors': colors, 'problems': problems}).replace('<', '\\u003c')

@@ -56,16 +56,6 @@ header { display: flex; align-items: center; justify-content: space-between; gap
 h2 { font-size: 17px; margin: 0 0 12px; }
 p { margin: 0 0 12px; color: var(--ink-2); }
 a { color: inherit; }
-.tabbar { display: flex; align-items: center; justify-content: space-between; gap: 8px 16px; flex-wrap: wrap; margin: 28px 0 16px; }
-.tabs { display: flex; gap: 4px; flex-wrap: wrap; }
-.toggle { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--muted); cursor: pointer; }
-.toggle[hidden] { display: none; }
-.toggle input { margin: 0; }
-.tabs button {
-  font: inherit; padding: 6px 14px; border-radius: 999px; cursor: pointer;
-  border: 1px solid var(--ring); background: transparent; color: var(--ink-2);
-}
-.tabs button[aria-selected="true"] { background: var(--ink); color: var(--page); border-color: var(--ink); }
 .picker { display: flex; gap: 6px; flex-wrap: wrap; margin: 0 0 16px; }
 .picker button {
   font: inherit; font-size: 13px; padding: 4px 10px; border-radius: 999px; cursor: pointer;
@@ -116,10 +106,6 @@ td:first-child small { margin-left: 18px; }
   <p class="lead" data-t="intro"></p>
   <div class="overview" id="overview"></div>
   <p id="meta"></p>
-  <div class="tabbar">
-    <div class="tabs" role="tablist" id="tabs"></div>
-    <label class="toggle" id="retired-toggle"><input type="checkbox" id="retired"><span data-t="showRetired"></span></label>
-  </div>
   <div class="picker" id="picker"></div>
   <section class="card">
     <h2 data-t="final"></h2>
@@ -178,7 +164,6 @@ const T = {
                             'ISUMAIL was written for isu-bench and is unpublished, so no model has seen it solved',
                             'The agent works alone with the docs, a slow reference implementation and SSH to three servers']],
     ],
-    showRetired: 'Show the results of isu-bench v1',
     final: 'Final score',
     each: 'Score of each benchmark run',
     details: 'Details',
@@ -192,10 +177,7 @@ const T = {
     askEnd: ' on X. Donations toward the EC2 and API costs are welcome too.',
     theory: 'estimated theoretical maximum',
     winner: 'contest winner',
-    tab: p => p.retired ? p.title : p.extra ? `${p.title} (extra)` : p.title,
-    summary: p => `${p.title}: ${p.results.length} configurations, one trial each, language Go.` +
-      (p.retired ? ' The problem as it was in isu-bench v1, with 15 runs; not part of the current score.'
-       : p.extra ? " An extra, not part of the isu-bench score: its public solutions may be in the models' training data." : ''),
+    summary: p => `${p.title}: ${p.results.length} configurations, one trial each, language Go.`,
     barsLabel: (p, ref) => `Final score as a percentage of the ${ref} for ${p.title}`,
     barsNote: (p, ref) => `The line marks 100%: the ${ref}, ${fmt(p.winner)}. The initial implementation scores about ${fmt(p.initial)}.`,
     share: (score, ratio, ref) => `${score} (${ratio} of ${ref})`,
@@ -226,7 +208,6 @@ const T = {
       ['採点', ['ISUMAILの11回目の点を、理論上の上限の見積もりで割った値', 'ISUMAILはisu-bench用に作った非公開の問題で、解かれた例を見たモデルはいない',
                'エージェントは仕様書、遅い参照実装、3台のサーバーへのSSHだけで一人で作業する']],
     ],
-    showRetired: 'isu-bench v1 の結果を表示',
     final: '最終点',
     each: '各ベンチマークの点',
     details: '詳細',
@@ -240,10 +221,7 @@ const T = {
     askEnd: 'まで連絡してください。EC2とAPIの費用への寄付も歓迎します。',
     theory: '理論上の上限の見積もり',
     winner: '競技の優勝スコア',
-    tab: p => p.retired ? p.title : p.extra ? `${p.title}（おまけ）` : p.title,
-    summary: p => `${p.title}: ${p.results.length}構成、各1試行、言語はGo。` +
-      (p.retired ? 'isu-bench v1 のときの問題（15回）で、いまのスコアには入りません。'
-       : p.extra ? 'この問題はおまけで、isu-benchスコアには入りません。公開解がモデルの学習データに含まれている可能性があります。' : ''),
+    summary: p => `${p.title}: ${p.results.length}構成、各1試行、言語はGo。`,
     barsLabel: (p, ref) => `${p.title}の最終点（${ref}に対する割合）`,
     barsNote: (p, ref) => `縦線は100%の位置で、${ref}（${fmt(p.winner)}点）を表します。初期実装は約${fmt(p.initial)}点です。`,
     share: (score, ratio, ref) => `${score}（${ref}の${ratio}）`,
@@ -567,7 +545,7 @@ function costTip(cell, r) {
   cell.addEventListener('blur', hideTip);
 }
 
-// A choice made on one tab carries to the others; until then a model replaced by its newer version is off.
+// Until a choice is made, a model replaced by its newer version is off.
 const chosen = new Map();
 const shown = r => chosen.get(r.config) ?? !r.old;
 
@@ -590,15 +568,8 @@ function picker(problem) {
   }
 }
 
-function select(name) {
-  current = name;
-  for (const b of document.querySelectorAll('.tabs button')) b.setAttribute('aria-selected', b.dataset.name === name);
-  picker(DATA.problems.find(p => p.name === name));
-  render();
-}
-
 function render() {
-  const all = DATA.problems.find(p => p.name === current);
+  const all = DATA.problems[0];
   const problem = { ...all, results: all.results.filter(shown) };
   document.getElementById('meta').textContent = L.summary(problem);
   bars(problem);
@@ -608,25 +579,9 @@ function render() {
   table(problem);
 }
 
-let current;
 addEventListener('resize', render);
-const tabs = document.getElementById('tabs');
-for (const p of DATA.problems) {
-  const b = document.createElement('button');
-  b.role = 'tab';
-  b.dataset.name = p.name;
-  b.textContent = L.tab(p);
-  b.hidden = p.retired;
-  b.addEventListener('click', () => select(p.name));
-  tabs.appendChild(b);
-}
-const retired = document.getElementById('retired');
-document.getElementById('retired-toggle').hidden = !DATA.problems.some(p => p.retired);
-retired.addEventListener('change', () => {
-  for (const b of tabs.children) b.hidden = !retired.checked && DATA.problems.find(p => p.name === b.dataset.name).retired;
-  if (!retired.checked && DATA.problems.find(p => p.name === current).retired) select(DATA.problems[0].name);
-});
-select(DATA.problems[0].name);
+picker(DATA.problems[0]);
+render();
 </script>
 </body>
 </html>
