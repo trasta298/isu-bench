@@ -46,7 +46,6 @@ p { margin: 0 0 12px; color: var(--ink-2); }
 a { color: inherit; }
 .tabbar { display: flex; align-items: center; justify-content: space-between; gap: 8px 16px; flex-wrap: wrap; margin: 28px 0 16px; }
 .tabs { display: flex; gap: 4px; flex-wrap: wrap; }
-.toggles { display: flex; gap: 4px 16px; flex-wrap: wrap; }
 .toggle { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--muted); cursor: pointer; }
 .toggle[hidden] { display: none; }
 .toggle input { margin: 0; }
@@ -55,6 +54,15 @@ a { color: inherit; }
   border: 1px solid var(--ring); background: transparent; color: var(--ink-2);
 }
 .tabs button[aria-selected="true"] { background: var(--ink); color: var(--page); border-color: var(--ink); }
+.picker { display: flex; gap: 6px; flex-wrap: wrap; margin: 0 0 16px; }
+.picker button {
+  font: inherit; font-size: 13px; padding: 4px 10px; border-radius: 999px; cursor: pointer;
+  border: 1px solid var(--ring); background: transparent; color: var(--ink-2);
+  display: inline-flex; align-items: center; gap: 6px;
+}
+.picker button::before { content: ""; width: 10px; height: 10px; border-radius: 3px; background: var(--key); }
+.picker button[aria-pressed="false"] { color: var(--muted); }
+.picker button[aria-pressed="false"]::before { background: transparent; box-shadow: inset 0 0 0 1.5px var(--key); }
 .card { background: var(--surface); border: 1px solid var(--ring); border-radius: 12px; padding: 20px; margin-bottom: 16px; }
 .note { font-size: 13px; color: var(--muted); margin: 8px 0 0; }
 svg { display: block; overflow: visible; }
@@ -94,11 +102,9 @@ td:first-child small { margin-left: 18px; }
   <p id="meta"></p>
   <div class="tabbar">
     <div class="tabs" role="tablist" id="tabs"></div>
-    <div class="toggles">
-      <label class="toggle" id="old-toggle"><input type="checkbox" id="old"><span data-t="showOld"></span></label>
-      <label class="toggle" id="retired-toggle"><input type="checkbox" id="retired"><span data-t="showRetired"></span></label>
-    </div>
+    <label class="toggle" id="retired-toggle"><input type="checkbox" id="retired"><span data-t="showRetired"></span></label>
   </div>
+  <div class="picker" id="picker"></div>
   <section class="card">
     <h2 data-t="final"></h2>
     <svg id="bars" role="img"></svg>
@@ -144,7 +150,6 @@ const T = {
     title: 'isu-bench results',
     intro: 'How far can a coding agent tune an ISUCON web service on its first encounter, given exactly 11 benchmark runs? Each agent gets the docs, a slow reference implementation and SSH to the servers; its score is the last run. The isu-bench score is ISUMAIL, a problem written for isu-bench whose source is not published; ISUCON14 and ISUCON13 are extras, measured under v1 with 15 runs.',
     showRetired: 'Show the results of isu-bench v1',
-    showOld: 'Show older versions of the models',
     final: 'Final score',
     each: 'Score of each benchmark run',
     details: 'Details',
@@ -185,7 +190,6 @@ const T = {
     title: 'isu-bench の結果',
     intro: 'コーディングエージェントが、初めて見るISUCON形式のWebサービスを、ベンチマーク11回だけでどこまで速くできるかを測ります。各エージェントには仕様書、遅い参照実装、サーバーへのSSHを渡し、最後の回の点で採点します。isu-benchスコアはISUMAILの点で決めます。ISUMAILはisu-benchのために作った問題で、ソースを公開していません。ISUCON14とISUCON13の結果はおまけで、v1（15回）で測ったものです。',
     showRetired: 'isu-bench v1 の結果を表示',
-    showOld: '古い版のモデルを表示',
     final: '最終点',
     each: '各ベンチマークの点',
     details: '詳細',
@@ -517,12 +521,39 @@ function costTip(cell, r) {
   cell.addEventListener('blur', hideTip);
 }
 
+// A choice made on one tab carries to the others; until then a model replaced by its newer version is off.
+const chosen = new Map();
+const shown = r => chosen.get(r.config) ?? !r.old;
+
+function picker(problem) {
+  const box = document.getElementById('picker');
+  box.replaceChildren();
+  for (const r of problem.results) {
+    const b = document.createElement('button');
+    b.style.setProperty('--key', color(r.config));
+    b.textContent = r.config;
+    b.setAttribute('aria-pressed', shown(r));
+    b.addEventListener('click', () => {
+      // The charts need at least one configuration to scale to.
+      if (shown(r) && problem.results.filter(shown).length === 1) return;
+      chosen.set(r.config, !shown(r));
+      b.setAttribute('aria-pressed', shown(r));
+      render();
+    });
+    box.appendChild(b);
+  }
+}
+
 function select(name) {
   current = name;
-  const all = DATA.problems.find(p => p.name === name);
-  const problem = { ...all, results: all.results.filter(r => old.checked || !r.old) };
-  document.getElementById('old-toggle').hidden = !all.results.some(r => r.old);
   for (const b of document.querySelectorAll('.tabs button')) b.setAttribute('aria-selected', b.dataset.name === name);
+  picker(DATA.problems.find(p => p.name === name));
+  render();
+}
+
+function render() {
+  const all = DATA.problems.find(p => p.name === current);
+  const problem = { ...all, results: all.results.filter(shown) };
   document.getElementById('meta').textContent = L.summary(problem);
   bars(problem);
   lines(problem);
@@ -532,7 +563,7 @@ function select(name) {
 }
 
 let current;
-addEventListener('resize', () => select(current));
+addEventListener('resize', render);
 const tabs = document.getElementById('tabs');
 for (const p of DATA.problems) {
   const b = document.createElement('button');
@@ -543,8 +574,6 @@ for (const p of DATA.problems) {
   b.addEventListener('click', () => select(p.name));
   tabs.appendChild(b);
 }
-const old = document.getElementById('old');
-old.addEventListener('change', () => select(current));
 const retired = document.getElementById('retired');
 document.getElementById('retired-toggle').hidden = !DATA.problems.some(p => p.retired);
 retired.addEventListener('change', () => {

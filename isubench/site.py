@@ -15,7 +15,7 @@ ORDER = ['isumail', 'isucon14', 'isucon13', 'isumail-v1']
 COLORS = [['claude-opus-5-5 xhigh', 'gpt-6.2-sol xhigh'], ['claude-fable-5-2 high'], ['gemini-4-carbon medium'],
           ['gpt-6-astra xhigh'], ['deepseek-v4.1-flash:1017 max'], ['gpt-6.1-sol xhigh'], ['claude-opus-5-5 high'],
           ['claude-sonnet-5-5 xhigh', 'gpt-6.2-astra xhigh']]
-# Replaced by a newer version of the same line; the page hides them where the newer one ran, until asked.
+# Replaced by a newer version of the same line; the page starts with them off where the newer one ran.
 OLD = {'gpt-6-astra': 'gpt-6.2-astra', 'gpt-6.1-sol': 'gpt-6.2-sol'}
 
 
