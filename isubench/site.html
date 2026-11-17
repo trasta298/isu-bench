@@ -40,7 +40,19 @@ body {
   font: 15px/1.55 system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 main { max-width: 960px; margin: 0 auto; padding: 40px 16px 64px; }
-h1 { font-size: 28px; margin: 0 0 8px; }
+h1 { font-size: 28px; margin: 0; }
+header { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 0 0 12px; }
+.repo {
+  display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; border-radius: 999px; flex: none;
+  background: var(--ink); color: var(--page); font-size: 14px; font-weight: 600; text-decoration: none;
+}
+.repo svg { width: 18px; height: 18px; fill: currentColor; }
+.lead { font-size: 16px; color: var(--ink); }
+.overview { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; margin: 16px 0 20px; }
+.overview section { background: var(--surface); border: 1px solid var(--ring); border-radius: 12px; padding: 16px; }
+.overview h3 { font-size: 14px; margin: 0 0 8px; }
+.overview ul { margin: 0; padding-left: 18px; font-size: 13px; color: var(--ink-2); }
+.overview li + li { margin-top: 4px; }
 h2 { font-size: 17px; margin: 0 0 12px; }
 p { margin: 0 0 12px; color: var(--ink-2); }
 a { color: inherit; }
@@ -97,9 +109,12 @@ td:first-child small { margin-left: 18px; }
 </head>
 <body>
 <main>
-  <h1>isu-bench</h1>
-  <p data-t="intro"></p>
-  <p data-t="about"></p>
+  <header>
+    <h1>isu-bench</h1>
+    <a class="repo" href="https://github.com/trasta298/isu-bench"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>GitHub</a>
+  </header>
+  <p class="lead" data-t="intro"></p>
+  <div class="overview" id="overview"></div>
   <p id="meta"></p>
   <div class="tabbar">
     <div class="tabs" role="tablist" id="tabs"></div>
@@ -149,8 +164,20 @@ const color = c => `var(--s${DATA.colors[c]})`;
 const T = {
   en: {
     title: 'isu-bench results',
-    intro: 'How far can a coding agent tune an ISUCON web service on its first encounter, given exactly 11 benchmark runs? Each agent gets the docs, a slow reference implementation and SSH to the servers; its score is the last run. The isu-bench score is ISUMAIL, a problem written for isu-bench whose source is not published; ISUCON14 and ISUCON13 are extras, measured under v1 with 15 runs.',
-    about: 'ISUCON is a Japanese web application performance tuning contest held since 2011: make an unfamiliar web service as fast as possible while it keeps behaving as specified. Anything may change, from queries to the language to how the servers share the work; a benchmarker scores the service under user-like load, and a serious error such as inconsistent data fails the run. So isu-bench measures, all at once, reading unfamiliar code and specs, finding bottlenecks by measuring, rebuilding everything from the database to the server layout without breaking it, and deciding with only 11 benchmark runs.',
+    intro: 'How far can a coding agent tune an ISUCON web service it has never seen, given 11 benchmark runs?',
+    overview: [
+      ['What ISUCON is', ['A Japanese web performance tuning contest held since 2011',
+                          'Make an unfamiliar web service as fast as possible while it keeps behaving as specified',
+                          'Anything may change, from queries to the language to the server layout',
+                          'A benchmarker scores it under user-like load; a serious error such as inconsistent data scores 0']],
+      ['What it measures', ['Reading an unfamiliar spec and codebase', 'Finding bottlenecks by measuring',
+                            'Carrying large rewrites through without breaking them',
+                            'Running several servers, through a reboot and data persistence',
+                            'Deciding when to measure and how far to push with 11 runs']],
+      ['How it is scored', ['The 11th ISUMAIL run as a share of its estimated theoretical maximum',
+                            'ISUMAIL was written for isu-bench and is unpublished, so no model has seen it solved',
+                            'The agent works alone with the docs, a slow reference implementation and SSH to three servers']],
+    ],
     showRetired: 'Show the results of isu-bench v1',
     final: 'Final score',
     each: 'Score of each benchmark run',
@@ -190,8 +217,15 @@ const T = {
   },
   ja: {
     title: 'isu-bench の結果',
-    intro: 'コーディングエージェントが、初めて見るISUCON形式のWebサービスを、ベンチマーク11回だけでどこまで速くできるかを測ります。各エージェントには仕様書、遅い参照実装、サーバーへのSSHを渡し、最後の回の点で採点します。isu-benchスコアはISUMAILの点で決めます。ISUMAILはisu-benchのために作った問題で、ソースを公開していません。ISUCON14とISUCON13の結果はおまけで、v1（15回）で測ったものです。',
-    about: 'ISUCONは2011年から続く日本のWebアプリケーション高速化コンテストで、初めて見るWebサービスを、仕様どおりの動作を保ったままどこまで速くできるかを競います。SQLから言語、サーバーの役割分担まで何を変えてもよく、点はベンチマーカーが利用者の操作をまねた負荷で決め、データの不整合など重大な誤りがあればその回は0点です。そのためisu-benchは、初めて見るコードと仕様を読み、計測からボトルネックを見つけ、データベースからサーバー構成までを壊さずに作り変え、11回のベンチマークで判断する力をまとめて測ります。',
+    intro: 'コーディングエージェントが、初めて見るISUCON形式のWebサービスを、ベンチマーク11回でどこまで速くできるかを測ります。',
+    overview: [
+      ['ISUCONとは', ['2011年から続く、日本のWebアプリケーション高速化コンテスト', '初めて見るWebサービスを、仕様どおりの動作を保ったままどこまで速くできるかを競う',
+                     'SQLから言語、サーバー構成まで何を変えてもよい', '点はベンチマーカーの負荷で決まり、データの不整合など重大な誤りは0点']],
+      ['測る力', ['初めて見る仕様とコードを読み解く', '計測してボトルネックを見つける', '大きな書き換えを壊さずにやり切る',
+                 '複数のサーバーを運用し、再起動後もデータを保つ', '11回の計測で、いつ測りどこまで攻めるかを決める']],
+      ['採点', ['ISUMAILの11回目の点を、理論上の上限の見積もりで割った値', 'ISUMAILはisu-bench用に作った非公開の問題で、解かれた例を見たモデルはいない',
+               'エージェントは仕様書、遅い参照実装、3台のサーバーへのSSHだけで一人で作業する']],
+    ],
     showRetired: 'isu-bench v1 の結果を表示',
     final: '最終点',
     each: '各ベンチマークの点',
@@ -233,6 +267,15 @@ const T = {
 const L = T[/^ja\b/i.test(navigator.language) ? 'ja' : 'en'];
 document.documentElement.lang = L === T.ja ? 'ja' : 'en';
 document.title = L.title;
+for (const [title, items] of L.overview) {
+  const box = document.createElement('section');
+  const h = document.createElement('h3');
+  h.textContent = title;
+  const ul = document.createElement('ul');
+  for (const item of items) ul.appendChild(document.createElement('li')).textContent = item;
+  box.append(h, ul);
+  document.getElementById('overview').appendChild(box);
+}
 for (const e of document.querySelectorAll('[data-t]')) {
   const t = L[e.dataset.t];
   e.replaceChildren(...[t].flat().flatMap((s, i) => i ? [document.createElement('br'), s] : [s]));
