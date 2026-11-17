@@ -6,6 +6,25 @@ How far can a coding agent tune an ISUCON web service on its first encounter, gi
 
 v1.1 is scored on [ISUMAIL](#isumail), an ISUCON-style problem written for isu-bench whose source is not published, so no model can have seen it solved. The agent gets the docs, the reference implementation and SSH to three servers, and is scored on its 11th benchmark run. [ISUCON14](https://github.com/isucon/isucon14) and [ISUCON13](https://github.com/isucon/isucon13) results are kept as [extras](#extras-isucon14-and-isucon13), and the results of v1 are [below](#changes-from-v1). See [REQUIREMENTS.md](REQUIREMENTS.md) for the full rules and [prompt.md](prompt.md) for the exact prompt.
 
+## What ISUCON is
+
+[ISUCON](https://isucon.net/) is a Japanese web application performance tuning contest held since 2011. On the day, contestants first see the problem: the specification of a web service, a slow reference implementation and a few servers running it. They race to make it as fast as they can in the time given, while it keeps behaving as specified.
+
+- Anything may change: queries and indexes, caching, algorithms, the language and middleware, and how the servers share the work.
+- A benchmarker decides the score. It puts user-like load on the service and scores the work that succeeds.
+- A serious error such as inconsistent data fails the run, which scores 0. Speed and correctness are demanded together.
+- After the contest the servers are rebooted to check that written data survived.
+
+isu-bench gives this to a coding agent working alone, and so measures these together:
+
+- Reading an unfamiliar specification (in Japanese) and codebase, and working out what is required
+- Finding bottlenecks by measuring, and choosing the changes that pay off
+- Carrying large rewrites across the application, database and server layout through without breaking them
+- Operating several servers over SSH, through deployment, recovery after reboot and data persistence
+- Deciding when to measure and how far to push with only 11 benchmark runs
+
+Unlike a task that is done once its tests pass, there is no single right answer, and the score keeps rising with each improvement.
+
 ## Results
 
 Interactive charts of every run: [isu-bench.trasta.dev](https://isu-bench.trasta.dev/)

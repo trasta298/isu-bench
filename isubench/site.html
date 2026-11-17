@@ -99,6 +99,7 @@ td:first-child small { margin-left: 18px; }
 <main>
   <h1>isu-bench</h1>
   <p data-t="intro"></p>
+  <p data-t="about"></p>
   <p id="meta"></p>
   <div class="tabbar">
     <div class="tabs" role="tablist" id="tabs"></div>
@@ -149,6 +150,7 @@ const T = {
   en: {
     title: 'isu-bench results',
     intro: 'How far can a coding agent tune an ISUCON web service on its first encounter, given exactly 11 benchmark runs? Each agent gets the docs, a slow reference implementation and SSH to the servers; its score is the last run. The isu-bench score is ISUMAIL, a problem written for isu-bench whose source is not published; ISUCON14 and ISUCON13 are extras, measured under v1 with 15 runs.',
+    about: 'ISUCON is a Japanese web application performance tuning contest held since 2011: make an unfamiliar web service as fast as possible while it keeps behaving as specified. Anything may change, from queries to the language to how the servers share the work; a benchmarker scores the service under user-like load, and a serious error such as inconsistent data fails the run. So isu-bench measures, all at once, reading unfamiliar code and specs, finding bottlenecks by measuring, rebuilding everything from the database to the server layout without breaking it, and deciding with only 11 benchmark runs.',
     showRetired: 'Show the results of isu-bench v1',
     final: 'Final score',
     each: 'Score of each benchmark run',
@@ -189,6 +191,7 @@ const T = {
   ja: {
     title: 'isu-bench の結果',
     intro: 'コーディングエージェントが、初めて見るISUCON形式のWebサービスを、ベンチマーク11回だけでどこまで速くできるかを測ります。各エージェントには仕様書、遅い参照実装、サーバーへのSSHを渡し、最後の回の点で採点します。isu-benchスコアはISUMAILの点で決めます。ISUMAILはisu-benchのために作った問題で、ソースを公開していません。ISUCON14とISUCON13の結果はおまけで、v1（15回）で測ったものです。',
+    about: 'ISUCONは2011年から続く日本のWebアプリケーション高速化コンテストで、初めて見るWebサービスを、仕様どおりの動作を保ったままどこまで速くできるかを競います。SQLから言語、サーバーの役割分担まで何を変えてもよく、点はベンチマーカーが利用者の操作をまねた負荷で決め、データの不整合など重大な誤りがあればその回は0点です。そのためisu-benchは、初めて見るコードと仕様を読み、計測からボトルネックを見つけ、データベースからサーバー構成までを壊さずに作り変え、11回のベンチマークで判断する力をまとめて測ります。',
     showRetired: 'isu-bench v1 の結果を表示',
     final: '最終点',
     each: '各ベンチマークの点',
