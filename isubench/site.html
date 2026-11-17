@@ -46,6 +46,7 @@ p { margin: 0 0 12px; color: var(--ink-2); }
 a { color: inherit; }
 .tabbar { display: flex; align-items: center; justify-content: space-between; gap: 8px 16px; flex-wrap: wrap; margin: 28px 0 16px; }
 .tabs { display: flex; gap: 4px; flex-wrap: wrap; }
+.toggles { display: flex; gap: 4px 16px; flex-wrap: wrap; }
 .toggle { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--muted); cursor: pointer; }
 .toggle[hidden] { display: none; }
 .toggle input { margin: 0; }
@@ -93,7 +94,10 @@ td:first-child small { margin-left: 18px; }
   <p id="meta"></p>
   <div class="tabbar">
     <div class="tabs" role="tablist" id="tabs"></div>
-    <label class="toggle" id="retired-toggle"><input type="checkbox" id="retired"><span data-t="showRetired"></span></label>
+    <div class="toggles">
+      <label class="toggle" id="old-toggle"><input type="checkbox" id="old"><span data-t="showOld"></span></label>
+      <label class="toggle" id="retired-toggle"><input type="checkbox" id="retired"><span data-t="showRetired"></span></label>
+    </div>
   </div>
   <section class="card">
     <h2 data-t="final"></h2>
@@ -134,18 +138,19 @@ const tip = document.getElementById('tip');
 const fmt = n => n.toLocaleString('en-US');
 const compact = n => n >= 1e6 ? (n / 1e6).toFixed(n % 1e6 ? 1 : 0) + 'M' : n >= 1e3 ? Math.round(n / 1e3) + 'K' : String(n);
 const pct = x => Math.round(x * 100) + '%';
-const color = c => `var(--s${DATA.configs.indexOf(c) % 8 + 1})`;
+const color = c => `var(--s${DATA.colors[c]})`;
 const T = {
   en: {
     title: 'isu-bench results',
     intro: 'How far can a coding agent tune an ISUCON web service on its first encounter, given exactly 11 benchmark runs? Each agent gets the docs, a slow reference implementation and SSH to the servers; its score is the last run. The isu-bench score is ISUMAIL, a problem written for isu-bench whose source is not published; ISUCON14 and ISUCON13 are extras, measured under v1 with 15 runs.',
     showRetired: 'Show the results of isu-bench v1',
+    showOld: 'Show older versions of the models',
     final: 'Final score',
     each: 'Score of each benchmark run',
     details: 'Details',
     failNote: 'A hollow mark on the baseline is a FAIL, which scores 0.',
     tableNote: ["Tokens come from each agent's transcripts and are not strictly comparable across providers.",
-                'API cost prices those tokens at each provider\'s list price on 2026-11-03, Anthropic\'s on 2026-11-10 and Google\'s on 2026-11-11 (DeepSeek at its peak rate, off-peak is half; Gemini 4 Carbon at its introductory price, which doubles on 2026-12-01). Hover over a cost for the prices.'],
+                'API cost prices those tokens at each provider\'s list price on 2026-11-03, Anthropic\'s on 2026-11-10, Google\'s on 2026-11-11 and GPT-6.2\'s on 2026-11-18 (DeepSeek at its peak rate, off-peak is half; Gemini 4 Carbon at its introductory price, which doubles on 2026-12-01). Hover over a cost for the prices.'],
     costHead: 'List price per 1M tokens × tokens',
     costKinds: [['input', 'Input'], ['output', 'Output'], ['cache_read', 'Cache read'], ['cache_write', 'Cache write']],
     source: 'Source and rules:',
@@ -180,12 +185,13 @@ const T = {
     title: 'isu-bench の結果',
     intro: 'コーディングエージェントが、初めて見るISUCON形式のWebサービスを、ベンチマーク11回だけでどこまで速くできるかを測ります。各エージェントには仕様書、遅い参照実装、サーバーへのSSHを渡し、最後の回の点で採点します。isu-benchスコアはISUMAILの点で決めます。ISUMAILはisu-benchのために作った問題で、ソースを公開していません。ISUCON14とISUCON13の結果はおまけで、v1（15回）で測ったものです。',
     showRetired: 'isu-bench v1 の結果を表示',
+    showOld: '古い版のモデルを表示',
     final: '最終点',
     each: '各ベンチマークの点',
     details: '詳細',
     failNote: '0点の線上にある白抜きの印はFAILです（0点）。',
     tableNote: ['トークン数は各エージェントの会話記録から数えたもので、提供元をまたいで厳密には比べられません。',
-                'API換算の費用は、そのトークン数に2026年11月3日時点の各社の定価（Anthropicは11月10日時点、Googleは11月11日時点）を掛けた値です（DeepSeekはピーク時の料金で、オフピーク時はその半額。Gemini 4 Carbonは導入価格で、12月1日から2倍）。費用にカーソルを合わせると単価が出ます。'],
+                'API換算の費用は、そのトークン数に2026年11月3日時点の各社の定価（Anthropicは11月10日時点、Googleは11月11日時点、GPT-6.2は11月18日時点）を掛けた値です（DeepSeekはピーク時の料金で、オフピーク時はその半額。Gemini 4 Carbonは導入価格で、12月1日から2倍）。費用にカーソルを合わせると単価が出ます。'],
     costHead: '100万トークンあたりの定価 × トークン数',
     costKinds: [['input', '入力'], ['output', '出力'], ['cache_read', 'キャッシュ読込'], ['cache_write', 'キャッシュ書込']],
     source: 'ソースとルール:',
@@ -513,7 +519,9 @@ function costTip(cell, r) {
 
 function select(name) {
   current = name;
-  const problem = DATA.problems.find(p => p.name === name);
+  const all = DATA.problems.find(p => p.name === name);
+  const problem = { ...all, results: all.results.filter(r => old.checked || !r.old) };
+  document.getElementById('old-toggle').hidden = !all.results.some(r => r.old);
   for (const b of document.querySelectorAll('.tabs button')) b.setAttribute('aria-selected', b.dataset.name === name);
   document.getElementById('meta').textContent = L.summary(problem);
   bars(problem);
@@ -535,6 +543,8 @@ for (const p of DATA.problems) {
   b.addEventListener('click', () => select(p.name));
   tabs.appendChild(b);
 }
+const old = document.getElementById('old');
+old.addEventListener('change', () => select(current));
 const retired = document.getElementById('retired');
 document.getElementById('retired-toggle').hidden = !DATA.problems.some(p => p.retired);
 retired.addEventListener('change', () => {

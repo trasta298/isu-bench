@@ -11,17 +11,24 @@ AGENT_NAMES = {'claude-code': 'Claude Code', 'codex': 'Codex', 'dsh': 'DeepSeek 
 # ISUMAIL leads: it is the problem no model can have seen solved.
 ORDER = ['isumail', 'isucon14', 'isucon13', 'isumail-v1']
 # Palette slots of site.html in this order, so that the close colors go to lines that never run near each other.
-COLORS = ['claude-opus-5-5 xhigh', 'claude-fable-5-2 high', 'gemini-4-carbon medium', 'gpt-6-astra xhigh',
-          'deepseek-v4.1-flash:1017 max', 'gpt-6.1-sol xhigh', 'claude-opus-5-5 high', 'claude-sonnet-5-5 xhigh']
+# Configurations sharing a slot never run on the same problem.
+COLORS = [['claude-opus-5-5 xhigh', 'gpt-6.2-sol xhigh'], ['claude-fable-5-2 high'], ['gemini-4-carbon medium'],
+          ['gpt-6-astra xhigh'], ['deepseek-v4.1-flash:1017 max'], ['gpt-6.1-sol xhigh'], ['claude-opus-5-5 high'],
+          ['claude-sonnet-5-5 xhigh', 'gpt-6.2-astra xhigh']]
+# Replaced by a newer version of the same line; the page hides them where the newer one ran, until asked.
+OLD = {'gpt-6-astra': 'gpt-6.2-astra', 'gpt-6.1-sol': 'gpt-6.2-sol'}
 
 
 def build(out):
     results = [r for r in (json.loads(f.read_text()) for f in sorted((ROOT / 'results').glob('*/result.json')))
                if r.get('status') == 'completed' and PROBLEMS[r['problem']].winner]
-    configs = COLORS + sorted({f"{r['model']} {r['effort']}" for r in results} - set(COLORS))
+    colors = {c: i % 8 + 1 for i, slot in enumerate(COLORS) for c in slot}
+    for i, c in enumerate(sorted({f"{r['model']} {r['effort']}" for r in results} - colors.keys()), len(COLORS)):
+        colors[c] = i % 8 + 1
     problems = []
     for name in sorted({r['problem'] for r in results}, key=lambda p: ORDER.index(p) if p in ORDER else len(ORDER)):
         problem = PROBLEMS[name]
+        ran = {r['model'] for r in results if r['problem'] == name}
         rows = []
         for r in sorted((r for r in results if r['problem'] == name), key=lambda r: -r['final_score']):
             runs = [x['score'] if x['passed'] else None for x in r['runs']]
@@ -35,7 +42,7 @@ def build(out):
                 'agent_seconds': agent_seconds(r), 'output_tokens': u.get('output_tokens', 0),
                 'cost': prices.cost(r['model'], u), 'prices': prices.PRICES.get(r['model']),
                 'usage': {k: u.get(f'{k}_tokens', 0) for k in ('input', 'output', 'cache_read', 'cache_write')},
-                'cache_read_tokens': u.get('cache_read_tokens', 0), 'pace': r.get('pace') or [],
+                'cache_read_tokens': u.get('cache_read_tokens', 0), 'pace': r.get('pace') or [], 'old': OLD.get(r['model']) in ran,
             })
         problems.append({
             'name': name, 'title': problem.title, 'winner': problem.winner, 'initial': problem.initial,
@@ -43,7 +50,7 @@ def build(out):
             'extra': not problem.scored, 'retired': problem.retired, 'runs': max(len(r['runs']) for r in rows),
             'results': rows,
         })
-    data = json.dumps({'configs': configs, 'problems': problems}).replace('<', '\\u003c')
+    data = json.dumps({'colors': colors, 'problems': problems}).replace('<', '\\u003c')
     html = (Path(__file__).parent / 'site.html').read_text().replace('/*DATA*/', data)
     out = Path(out)
     out.mkdir(parents=True, exist_ok=True)
