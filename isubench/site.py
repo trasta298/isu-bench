@@ -8,6 +8,10 @@ from .run import agent_seconds
 
 ROOT = Path(__file__).resolve().parent.parent
 AGENT_NAMES = {'claude-code': 'Claude Code', 'codex': 'Codex', 'dsh': 'DeepSeek Harness', 'agy': 'Antigravity CLI'}
+MODEL_NAMES = {'claude-fable-5-2': 'Claude Fable 5.2', 'claude-opus-5-5': 'Claude Opus 5.5', 'claude-sonnet-5-5': 'Claude Sonnet 5.5',
+               'gpt-6-astra': 'GPT-6 Astra', 'gpt-6.1-sol': 'GPT-6.1 Sol', 'gpt-6.2-astra': 'GPT-6.2 Astra', 'gpt-6.2-sol': 'GPT-6.2 Sol',
+               'gemini-4-carbon': 'Gemini 4 Carbon', 'gemini-4-hydrogen': 'Gemini 4 Hydrogen',
+               'deepseek-v4.1-flash:1017': 'DeepSeek V4.1 Flash'}
 # ISUMAIL leads: it is the problem no model can have seen solved.
 ORDER = ['isumail', 'isucon14', 'isucon13', 'isumail-v1']
 # Palette slots of site.html in this order, so that the close colors go to lines that never run near each other.
@@ -37,23 +41,25 @@ def build(out):
             version = re.search(r'\d+\.\d+\.\d+[\w.-]*', r['agent_version'])
             u = r.get('usage', {})
             rows.append({
-                'config': f"{r['model']} {r['effort']}",
+                'config': f"{r['model']} {r['effort']}", 'name': MODEL_NAMES.get(r['model'], r['model']), 'effort': r['effort'],
                 'agent': f"{AGENT_NAMES.get(r['agent'], r['agent'])} {version.group() if version else ''}".strip(),
-                'final': r['final_score'], 'runs': runs, 'best': max((v for v in runs if v is not None), default=0),
-                'fails': runs.count(None), 'uncounted': len(r.get('infra_failures', [])),
-                'agent_seconds': agent_seconds(r), 'output_tokens': u.get('output_tokens', 0),
+                'final': r['final_score'], 'runs': runs, 'fails': runs.count(None),
+                'agent_seconds': agent_seconds(r),
                 'cost': prices.cost(r['model'], u), 'prices': prices.PRICES.get(r['model']),
                 'usage': {k: u.get(f'{k}_tokens', 0) for k in ('input', 'output', 'cache_read', 'cache_write')},
-                'cache_read_tokens': u.get('cache_read_tokens', 0), 'pace': r.get('pace') or [], 'old': OLD.get(r['model']) in ran,
+                'pace': r.get('pace') or [], 'old': OLD.get(r['model']) in ran,
             })
         problems.append({
-            'name': name, 'title': problem.title, 'winner': problem.winner, 'initial': problem.initial,
-            'reference': 'theory' if name.startswith('isumail') else 'winner',
+            'title': problem.title, 'winner': problem.winner, 'initial': problem.initial,
             'runs': max(len(r['runs']) for r in rows),
             'results': rows,
         })
+    html = (Path(__file__).parent / 'site.html').read_text()
+    # The page's own text is about the first problem.
+    for key in ('runs', 'winner', 'initial'):
+        html = html.replace('{%s}' % key.upper(), f'{problems[0][key]:,}')
     data = json.dumps({'colors': colors, 'problems': problems}).replace('<', '\\u003c')
-    html = (Path(__file__).parent / 'site.html').read_text().replace('/*DATA*/', data)
+    html = html.replace('/*DATA*/', data)
     out = Path(out)
     out.mkdir(parents=True, exist_ok=True)
     (out / 'index.html').write_text(html)
