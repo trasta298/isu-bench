@@ -1,6 +1,6 @@
 # isu-bench v1.1 requirements
 
-isu-bench measures how far a coding agent can improve an ISUCON web service on its first encounter. The score is ISUMAIL, an original problem whose source is not published; ISUCON14 (ISURIDE) and ISUCON13 (ISUPipe) run as extras.
+isu-bench measures how far a coding agent can improve an ISUCON-style web service on its first encounter. The score is ISUMAIL, an original problem whose source is not published; ISUCON14 (ISURIDE) and ISUCON13 (ISUPipe) run as extras.
 
 ## Problem and infrastructure
 

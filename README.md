@@ -2,7 +2,7 @@
 
 English | [日本語](README.ja.md)
 
-How far can a coding agent tune an ISUCON web service on its first encounter, given exactly 11 benchmark runs?
+How far can a coding agent tune an ISUCON-style web service on its first encounter, given exactly 11 benchmark runs?
 
 v1.1 is scored on [ISUMAIL](#isumail), an ISUCON-style problem written for isu-bench whose source is not published, so no model can have seen it solved. The agent gets the docs, the reference implementation and SSH to three servers, and is scored on its 11th benchmark run. [ISUCON14](https://github.com/isucon/isucon14) and [ISUCON13](https://github.com/isucon/isucon13) results are kept as [extras](#extras-isucon14-and-isucon13), and the results of v1 are [below](#changes-from-v1). See [REQUIREMENTS.md](REQUIREMENTS.md) for the full rules and [prompt.md](prompt.md) for the exact prompt.
 
@@ -236,5 +236,11 @@ EC2 cost is about $0.64 per hour per ISUMAIL run and $0.75 for ISUCON14 and ISUC
 - [kyosu-1/isuenv](https://github.com/kyosu-1/isuenv) for the TTL technique.
 
 ## License
+## Trademark
+
+ISUCON is a trademark or registered trademark of SAKURA internet Inc. ([isucon.net](https://isucon.net))
+
+isu-bench is an independent project. It is not run, sponsored or endorsed by the ISUCON organizers or SAKURA internet Inc.
+
 
 [MIT](LICENSE)

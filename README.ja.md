@@ -236,5 +236,11 @@ EC2の費用は1走行1時間あたり、ISUMAILで約$0.64、ISUCON14とISUCON1
 - TTLの手法: [kyosu-1/isuenv](https://github.com/kyosu-1/isuenv)
 
 ## ライセンス
+## 商標
+
+「ISUCON」は、さくらインターネット株式会社の商標または登録商標です。（[isucon.net](https://isucon.net)）
+
+isu-benchは独立した非公式のプロジェクトです。ISUCONの運営やさくらインターネット株式会社が主催、後援、公認するものではありません。
+
 
 [MIT](LICENSE)
