@@ -97,7 +97,11 @@ The trials below ran under v1, with 15 runs.
 
 ## Scoring
 
-isu-bench score = geometric mean over problems of `max(final, initial) / winner`, where `winner` is the contest winner's official final score and `initial` the initial Go implementation's median first-run score in this environment. The floor makes a FAIL count as no progress instead of zeroing the mean. The geometric mean keeps a problem whose winning score was low (ISUCON14: 58,153, beaten tenfold by post-contest tuning and by these agents) from outweighing the others, as an arithmetic mean of percentages would. It is computed only for configurations run on every problem.
+isu-bench score = the ISUMAIL score of the 11th run divided by `winner`, which for ISUMAIL is the estimated theoretical maximum. A FAIL scores 0. ISUMAIL is the only problem marked `scored`.
+
+Should more than one problem be scored, the score is the geometric mean over them of `max(final, initial) / winner`, where `initial` is the reference implementation's median score in this environment. The floor makes a FAIL count as no progress instead of zeroing the mean. `python3 -m isubench table` already computes it this way. It is computed only for configurations run on every scored problem.
+
+ISUCON14 and ISUCON13 are not scored. Their `winner` is the contest winner's official final score, and the table shows each result as a share of it for reference.
 
 ## Prompt
 
