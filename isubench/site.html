@@ -63,14 +63,14 @@ h1 { font-size: clamp(30px, 5.4vw, 48px); line-height: 1.12; letter-spacing: -0.
 .lead { font-size: clamp(17px, 2.2vw, 20px); color: var(--ink-2); max-width: 40em; margin: 0 0 40px; text-wrap: pretty; }
 h2 { font-size: 22px; letter-spacing: -0.01em; margin: 0 0 16px; }
 .card { background: var(--surface); border: 1px solid var(--ring); border-radius: 12px; padding: 20px; margin-bottom: 16px; }
-.card h2 { font-size: 17px; margin-bottom: 12px; }
+.card h2, .card h3 { font-size: 17px; margin: 0 0 12px; }
 .note { font-size: 13px; line-height: 1.55; color: var(--muted); margin: 12px 0 0; }
 svg { display: block; overflow: visible; }
 #chart { touch-action: pan-y; }
-#chart text { fill: var(--ink-2); font-size: 12px; }
-#chart .tick { fill: var(--muted); font-variant-numeric: tabular-nums; }
-#chart .end { font-size: 13px; paint-order: stroke; stroke: var(--surface); stroke-width: 4px; stroke-linejoin: round; }
-#chart .end tspan:first-child { fill: var(--ink); font-weight: 600; }
+.plot text { fill: var(--ink-2); font-size: 12px; }
+.plot .tick { fill: var(--muted); font-variant-numeric: tabular-nums; }
+.plot .end { font-size: 13px; paint-order: stroke; stroke: var(--surface); stroke-width: 4px; stroke-linejoin: round; }
+.plot .end tspan:first-child { fill: var(--ink); font-weight: 600; }
 #chart .series { transition: opacity 0.12s; }
 #chart.focus .series:not(.on) { opacity: 0.2; }
 .tip {
@@ -83,34 +83,38 @@ svg { display: block; overflow: visible; }
 .tip .r { display: flex; gap: 8px; white-space: nowrap; color: var(--ink-2); }
 .tip .r b { font-variant-numeric: tabular-nums; margin-left: auto; padding-left: 12px; color: var(--ink); }
 .scroll { overflow-x: auto; margin-top: 20px; }
+.scroll:first-child { margin-top: 0; }
 table { border-collapse: collapse; width: 100%; font-size: 14px; }
 th, td { padding: 10px 8px; border-bottom: 1px solid var(--grid); text-align: right; white-space: nowrap; }
 tr:last-child td { border-bottom: 0; }
 th { color: var(--muted); font-weight: 500; font-size: 13px; }
 td { font-variant-numeric: tabular-nums; }
 #board td:first-child, #board th:first-child { color: var(--muted); text-align: left; width: 1%; }
-#board td:nth-child(2), #board th:nth-child(2), #board th:nth-child(3) { text-align: left; }
-#board td:nth-child(2) { line-height: 1.35; font-weight: 600; }
-#board td small { display: block; font-weight: 400; color: var(--muted); margin-left: 18px; }
-#board button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
-#board .key { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 8px; background: var(--key); }
-#board [aria-pressed="false"] .key { background: transparent; box-shadow: inset 0 0 0 1.5px var(--key); }
-#board tr.off td { color: var(--muted); }
-#board tr.off .score i::after { opacity: 0.35; }
+#board th:nth-child(2), #board th:nth-child(3), #detail th:first-child { text-align: left; }
+td.model { text-align: left; line-height: 1.35; font-weight: 600; }
+td.model small { display: block; font-weight: 400; color: var(--muted); margin-left: 18px; }
+td.model button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
+.key { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 8px; background: var(--key); }
+[aria-pressed="false"] .key { background: transparent; box-shadow: inset 0 0 0 1.5px var(--key); }
+tr.off td { color: var(--muted); }
+tr.off .score i::after { opacity: 0.35; }
 .score { display: flex; align-items: center; gap: 12px; min-width: 200px; }
 .score b { width: 3.4em; text-align: right; font-size: 15px; }
 .score i { flex: 1; height: 8px; border-radius: 4px; background: var(--grid); overflow: hidden; }
 .score i::after { content: ""; display: block; height: 100%; width: var(--w); border-radius: 4px; background: var(--key); }
+#detail th[colspan] { text-align: center; }
 td.cost { cursor: help; text-decoration: underline dotted var(--axis); text-underline-offset: 3px; }
 .prose { margin-top: 64px; }
+.details { margin-top: 40px; }
 .prose p, .prose ul { max-width: 44em; margin: 0 0 16px; color: var(--ink-2); }
 .prose ul { padding-left: 20px; }
 .prose li + li { margin-top: 6px; }
 .prose strong { color: var(--ink); }
-.setup { display: grid; grid-template-columns: 1fr auto 1.3fr auto 1fr; gap: 12px; align-items: center; margin: 24px 0; }
+.setup { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; gap: 12px; align-items: center; margin: 24px 0; }
 .setup .node { background: var(--surface); border: 1px solid var(--ring); border-radius: 10px; padding: 12px 14px; font-size: 13px; line-height: 1.45; color: var(--ink-2); }
 .setup .node b { display: block; font-size: 14px; color: var(--ink); }
-.setup .servers { display: grid; gap: 8px; }
+.setup .servers { display: grid; gap: 8px; text-align: center; }
+.setup .servers span { font-size: 12px; color: var(--muted); }
 .setup .arrow { font-size: 12px; color: var(--muted); text-align: center; line-height: 1.3; }
 .setup .arrow::before { content: "\2192"; display: block; font-size: 22px; color: var(--axis); }
 .setup .arrow.back::before { content: "\2190"; }
@@ -152,11 +156,25 @@ footer p:nth-child(n+3) { font-size: 13px; color: var(--muted); }
   <section class="card">
     <h2 lang="en">Score over time</h2>
     <h2 lang="ja">経過時間とスコア</h2>
-    <svg id="chart" role="img"></svg>
+    <svg id="chart" class="plot" role="img"></svg>
     <p class="note" lang="en">Each dot is one load test, placed at the time it started. The score is the share of the estimated maximum, {WINNER} points; the untouched service scores about {INITIAL}. A hollow dot on the baseline is a failed test, which scores 0.</p>
     <p class="note" lang="ja">点は1回のベンチマークで、開始した時刻の位置にあります。スコアは、理論上の上限の見積もり（{WINNER}点）に対する割合です。手を入れる前のサービスは約{INITIAL}点です。0%の線上にある白抜きの点はFAIL（0点）です。</p>
     <div class="scroll"><table id="board"></table></div>
     <p class="note" id="board-note"></p>
+  </section>
+
+  <section class="details">
+    <h2 lang="en">Detailed results</h2>
+    <h2 lang="ja">詳細な結果</h2>
+    <div class="card">
+      <h3 lang="en">Score and API cost</h3>
+      <h3 lang="ja">スコアとAPI換算の費用</h3>
+      <svg id="scatter" class="plot" role="img"></svg>
+    </div>
+    <div class="card">
+      <div class="scroll"><table id="detail"></table></div>
+      <p class="note" id="detail-note"></p>
+    </div>
   </section>
 
   <section class="prose">
@@ -182,9 +200,10 @@ footer p:nth-child(n+3) { font-size: 13px; color: var(--muted); }
       <div class="node"><b lang="en">Coding agent</b><b lang="ja">コーディングエージェント</b><span lang="en">Reads the spec and the code, measures, rewrites, deploys</span><span lang="ja">仕様とコードを読み、計測し、書き換え、配置する</span></div>
       <div class="arrow">SSH</div>
       <div class="servers">
-        <div class="node"><b>s1</b>2 vCPU x86 · 4 GB · PostgreSQL</div>
-        <div class="node"><b>s2</b>1 vCPU arm · 2 GB</div>
-        <div class="node"><b>s3</b>1 vCPU arm · 2 GB</div>
+        <div class="node"><b>s1</b></div>
+        <div class="node"><b>s2</b></div>
+        <div class="node"><b>s3</b></div>
+        <span lang="en">each with different CPU and memory</span><span lang="ja">CPUもメモリも1台ずつ違う</span>
       </div>
       <div class="arrow back"><span lang="en">user traffic</span><span lang="ja">利用者の操作</span></div>
       <div class="node"><b lang="en">Load test</b><b lang="ja">ベンチマーカー</b><span lang="en">70 seconds of publishers and readers, then a score or a FAIL</span><span lang="ja">発行者と読者の操作を70秒間送り、点かFAILを返す</span></div>
@@ -319,9 +338,14 @@ const T = {
     score: 'Score',
     points: 'Points',
     calls: 'Tool calls before it',
-    head: ['', 'Model', 'Score', 'Time', 'API cost', 'Failed tests', 'Output tokens'],
-    boardNote: ["Time is how long the agent worked. Tokens come from each agent's transcripts and are not strictly comparable across providers.",
-                'API cost prices those tokens at each provider\'s list price on 2026-11-03, Anthropic\'s on 2026-11-10, Google\'s on 2026-11-11 and GPT-6.2\'s on 2026-11-18 (DeepSeek at its peak rate, off-peak is half; Gemini 4 Carbon at its introductory price, which doubles on 2026-12-01). Hover over a cost for the prices.'],
+    head: ['', 'Model', 'Score', 'Time', 'API cost', 'Failed tests'],
+    scatterLabel: `Final score against the API cost of the trial, for ${P.title}`,
+    costAxis: 'API cost of the trial (USD, log scale)',
+    detailHead: ['Model', 'Final points', 'Best points'],
+    tokens: 'Tokens',
+    detailNote: ["Tokens come from each agent's transcripts and are not strictly comparable across providers. Input is uncached input."],
+    boardNote: ['Time is how long the agent worked.',
+                'API cost prices each trial\'s tokens at each provider\'s list price on 2026-11-03, Anthropic\'s on 2026-11-10, Google\'s on 2026-11-11 and GPT-6.2\'s on 2026-11-18 (DeepSeek at its peak rate, off-peak is half; Gemini 4 Carbon at its introductory price, which doubles on 2026-12-01). Hover over a cost for the prices.'],
     costHead: 'List price per 1M tokens × tokens',
     costKinds: [['input', 'Input'], ['output', 'Output'], ['cache_read', 'Cache read'], ['cache_write', 'Cache write']],
   },
@@ -336,9 +360,13 @@ const T = {
     score: 'スコア',
     points: '点',
     calls: '直前までのツール呼び出し',
-    head: ['', 'モデル', 'スコア', '作業時間', 'API換算の費用', 'FAIL', '出力トークン'],
-    boardNote: ['トークン数は各エージェントの会話記録から数えたもので、提供元をまたいで厳密には比べられません。',
-                'API換算の費用は、そのトークン数に2026年11月3日時点の各社の定価（Anthropicは11月10日時点、Googleは11月11日時点、GPT-6.2は11月18日時点）を掛けた値です（DeepSeekはピーク時の料金で、オフピーク時はその半額。Gemini 4 Carbonは導入価格で、12月1日から2倍）。費用にカーソルを合わせると単価が出ます。'],
+    head: ['', 'モデル', 'スコア', '作業時間', 'API換算の費用', 'FAIL'],
+    scatterLabel: `${P.title}の最終スコアと、その試行のAPI換算の費用の関係を示すグラフ`,
+    costAxis: '試行のAPI換算の費用（USD、対数目盛）',
+    detailHead: ['モデル', '最終点', '最高点'],
+    tokens: 'トークン',
+    detailNote: ['トークン数は各エージェントの会話記録から数えたもので、提供元をまたいで厳密には比べられません。入力はキャッシュされていない入力です。'],
+    boardNote: ['API換算の費用は、各試行のトークン数に2026年11月3日時点の各社の定価（Anthropicは11月10日時点、Googleは11月11日時点、GPT-6.2は11月18日時点）を掛けた値です（DeepSeekはピーク時の料金で、オフピーク時はその半額。Gemini 4 Carbonは導入価格で、12月1日から2倍）。費用にカーソルを合わせると単価が出ます。'],
     costHead: '100万トークンあたりの定価 × トークン数',
     costKinds: [['input', '入力'], ['output', '出力'], ['cache_read', 'キャッシュ読込'], ['cache_write', 'キャッシュ書込']],
   },
@@ -348,15 +376,21 @@ function setLang(lang) {
   L = T[lang];
   document.documentElement.lang = lang;
   document.getElementById('lang').textContent = L.other[0];
-  document.getElementById('board-note').replaceChildren(...L.boardNote.flatMap((s, i) => i ? [document.createElement('br'), s] : [s]));
+  for (const [id, lines] of [['board-note', L.boardNote], ['detail-note', L.detailNote]]) {
+    document.getElementById(id).replaceChildren(...lines.flatMap((s, i) => i ? [document.createElement('br'), s] : [s]));
+  }
   board();
-  chart();
+  detail();
+  draw();
 }
 document.getElementById('lang').addEventListener('click', () => setLang(L.other[1]));
 
 const dur = minutes => { const m = Math.round(minutes); return L.dur(Math.floor(m / 60), m % 60); };
-// The effort tells apart two configurations of one model.
-const label = r => P.results.filter(o => o.name === r.name).length > 1 ? `${r.name} ${r.effort}` : r.name;
+const label = r => `${r.name} · ${r.effort}`;
+function nameAndEffort(r, text) {
+  el('tspan', {}, text, r.name);
+  el('tspan', {}, text, ` · ${r.effort}`);
+}
 
 function el(tag, attrs, parent, text) {
   const e = document.createElementNS(NS, tag);
@@ -390,19 +424,40 @@ function showTip(ev, r, rows) {
   tip.style.top = Math.min(ev.clientY + 14, innerHeight - tip.offsetHeight - 8) + 'px';
 }
 const hideTip = () => { tip.style.display = 'none'; };
+const hits = (a, b) => a.x < b.x + b.width && b.x < a.x + a.width && a.y < b.y + b.height && b.y < a.y + a.height;
+const width = svg => Math.max(280, svg.parentElement.clientWidth - 2 * parseFloat(getComputedStyle(svg.parentElement).paddingLeft));
 
 // Until a choice is made, a model replaced by its newer version is off.
-const chosen = new Map();
-const shown = r => chosen.get(r.config) ?? !r.old;
+// Each chart keeps its own choice, made in the table under it.
+const chosen = { chart: new Map(), scatter: new Map() };
+const shown = (of, r) => chosen[of].get(r.config) ?? !r.old;
+
+function modelCell(of, r, row, redraw) {
+  const cell = row.insertCell();
+  cell.className = 'model';
+  const toggle = document.createElement('button');
+  toggle.appendChild(document.createElement('span')).className = 'key';
+  toggle.append(r.name);
+  const set = () => { toggle.setAttribute('aria-pressed', shown(of, r)); row.classList.toggle('off', !shown(of, r)); };
+  set();
+  toggle.addEventListener('click', () => {
+    // The chart needs at least one configuration to scale to.
+    if (shown(of, r) && P.results.filter(o => shown(of, o)).length === 1) return;
+    chosen[of].set(r.config, !shown(of, r));
+    set();
+    redraw();
+  });
+  cell.append(toggle, document.createElement('small'));
+  cell.lastChild.textContent = `${r.agent} · ${r.effort}`;
+}
 
 function chart() {
   const svg = document.getElementById('chart');
   svg.replaceChildren();
   svg.classList.remove('focus');
   hideTip();
-  const results = P.results.filter(r => shown(r) && r.pace.length === r.runs.length);
-  const W = Math.max(280, svg.parentElement.clientWidth - 2 * parseFloat(getComputedStyle(svg.parentElement).paddingLeft));
-  const narrow = W < 640, H = narrow ? 320 : 460, left = 40, right = narrow ? 10 : 170, top = 20, bottom = 46;
+  const results = P.results.filter(r => shown('chart', r) && r.pace.length === r.runs.length);
+  const W = width(svg), narrow = W < 640, H = narrow ? 320 : 460, left = 40, right = narrow ? 10 : 220, top = 20, bottom = 46;
   svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
   svg.setAttribute('width', W);
   svg.setAttribute('height', H);
@@ -441,10 +496,10 @@ function chart() {
   for (const { r, at } of narrow ? [] : labels) {
     const t = el('text', { x: at[0] + 12, y: at[1] + 4, class: 'end series' }, svg);
     t.dataset.config = r.config;
-    el('tspan', {}, t, label(r));
+    nameAndEffort(r, t);
     el('tspan', { dx: 6 }, t, pct(r.final / P.winner));
     const b = t.getBBox();
-    if (placed.some(o => b.x < o.x + o.width && o.x < b.x + b.width && b.y < o.y + o.height && o.y < b.y + b.height)) t.remove();
+    if (placed.some(o => hits(b, o))) t.remove();
     else placed.push(b);
   }
 
@@ -467,6 +522,86 @@ function chart() {
   svg.onpointerleave = leave;
 }
 
+function scatter() {
+  const svg = document.getElementById('scatter');
+  svg.replaceChildren();
+  const results = P.results.filter(r => shown('scatter', r) && r.cost !== null);
+  const W = width(svg), H = W < 640 ? 300 : 380, left = 40, right = 12, top = 16, bottom = 46;
+  svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+  svg.setAttribute('width', W);
+  svg.setAttribute('height', H);
+  svg.setAttribute('aria-label', L.scatterLabel);
+  if (!results.length) return;
+  const ticks = [0.01, 0.03, 0.1, 0.3, 1, 3, 10, 30, 100, 300, 1000];
+  const costs = results.map(r => r.cost);
+  const lo = ticks.findLast(t => t <= Math.min(...costs)) ?? ticks[0], hi = ticks.find(t => t >= Math.max(...costs)) ?? ticks.at(-1);
+  const topV = Math.ceil((Math.max(...results.map(r => r.final / P.winner)) + 0.05) / 0.2) * 0.2;
+  const x = c => left + (W - left - right) * Math.log(c / lo) / Math.log(hi / lo);
+  const y = v => top + (H - top - bottom) * (1 - v / topV);
+  for (let v = 0; v <= topV + 0.001; v += 0.2) {
+    el('line', { x1: left, x2: W - right, y1: y(v), y2: y(v), stroke: v < 0.001 ? 'var(--axis)' : 'var(--grid)', 'stroke-width': 1 }, svg);
+    el('text', { x: left - 8, y: y(v) + 4, 'text-anchor': 'end', class: 'tick' }, svg, Math.round(v * 100) + '%');
+  }
+  for (const t of ticks.filter(t => t >= lo && t <= hi)) {
+    el('line', { x1: x(t), x2: x(t), y1: top, y2: y(0), stroke: 'var(--grid)', 'stroke-width': 1 }, svg);
+    el('text', { x: x(t), y: H - 26, 'text-anchor': 'middle', class: 'tick' }, svg, '$' + t);
+  }
+  el('text', { x: left + (W - left - right) / 2, y: H - 4, 'text-anchor': 'middle', class: 'tick' }, svg, L.costAxis);
+
+  const dots = results.map(r => ({ r, px: x(r.cost), py: y(r.final / P.winner) }));
+  const boxes = dots.map(d => d.box = { x: d.px - 8, y: d.py - 8, width: 16, height: 16 });
+  for (const d of dots) {
+    el('circle', { cx: d.px, cy: d.py, r: 6, fill: color(d.r.config), stroke: 'var(--surface)', 'stroke-width': 2 }, svg);
+  }
+  // A name goes beside its dot on the first side where it covers neither a dot nor another name; with no such side it is left to the table.
+  for (const d of dots) {
+    const t = el('text', { class: 'end' }, svg);
+    nameAndEffort(d.r, t);
+    const fits = [[12, 4, 'start'], [-12, 4, 'end'], [0, -13, 'middle'], [0, 22, 'middle']].some(([dx, dy, anchor]) => {
+      t.setAttribute('x', d.px + dx);
+      t.setAttribute('y', d.py + dy);
+      t.setAttribute('text-anchor', anchor);
+      const b = t.getBBox();
+      if (b.x < left || b.x + b.width > W || boxes.some(o => o !== d.box && hits(b, o))) return false;
+      boxes.push(b);
+      return true;
+    });
+    if (!fits) t.remove();
+  }
+  for (const d of dots) {
+    const hit = el('circle', { cx: d.px, cy: d.py, r: 14, fill: 'transparent' }, svg);
+    const show = ev => showTip(ev, d.r, [[L.head[2], pct(d.r.final / P.winner)], [L.head[4], '$' + d.r.cost.toFixed(2)],
+                                         [L.head[3], dur(d.r.agent_seconds / 60)]]);
+    hit.addEventListener('pointermove', show);
+    hit.addEventListener('pointerdown', show);
+    hit.addEventListener('pointerleave', hideTip);
+  }
+}
+
+function detail() {
+  const t = document.getElementById('detail');
+  t.replaceChildren();
+  const group = t.insertRow();
+  group.appendChild(document.createElement('th')).colSpan = L.detailHead.length;
+  const tokens = group.appendChild(document.createElement('th'));
+  tokens.colSpan = L.costKinds.length;
+  tokens.textContent = L.tokens;
+  const tr = t.insertRow();
+  for (const h of [...L.detailHead, ...L.costKinds.map(([, name]) => name)]) tr.appendChild(document.createElement('th')).textContent = h;
+  for (const r of P.results) {
+    const row = t.insertRow();
+    row.style.setProperty('--key', color(r.config));
+    modelCell('scatter', r, row, scatter);
+    const cells = [fmt(r.final), fmt(Math.max(0, ...r.runs)), ...L.costKinds.map(([kind]) => compact(r.usage[kind]))];
+    for (const v of cells) row.insertCell().textContent = v;
+  }
+}
+
+function draw() {
+  chart();
+  scatter();
+}
+
 function board() {
   const t = document.getElementById('board');
   t.replaceChildren();
@@ -476,28 +611,14 @@ function board() {
     const row = t.insertRow();
     row.style.setProperty('--key', color(r.config));
     row.insertCell().textContent = i + 1;
-    const toggle = document.createElement('button');
-    toggle.appendChild(document.createElement('span')).className = 'key';
-    toggle.append(r.name);
-    const set = () => { toggle.setAttribute('aria-pressed', shown(r)); row.classList.toggle('off', !shown(r)); };
-    set();
-    toggle.addEventListener('click', () => {
-      // The chart needs at least one configuration to scale to.
-      if (shown(r) && P.results.filter(shown).length === 1) return;
-      chosen.set(r.config, !shown(r));
-      set();
-      chart();
-    });
-    const config = document.createElement('small');
-    config.textContent = `${r.agent} · ${r.effort}`;
-    row.insertCell().append(toggle, config);
+    modelCell('chart', r, row, chart);
     const score = document.createElement('div');
     score.className = 'score';
     score.style.setProperty('--w', pct(r.final / P.winner));
     score.appendChild(document.createElement('b')).textContent = pct(r.final / P.winner);
     score.appendChild(document.createElement('i'));
     row.insertCell().appendChild(score);
-    const cells = [dur(r.agent_seconds / 60), r.cost === null ? '-' : '$' + r.cost.toFixed(2), `${r.fails} / ${r.runs.length}`, fmt(r.usage.output)];
+    const cells = [dur(r.agent_seconds / 60), r.cost === null ? '-' : '$' + r.cost.toFixed(2), `${r.fails} / ${r.runs.length}`];
     for (const v of cells) row.insertCell().textContent = v;
     if (r.prices) costTip(row.cells[4], r);
   });
@@ -517,7 +638,7 @@ function costTip(cell, r) {
   cell.addEventListener('blur', hideTip);
 }
 
-addEventListener('resize', chart);
+addEventListener('resize', draw);
 setLang(/^ja\b/i.test(new URLSearchParams(location.search).get('lang') || navigator.language) ? 'ja' : 'en');
 </script>
 </body>
