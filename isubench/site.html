@@ -136,6 +136,22 @@ footer p:nth-child(n+3) { font-size: 13px; color: var(--muted); }
   .setup .arrow.back::before { content: "\2191"; }
   .compare th:first-child, .compare td:first-child { width: 22%; }
 }
+.figure main { max-width: none; padding: 28px 44px 0; }
+.figure .top { margin-bottom: 18px; }
+.figure .top::after { content: "isu-bench.trasta.dev"; font-size: 15px; color: var(--muted); }
+.figure h1 { font-size: 36px; max-width: none; margin-bottom: 14px; }
+.figure .lead { font-size: 19px; max-width: none; margin-bottom: 20px; }
+.figure .card { border: 0; padding: 0; margin: 0; background: none; }
+.figure :is(.top button, .top a, .card h2, .card .note, #chart, .details, .prose, footer) { display: none; }
+.figure .scroll { margin: 0; }
+.figure .scroll::after { content: "A full bar is the estimated maximum, {WINNER} points"; display: block; text-align: right; font-size: 14px; color: var(--muted); }
+.figure:lang(ja) .scroll::after { content: "バーの右端が理論上の上限の見積もり（{WINNER}点）"; }
+.figure #board :is(tr:first-child, tr.off, td:first-child, td:nth-child(n+4)) { display: none; }
+.figure #board td { font-size: 19px; padding: 8px 0; border: 0; }
+.figure #board td.model { width: 330px; }
+.figure #board small { font-size: 14px; }
+.figure .score b { font-size: 22px; width: 3.6em; }
+.figure .score i, .figure .score i::after { height: 18px; border-radius: 5px; }
 </style>
 </head>
 <body>
@@ -319,6 +335,10 @@ footer p:nth-child(n+3) { font-size: 13px; color: var(--muted); }
 <script type="application/json" id="data">/*DATA*/</script>
 <script>
 const DATA = JSON.parse(document.getElementById('data').textContent);
+// ?figure leaves the wordmark, the headline and the leaderboard's bars, for the screenshots in docs/.
+const figure = new URLSearchParams(location.search).has('figure');
+document.documentElement.classList.toggle('figure', figure);
+if (figure) document.documentElement.dataset.theme = 'light';
 const P = DATA.problems[0];
 const NS = 'http://www.w3.org/2000/svg';
 const tip = document.getElementById('tip');
