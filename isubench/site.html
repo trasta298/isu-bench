@@ -516,16 +516,24 @@ function chart() {
     });
     labels.push({ r, at: pts[pts.length - 1] });
   }
-  // Labels go above every line. One that would cover a label already placed is left to the table below.
+  // A label that would cover one already placed moves up or down a line at a time, tied to its line's end by a short stroke.
   const placed = [];
   for (const { r, at } of narrow ? [] : labels) {
     const t = el('text', { x: at[0] + 12, y: at[1] + 4, class: 'end series' }, svg);
     t.dataset.config = r.config;
     nameAndEffort(r, t);
     el('tspan', { dx: 6 }, t, pct(r.final / P.winner));
-    const b = t.getBBox();
-    if (placed.some(o => hits(b, o))) t.remove();
-    else placed.push(b);
+    const step = t.getBBox().height;
+    const fits = [0, 1, -1, 2, -2, 3, -3].some(k => {
+      t.setAttribute('y', at[1] + 4 + k * step);
+      const b = t.getBBox();
+      if (b.y < top || b.y + b.height > H - bottom + 10 || placed.some(o => hits(b, o))) return false;
+      placed.push(b);
+      if (k) el('line', { x1: at[0] + 7, y1: at[1], x2: at[0] + 10, y2: b.y + b.height / 2, stroke: color(r.config),
+                          'stroke-width': 1.5, class: 'series', 'data-config': r.config }, svg);
+      return true;
+    });
+    if (!fits) t.remove();
   }
 
   const series = [...svg.querySelectorAll('.series')];
