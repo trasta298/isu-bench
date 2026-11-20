@@ -1,5 +1,6 @@
 import json
 import re
+import shutil
 from pathlib import Path
 
 from . import prices
@@ -63,4 +64,5 @@ def build(out):
     out = Path(out)
     out.mkdir(parents=True, exist_ok=True)
     (out / 'index.html').write_text(html)
+    shutil.copy(ROOT / 'docs' / 'og.png', out / 'og.png')
     print(out / 'index.html')

@@ -9,7 +9,8 @@
 <meta property="og:description" content="Can a coding agent make a slow web service fast, without breaking it? One unseen service, three servers, {RUNS} load tests.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://isu-bench.trasta.dev/">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://isu-bench.trasta.dev/og.png">
+<meta name="twitter:card" content="summary_large_image">
 <style>
 :root {
   color-scheme: light;
@@ -152,6 +153,8 @@ footer p:nth-child(n+3) { font-size: 13px; color: var(--muted); }
 .figure #board small { font-size: 14px; }
 .figure .score b { font-size: 22px; width: 3.6em; }
 .figure .score i, .figure .score i::after { height: 18px; border-radius: 5px; }
+.og .lead { display: none; }
+.og #board td { padding: 5px 0; }
 </style>
 </head>
 <body>
@@ -336,9 +339,11 @@ footer p:nth-child(n+3) { font-size: 13px; color: var(--muted); }
 <script>
 const DATA = JSON.parse(document.getElementById('data').textContent);
 // ?figure leaves the wordmark, the headline and the leaderboard's bars, for the screenshots in docs/.
-const figure = new URLSearchParams(location.search).has('figure');
-document.documentElement.classList.toggle('figure', figure);
-if (figure) document.documentElement.dataset.theme = 'light';
+// ?figure=og drops the lead as well, to fit the 1200x630 of a link card.
+const figure = new URLSearchParams(location.search).get('figure');
+document.documentElement.classList.toggle('figure', figure !== null);
+document.documentElement.classList.toggle('og', figure === 'og');
+if (figure !== null) document.documentElement.dataset.theme = 'light';
 const P = DATA.problems[0];
 const NS = 'http://www.w3.org/2000/svg';
 const tip = document.getElementById('tip');
