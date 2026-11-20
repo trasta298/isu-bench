@@ -10,14 +10,14 @@ ROOT = Path(__file__).resolve().parent.parent
 AGENT_NAMES = {'claude-code': 'Claude Code', 'codex': 'Codex', 'dsh': 'DeepSeek Harness', 'agy': 'Antigravity CLI'}
 MODEL_NAMES = {'claude-fable-5-2': 'Claude Fable 5.2', 'claude-opus-5-5': 'Claude Opus 5.5', 'claude-sonnet-5-5': 'Claude Sonnet 5.5',
                'gpt-6-astra': 'GPT-6 Astra', 'gpt-6.1-sol': 'GPT-6.1 Sol', 'gpt-6.2-astra': 'GPT-6.2 Astra', 'gpt-6.2-sol': 'GPT-6.2 Sol',
-               'gemini-4-carbon': 'Gemini 4 Carbon', 'gemini-4-hydrogen': 'Gemini 4 Hydrogen',
+               'gemini-4-carbon': 'Gemini 4 Carbon', 'gemini-4-hydrogen': 'Gemini 4 Hydrogen', 'gemini-4-neon': 'Gemini 4 Neon',
                'deepseek-v4.1-flash:1017': 'DeepSeek V4.1 Flash'}
 # ISUMAIL leads: it is the problem no model can have seen solved.
 ORDER = ['isumail', 'isucon14', 'isucon13', 'isumail-v1']
 # Palette slots of site.html in this order, so that the close colors go to lines that never run near each other.
-# Configurations sharing a slot never run on the same problem.
+# Configurations sharing a slot never run on the same problem, or one of them starts off on the page (OLD).
 COLORS = [['claude-opus-5-5 xhigh', 'gpt-6.2-sol xhigh'], ['claude-fable-5-2 high'], ['gemini-4-carbon medium'],
-          ['gpt-6-astra xhigh'], ['deepseek-v4.1-flash:1017 max'], ['gpt-6.1-sol xhigh'], ['claude-opus-5-5 high'],
+          ['gpt-6-astra xhigh', 'gemini-4-neon high'], ['deepseek-v4.1-flash:1017 max'], ['gpt-6.1-sol xhigh', 'gemini-4-hydrogen high'], ['claude-opus-5-5 high'],
           ['claude-sonnet-5-5 xhigh', 'gpt-6.2-astra xhigh']]
 # Replaced by a newer version of the same line; the page starts with them off where the newer one ran.
 OLD = {'gpt-6-astra': 'gpt-6.2-astra', 'gpt-6.1-sol': 'gpt-6.2-sol'}

@@ -1,0 +1,309 @@
+{
+  "run_id": "isumail-agy-gemini-4-hydrogen-go-20261119174434",
+  "problem": "isumail",
+  "agent": "agy",
+  "agent_version": "1.5.12",
+  "model": "gemini-4-hydrogen",
+  "effort": "high",
+  "lang": "go",
+  "provider": "direct",
+  "upstream_commit": null,
+  "started_at": "2026-11-19T17:44:34.928194+00:00",
+  "image": {
+    "ImageId": "ami-0c07931bc35138ebf",
+    "Name": "isumail-app-x86-202611030222",
+    "OwnerId": "253433207414",
+    "CreationDate": "2026-11-03T02:25:47.000Z"
+  },
+  "images": {
+    "s1": {
+      "ImageId": "ami-0c07931bc35138ebf",
+      "Name": "isumail-app-x86-202611030222",
+      "OwnerId": "253433207414",
+      "CreationDate": "2026-11-03T02:25:47.000Z",
+      "Architecture": "x86_64"
+    },
+    "s2": {
+      "ImageId": "ami-0386de926573364e3",
+      "Name": "isumail-app-arm64-202611030222",
+      "OwnerId": "253433207414",
+      "CreationDate": "2026-11-03T02:24:30.000Z",
+      "Architecture": "arm64"
+    },
+    "s3": {
+      "ImageId": "ami-0386de926573364e3",
+      "Name": "isumail-app-arm64-202611030222",
+      "OwnerId": "253433207414",
+      "CreationDate": "2026-11-03T02:24:30.000Z",
+      "Architecture": "arm64"
+    },
+    "router": {
+      "ImageId": "ami-0cc8249ffb25653a1",
+      "Name": "isumail-router-arm64-202611030504",
+      "OwnerId": "253433207414",
+      "CreationDate": "2026-11-03T05:04:59.000Z",
+      "Architecture": "arm64"
+    },
+    "bench": {
+      "ImageId": "ami-06ede16f4cb5d89d5",
+      "Name": "isumail-bench-arm64-202611101026",
+      "OwnerId": "253433207414",
+      "CreationDate": "2026-11-10T10:27:36.000Z",
+      "Architecture": "arm64"
+    }
+  },
+  "host_resources": {
+    "s1": [
+      "2",
+      "3790",
+      "Intel(R) Xeon(R) Platinum 8275CL CPU @ 3.00GHz"
+    ],
+    "s2": [
+      "1",
+      "1823",
+      "Neoverse-V1"
+    ],
+    "s3": [
+      "1",
+      "1823",
+      "Neoverse-N1"
+    ],
+    "router": [
+      "1",
+      "1823",
+      "Neoverse-N1"
+    ],
+    "bench": [
+      "8",
+      "15665",
+      "Neoverse-V1"
+    ]
+  },
+  "aws_checks": [
+    {
+      "stage": "provisioned",
+      "differences": []
+    },
+    {
+      "stage": "ssh closed",
+      "differences": []
+    },
+    {
+      "stage": "after reboot",
+      "differences": []
+    }
+  ],
+  "resumes": 0,
+  "agent_seconds": 4865,
+  "status": "completed",
+  "reboot_check": {
+    "passed": true,
+    "rebooted": {
+      "s1": true,
+      "s2": true,
+      "s3": true
+    },
+    "probe_status": {
+      "s1": 401
+    },
+    "persist": {
+      "passed": true,
+      "infra": false,
+      "errors": 0
+    },
+    "router": {
+      "ok": true,
+      "text": "isumail-router: ok\ns1 sent_bytes=995777494 sent_packets=2355788 dropped=8 overlimits=130251 backlog=0b\ns2 sent_bytes=399709035 sent_packets=1404402 dropped=4 overlimits=23020 backlog=0b\ns3 sent_bytes=377214139 sent_packets=1603079 dropped=10 overlimits=138484 backlog=0b\nconntrack count=461 max=1048576\ncpu  2362 1 1662 497619 947 0 498 0 0 0\n"
+    },
+    "infra": false
+  },
+  "runs": [
+    {
+      "n": 1,
+      "attempt": 1,
+      "started_at": "2026-11-19T17:48:20.357274+00:00",
+      "exit": 0,
+      "finished_at": "2026-11-19T17:50:15.436668+00:00",
+      "passed": true,
+      "score": 1927,
+      "run_id": "r-20261119-14119497a8b6",
+      "state_sha256": "22ed9f555c149e2638d8e3c255689c1b0643d55f1acd143bc425d8e28bf1f374"
+    },
+    {
+      "n": 2,
+      "attempt": 2,
+      "started_at": "2026-11-19T18:06:15.727364+00:00",
+      "exit": 1,
+      "finished_at": "2026-11-19T18:06:28.707789+00:00",
+      "passed": false,
+      "score": 0,
+      "run_id": "r-20261119-0a18ebb3769b",
+      "state_sha256": null
+    },
+    {
+      "n": 3,
+      "attempt": 3,
+      "started_at": "2026-11-19T18:07:34.319812+00:00",
+      "exit": 1,
+      "finished_at": "2026-11-19T18:08:06.512166+00:00",
+      "passed": false,
+      "score": 0,
+      "run_id": "r-20261119-d8871cc3950b",
+      "state_sha256": null
+    },
+    {
+      "n": 4,
+      "attempt": 4,
+      "started_at": "2026-11-19T18:13:06.494781+00:00",
+      "exit": 1,
+      "finished_at": "2026-11-19T18:13:21.489600+00:00",
+      "passed": false,
+      "score": 0,
+      "run_id": "r-20261119-1159d96a1e0b",
+      "state_sha256": null
+    },
+    {
+      "n": 5,
+      "attempt": 5,
+      "started_at": "2026-11-19T18:13:47.921842+00:00",
+      "exit": 0,
+      "finished_at": "2026-11-19T18:15:29.182241+00:00",
+      "passed": true,
+      "score": 9226,
+      "run_id": "r-20261119-4ba22880f5ee",
+      "state_sha256": "7510ad26018634bfce1dced8d222c7926b0009016bde5436385b1f6606875094"
+    },
+    {
+      "n": 6,
+      "attempt": 6,
+      "started_at": "2026-11-19T18:19:52.553395+00:00",
+      "exit": 0,
+      "finished_at": "2026-11-19T18:21:33.873026+00:00",
+      "passed": true,
+      "score": 25534,
+      "run_id": "r-20261119-00badee32f2e",
+      "state_sha256": "69c271e553ba4c4ed0fb720c28ea961b870ae2c934d7f299ecb59d95340606b8"
+    },
+    {
+      "n": 7,
+      "attempt": 7,
+      "started_at": "2026-11-19T18:28:44.038823+00:00",
+      "exit": 0,
+      "finished_at": "2026-11-19T18:30:25.767982+00:00",
+      "passed": true,
+      "score": 119263,
+      "run_id": "r-20261119-a8cdcfb540c3",
+      "state_sha256": "37e6cb2c3c5e774f56a15a3326414cb3c8ae1cd123dd50d5e69aea82d592f53b"
+    },
+    {
+      "n": 8,
+      "attempt": 8,
+      "started_at": "2026-11-19T18:35:51.082150+00:00",
+      "exit": 1,
+      "finished_at": "2026-11-19T18:36:41.841630+00:00",
+      "passed": false,
+      "score": 0,
+      "run_id": "r-20261119-2a2b8ff0a7a6",
+      "state_sha256": null
+    },
+    {
+      "n": 9,
+      "attempt": 9,
+      "started_at": "2026-11-19T18:56:16.906227+00:00",
+      "exit": 0,
+      "finished_at": "2026-11-19T18:57:58.244665+00:00",
+      "passed": true,
+      "score": 53772,
+      "run_id": "r-20261119-557009d3b2fc",
+      "state_sha256": "a6c52f585998ff5c70e4e136b4e1327e9ec7ccd2c889e0b557a0fdf0e4f55fac"
+    },
+    {
+      "n": 10,
+      "attempt": 10,
+      "started_at": "2026-11-19T19:02:09.549030+00:00",
+      "exit": 0,
+      "finished_at": "2026-11-19T19:03:49.864807+00:00",
+      "passed": true,
+      "score": 170557,
+      "run_id": "r-20261119-0656d7eb9103",
+      "state_sha256": "c288d13202e8cdb396fcaded816c4b938c37db1552103cf3aab0a9bc90591d3d"
+    },
+    {
+      "n": 11,
+      "attempt": 11,
+      "started_at": "2026-11-19T19:06:56.078154+00:00",
+      "exit": 0,
+      "finished_at": "2026-11-19T19:08:49.654653+00:00",
+      "passed": true,
+      "score": 189095,
+      "run_id": "r-20261119-e1cd4c7be4c1",
+      "state_sha256": "afca4722349820af78c45700d071a132842219105806d0804c90f7b61c0a9ad8"
+    }
+  ],
+  "infra_failures": [],
+  "final_score": 189095,
+  "finished_at": "2026-11-19T19:09:44.065972+00:00",
+  "usage": {
+    "input_tokens": 1207904,
+    "output_tokens": 413110,
+    "cache_read_tokens": 74817153,
+    "reasoning_tokens": 253016
+  },
+  "pace": [
+    {
+      "minutes": 1.1,
+      "tool_calls": 32,
+      "output_tokens": 2695
+    },
+    {
+      "minutes": 19.0,
+      "tool_calls": 52,
+      "output_tokens": 118875
+    },
+    {
+      "minutes": 20.3,
+      "tool_calls": 5,
+      "output_tokens": 2636
+    },
+    {
+      "minutes": 25.8,
+      "tool_calls": 30,
+      "output_tokens": 27530
+    },
+    {
+      "minutes": 26.5,
+      "tool_calls": 6,
+      "output_tokens": 1384
+    },
+    {
+      "minutes": 32.6,
+      "tool_calls": 25,
+      "output_tokens": 25566
+    },
+    {
+      "minutes": 41.5,
+      "tool_calls": 33,
+      "output_tokens": 45623
+    },
+    {
+      "minutes": 48.6,
+      "tool_calls": 29,
+      "output_tokens": 32597
+    },
+    {
+      "minutes": 69.0,
+      "tool_calls": 123,
+      "output_tokens": 122045
+    },
+    {
+      "minutes": 74.9,
+      "tool_calls": 18,
+      "output_tokens": 22112
+    },
+    {
+      "minutes": 79.7,
+      "tool_calls": 14,
+      "output_tokens": 12047
+    }
+  ]
+}

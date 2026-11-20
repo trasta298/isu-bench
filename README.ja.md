@@ -15,9 +15,11 @@ isu-bench v1.1の結果です。各構成の試行は1回だけなので、小�
 | モデル | エージェント | effort | スコア | 作業時間 | API換算の費用 |
 |---|---|---|---:|---:|---:|
 | Claude Fable 5.2 | Claude Code 2.1.321 | high | **58.4%** | 4時間31分 | $76.55 |
+| Gemini 4 Neon | Antigravity CLI 1.5.12 | high | **54.7%** | 2時間4分 | $18.98 |
 | Gemini 4 Carbon | Antigravity CLI 1.5.5 | medium | **51.9%** | 3時間9分 | $39.27 |
 | Claude Opus 5.5 | Claude Code 2.1.321 | high | **43.2%** | 2時間13分 | $22.78 |
 | GPT-6.2 Astra | Codex 0.169.0 | xhigh | **41.8%** | 35分 | $9.70 |
+| Gemini 4 Hydrogen | Antigravity CLI 1.5.12 | high | **17.8%** | 1時間21分 | $10.52 |
 | GPT-6.1 Sol | Codex 0.166.0 | xhigh | **15.2%** | 46分 | $2.38 |
 | GPT-6.2 Sol | Codex 0.169.0 | xhigh | **14.1%** | 48分 | $4.14 |
 | GPT-6 Astra | Codex 0.166.0 | xhigh | **9.7%** | 46分 | $13.72 |
@@ -25,7 +27,6 @@ isu-bench v1.1の結果です。各構成の試行は1回だけなので、小�
 
 - 手を入れる前のサービスは約1,744点（0.2%）で、点は回ごとに5%ほど変わります。
 - API換算の費用は、各試行のトークン数に2026年11月時点の各社の定価を掛けた値です（[isubench/prices.py](isubench/prices.py)）。DeepSeekはピーク時の料金、Gemini 4 Carbonは導入価格で、12月1日から2倍になります。
-- Gemini 4 Carbonは、7回目の後にAPIの鍵のクレジットが尽きたため、別の鍵で会話を引き継いで続けています（3回までの再開のうちの1回）。
 
 ## 仕組み
 
@@ -75,8 +76,8 @@ python3 -m isubench teardown <run_id>
 | Antigravity CLI | `agy` | Gemini APIのモデルを名前で指定します（`--model gemini-4-carbon`）。`--effort` は `low`・`medium`・`high`。Web検索はモデルのAPIの中で実行されプロキシでは止まらないので、フックで拒否しています |
 | DeepSeek Harness | `dsh` | `OLLAMA_API_KEY` を設定するとOllama Cloudで動きます。ベンチマーク1回に約70秒かかるため、コマンドのタイムアウトを60秒から10分に延ばしています |
 
-
 - `agy` では、isu-bench専用に作ったGoogleのログインも使えます。`GEMINI_API_KEY` が未設定のときに使われます。ログインには `docker run --rm -it -v ~/.config/isu-bench/agy:/home/agent/.gemini/antigravity-cli isu-bench-agent:v1 agy` を実行してGoogle OAuthを選び、ログインページに出るコードを貼り付けます。初回の画面では、Googleが操作データを収集することへの同意にチェックが入っているので外します。ログインした場合は、`agy models` がそのアカウントに出すモデルを指定します（例: `--model gemini-4-neon --effort high`）。
+
 ## 他の問題と以前のバージョン
 
 - ISUCON14とISUCON13もこのハーネスで動きます（`--problem isucon14`、`--problem isucon13`）。公開されている解法がモデルの学習データより前からあるため、採点には使っていません。v1のときの結果は `results/` にあります。

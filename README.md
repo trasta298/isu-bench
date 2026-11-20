@@ -15,9 +15,11 @@ isu-bench v1.1. Each configuration ran once, so small gaps mean little. The scor
 | Model | Agent | Effort | Score | Time | API cost |
 |---|---|---|---:|---:|---:|
 | Claude Fable 5.2 | Claude Code 2.1.321 | high | **58.4%** | 4 h 31 min | $76.55 |
+| Gemini 4 Neon | Antigravity CLI 1.5.12 | high | **54.7%** | 2 h 4 min | $18.98 |
 | Gemini 4 Carbon | Antigravity CLI 1.5.5 | medium | **51.9%** | 3 h 9 min | $39.27 |
 | Claude Opus 5.5 | Claude Code 2.1.321 | high | **43.2%** | 2 h 13 min | $22.78 |
 | GPT-6.2 Astra | Codex 0.169.0 | xhigh | **41.8%** | 35 min | $9.70 |
+| Gemini 4 Hydrogen | Antigravity CLI 1.5.12 | high | **17.8%** | 1 h 21 min | $10.52 |
 | GPT-6.1 Sol | Codex 0.166.0 | xhigh | **15.2%** | 46 min | $2.38 |
 | GPT-6.2 Sol | Codex 0.169.0 | xhigh | **14.1%** | 48 min | $4.14 |
 | GPT-6 Astra | Codex 0.166.0 | xhigh | **9.7%** | 46 min | $13.72 |
@@ -25,7 +27,6 @@ isu-bench v1.1. Each configuration ran once, so small gaps mean little. The scor
 
 - The untouched service scores about 1,744 points (0.2%), and its score varies by about 5% from run to run.
 - API cost prices each trial's tokens at the provider's list price in November 2026 ([isubench/prices.py](isubench/prices.py)). DeepSeek is at its peak rate, and Gemini 4 Carbon at its introductory price, which doubles on 2026-12-01.
-- Gemini 4 Carbon's API key ran out of credit after the 7th load test, and the session went on with a second key as one of its three resumes.
 
 ## How it works
 
@@ -75,8 +76,8 @@ A trial creates its own VPC and instances and deletes them when it ends. If the 
 | Antigravity CLI | `agy` | Takes a Gemini API model by name (`--model gemini-4-carbon`) and `--effort low`, `medium` or `high`. Its web search runs inside the model API, past the proxy, so a hook denies it |
 | DeepSeek Harness | `dsh` | With `OLLAMA_API_KEY` it runs against Ollama Cloud. Its command timeout is raised from 60 seconds to 10 minutes, because one load test takes about 70 seconds |
 
-
 - `agy` can also use a Google sign-in made for isu-bench only, used when `GEMINI_API_KEY` is unset: run `docker run --rm -it -v ~/.config/isu-bench/agy:/home/agent/.gemini/antigravity-cli isu-bench-agent:v1 agy`, choose Google OAuth and paste the code from the sign-in page. Its first-run screen checks the box that lets Google collect your interactions data; uncheck it. Signed in, `agy` takes the models that `agy models` lists for the account, such as `--model gemini-4-neon --effort high`.
+
 ## Other problems and versions
 
 - ISUCON14 and ISUCON13 also run in the harness (`--problem isucon14`, `--problem isucon13`). They are not scored, because their public solutions predate the models' training data. Results from v1 are in `results/`.
