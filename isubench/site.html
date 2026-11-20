@@ -169,7 +169,7 @@ footer p:nth-child(n+3) { font-size: 13px; color: var(--muted); }
     <h1 lang="en">Can a coding agent speed up a slow web service without breaking it?</h1>
     <h1 lang="ja">遅いWebサービスを、壊さずにどこまで速くできるか</h1>
     <p class="lead" lang="en">isu-bench gives a coding agent an unfamiliar web service, the three servers it runs on, and a budget of {RUNS} load tests. There is no time limit, and the agent gets no hints or outside help. The {RUNS}th load test determines the final score.</p>
-    <p class="lead" lang="ja">isu-benchは、コーディングエージェントに初めて見るWebサービスと、それが動く3台のサーバーを渡します。ベンチマークを実行できるのは{RUNS}回だけ。時間制限もヒントもなく、質問できる相手もいません。{RUNS}回目の点がそのままスコアになります。</p>
+    <p class="lead" lang="ja">isu-benchは、コーディングエージェントに、初めて見るWebサービスとそれが動く3台のサーバーを渡します。ベンチマークは{RUNS}回まで。時間制限もヒントもなく、質問できる相手もいません。{RUNS}回目の結果がそのままスコアになります。</p>
   </header>
 
   <section class="card">
@@ -177,7 +177,7 @@ footer p:nth-child(n+3) { font-size: 13px; color: var(--muted); }
     <h2 lang="ja">経過時間とスコア</h2>
     <svg id="chart" class="plot" role="img"></svg>
     <p class="note" lang="en">Each dot represents one load test, plotted at its start time. Scores are a percentage of the estimated maximum ({WINNER} points); unmodified, the service scores about {INITIAL}. Hollow dots along the 0% line indicate failed runs (0 points).</p>
-    <p class="note" lang="ja">点は1回のベンチマークで、開始した時刻の位置にあります。スコアは、理論上の上限の見積もり（{WINNER}点）に対する割合です。手を入れる前のサービスは約{INITIAL}点です。0%の線上にある白抜きの点はFAIL（0点）です。</p>
+    <p class="note" lang="ja">各点は1回のベンチマークを表し、開始時点の位置にプロットしています。スコアは、理論上の上限の見積もり（{WINNER}点）に対する割合です。初期状態では約{INITIAL}点です。0%の線上にある白抜きの点はFAIL（0点）です。</p>
     <div class="scroll"><table id="board"></table></div>
     <p class="note" id="board-note"></p>
   </section>
@@ -208,24 +208,24 @@ footer p:nth-child(n+3) { font-size: 13px; color: var(--muted); }
       </ul>
     </div>
     <div lang="ja">
-      <p>エージェントは、チューニングコンテストの参加者と同じ立場に置かれます。最初に渡されるのは次の3つです。</p>
+      <p>エージェントは、チューニングコンテストの参加者と同じ条件で挑戦します。最初に渡されるのは次の3つです。</p>
       <ul>
         <li>ニュースレター配信サービス「ISUMAIL」の仕様書（日本語）</li>
-        <li>GoとPostgreSQLで書かれた、動くけれど遅い参照実装</li>
-        <li>それが動いている3台のサーバーのroot権限。CPUもメモリも1台ずつ違う</li>
+        <li>GoとPostgreSQLで作られた、動作するものの遅い参照実装</li>
+        <li>それぞれCPU・メモリ構成が異なる3台のサーバーのroot権限</li>
       </ul>
     </div>
     <div class="setup">
-      <div class="node"><b lang="en">Coding agent</b><b lang="ja">コーディングエージェント</b><span lang="en">Reads the spec and code, profiles, rewrites, and deploys</span><span lang="ja">仕様とコードを読み、計測し、書き換え、配置する</span></div>
+      <div class="node"><b lang="en">Coding agent</b><b lang="ja">コーディングエージェント</b><span lang="en">Reads the spec and code, profiles, rewrites, and deploys</span><span lang="ja">仕様とコードを読み、計測・書き換え・デプロイを行う</span></div>
       <div class="arrow">SSH</div>
       <div class="servers">
         <div class="node"><b>s1</b></div>
         <div class="node"><b>s2</b></div>
         <div class="node"><b>s3</b></div>
-        <span lang="en">different CPU and memory on each</span><span lang="ja">CPUもメモリも1台ずつ違う</span>
+        <span lang="en">different CPU and memory on each</span><span lang="ja">1台ごとにCPU・メモリが異なる</span>
       </div>
       <div class="arrow back"><span lang="en">user traffic</span><span lang="ja">利用者の操作</span></div>
-      <div class="node"><b lang="en">Load test</b><b lang="ja">ベンチマーカー</b><span lang="en">70 seconds of simulated publisher and reader traffic; returns a score or FAIL</span><span lang="ja">発行者と読者の操作を70秒間送り、点かFAILを返す</span></div>
+      <div class="node"><b lang="en">Load test</b><b lang="ja">ベンチマーカー</b><span lang="en">70 seconds of simulated publisher and reader traffic; returns a score or FAIL</span><span lang="ja">発行者と読者の操作を70秒間送り、スコアまたはFAILを返す</span></div>
     </div>
     <div lang="en">
       <p><strong>The agent can change anything</strong>: queries, indexes, caching, architecture, language, database, or how work is split across the servers. The only requirement is that the service continues to follow the specification.</p>
@@ -233,7 +233,7 @@ footer p:nth-child(n+3) { font-size: 13px; color: var(--muted); }
     </div>
     <div lang="ja">
       <p><strong>何を変えても構いません</strong>。SQLやインデックス、キャッシュ、アーキテクチャ、言語、データベース、サーバーの役割分担まで自由です。条件は、仕様どおりに動き続けることだけです。</p>
-      <p>ベンチマーカーは利用者の役をします。発行者は号を予約し、その号は期限までに購読者全員へ届かなければなりません。読者は開封、クリック、共有、購読をします。点は、期限内に届いたメールと成功した操作の数で決まります。データに不整合があればその回はFAILです。</p>
+      <p>ベンチマーカーは利用者の動きを再現します。発行者はメール号の配信を予約し、期限までに購読者全員へ届ける必要があります。読者はメールの開封、クリック、共有、購読を行います。スコアは、期限内に届いたメール数と成功した操作数で決まります。データに不整合があればその回はFAILです。</p>
     </div>
   </section>
 
@@ -249,10 +249,10 @@ footer p:nth-child(n+3) { font-size: 13px; color: var(--muted); }
     </table>
     <table class="compare" lang="ja">
       <tr><th></th><th>テストで採点するベンチマーク</th><th>isu-bench</th></tr>
-      <tr><td>作業</td><td>リポジトリのコードを変更する</td><td>動いているシステムを丸ごと扱う。コード、データベース、3台のサーバー</td></tr>
-      <tr><td>終わり</td><td>テストが通れば終わり</td><td>終わりはない。改善した分だけ点が伸びる</td></tr>
-      <tr><td>手がかり</td><td>テストは何度でも実行できる</td><td>ベンチマークは{RUNS}回。最後の1回がFAILなら0点</td></tr>
-      <tr><td>既知かどうか</td><td>多くは公開されているコード</td><td>非公開の問題。マシンイメージでだけ配布</td></tr>
+      <tr><td>作業内容</td><td>リポジトリのコードを変更する</td><td>稼働中のシステム全体（コード、データベース、3台のサーバー）を最適化する</td></tr>
+      <tr><td>終了条件</td><td>テストが通れば終わり</td><td>終わりはない。改善した分だけスコアが伸びる</td></tr>
+      <tr><td>フィードバック</td><td>テストは何度でも実行できる</td><td>ベンチマークは{RUNS}回まで。最後の1回がFAILなら0点</td></tr>
+      <tr><td>問題の公開状況</td><td>多くは公開されているコード</td><td>非公開の問題。マシンイメージのみで配布</td></tr>
     </table>
     <div lang="en">
       <p>Doing well requires several skills at once:</p>
@@ -265,13 +265,13 @@ footer p:nth-child(n+3) { font-size: 13px; color: var(--muted); }
       </ul>
     </div>
     <div lang="ja">
-      <p>高い点を取るには、次の力が同時に要ります。</p>
+      <p>高いスコアを出すには、次の力が同時に求められます。</p>
       <ul>
         <li>初めて見る仕様書とコードを読み解く</li>
         <li>計測してボトルネックを見つける</li>
         <li>大きな書き換えを、動作を壊さずにやり切る</li>
-        <li>サーバーを運用する。配置、再起動後の復帰、データの永続化</li>
-        <li>限られた回数の中で、いつ測り、どこで攻めるのをやめるかを決める</li>
+        <li>デプロイ、再起動後の復帰、データの永続化といったサーバー運用</li>
+        <li>限られた回数の中で、いつ計測し、どこでリスクを取るのをやめるか判断する</li>
       </ul>
     </div>
   </section>
@@ -285,7 +285,7 @@ footer p:nth-child(n+3) { font-size: 13px; color: var(--muted); }
     </div>
     <div lang="ja">
       <p>課題の形式は<a href="https://isucon.net/">ISUCON</a>にならっています。ISUCONは2011年から続くWebアプリケーション高速化コンテストで、最大3人のチームが、初めて見る遅いWebサービスと数台のサーバーを渡され、8時間でどこまで速くできるかを競います。</p>
-      <p>過去のISUCONの問題と解法は公開されているので、モデルが解かれた例を見ているかもしれません。そこでisu-benchは、同じ形式で新しく作った問題「ISUMAIL」で採点します。ソースは公開せず、マシンイメージでだけ配布しています。</p>
+      <p>過去のISUCONの問題と解法は公開されているため、モデルがすでに解法を学習している可能性があります。そこでisu-benchは、同じ形式で新しく作った問題「ISUMAIL」で採点します。ソースコードは公開せず、マシンイメージのみで配布しています。</p>
     </div>
   </section>
 
@@ -301,15 +301,15 @@ footer p:nth-child(n+3) { font-size: 13px; color: var(--muted); }
       <li>One trial per configuration, starting from the Go implementation. Each configuration is a combination of model, agent harness, and reasoning effort.</li>
     </ul>
     <ul lang="ja">
-      <li><strong>スコア</strong>: {RUNS}回目のベンチマークの点を、理論上の上限の見積もり（{WINNER}点）で割った値。</li>
-      <li>ベンチマークはFAILも含めてすべて{RUNS}回のうちに数えます。</li>
-      <li>最後の1回の後に3台のサーバーを再起動します。サービスが復帰しない、またはその回に書き込んだデータが残っていなければ0点です。</li>
+      <li><strong>スコア</strong>: {RUNS}回目のベンチマークの点数を、理論上の上限の見積もり（{WINNER}点）で割った割合。</li>
+      <li>ベンチマークはFAILも含めてすべて{RUNS}回の上限にカウントされます。</li>
+      <li>最後のベンチマーク後に3台のサーバーを再起動します。サービスが復帰しない、またはその回に書き込んだデータが残っていなければ0点です。</li>
       <li>時間制限はありません。途中で止まったエージェントには、3回まで続行を指示します。</li>
-      <li>Webは使えません。検索ツールは無効で、通信先はモデルのAPI、パッケージレジストリ、サーバーだけです。</li>
-      <li>1構成につき1試行、言語はGo。構成は、モデル、それを動かすエージェント、推論の強さの組み合わせです。</li>
+      <li>Webは使えません。検索ツールは無効で、通信先はモデルのAPI、パッケージレジストリ、対象サーバーのみに制限されています。</li>
+      <li>1構成につき1試行、初期実装の言語はGoです。構成は、モデル、それを動かすエージェント、推論の強さの組み合わせです。</li>
     </ul>
     <p lang="en">The <a href="https://github.com/trasta298/isu-bench/blob/main/REQUIREMENTS.md">full rules</a>, the <a href="https://github.com/trasta298/isu-bench/blob/main/prompt.md">exact prompt</a>, and the harness are available in the <a href="https://github.com/trasta298/isu-bench">repository</a>.</p>
-    <p lang="ja"><a href="https://github.com/trasta298/isu-bench/blob/main/REQUIREMENTS.md">ルールの全体</a>、<a href="https://github.com/trasta298/isu-bench/blob/main/prompt.md">プロンプトの原文</a>、ハーネスは<a href="https://github.com/trasta298/isu-bench/blob/main/README.ja.md">リポジトリ</a>にあります。</p>
+    <p lang="ja"><a href="https://github.com/trasta298/isu-bench/blob/main/REQUIREMENTS.md">ルール全文</a>、<a href="https://github.com/trasta298/isu-bench/blob/main/prompt.md">プロンプトの原文</a>、ハーネスは<a href="https://github.com/trasta298/isu-bench/blob/main/README.ja.md">リポジトリ</a>にあります。</p>
   </section>
 
   <section class="prose">
@@ -321,9 +321,9 @@ footer p:nth-child(n+3) { font-size: 13px; color: var(--muted); }
       <li>The 100% mark is an estimate of the problem's theoretical limit. Like the source code, its derivation is kept private to keep the problem out of training data.</li>
     </ul>
     <ul lang="ja">
-      <li>各構成の試行は1回だけで、試行間のばらつきは測っていません。手を入れる前のサービスでも、点は回ごとに5%ほど変わります。小さな差に意味はありません。</li>
-      <li>モデルはそれぞれ提供元のエージェントで動かしています。結果はモデル単体ではなく、その組み合わせのものです。</li>
-      <li>上限は問題の理論上の限界を見積もった値です。導き方は、ソースと同じく学習データに入れないため公開していません。</li>
+      <li>各構成の試行は1回だけで、試行間のばらつきは測っていません。初期状態のサービスでも、実行ごとに5%ほどばらつきます。小さな差に意味はありません。</li>
+      <li>モデルはそれぞれ提供元のエージェントで動かしています。結果はモデル単体ではなく、モデルとエージェントの組み合わせに対するものです。</li>
+      <li>上限は問題の理論上の限界を見積もった値です。算出根拠は、ソースコードと同様に学習データへの混入を防ぐため非公開としています。</li>
     </ul>
   </section>
 
@@ -376,22 +376,23 @@ const T = {
   },
   ja: {
     other: ['English', 'en'],
-    chartLabel: `${P.title}の各ベンチマークのスコアを、エージェントが動き始めてからの時間に沿って並べたグラフ`,
-    elapsed: 'エージェントが動き始めてからの時間（時:分）',
+    chartLabel: `${P.title}の各ベンチマークのスコアを、開始からの経過時間に沿って並べたグラフ`,
+    elapsed: '経過時間（時:分）',
     max: '理論上の上限の見積もり',
     dur: (h, m) => h ? `${h}時間${m}分` : `${m}分`,
     test: (i, n) => `ベンチマーク ${i}/${n}回目`,
     startedAt: '開始',
     score: 'スコア',
-    points: '点',
-    calls: '直前までのツール呼び出し',
+    points: '点数',
+    calls: '直前までのツール呼び出し数',
     head: ['', 'モデル', 'スコア', '作業時間', 'API換算の費用', 'FAIL'],
     scatterLabel: `${P.title}の最終スコアと、その試行のAPI換算の費用の関係を示すグラフ`,
     costAxis: '試行のAPI換算の費用（USD、対数目盛）',
     detailHead: ['モデル', '最終点', '最高点'],
     tokens: 'トークン',
-    detailNote: ['トークン数は各エージェントの会話記録から数えたもので、提供元をまたいで厳密には比べられません。入力はキャッシュされていない入力です。'],
-    boardNote: ['API換算の費用は、各試行のトークン数に2026年11月3日時点の各社の定価（Anthropicは11月10日時点、Googleは11月11日時点（Gemini 4 Hydrogenは11月19日、Gemini 4 Neonは11月20日時点）、GPT-6.2は11月18日時点）を掛けた値です（DeepSeekはピーク時の料金で、オフピーク時はその半額。Gemini 4 Carbonは導入価格で、12月1日から2倍）。費用にカーソルを合わせると単価が出ます。'],
+    detailNote: ['トークン数は各エージェントの会話記録から集計したもので、提供元をまたいだ厳密な比較はできません。「入力」にはキャッシュ分を含みません。'],
+    boardNote: ['作業時間はエージェントの実稼働時間です。',
+                'API換算の費用は、各試行のトークン数に各社の定価を掛けた値です（2026年11月3日時点。Anthropicは11月10日、Googleは11月11日、GPT-6.2は11月18日、Gemini 4 Hydrogenは11月19日、Gemini 4 Neonは11月20日時点）。DeepSeekはピーク時の料金（オフピーク時は半額）、Gemini 4 Carbonは導入価格（12月1日から2倍）で計算しています。費用にカーソルを合わせると内訳が表示されます。'],
     costHead: '100万トークンあたりの定価 × トークン数',
     costKinds: [['input', '入力'], ['output', '出力'], ['cache_read', 'キャッシュ読込'], ['cache_write', 'キャッシュ書込']],
   },
