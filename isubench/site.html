@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>isu-bench</title>
-<meta name="description" content="A benchmark for coding agents: make a slow web service on three servers as fast as possible without breaking it, with {RUNS} load tests.">
+<meta name="description" content="A benchmark for coding agents: optimize a slow web service across three servers without breaking it, within a budget of {RUNS} load tests.">
 <meta property="og:title" content="isu-bench">
-<meta property="og:description" content="Can a coding agent make a slow web service fast, without breaking it? One unseen service, three servers, {RUNS} load tests.">
+<meta property="og:description" content="Can a coding agent speed up a slow web service without breaking it? One unseen service, three servers, and {RUNS} load tests.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://isu-bench.trasta.dev/">
 <meta property="og:image" content="https://isu-bench.trasta.dev/og.png">
@@ -145,7 +145,7 @@ footer p:nth-child(n+3) { font-size: 13px; color: var(--muted); }
 .figure .card { border: 0; padding: 0; margin: 0; background: none; }
 .figure :is(.top button, .top a, .card h2, .card .note, #chart, .details, .prose, footer) { display: none; }
 .figure .scroll { margin: 0; }
-.figure .scroll::after { content: "A full bar is the estimated maximum, {WINNER} points"; display: block; text-align: right; font-size: 14px; color: var(--muted); }
+.figure .scroll::after { content: "A full bar is the estimated maximum ({WINNER} points)"; display: block; text-align: right; font-size: 14px; color: var(--muted); }
 .figure:lang(ja) .scroll::after { content: "バーの右端が理論上の上限の見積もり（{WINNER}点）"; }
 .figure #board :is(tr:first-child, tr.off, td:first-child, td:nth-child(n+4)) { display: none; }
 .figure #board td { font-size: 19px; padding: 8px 0; border: 0; }
@@ -166,9 +166,9 @@ footer p:nth-child(n+3) { font-size: 13px; color: var(--muted); }
   </div>
 
   <header>
-    <h1 lang="en">Can a coding agent make a slow web service fast, without breaking it?</h1>
+    <h1 lang="en">Can a coding agent speed up a slow web service without breaking it?</h1>
     <h1 lang="ja">遅いWebサービスを、壊さずにどこまで速くできるか</h1>
-    <p class="lead" lang="en">isu-bench hands an agent a web service it has never seen, the three servers it runs on, and {RUNS} load tests. There is no time limit, no hint and no one to ask. The {RUNS}th load test is its score.</p>
+    <p class="lead" lang="en">isu-bench gives a coding agent an unfamiliar web service, the three servers it runs on, and a budget of {RUNS} load tests. There is no time limit, and the agent gets no hints or outside help. The {RUNS}th load test determines the final score.</p>
     <p class="lead" lang="ja">isu-benchは、コーディングエージェントに初めて見るWebサービスと、それが動く3台のサーバーを渡します。ベンチマークを実行できるのは{RUNS}回だけ。時間制限もヒントもなく、質問できる相手もいません。{RUNS}回目の点がそのままスコアになります。</p>
   </header>
 
@@ -176,7 +176,7 @@ footer p:nth-child(n+3) { font-size: 13px; color: var(--muted); }
     <h2 lang="en">Score over time</h2>
     <h2 lang="ja">経過時間とスコア</h2>
     <svg id="chart" class="plot" role="img"></svg>
-    <p class="note" lang="en">Each dot is one load test, placed at the time it started. The score is the share of the estimated maximum, {WINNER} points; the untouched service scores about {INITIAL}. A hollow dot on the baseline is a failed test, which scores 0.</p>
+    <p class="note" lang="en">Each dot represents one load test, plotted at its start time. Scores are a percentage of the estimated maximum ({WINNER} points); unmodified, the service scores about {INITIAL}. Hollow dots along the 0% line indicate failed runs (0 points).</p>
     <p class="note" lang="ja">点は1回のベンチマークで、開始した時刻の位置にあります。スコアは、理論上の上限の見積もり（{WINNER}点）に対する割合です。手を入れる前のサービスは約{INITIAL}点です。0%の線上にある白抜きの点はFAIL（0点）です。</p>
     <div class="scroll"><table id="board"></table></div>
     <p class="note" id="board-note"></p>
@@ -186,7 +186,7 @@ footer p:nth-child(n+3) { font-size: 13px; color: var(--muted); }
     <h2 lang="en">Detailed results</h2>
     <h2 lang="ja">詳細な結果</h2>
     <div class="card">
-      <h3 lang="en">Score and API cost</h3>
+      <h3 lang="en">Score vs. API cost</h3>
       <h3 lang="ja">スコアとAPI換算の費用</h3>
       <svg id="scatter" class="plot" role="img"></svg>
     </div>
@@ -200,11 +200,11 @@ footer p:nth-child(n+3) { font-size: 13px; color: var(--muted); }
     <h2 lang="en">The task</h2>
     <h2 lang="ja">課題</h2>
     <div lang="en">
-      <p>The agent takes the seat of a contestant in a performance tuning contest. It starts with:</p>
+      <p>The agent competes under the same conditions as a human contestant in a performance tuning contest. It starts with:</p>
       <ul>
-        <li>the specification of ISUMAIL, a newsletter delivery service, written in Japanese</li>
-        <li>a reference implementation in Go and PostgreSQL that works but is slow</li>
-        <li>root access to the three servers it runs on, which differ in CPU and memory</li>
+        <li>a Japanese specification for ISUMAIL, a newsletter delivery service</li>
+        <li>a working but slow reference implementation in Go and PostgreSQL</li>
+        <li>root access to the three servers running it, each with different CPU and memory</li>
       </ul>
     </div>
     <div lang="ja">
@@ -216,20 +216,20 @@ footer p:nth-child(n+3) { font-size: 13px; color: var(--muted); }
       </ul>
     </div>
     <div class="setup">
-      <div class="node"><b lang="en">Coding agent</b><b lang="ja">コーディングエージェント</b><span lang="en">Reads the spec and the code, measures, rewrites, deploys</span><span lang="ja">仕様とコードを読み、計測し、書き換え、配置する</span></div>
+      <div class="node"><b lang="en">Coding agent</b><b lang="ja">コーディングエージェント</b><span lang="en">Reads the spec and code, profiles, rewrites, and deploys</span><span lang="ja">仕様とコードを読み、計測し、書き換え、配置する</span></div>
       <div class="arrow">SSH</div>
       <div class="servers">
         <div class="node"><b>s1</b></div>
         <div class="node"><b>s2</b></div>
         <div class="node"><b>s3</b></div>
-        <span lang="en">each with different CPU and memory</span><span lang="ja">CPUもメモリも1台ずつ違う</span>
+        <span lang="en">different CPU and memory on each</span><span lang="ja">CPUもメモリも1台ずつ違う</span>
       </div>
       <div class="arrow back"><span lang="en">user traffic</span><span lang="ja">利用者の操作</span></div>
-      <div class="node"><b lang="en">Load test</b><b lang="ja">ベンチマーカー</b><span lang="en">70 seconds of publishers and readers, then a score or a FAIL</span><span lang="ja">発行者と読者の操作を70秒間送り、点かFAILを返す</span></div>
+      <div class="node"><b lang="en">Load test</b><b lang="ja">ベンチマーカー</b><span lang="en">70 seconds of simulated publisher and reader traffic; returns a score or FAIL</span><span lang="ja">発行者と読者の操作を70秒間送り、点かFAILを返す</span></div>
     </div>
     <div lang="en">
-      <p><strong>Anything may change</strong>: queries and indexes, caching, the architecture, the language, the database, which server does what. The only condition is that the service keeps behaving as the specification says.</p>
-      <p>A load test plays the users. Publishers schedule issues, which must reach every subscriber before a deadline; readers open, click, share and subscribe. The score counts the mail delivered in time and the activity that succeeded. Inconsistent data fails the test.</p>
+      <p><strong>The agent can change anything</strong>: queries, indexes, caching, architecture, language, database, or how work is split across the servers. The only requirement is that the service continues to follow the specification.</p>
+      <p>Each load test simulates real users. Publishers schedule newsletter issues that must reach every subscriber before a deadline, while readers open, click, share, and subscribe. The score is based on emails delivered on time and successful user actions. Any data inconsistency fails the test.</p>
     </div>
     <div lang="ja">
       <p><strong>何を変えても構いません</strong>。SQLやインデックス、キャッシュ、アーキテクチャ、言語、データベース、サーバーの役割分担まで自由です。条件は、仕様どおりに動き続けることだけです。</p>
@@ -242,10 +242,10 @@ footer p:nth-child(n+3) { font-size: 13px; color: var(--muted); }
     <h2 lang="ja">何を測っているか</h2>
     <table class="compare" lang="en">
       <tr><th></th><th>Test-based coding benchmarks</th><th>isu-bench</th></tr>
-      <tr><td>The work</td><td>Change the code in a repository</td><td>Run a live system: code, database and three servers</td></tr>
-      <tr><td>Done when</td><td>The tests pass</td><td>Never. Every improvement raises the score</td></tr>
-      <tr><td>Feedback</td><td>Run the tests as often as needed</td><td>{RUNS} load tests, and failing the last one scores 0</td></tr>
-      <tr><td>Prior exposure</td><td>Mostly public code</td><td>An unpublished problem, shipped only as machine images</td></tr>
+      <tr><td>Task</td><td>Edit code in a repository</td><td>Optimize a live system: code, database, and three servers</td></tr>
+      <tr><td>Done when</td><td>The tests pass</td><td>Open-ended: every improvement raises the score</td></tr>
+      <tr><td>Feedback</td><td>Run tests as often as needed</td><td>{RUNS} load tests total; failing the last one scores 0</td></tr>
+      <tr><td>Prior exposure</td><td>Mostly public code</td><td>Unpublished problem, distributed only as machine images</td></tr>
     </table>
     <table class="compare" lang="ja">
       <tr><th></th><th>テストで採点するベンチマーク</th><th>isu-bench</th></tr>
@@ -255,13 +255,13 @@ footer p:nth-child(n+3) { font-size: 13px; color: var(--muted); }
       <tr><td>既知かどうか</td><td>多くは公開されているコード</td><td>非公開の問題。マシンイメージでだけ配布</td></tr>
     </table>
     <div lang="en">
-      <p>Doing well takes several skills at once:</p>
+      <p>Doing well requires several skills at once:</p>
       <ul>
         <li>reading an unfamiliar specification and codebase</li>
-        <li>finding the bottleneck by measuring it</li>
-        <li>carrying a large rewrite through without breaking behavior</li>
-        <li>operating servers: deployment, recovery after a reboot, durable data</li>
-        <li>judgment under a budget: when to spend a load test, and when to stop taking risks</li>
+        <li>profiling to find bottlenecks</li>
+        <li>making large rewrites without breaking existing behavior</li>
+        <li>server operations: deployment, reboot recovery, and data durability</li>
+        <li>managing a limited budget: deciding when to run a load test and when to stop taking risks</li>
       </ul>
     </div>
     <div lang="ja">
@@ -280,8 +280,8 @@ footer p:nth-child(n+3) { font-size: 13px; color: var(--muted); }
     <h2 lang="en">Where the format comes from</h2>
     <h2 lang="ja">ISUCONについて</h2>
     <div lang="en">
-      <p>The format is borrowed from <a href="https://isucon.net/">ISUCON</a> (<i>Iikanji ni Speed Up Contest</i>, roughly "speed it up nicely"), a web performance tuning contest held in Japan since 2011. Teams of up to three engineers get the same deal: an unfamiliar slow service, a few servers and eight hours. The highest score at the end wins.</p>
-      <p>Past ISUCON problems and their solutions are public, so a model may have seen them solved. isu-bench is therefore scored on ISUMAIL, a problem in the same style written for it. Its source is not published and it ships only as machine images.</p>
+      <p>The format is modeled after <a href="https://isucon.net/">ISUCON</a> (<i>Iikanji ni Speed Up Contest</i>, roughly "speed it up nicely"), a web performance tuning contest held in Japan since 2011. Teams of up to three engineers face the same challenge: an unfamiliar slow service, a few servers, and eight hours. The highest score at the end wins.</p>
+      <p>Because past ISUCON problems and their solutions are public, models may have seen them during training. Instead, isu-bench scores agents on ISUMAIL, a new problem written specifically for this benchmark in the same style. Its source code is unpublished, and it is distributed only as machine images.</p>
     </div>
     <div lang="ja">
       <p>課題の形式は<a href="https://isucon.net/">ISUCON</a>にならっています。ISUCONは2011年から続くWebアプリケーション高速化コンテストで、最大3人のチームが、初めて見る遅いWebサービスと数台のサーバーを渡され、8時間でどこまで速くできるかを競います。</p>
@@ -293,12 +293,12 @@ footer p:nth-child(n+3) { font-size: 13px; color: var(--muted); }
     <h2 lang="en">Scoring and rules</h2>
     <h2 lang="ja">採点とルール</h2>
     <ul lang="en">
-      <li><strong>Score</strong>: the points of the {RUNS}th load test, divided by the estimated maximum of {WINNER}.</li>
-      <li>Every load test counts toward the {RUNS}, failed ones included.</li>
-      <li>After the last one the three servers are rebooted. If the service does not come back with the data written during that test, the score is 0.</li>
-      <li>No time limit. An agent that stops early is told to continue, up to three times.</li>
-      <li>No web access. Search tools are off and the network reaches only the model API, package registries and the servers.</li>
-      <li>One trial per configuration, in Go. A configuration is a model, the agent it runs in and a reasoning effort.</li>
+      <li><strong>Score</strong>: the points from the {RUNS}th load test, divided by the estimated maximum ({WINNER} points).</li>
+      <li>Every load test counts toward the {RUNS}-run limit, including failed runs.</li>
+      <li>After the final load test, all three servers are rebooted. If the service fails to come back up with the data written during that test intact, the score is 0.</li>
+      <li>No time limit. If an agent stops early, it is prompted to continue up to three times.</li>
+      <li>No web access. Search tools are disabled, and network access is restricted to the model API, package registries, and the target servers.</li>
+      <li>One trial per configuration, starting from the Go implementation. Each configuration is a combination of model, agent harness, and reasoning effort.</li>
     </ul>
     <ul lang="ja">
       <li><strong>スコア</strong>: {RUNS}回目のベンチマークの点を、理論上の上限の見積もり（{WINNER}点）で割った値。</li>
@@ -308,7 +308,7 @@ footer p:nth-child(n+3) { font-size: 13px; color: var(--muted); }
       <li>Webは使えません。検索ツールは無効で、通信先はモデルのAPI、パッケージレジストリ、サーバーだけです。</li>
       <li>1構成につき1試行、言語はGo。構成は、モデル、それを動かすエージェント、推論の強さの組み合わせです。</li>
     </ul>
-    <p lang="en">The <a href="https://github.com/trasta298/isu-bench/blob/main/REQUIREMENTS.md">full rules</a>, the <a href="https://github.com/trasta298/isu-bench/blob/main/prompt.md">exact prompt</a> and the harness are in the <a href="https://github.com/trasta298/isu-bench">repository</a>.</p>
+    <p lang="en">The <a href="https://github.com/trasta298/isu-bench/blob/main/REQUIREMENTS.md">full rules</a>, the <a href="https://github.com/trasta298/isu-bench/blob/main/prompt.md">exact prompt</a>, and the harness are available in the <a href="https://github.com/trasta298/isu-bench">repository</a>.</p>
     <p lang="ja"><a href="https://github.com/trasta298/isu-bench/blob/main/REQUIREMENTS.md">ルールの全体</a>、<a href="https://github.com/trasta298/isu-bench/blob/main/prompt.md">プロンプトの原文</a>、ハーネスは<a href="https://github.com/trasta298/isu-bench/blob/main/README.ja.md">リポジトリ</a>にあります。</p>
   </section>
 
@@ -316,9 +316,9 @@ footer p:nth-child(n+3) { font-size: 13px; color: var(--muted); }
     <h2 lang="en">Caveats</h2>
     <h2 lang="ja">注意点</h2>
     <ul lang="en">
-      <li>Each configuration ran once, so the spread between trials is not measured. The untouched service alone varies by about 5% from test to test. Small gaps mean little.</li>
-      <li>Each model runs in its vendor's own agent, so a result belongs to the pair, not to the model alone.</li>
-      <li>The maximum is an estimate of the problem's theoretical limit. Its derivation is withheld together with the source, to keep the problem out of training data.</li>
+      <li>Each configuration was run once, so run-to-run variance is not measured. Even the unmodified service varies by about 5% from run to run. Small score differences are not meaningful.</li>
+      <li>Each model runs in its provider's own agent harness, so results reflect the model-and-agent pair rather than the model alone.</li>
+      <li>The 100% mark is an estimate of the problem's theoretical limit. Like the source code, its derivation is kept private to keep the problem out of training data.</li>
     </ul>
     <ul lang="ja">
       <li>各構成の試行は1回だけで、試行間のばらつきは測っていません。手を入れる前のサービスでも、点は回ごとに5%ほど変わります。小さな差に意味はありません。</li>
@@ -328,9 +328,9 @@ footer p:nth-child(n+3) { font-size: 13px; color: var(--muted); }
   </section>
 
   <footer>
-    <p lang="en">Want another model or agent added? Ask <a href="https://x.com/trasta">@trasta</a> on X. Each configuration ran once because of cost, and <a href="https://github.com/sponsors/trasta298">sponsorship on GitHub</a> goes to more trials and more models.</p>
+    <p lang="en">Want another model or agent added? Reach out to <a href="https://x.com/trasta">@trasta</a> on X. Each configuration was run once due to cost, and <a href="https://github.com/sponsors/trasta298">GitHub Sponsors</a> funding goes toward additional trials and new models.</p>
     <p lang="ja">追加してほしいモデルやエージェントがあれば、Xの<a href="https://x.com/trasta">@trasta</a>まで連絡してください。各構成の試行が1回なのは費用の都合で、<a href="https://github.com/sponsors/trasta298">GitHub Sponsors</a>での支援は試行回数とモデルの追加に充てます。</p>
-    <p lang="en">ISUCON is a trademark or registered trademark of SAKURA internet Inc. (<a href="https://isucon.net">isucon.net</a>) isu-bench is an independent project. It is not run, sponsored or endorsed by the ISUCON organizers or SAKURA internet Inc.</p>
+    <p lang="en">ISUCON is a trademark or registered trademark of SAKURA internet Inc. (<a href="https://isucon.net">isucon.net</a>). isu-bench is an independent project. It is not run, sponsored, or endorsed by the ISUCON organizers or SAKURA internet Inc.</p>
     <p lang="ja">「ISUCON」は、さくらインターネット株式会社の商標または登録商標です。（<a href="https://isucon.net">isucon.net</a>）isu-benchは独立した非公式のプロジェクトです。ISUCONの運営やさくらインターネット株式会社が主催、後援、公認するものではありません。</p>
   </footer>
 </main>
@@ -354,24 +354,24 @@ const color = c => `var(--s${DATA.colors[c]})`;
 const T = {
   en: {
     other: ['日本語', 'ja'],
-    chartLabel: `Score of each load test against the time since the agent started, for ${P.title}`,
-    elapsed: 'Time since the agent started (h:mm)',
+    chartLabel: `Load test scores over elapsed time for ${P.title}`,
+    elapsed: 'Elapsed time (h:mm)',
     max: 'estimated maximum',
     dur: (h, m) => h ? `${h} h ${m} min` : `${m} min`,
     test: (i, n) => `Load test ${i} of ${n}`,
     startedAt: 'Started at',
     score: 'Score',
     points: 'Points',
-    calls: 'Tool calls before it',
-    head: ['', 'Model', 'Score', 'Time', 'API cost', 'Failed tests'],
-    scatterLabel: `Final score against the API cost of the trial, for ${P.title}`,
-    costAxis: 'API cost of the trial (USD, log scale)',
+    calls: 'Tool calls before this run',
+    head: ['', 'Model', 'Score', 'Time', 'API cost', 'Failed runs'],
+    scatterLabel: `Final score vs. API cost for ${P.title}`,
+    costAxis: 'Trial API cost (USD, log scale)',
     detailHead: ['Model', 'Final points', 'Best points'],
     tokens: 'Tokens',
-    detailNote: ["Tokens come from each agent's transcripts and are not strictly comparable across providers. Input is uncached input."],
-    boardNote: ['Time is how long the agent worked.',
-                'API cost prices each trial\'s tokens at each provider\'s list price on 2026-11-03, Anthropic\'s on 2026-11-10, Google\'s on 2026-11-11 (Gemini 4 Hydrogen\'s on 2026-11-19, Gemini 4 Neon\'s on 2026-11-20) and GPT-6.2\'s on 2026-11-18 (DeepSeek at its peak rate, off-peak is half; Gemini 4 Carbon at its introductory price, which doubles on 2026-12-01). Hover over a cost for the prices.'],
-    costHead: 'List price per 1M tokens × tokens',
+    detailNote: ['Token counts come from each agent\'s transcripts and are not strictly comparable across providers. "Input" excludes cached tokens.'],
+    boardNote: ['Time is total active agent working time.',
+                'API cost is calculated from each trial\'s token usage using provider list prices (checked 2026-11-03; Anthropic 2026-11-10; Google 2026-11-11, with Gemini 4 Hydrogen on 2026-11-19 and Gemini 4 Neon on 2026-11-20; GPT-6.2 2026-11-18). DeepSeek uses its peak rate (off-peak is half), and Gemini 4 Carbon uses its introductory rate (which doubles on 2026-12-01). Hover over a cost to see the per-token breakdown.'],
+    costHead: 'List price per 1M tokens × token count',
     costKinds: [['input', 'Input'], ['output', 'Output'], ['cache_read', 'Cache read'], ['cache_write', 'Cache write']],
   },
   ja: {
