@@ -76,6 +76,7 @@ A trial creates its own VPC and instances and deletes them when it ends. If the 
 | DeepSeek Harness | `dsh` | With `OLLAMA_API_KEY` it runs against Ollama Cloud. Its command timeout is raised from 60 seconds to 10 minutes, because one load test takes about 70 seconds |
 
 
+- `agy` can also use a Google sign-in made for isu-bench only, used when `GEMINI_API_KEY` is unset: run `docker run --rm -it -v ~/.config/isu-bench/agy:/home/agent/.gemini/antigravity-cli isu-bench-agent:v1 agy`, choose Google OAuth and paste the code from the sign-in page. Its first-run screen checks the box that lets Google collect your interactions data; uncheck it. Signed in, `agy` takes the models that `agy models` lists for the account, such as `--model gemini-4-neon --effort high`.
 ## Other problems and versions
 
 - ISUCON14 and ISUCON13 also run in the harness (`--problem isucon14`, `--problem isucon13`). They are not scored, because their public solutions predate the models' training data. Results from v1 are in `results/`.

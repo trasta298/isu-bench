@@ -1,5 +1,6 @@
 import datetime
 import json
+import os
 from pathlib import Path
 
 
@@ -155,10 +156,19 @@ class DeepSeekHarness:
 
 class Antigravity:
     name = 'agy'
-    domains = ['generativelanguage.googleapis.com']
+    # A Google sign-in also calls play.googleapis.com and aicode.googleapis.com, and works with both blocked.
+    domains = ['generativelanguage.googleapis.com', 'daily-cloudcode-pa.googleapis.com', 'www.googleapis.com',
+               'oauth2.googleapis.com']
     credentials = ['GEMINI_API_KEY']
     env = {}
     version = ['agy', '--version']
+    # A Google sign-in made for isu-bench only, kept apart from the user's own CLI home.
+    auth_store = Path('~/.config/isu-bench/agy/antigravity-oauth-token').expanduser()
+    auth_file = '.gemini/antigravity-cli/antigravity-oauth-token'
+
+    def auth_secrets(self, text):
+        token = json.loads(text).get('token', {})
+        return [token[k] for k in ('access_token', 'refresh_token') if token.get(k)]
     # The CLI keeps its conversations as protobuf and its events carry no time, so the stream is stamped and kept.
     stream = '.agy/stream.jsonl'
     stamp = """
@@ -185,11 +195,14 @@ sys.exit(proc.wait())
         return {'.gemini/config/hooks.json': json.dumps({'no-web': {'PreToolUse': [
             {'matcher': self.web_tools, 'hooks': [{'type': 'command', 'command': deny}]}]}})}
 
-    # A model the CLI does not list has to be declared, as an entry of a map: only then does --effort apply to it
-    # (low, medium or high, sent as the API's thinking level; named by its API path alone the model thinks as it likes).
+    # On a Gemini API key, a model the CLI does not list has to be declared, as an entry of a map: only then does --effort
+    # apply to it (low, medium or high, sent as the API's thinking level; named by its API path alone the model thinks as
+    # it likes). Signed in with Google, the CLI lists the model and --effort picks its variant (gemini-4-neon-high).
     def command(self, model, effort, prompt, logs):
-        settings = {'modelProvider': 'gemini', 'permissions': {'deny': ['read_url(*)', 'execute_url(*)']},
-                    'customModelsConfig': {'customModels': {model: {'modelName': f'gemini-api://models/{model}', 'label': model}}}}
+        settings = {'permissions': {'deny': ['read_url(*)', 'execute_url(*)']}}
+        if os.environ.get('GEMINI_API_KEY'):
+            settings |= {'modelProvider': 'gemini', 'customModelsConfig': {'customModels': {
+                model: {'modelName': f'gemini-api://models/{model}', 'label': model}}}}
         cmd = ['agy', '-p', prompt, '--model', model, '--effort', effort, '--settings', json.dumps(settings),
                '--output-format', 'stream-json', '--dangerously-skip-permissions']
         return ['python3', '-c', self.stamp, *cmd, *(['--continue'] if logs else [])]

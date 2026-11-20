@@ -76,6 +76,7 @@ python3 -m isubench teardown <run_id>
 | DeepSeek Harness | `dsh` | `OLLAMA_API_KEY` を設定するとOllama Cloudで動きます。ベンチマーク1回に約70秒かかるため、コマンドのタイムアウトを60秒から10分に延ばしています |
 
 
+- `agy` では、isu-bench専用に作ったGoogleのログインも使えます。`GEMINI_API_KEY` が未設定のときに使われます。ログインには `docker run --rm -it -v ~/.config/isu-bench/agy:/home/agent/.gemini/antigravity-cli isu-bench-agent:v1 agy` を実行してGoogle OAuthを選び、ログインページに出るコードを貼り付けます。初回の画面では、Googleが操作データを収集することへの同意にチェックが入っているので外します。ログインした場合は、`agy models` がそのアカウントに出すモデルを指定します（例: `--model gemini-4-neon --effort high`）。
 ## 他の問題と以前のバージョン
 
 - ISUCON14とISUCON13もこのハーネスで動きます（`--problem isucon14`、`--problem isucon13`）。公開されている解法がモデルの学習データより前からあるため、採点には使っていません。v1のときの結果は `results/` にあります。
